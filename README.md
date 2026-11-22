@@ -11,7 +11,7 @@
 - `docs/` — static report and accuracy boundary.
 - `resources/` — exact PE resource payloads.
 
-The original executable remains under `artifacts/` as well as the Delta-style `assets/extracted-app/` copy. All copies are digest-bound in `PROVENANCE.json`.
+The original executable remains under `artifacts/` as well as `assets/extracted-app/` copy. All copies are digest-bound in `PROVENANCE.json`.
 
 ## Accuracy boundary
 
