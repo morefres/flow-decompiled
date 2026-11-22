@@ -1,0 +1,9 @@
+resources/resource_0_type3_name1_lang1033.bin:      PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced
+resources/resource_1_type3_name2_lang1033.bin:      PNG image data, 24 x 24, 8-bit/color RGBA, non-interlaced
+resources/resource_2_type3_name3_lang1033.bin:      PNG image data, 32 x 32, 8-bit/color RGBA, non-interlaced
+resources/resource_3_type3_name4_lang1033.bin:      PNG image data, 48 x 48, 8-bit/color RGBA, non-interlaced
+resources/resource_4_type3_name5_lang1033.bin:      PNG image data, 64 x 64, 8-bit/color RGBA, non-interlaced
+resources/resource_5_type3_name6_lang1033.bin:      PNG image data, 256 x 256, 8-bit/color RGBA, non-interlaced
+resources/resource_6_type14_name32512_lang1033.bin: data
+resources/resource_7_type16_name1_lang1033.bin:     data
+resources/resource_8_type24_name1_lang1033.bin:     ASCII text, with very long lines (334), with no line terminators
