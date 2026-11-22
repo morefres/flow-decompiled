@@ -1,0 +1,57 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x1d60e3-0x1d61b3
+0x00000001401d60e3: sub      rsp, 0x38
+0x00000001401d60e7: mov      r9, qword ptr [rcx + 0x20]
+0x00000001401d60eb: mov      rax, qword ptr [rcx + 0x28]
+0x00000001401d60ef: cmp      rax, r9
+0x00000001401d60f2: jae      0x1401d611f
+0x00000001401d60f4: mov      rdx, qword ptr [rcx + 0x18]
+0x00000001401d60f8: movabs   r8, 0x100002600
+0x00000001401d6102: movzx    r10d, byte ptr [rdx + rax]
+0x00000001401d6107: cmp      r10, 0x2c
+0x00000001401d610b: ja       0x1401d617a
+0x00000001401d610d: bt       r8, r10
+0x00000001401d6111: jae      0x1401d6132
+0x00000001401d6113: inc      rax
+0x00000001401d6116: mov      qword ptr [rcx + 0x28], rax
+0x00000001401d611a: cmp      r9, rax
+0x00000001401d611d: jne      0x1401d6102
+0x00000001401d611f: lea      rdx, [rsp + 0x20]
+0x00000001401d6124: mov      qword ptr [rdx], 2
+0x00000001401d612b: call     0x1408b3f4b
+0x00000001401d6130: jmp      0x1401d6189
+0x00000001401d6132: cmp      r10, 0x2c
+0x00000001401d6136: jne      0x1401d617a
+0x00000001401d6138: lea      r10, [rax + 1]
+0x00000001401d613c: mov      qword ptr [rcx + 0x28], r10
+0x00000001401d6140: cmp      r10, r9
+0x00000001401d6143: jae      0x1401d61a2
+0x00000001401d6145: add      rax, 2
+0x00000001401d6149: mov      r10d, 1
+0x00000001401d614f: sub      r10, r9
+0x00000001401d6152: movzx    r9d, byte ptr [rdx + rax - 1]
+0x00000001401d6158: cmp      r9, 0x20
+0x00000001401d615c: ja       0x1401d618e
+0x00000001401d615e: bt       r8, r9
+0x00000001401d6162: jae      0x1401d618e
+0x00000001401d6164: mov      qword ptr [rcx + 0x28], rax
+0x00000001401d6168: lea      r9, [r10 + rax]
+0x00000001401d616c: inc      r9
+0x00000001401d616f: inc      rax
+0x00000001401d6172: cmp      r9, 2
+0x00000001401d6176: je       0x1401d61a2
+0x00000001401d6178: jmp      0x1401d6152
+0x00000001401d617a: cmp      r10d, 0x5d
+0x00000001401d617e: jne      0x1401d61a2
+0x00000001401d6180: inc      rax
+0x00000001401d6183: mov      qword ptr [rcx + 0x28], rax
+0x00000001401d6187: xor      eax, eax
+0x00000001401d6189: add      rsp, 0x38
+0x00000001401d618d: ret      
+0x00000001401d618e: cmp      r9d, 0x5d
+0x00000001401d6192: jne      0x1401d61a2
+0x00000001401d6194: lea      rdx, [rsp + 0x20]
+0x00000001401d6199: mov      qword ptr [rdx], 0x15
+0x00000001401d61a0: jmp      0x1401d612b
+0x00000001401d61a2: lea      rdx, [rsp + 0x20]
+0x00000001401d61a7: mov      qword ptr [rdx], 0x16
+0x00000001401d61ae: jmp      0x1401d612b

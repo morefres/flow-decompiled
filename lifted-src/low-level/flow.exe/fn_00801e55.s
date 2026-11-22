@@ -1,0 +1,36 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x801e55-0x801eaf
+0x0000000140801e55: push     r15
+0x0000000140801e57: push     r14
+0x0000000140801e59: push     rsi
+0x0000000140801e5a: push     rdi
+0x0000000140801e5b: push     rbx
+0x0000000140801e5c: sub      rsp, 0x20
+0x0000000140801e60: test     r9, r9
+0x0000000140801e63: je       0x140801e9d
+0x0000000140801e65: mov      rsi, r8
+0x0000000140801e68: mov      rdi, rdx
+0x0000000140801e6b: mov      rbx, rcx
+0x0000000140801e6e: shl      r9, 3
+0x0000000140801e72: lea      r14, [r9 + r9*2]
+0x0000000140801e76: xor      r15d, r15d
+0x0000000140801e79: cmp      qword ptr [rsi + r15 + 0x10], rdi
+0x0000000140801e7e: jne      0x140801e94
+0x0000000140801e80: mov      rcx, qword ptr [rsi + r15 + 8]
+0x0000000140801e85: mov      rdx, rbx
+0x0000000140801e88: mov      r8, rdi
+0x0000000140801e8b: call     0x1408accc0
+0x0000000140801e90: test     eax, eax
+0x0000000140801e92: je       0x140801ea1
+0x0000000140801e94: add      r15, 0x18
+0x0000000140801e98: cmp      r14, r15
+0x0000000140801e9b: jne      0x140801e79
+0x0000000140801e9d: xor      eax, eax
+0x0000000140801e9f: jmp      0x140801ea3
+0x0000000140801ea1: mov      al, 1
+0x0000000140801ea3: add      rsp, 0x20
+0x0000000140801ea7: pop      rbx
+0x0000000140801ea8: pop      rdi
+0x0000000140801ea9: pop      rsi
+0x0000000140801eaa: pop      r14
+0x0000000140801eac: pop      r15
+0x0000000140801eae: ret      

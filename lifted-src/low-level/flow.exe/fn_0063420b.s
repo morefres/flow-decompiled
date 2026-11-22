@@ -1,0 +1,66 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x63420b-0x634300
+0x000000014063420b: push     rbp
+0x000000014063420c: push     r15
+0x000000014063420e: push     r14
+0x0000000140634210: push     rsi
+0x0000000140634211: push     rdi
+0x0000000140634212: push     rbx
+0x0000000140634213: mov      eax, 0x1068
+0x0000000140634218: call     0x1408a7060
+0x000000014063421d: sub      rsp, rax
+0x0000000140634220: lea      rbp, [rsp + 0x80]
+0x0000000140634228: mov      qword ptr [rbp + 0xfe0], 0xfffffffffffffffe
+0x0000000140634233: mov      rsi, rdx
+0x0000000140634236: mov      rdi, rcx
+0x0000000140634239: mov      rax, rdx
+0x000000014063423c: shr      rax, 1
+0x000000014063423f: mov      rcx, rdx
+0x0000000140634242: sub      rcx, rax
+0x0000000140634245: mov      edx, 0x7a120
+0x000000014063424a: cmp      rsi, rdx
+0x000000014063424d: cmovb    rdx, rsi
+0x0000000140634251: cmp      rdx, rcx
+0x0000000140634254: cmovbe   rdx, rcx
+0x0000000140634258: cmp      rdx, 0x101
+0x000000014063425f: jae      0x140634270
+0x0000000140634261: lea      r8, [rbp - 0x50]
+0x0000000140634265: mov      r9d, 0x100
+0x000000014063426b: xor      r15d, r15d
+0x000000014063426e: jmp      0x1406342a9
+0x0000000140634270: mov      byte ptr [rbp + 0xfdf], 0
+0x0000000140634277: lea      rcx, [rbp + 0xfb0]
+0x000000014063427e: call     0x14063434e
+0x0000000140634283: nop      
+0x0000000140634284: mov      r14, qword ptr [rbp + 0xfb0]
+0x000000014063428b: mov      rbx, qword ptr [rbp + 0xfb8]
+0x0000000140634292: mov      r8, qword ptr [rbp + 0xfc0]
+0x0000000140634299: mov      r9, r14
+0x000000014063429c: sub      r9, r8
+0x000000014063429f: shl      r8, 4
+0x00000001406342a3: add      r8, rbx
+0x00000001406342a6: mov      r15b, 1
+0x00000001406342a9: mov      qword ptr [rbp + 0xfd0], rbx
+0x00000001406342b0: mov      qword ptr [rbp + 0xfc8], r14
+0x00000001406342b7: mov      byte ptr [rbp + 0xfdf], r15b
+0x00000001406342be: cmp      rsi, 0x41
+0x00000001406342c2: setb     byte ptr [rsp + 0x20]
+0x00000001406342c7: mov      rcx, rdi
+0x00000001406342ca: mov      rdx, rsi
+0x00000001406342cd: call     0x1406343b9
+0x00000001406342d2: nop      
+0x00000001406342d3: test     r15b, r15b
+0x00000001406342d6: je       0x1406342f0
+0x00000001406342d8: mov      r8d, 8
+0x00000001406342de: mov      r9d, 0x10
+0x00000001406342e4: mov      rcx, r14
+0x00000001406342e7: mov      rdx, rbx
+0x00000001406342ea: call     0x14000a0f6
+0x00000001406342ef: nop      
+0x00000001406342f0: add      rsp, 0x1068
+0x00000001406342f7: pop      rbx
+0x00000001406342f8: pop      rdi
+0x00000001406342f9: pop      rsi
+0x00000001406342fa: pop      r14
+0x00000001406342fc: pop      r15
+0x00000001406342fe: pop      rbp
+0x00000001406342ff: ret      

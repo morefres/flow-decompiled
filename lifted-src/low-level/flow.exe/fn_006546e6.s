@@ -1,0 +1,47 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6546e6-0x654770
+0x00000001406546e6: push     rbp
+0x00000001406546e7: push     r14
+0x00000001406546e9: push     rsi
+0x00000001406546ea: push     rdi
+0x00000001406546eb: push     rbx
+0x00000001406546ec: sub      rsp, 0x40
+0x00000001406546f0: lea      rbp, [rsp + 0x40]
+0x00000001406546f5: mov      qword ptr [rbp - 8], 0xfffffffffffffffe
+0x00000001406546fd: mov      rbx, rdx
+0x0000000140654700: mov      qword ptr [rbp - 0x10], r8
+0x0000000140654704: mov      qword ptr [rbp - 0x18], r8
+0x0000000140654708: mov      rsi, qword ptr [rcx + 0x10]
+0x000000014065470c: cmp      rsi, rdx
+0x000000014065470f: jb       0x14065475f
+0x0000000140654711: mov      rdi, rcx
+0x0000000140654714: cmp      rsi, qword ptr [rcx]
+0x0000000140654717: jne      0x140654722
+0x0000000140654719: mov      rcx, rdi
+0x000000014065471c: call     0x1406547a1
+0x0000000140654721: nop      
+0x0000000140654722: lea      r14, [rbx*8]
+0x000000014065472a: add      r14, qword ptr [rdi + 8]
+0x000000014065472e: mov      r8, rsi
+0x0000000140654731: sub      r8, rbx
+0x0000000140654734: jbe      0x140654746
+0x0000000140654736: lea      rcx, [r14 + 8]
+0x000000014065473a: shl      r8, 3
+0x000000014065473e: mov      rdx, r14
+0x0000000140654741: call     0x1408acdc0
+0x0000000140654746: mov      rax, qword ptr [rbp - 0x10]
+0x000000014065474a: mov      qword ptr [r14], rax
+0x000000014065474d: inc      rsi
+0x0000000140654750: mov      qword ptr [rdi + 0x10], rsi
+0x0000000140654754: add      rsp, 0x40
+0x0000000140654758: pop      rbx
+0x0000000140654759: pop      rdi
+0x000000014065475a: pop      rsi
+0x000000014065475b: pop      r14
+0x000000014065475d: pop      rbp
+0x000000014065475e: ret      
+0x000000014065475f: mov      rcx, rbx
+0x0000000140654762: mov      rdx, rsi
+0x0000000140654765: mov      r8, r9
+0x0000000140654768: call     0x1408ada30
+0x000000014065476d: nop      
+0x000000014065476e: ud2      

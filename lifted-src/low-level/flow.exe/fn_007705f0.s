@@ -1,0 +1,42 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7705f0-0x77067b
+0x00000001407705f0: push     rbp
+0x00000001407705f1: push     rsi
+0x00000001407705f2: sub      rsp, 0x28
+0x00000001407705f6: lea      rbp, [rsp + 0x20]
+0x00000001407705fb: lock dec byte ptr [rcx + 0x28]
+0x00000001407705ff: je       0x140770674
+0x0000000140770601: mov      rsi, rcx
+0x0000000140770604: add      rsi, 0x28
+0x0000000140770608: mov      byte ptr [rbp + 7], 0xff
+0x000000014077060c: mov      ecx, 0x3e8
+0x0000000140770611: mov      rax, rdx
+0x0000000140770614: mul      rcx
+0x0000000140770617: mov      r9d, 0xffffffff
+0x000000014077061d: jo       0x140770652
+0x000000014077061f: mov      ecx, r8d
+0x0000000140770622: imul     rcx, rcx, 0x431bde83
+0x0000000140770629: shr      rcx, 0x32
+0x000000014077062d: add      rax, rcx
+0x0000000140770630: jb       0x140770652
+0x0000000140770632: imul     ecx, ecx, 0xf4240
+0x0000000140770638: xor      edx, edx
+0x000000014077063a: sub      r8d, ecx
+0x000000014077063d: setne    dl
+0x0000000140770640: add      rax, rdx
+0x0000000140770643: jb       0x140770652
+0x0000000140770645: mov      r9d, 0xffffffff
+0x000000014077064b: cmp      rax, r9
+0x000000014077064e: cmovb    r9, rax
+0x0000000140770652: lea      rdx, [rbp + 7]
+0x0000000140770656: mov      r8d, 1
+0x000000014077065c: mov      rcx, rsi
+0x000000014077065f: call     qword ptr [rip + 0x160a1b]
+0x0000000140770665: cmp      eax, 1
+0x0000000140770668: je       0x140770670
+0x000000014077066a: call     qword ptr [rip + 0x160e30]
+0x0000000140770670: xor      eax, eax
+0x0000000140770672: xchg     byte ptr [rsi], al
+0x0000000140770674: add      rsp, 0x28
+0x0000000140770678: pop      rsi
+0x0000000140770679: pop      rbp
+0x000000014077067a: ret      

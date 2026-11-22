@@ -1,0 +1,55 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x20340-0x20406
+0x0000000140020340: push     rbp
+0x0000000140020341: sub      rsp, 0x20
+0x0000000140020345: lea      rbp, [rsp + 0x20]
+0x000000014002034a: cmp      ecx, 0x1ebff
+0x0000000140020350: ja       0x140020390
+0x0000000140020352: mov      eax, ecx
+0x0000000140020354: shr      eax, 6
+0x0000000140020357: and      eax, 0xf
+0x000000014002035a: mov      edx, ecx
+0x000000014002035c: shr      edx, 0xa
+0x000000014002035f: lea      r8, [rip + 0x8dbdea]
+0x0000000140020366: movzx    edx, byte ptr [rdx + r8]
+0x000000014002036b: shl      edx, 4
+0x000000014002036e: lea      r8, [rip + 0x8de19b]
+0x0000000140020375: add      r8, rdx
+0x0000000140020378: movzx    eax, byte ptr [rax + r8]
+0x000000014002037d: cmp      rax, 0x39
+0x0000000140020381: jae      0x140020394
+0x0000000140020383: lea      rdx, [rip + 0x8ddfbe]
+0x000000014002038a: mov      rax, qword ptr [rdx + rax*8]
+0x000000014002038e: jmp      0x1400203e5
+0x0000000140020390: xor      eax, eax
+0x0000000140020392: jmp      0x1400203e8
+0x0000000140020394: lea      r9, [rax - 0x39]
+0x0000000140020398: cmp      al, 0x4f
+0x000000014002039a: jae      0x1400203f0
+0x000000014002039c: mov      edx, ecx
+0x000000014002039e: lea      r8, [rip + 0x8ddf73]
+0x00000001400203a5: movzx    ecx, byte ptr [r8 + rax*2 - 0x71]
+0x00000001400203ab: movzx    r8d, byte ptr [r8 + rax*2 - 0x72]
+0x00000001400203b1: lea      r10, [rip + 0x8ddf90]
+0x00000001400203b8: xor      eax, eax
+0x00000001400203ba: mov      r11d, 0x1f3ffe
+0x00000001400203c0: bt       r11, r9
+0x00000001400203c4: adc      rax, -1
+0x00000001400203c8: xor      rax, qword ptr [r10 + r8*8]
+0x00000001400203cc: mov      r8d, 0x2cc001
+0x00000001400203d2: bt       r8, r9
+0x00000001400203d6: jae      0x1400203e0
+0x00000001400203d8: movzx    ecx, cl
+0x00000001400203db: rol      rax, cl
+0x00000001400203de: jmp      0x1400203e3
+0x00000001400203e0: shr      rax, cl
+0x00000001400203e3: mov      ecx, edx
+0x00000001400203e5: shr      rax, cl
+0x00000001400203e8: and      al, 1
+0x00000001400203ea: add      rsp, 0x20
+0x00000001400203ee: pop      rbp
+0x00000001400203ef: ret      
+0x00000001400203f0: lea      r8, [rip + 0x8dbf71]
+0x00000001400203f7: mov      edx, 0x16
+0x00000001400203fc: mov      rcx, r9
+0x00000001400203ff: call     0x1408ae879
+0x0000000140020404: ud2      

@@ -1,0 +1,53 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x272809-0x2728ab
+0x0000000140272809: push     rbp
+0x000000014027280a: push     rsi
+0x000000014027280b: push     rdi
+0x000000014027280c: push     rbx
+0x000000014027280d: sub      rsp, 0x38
+0x0000000140272811: lea      rbp, [rsp + 0x30]
+0x0000000140272816: mov      qword ptr [rbp], 0xfffffffffffffffe
+0x000000014027281e: test     rcx, rcx
+0x0000000140272821: je       0x140272876
+0x0000000140272823: mov      qword ptr [rbp - 8], r8
+0x0000000140272827: mov      rax, qword ptr [rbp + 0x50]
+0x000000014027282b: mov      r8, r9
+0x000000014027282e: mov      r9, rax
+0x0000000140272831: call     0x1400a366e
+0x0000000140272836: nop      
+0x0000000140272837: mov      r8, qword ptr [rbp - 8]
+0x000000014027283b: mov      rsi, qword ptr [r8]
+0x000000014027283e: test     al, al
+0x0000000140272840: je       0x140272879
+0x0000000140272842: cmp      rsi, -1
+0x0000000140272846: je       0x140272879
+0x0000000140272848: cmp      qword ptr [r8 + 0x10], 1
+0x000000014027284d: jne      0x140272879
+0x000000014027284f: mov      rdi, qword ptr [r8 + 8]
+0x0000000140272853: cmp      qword ptr [rdi + 8], 0xb
+0x0000000140272858: jne      0x140272883
+0x000000014027285a: mov      rcx, qword ptr [rdi]
+0x000000014027285d: lea      rdx, [rip + 0x8872ee]
+0x0000000140272864: mov      r8d, 0xb
+0x000000014027286a: call     0x1408accc0
+0x000000014027286f: test     eax, eax
+0x0000000140272871: sete     bl
+0x0000000140272874: jmp      0x140272885
+0x0000000140272876: mov      rsi, qword ptr [r8]
+0x0000000140272879: cmp      rsi, -1
+0x000000014027287d: je       0x14027289e
+0x000000014027287f: mov      rdi, qword ptr [r8 + 8]
+0x0000000140272883: xor      ebx, ebx
+0x0000000140272885: mov      r8d, 8
+0x000000014027288b: mov      r9d, 0x10
+0x0000000140272891: mov      rcx, rsi
+0x0000000140272894: mov      rdx, rdi
+0x0000000140272897: call     0x14000a0f6
+0x000000014027289c: jmp      0x1402728a0
+0x000000014027289e: xor      ebx, ebx
+0x00000001402728a0: mov      eax, ebx
+0x00000001402728a2: add      rsp, 0x38
+0x00000001402728a6: pop      rbx
+0x00000001402728a7: pop      rdi
+0x00000001402728a8: pop      rsi
+0x00000001402728a9: pop      rbp
+0x00000001402728aa: ret      

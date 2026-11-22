@@ -1,0 +1,17 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x8c33f8-0x8c3441
+0x00000001408c33f8: sub      rsp, 0x28
+0x00000001408c33fc: test     rcx, rcx
+0x00000001408c33ff: je       0x1408c3417
+0x00000001408c3401: cmp      rcx, 1
+0x00000001408c3405: jne      0x1408c3427
+0x00000001408c3407: lea      rcx, [rip + 0x2cb222]
+0x00000001408c340e: lea      r8, [rip + 0x2a32ab]
+0x00000001408c3415: jmp      0x1408c3435
+0x00000001408c3417: lea      rcx, [rip + 0x2cb212]
+0x00000001408c341e: lea      r8, [rip + 0x2a3283]
+0x00000001408c3425: jmp      0x1408c3435
+0x00000001408c3427: lea      rcx, [rip + 0x2cb202]
+0x00000001408c342e: lea      r8, [rip + 0x2a32a3]
+0x00000001408c3435: mov      edx, 0x28
+0x00000001408c343a: call     0x1408ae860
+0x00000001408c343f: ud2      

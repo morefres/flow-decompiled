@@ -1,0 +1,48 @@
+/* Evidence-based C-like lift; not original Rust source. */
+/* image=flow.exe rva=0x37250a-0x3725ad va=0x14037250a bytes=163 */
+void sub_000000014037250a(void) {
+    /* mov qword ptr [rsp + 0x10], rdx */
+    /* push rbp */
+    /* push r15 */
+    /* push r14 */
+    /* push r13 */
+    /* push r12 */
+    /* push rsi */
+    /* push rdi */
+    /* push rbx */
+    /* sub rsp, 0x38 */
+    /* lea rbp, [rdx + 0x80] */
+    /* mov rax, qword ptr [rbp + 0x4d8] */
+    /* cmp byte ptr [rax + 0x3853], 0 */
+    /* jne 0x14037259f */
+    /* mov rsi, qword ptr [rbp + 0x4d8] */
+    /* cmp byte ptr [rsi + 0x3852], 0 */
+    /* je 0x14037255f */
+    /* mov rax, qword ptr [rsi + 0x180] */
+    /* lock dec qword ptr [rax] */
+    /* jne 0x14037255f */
+    /* mov rcx, qword ptr [rsi + 0x180] */
+    /* call 0x1407e387b */
+    /* cmp byte ptr [rsi + 0x3851], 0 */
+    /* je 0x140372587 */
+    /* mov rcx, qword ptr [rsi + 0x168] */
+    /* mov rdx, qword ptr [rsi + 0x170] */
+    /* mov r8d, 1 */
+    /* mov r9d, 1 */
+    /* call 0x14000a0f6 */
+    /* mov byte ptr [rsi + 0x3850], 2 */
+    /* add rsp, 0x38 */
+    /* pop rbx */
+    /* pop rdi */
+    /* pop rsi */
+    /* pop r12 */
+    /* pop r13 */
+    /* pop r14 */
+    /* pop r15 */
+    /* pop rbp */
+    /* ret  */
+    /* mov rcx, qword ptr [rbp + 0x4d8] */
+    /* call 0x140038a80 */
+    /* jmp 0x140372536 */
+    /* Types, control-flow semantics, ABI effects, and source names remain unresolved. */
+}

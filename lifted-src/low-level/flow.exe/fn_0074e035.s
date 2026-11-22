@@ -1,0 +1,41 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x74e035-0x74e0a2
+0x000000014074e035: push     r14
+0x000000014074e037: push     rsi
+0x000000014074e038: push     rdi
+0x000000014074e039: push     rbx
+0x000000014074e03a: sub      rsp, 0x28
+0x000000014074e03e: mov      rsi, r8
+0x000000014074e041: test     r8, r8
+0x000000014074e044: jns      0x14074e052
+0x000000014074e046: xor      ecx, ecx
+0x000000014074e048: mov      rdx, rsi
+0x000000014074e04b: call     0x1408ad821
+0x000000014074e050: ud2      
+0x000000014074e052: mov      rdi, rcx
+0x000000014074e055: je       0x14074e07f
+0x000000014074e057: mov      r14, rdx
+0x000000014074e05a: xor      ecx, ecx
+0x000000014074e05c: mov      rdx, rsi
+0x000000014074e05f: call     0x1407667d0
+0x000000014074e064: test     rax, rax
+0x000000014074e067: je       0x14074e09b
+0x000000014074e069: mov      rbx, rax
+0x000000014074e06c: mov      rcx, rax
+0x000000014074e06f: mov      rdx, r14
+0x000000014074e072: mov      r8, rsi
+0x000000014074e075: call     0x1408acdc0
+0x000000014074e07a: mov      rax, rsi
+0x000000014074e07d: jmp      0x14074e086
+0x000000014074e07f: mov      ebx, 1
+0x000000014074e084: xor      eax, eax
+0x000000014074e086: mov      qword ptr [rdi], rax
+0x000000014074e089: mov      qword ptr [rdi + 8], rbx
+0x000000014074e08d: mov      qword ptr [rdi + 0x10], rsi
+0x000000014074e091: add      rsp, 0x28
+0x000000014074e095: pop      rbx
+0x000000014074e096: pop      rdi
+0x000000014074e097: pop      rsi
+0x000000014074e098: pop      r14
+0x000000014074e09a: ret      
+0x000000014074e09b: mov      ecx, 1
+0x000000014074e0a0: jmp      0x14074e048

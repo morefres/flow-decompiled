@@ -1,0 +1,33 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x692fd0-0x693040
+0x0000000140692fd0: sub      rsp, 0x28
+0x0000000140692fd4: mov      rax, qword ptr [rcx + 0x20]
+0x0000000140692fd8: test     rax, rax
+0x0000000140692fdb: je       0x14069301f
+0x0000000140692fdd: mov      r9d, 0x10
+0x0000000140692fe3: dec      r9
+0x0000000140692fe6: jne      0x140692fe3
+0x0000000140692fe8: test     r8, r8
+0x0000000140692feb: je       0x14069301f
+0x0000000140692fed: mov      r8, qword ptr [rcx + 0x10]
+0x0000000140692ff1: test     r8, r8
+0x0000000140692ff4: je       0x14069301f
+0x0000000140692ff6: mov      r9, r8
+0x0000000140692ff9: shr      r9, 0x20
+0x0000000140692ffd: jne      0x140693026
+0x0000000140692fff: cmp      rax, r8
+0x0000000140693002: cmovae   rax, r8
+0x0000000140693006: mov      rcx, qword ptr [rcx + 8]
+0x000000014069300a: test     rcx, rcx
+0x000000014069300d: cmovne   r8d, eax
+0x0000000140693011: mov      dword ptr [rdx], r8d
+0x0000000140693014: mov      qword ptr [rdx + 8], rcx
+0x0000000140693018: mov      eax, 1
+0x000000014069301d: jmp      0x140693021
+0x000000014069301f: xor      eax, eax
+0x0000000140693021: add      rsp, 0x28
+0x0000000140693025: ret      
+0x0000000140693026: lea      rcx, [rip + 0x4d5f0c]
+0x000000014069302d: lea      r8, [rip + 0x4d5f3c]
+0x0000000140693034: mov      edx, 0x30
+0x0000000140693039: call     0x1408ae860
+0x000000014069303e: ud2      

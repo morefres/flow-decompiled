@@ -1,0 +1,40 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x3634a0-0x363527
+0x00000001403634a0: push     rsi
+0x00000001403634a1: sub      rsp, 0x20
+0x00000001403634a5: mov      rsi, rcx
+0x00000001403634a8: mov      rax, qword ptr [rcx]
+0x00000001403634ab: mov      rcx, rax
+0x00000001403634ae: xor      edx, edx
+0x00000001403634b0: test     cl, 3
+0x00000001403634b3: sete     dl
+0x00000001403634b6: or       rdx, rax
+0x00000001403634b9: or       rdx, 0x20
+0x00000001403634bd: lock cmpxchg qword ptr [rsi], rdx
+0x00000001403634c2: jne      0x1403634ab
+0x00000001403634c4: test     cl, 3
+0x00000001403634c7: je       0x1403634ea
+0x00000001403634c9: mov      rax, 0xffffffffffffffc0
+0x00000001403634d0: lock xadd qword ptr [rsi], rax
+0x00000001403634d5: shr      rax, 6
+0x00000001403634d9: cmp      rax, 1
+0x00000001403634dd: je       0x140363500
+0x00000001403634df: test     rax, rax
+0x00000001403634e2: je       0x14036350d
+0x00000001403634e4: add      rsp, 0x20
+0x00000001403634e8: pop      rsi
+0x00000001403634e9: ret      
+0x00000001403634ea: lea      rcx, [rsi + 0x20]
+0x00000001403634ee: call     0x140360d2a
+0x00000001403634f3: mov      rcx, rsi
+0x00000001403634f6: add      rsp, 0x20
+0x00000001403634fa: pop      rsi
+0x00000001403634fb: jmp      0x14036359a
+0x0000000140363500: mov      rcx, rsi
+0x0000000140363503: add      rsp, 0x20
+0x0000000140363507: pop      rsi
+0x0000000140363508: jmp      0x140363527
+0x000000014036350d: lea      rcx, [rip + 0x81e3bc]
+0x0000000140363514: lea      r8, [rip + 0x81e3dd]
+0x000000014036351b: mov      edx, 0x27
+0x0000000140363520: call     0x1408ae860
+0x0000000140363525: ud2      

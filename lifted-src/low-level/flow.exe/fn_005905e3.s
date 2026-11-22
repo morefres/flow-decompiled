@@ -1,0 +1,58 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x5905e3-0x590689
+0x00000001405905e3: push     rsi
+0x00000001405905e4: push     rdi
+0x00000001405905e5: push     rbx
+0x00000001405905e6: sub      rsp, 0x40
+0x00000001405905ea: mov      rsi, rcx
+0x00000001405905ed: mov      rax, qword ptr [rdx]
+0x00000001405905f0: mov      r8, qword ptr [rdx + 8]
+0x00000001405905f4: mov      rdi, qword ptr [rdx + 0x10]
+0x00000001405905f8: lea      rbx, [rsp + 0x30]
+0x00000001405905fd: mov      rcx, rbx
+0x0000000140590600: mov      rdx, rax
+0x0000000140590603: call     0x140590689
+0x0000000140590608: cmp      byte ptr [rbx], 0
+0x000000014059060b: cmovne   rdi, qword ptr [rbx + 8]
+0x0000000140590610: movzx    eax, byte ptr [rbx + 1]
+0x0000000140590614: mov      ecx, 0xff
+0x0000000140590619: cmove    ecx, eax
+0x000000014059061c: movzx    eax, cl
+0x000000014059061f: cmp      eax, 1
+0x0000000140590622: jg       0x140590638
+0x0000000140590624: test     eax, eax
+0x0000000140590626: jne      0x14059064d
+0x0000000140590628: test     rdi, rdi
+0x000000014059062b: je       0x140590632
+0x000000014059062d: cmp      byte ptr [rdi], 0
+0x0000000140590630: jne      0x14059066f
+0x0000000140590632: mov      byte ptr [rsi + 1], 0
+0x0000000140590636: jmp      0x14059065b
+0x0000000140590638: cmp      eax, 2
+0x000000014059063b: jne      0x14059065f
+0x000000014059063d: test     rdi, rdi
+0x0000000140590640: je       0x140590647
+0x0000000140590642: cmp      byte ptr [rdi], 0
+0x0000000140590645: jne      0x14059066f
+0x0000000140590647: mov      byte ptr [rsi + 1], 2
+0x000000014059064b: jmp      0x14059065b
+0x000000014059064d: test     rdi, rdi
+0x0000000140590650: je       0x140590657
+0x0000000140590652: cmp      byte ptr [rdi], 0
+0x0000000140590655: jne      0x14059066f
+0x0000000140590657: mov      byte ptr [rsi + 1], 1
+0x000000014059065b: xor      eax, eax
+0x000000014059065d: jmp      0x140590665
+0x000000014059065f: mov      qword ptr [rsi + 8], rdi
+0x0000000140590663: mov      al, 1
+0x0000000140590665: mov      byte ptr [rsi], al
+0x0000000140590667: add      rsp, 0x40
+0x000000014059066b: pop      rbx
+0x000000014059066c: pop      rdi
+0x000000014059066d: pop      rsi
+0x000000014059066e: ret      
+0x000000014059066f: lea      r8, [rip + 0x5ee1fa]
+0x0000000140590676: lea      rdx, [rsp + 0x2f]
+0x000000014059067b: mov      rcx, rdi
+0x000000014059067e: call     0x1408c3d55
+0x0000000140590683: mov      qword ptr [rsi + 8], rax
+0x0000000140590687: jmp      0x140590663

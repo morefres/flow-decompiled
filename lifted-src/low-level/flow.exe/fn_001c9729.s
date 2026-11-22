@@ -1,0 +1,40 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x1c9729-0x1c9794
+0x00000001401c9729: mov      qword ptr [rsp + 0x10], rdx
+0x00000001401c972e: push     rbp
+0x00000001401c972f: push     r15
+0x00000001401c9731: push     r14
+0x00000001401c9733: push     r13
+0x00000001401c9735: push     r12
+0x00000001401c9737: push     rsi
+0x00000001401c9738: push     rdi
+0x00000001401c9739: push     rbx
+0x00000001401c973a: sub      rsp, 0x28
+0x00000001401c973e: lea      rbp, [rdx + 0x80]
+0x00000001401c9745: cmp      qword ptr [rbp + 0x700], 0
+0x00000001401c974d: jne      0x1401c977c
+0x00000001401c974f: lea      rcx, [rbp + 0x3f0]
+0x00000001401c9756: call     0x1401cca9d
+0x00000001401c975b: lea      rcx, [rbp - 0x58]
+0x00000001401c975f: call     0x140038a80
+0x00000001401c9764: mov      byte ptr [rbp + 0x6f9], 0
+0x00000001401c976b: add      rsp, 0x28
+0x00000001401c976f: pop      rbx
+0x00000001401c9770: pop      rdi
+0x00000001401c9771: pop      rsi
+0x00000001401c9772: pop      r12
+0x00000001401c9774: pop      r13
+0x00000001401c9776: pop      r14
+0x00000001401c9778: pop      r15
+0x00000001401c977a: pop      rbp
+0x00000001401c977b: ret      
+0x00000001401c977c: mov      byte ptr [rbp + 0x6f9], 0
+0x00000001401c9783: add      rsp, 0x28
+0x00000001401c9787: pop      rbx
+0x00000001401c9788: pop      rdi
+0x00000001401c9789: pop      rsi
+0x00000001401c978a: pop      r12
+0x00000001401c978c: pop      r13
+0x00000001401c978e: pop      r14
+0x00000001401c9790: pop      r15
+0x00000001401c9792: pop      rbp
+0x00000001401c9793: ret      

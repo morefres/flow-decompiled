@@ -1,0 +1,56 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x54c58f-0x54c642
+0x000000014054c58f: push     rsi
+0x000000014054c590: push     rdi
+0x000000014054c591: sub      rsp, 0x28
+0x000000014054c595: mov      rsi, rcx
+0x000000014054c598: add      r8, -2
+0x000000014054c59c: cmp      r8, 9
+0x000000014054c5a0: ja       0x14054c627
+0x000000014054c5a6: mov      rdi, rdx
+0x000000014054c5a9: lea      rax, [rip + 0x6576a8]
+0x000000014054c5b0: movsxd   rcx, dword ptr [rax + r8*4]
+0x000000014054c5b4: add      rcx, rax
+0x000000014054c5b7: jmp      rcx
+0x000000014054c5b9: cmp      word ptr [rdi], 0x6469
+0x000000014054c5be: jne      0x14054c627
+0x000000014054c5c0: mov      al, 1
+0x000000014054c5c2: jmp      0x14054c629
+0x000000014054c5c4: lea      rdx, [rip + 0x3cbd65]
+0x000000014054c5cb: mov      r8d, 7
+0x000000014054c5d1: mov      rcx, rdi
+0x000000014054c5d4: call     0x1408accc0
+0x000000014054c5d9: test     eax, eax
+0x000000014054c5db: je       0x14054c636
+0x000000014054c5dd: lea      rdx, [rip + 0x3cabfe]
+0x000000014054c5e4: mov      r8d, 7
+0x000000014054c5ea: mov      rcx, rdi
+0x000000014054c5ed: call     0x1408accc0
+0x000000014054c5f2: test     eax, eax
+0x000000014054c5f4: jne      0x14054c627
+0x000000014054c5f6: mov      al, 4
+0x000000014054c5f8: jmp      0x14054c629
+0x000000014054c5fa: cmp      dword ptr [rdi], 0x74786574
+0x000000014054c600: je       0x14054c63a
+0x000000014054c602: cmp      dword ptr [rdi], 0x6e6f6369
+0x000000014054c608: jne      0x14054c627
+0x000000014054c60a: mov      al, 3
+0x000000014054c60c: jmp      0x14054c629
+0x000000014054c60e: lea      rdx, [rip + 0x3cbd29]
+0x000000014054c615: mov      r8d, 0xb
+0x000000014054c61b: mov      rcx, rdi
+0x000000014054c61e: call     0x1408accc0
+0x000000014054c623: test     eax, eax
+0x000000014054c625: je       0x14054c63e
+0x000000014054c627: mov      al, 6
+0x000000014054c629: mov      byte ptr [rsi + 1], al
+0x000000014054c62c: mov      byte ptr [rsi], 0
+0x000000014054c62f: add      rsp, 0x28
+0x000000014054c633: pop      rdi
+0x000000014054c634: pop      rsi
+0x000000014054c635: ret      
+0x000000014054c636: xor      eax, eax
+0x000000014054c638: jmp      0x14054c629
+0x000000014054c63a: mov      al, 2
+0x000000014054c63c: jmp      0x14054c629
+0x000000014054c63e: mov      al, 5
+0x000000014054c640: jmp      0x14054c629

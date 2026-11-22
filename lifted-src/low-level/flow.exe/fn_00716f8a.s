@@ -1,0 +1,62 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x716f8a-0x71703e
+0x0000000140716f8a: push     r15
+0x0000000140716f8c: push     r14
+0x0000000140716f8e: push     r12
+0x0000000140716f90: push     rsi
+0x0000000140716f91: push     rdi
+0x0000000140716f92: push     rbp
+0x0000000140716f93: push     rbx
+0x0000000140716f94: sub      rsp, 0x20
+0x0000000140716f98: mov      rsi, rcx
+0x0000000140716f9b: mov      rax, qword ptr [rdx]
+0x0000000140716f9e: movabs   rcx, 0x8000000000000005
+0x0000000140716fa8: cmp      rax, rcx
+0x0000000140716fab: jl       0x140717016
+0x0000000140716fad: mov      r12, qword ptr [rsp + 0x88]
+0x0000000140716fb5: mov      rdi, qword ptr [rsp + 0x80]
+0x0000000140716fbd: add      rdx, 0x18
+0x0000000140716fc1: mov      rcx, rdx
+0x0000000140716fc4: call     0x1406e3a3a
+0x0000000140716fc9: mov      ebx, eax
+0x0000000140716fcb: mov      ebp, edx
+0x0000000140716fcd: lea      r14, [r12 + r12]
+0x0000000140716fd1: xor      ecx, ecx
+0x0000000140716fd3: mov      rdx, r14
+0x0000000140716fd6: call     0x1407667d0
+0x0000000140716fdb: test     rax, rax
+0x0000000140716fde: je       0x14071702f
+0x0000000140716fe0: mov      r15, rax
+0x0000000140716fe3: mov      rcx, rax
+0x0000000140716fe6: mov      rdx, rdi
+0x0000000140716fe9: mov      r8, r14
+0x0000000140716fec: call     0x1408acdc0
+0x0000000140716ff1: mov      qword ptr [rsi + 8], r12
+0x0000000140716ff5: mov      qword ptr [rsi + 0x10], r15
+0x0000000140716ff9: mov      qword ptr [rsi + 0x18], r12
+0x0000000140716ffd: mov      byte ptr [rsi + 1], bl
+0x0000000140717000: mov      byte ptr [rsi + 2], bpl
+0x0000000140717004: mov      byte ptr [rsi], 1
+0x0000000140717007: add      rsp, 0x20
+0x000000014071700b: pop      rbx
+0x000000014071700c: pop      rbp
+0x000000014071700d: pop      rdi
+0x000000014071700e: pop      rsi
+0x000000014071700f: pop      r12
+0x0000000140717011: pop      r14
+0x0000000140717013: pop      r15
+0x0000000140717015: ret      
+0x0000000140717016: mov      rcx, rsi
+0x0000000140717019: mov      rdx, rax
+0x000000014071701c: add      rsp, 0x20
+0x0000000140717020: pop      rbx
+0x0000000140717021: pop      rbp
+0x0000000140717022: pop      rdi
+0x0000000140717023: pop      rsi
+0x0000000140717024: pop      r12
+0x0000000140717026: pop      r14
+0x0000000140717028: pop      r15
+0x000000014071702a: jmp      0x1407173f4
+0x000000014071702f: mov      ecx, 1
+0x0000000140717034: mov      rdx, r14
+0x0000000140717037: call     0x1408ad821
+0x000000014071703c: ud2      

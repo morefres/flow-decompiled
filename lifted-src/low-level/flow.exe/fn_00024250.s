@@ -1,0 +1,35 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x24250-0x242bd
+0x0000000140024250: push     rbp
+0x0000000140024251: sub      rsp, 0x30
+0x0000000140024255: lea      rbp, [rsp + 0x30]
+0x000000014002425a: cmp      rdx, 0xf
+0x000000014002425e: jbe      0x140024266
+0x0000000140024260: mov      al, 1
+0x0000000140024262: mov      cl, 1
+0x0000000140024264: jmp      0x1400242a2
+0x0000000140024266: mov      qword ptr [rbp - 0x10], rcx
+0x000000014002426a: mov      qword ptr [rbp - 8], rdx
+0x000000014002426e: lea      rcx, [rbp - 0x10]
+0x0000000140024272: call     0x14001c7f0
+0x0000000140024277: cmp      qword ptr [rbp - 8], 0
+0x000000014002427c: sete     cl
+0x000000014002427f: mov      edx, eax
+0x0000000140024281: and      dl, cl
+0x0000000140024283: mov      ecx, edx
+0x0000000140024285: xor      cl, 1
+0x0000000140024288: test     dl, dl
+0x000000014002428a: mov      edx, 0x100
+0x000000014002428f: cmovne   rdx, rax
+0x0000000140024293: mov      eax, edx
+0x0000000140024295: shr      eax, 8
+0x0000000140024298: shr      rdx, 0x10
+0x000000014002429c: and      edx, 0xffffff
+0x00000001400242a2: shl      rdx, 0x10
+0x00000001400242a6: movzx    r8d, al
+0x00000001400242aa: shl      r8d, 8
+0x00000001400242ae: or       r8, rdx
+0x00000001400242b1: movzx    eax, cl
+0x00000001400242b4: or       rax, r8
+0x00000001400242b7: add      rsp, 0x30
+0x00000001400242bb: pop      rbp
+0x00000001400242bc: ret      

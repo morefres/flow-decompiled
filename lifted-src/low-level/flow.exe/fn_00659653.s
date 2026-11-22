@@ -1,0 +1,59 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x659653-0x659715
+0x0000000140659653: push     rbp
+0x0000000140659654: push     r15
+0x0000000140659656: push     r14
+0x0000000140659658: push     r12
+0x000000014065965a: push     rsi
+0x000000014065965b: push     rdi
+0x000000014065965c: push     rbx
+0x000000014065965d: sub      rsp, 0x30
+0x0000000140659661: lea      rbp, [rsp + 0x30]
+0x0000000140659666: mov      qword ptr [rbp - 8], 0xfffffffffffffffe
+0x000000014065966e: mov      rsi, rcx
+0x0000000140659671: mov      rcx, qword ptr [rdx + 0x10]
+0x0000000140659675: movabs   rax, 0x7fffffffffffffff
+0x000000014065967f: cmp      rcx, rax
+0x0000000140659682: jae      0x1406596f4
+0x0000000140659684: mov      r12, rdx
+0x0000000140659687: inc      rcx
+0x000000014065968a: mov      qword ptr [rdx + 0x10], rcx
+0x000000014065968e: mov      r14, qword ptr [rdx + 0x30]
+0x0000000140659692: mov      r15, qword ptr [r14 + 0x10]
+0x0000000140659696: cmp      r15, rax
+0x0000000140659699: jae      0x140659702
+0x000000014065969b: mov      rdi, r9
+0x000000014065969e: mov      rbx, r8
+0x00000001406596a1: lea      rax, [r15 + 1]
+0x00000001406596a5: mov      qword ptr [r14 + 0x10], rax
+0x00000001406596a9: lea      rcx, [r14 + 0x18]
+0x00000001406596ad: mov      rdx, r8
+0x00000001406596b0: call     0x140652e2f
+0x00000001406596b5: mov      qword ptr [r14 + 0x10], r15
+0x00000001406596b9: mov      ecx, 5
+0x00000001406596be: test     al, al
+0x00000001406596c0: je       0x1406596dd
+0x00000001406596c2: mov      rcx, rbx
+0x00000001406596c5: mov      edx, 0xc9
+0x00000001406596ca: xor      r8d, r8d
+0x00000001406596cd: mov      r9, rdi
+0x00000001406596d0: call     qword ptr [rip + 0x278572]
+0x00000001406596d6: mov      rcx, 0xffffffffffffffff
+0x00000001406596dd: mov      qword ptr [rsi], rcx
+0x00000001406596e0: dec      qword ptr [r12 + 0x10]
+0x00000001406596e5: add      rsp, 0x30
+0x00000001406596e9: pop      rbx
+0x00000001406596ea: pop      rdi
+0x00000001406596eb: pop      rsi
+0x00000001406596ec: pop      r12
+0x00000001406596ee: pop      r14
+0x00000001406596f0: pop      r15
+0x00000001406596f2: pop      rbp
+0x00000001406596f3: ret      
+0x00000001406596f4: lea      rcx, [rip + 0x4f3075]
+0x00000001406596fb: call     0x1408ae940
+0x0000000140659700: ud2      
+0x0000000140659702: mov      qword ptr [rbp - 0x10], r12
+0x0000000140659706: lea      rcx, [rip + 0x4f34a3]
+0x000000014065970d: call     0x1408ae940
+0x0000000140659712: nop      
+0x0000000140659713: ud2      

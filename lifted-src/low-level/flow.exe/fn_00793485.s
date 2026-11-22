@@ -1,0 +1,28 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x793485-0x7934dc
+0x0000000140793485: sub      rsp, 0x28
+0x0000000140793489: mov      edx, dword ptr [rcx + 0x20]
+0x000000014079348c: xor      r8d, r8d
+0x000000014079348f: mov      eax, edx
+0x0000000140793491: sub      eax, 1
+0x0000000140793494: cmovb    eax, r8d
+0x0000000140793498: mov      dword ptr [rcx + 0x20], eax
+0x000000014079349b: mov      al, 1
+0x000000014079349d: lock cmpxchg byte ptr [rcx], r8b
+0x00000001407934a2: sete     al
+0x00000001407934a5: cmp      edx, 1
+0x00000001407934a8: ja       0x1407934c3
+0x00000001407934aa: test     al, al
+0x00000001407934ac: je       0x1407934cc
+0x00000001407934ae: call     qword ptr [rip + 0x13e5ac]
+0x00000001407934b4: test     eax, eax
+0x00000001407934b6: jne      0x1407934c7
+0x00000001407934b8: add      rsp, 0x28
+0x00000001407934bc: jmp      qword ptr [rip + 0x13dfdd]
+0x00000001407934c3: test     al, al
+0x00000001407934c5: je       0x1407934d3
+0x00000001407934c7: add      rsp, 0x28
+0x00000001407934cb: ret      
+0x00000001407934cc: call     0x1408bf786
+0x00000001407934d1: jmp      0x1407934ae
+0x00000001407934d3: add      rsp, 0x28
+0x00000001407934d7: jmp      0x1408bf786

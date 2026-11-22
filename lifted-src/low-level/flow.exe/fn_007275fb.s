@@ -1,0 +1,63 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7275fb-0x7276e8
+0x00000001407275fb: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140727600: push     rbp
+0x0000000140727601: push     r15
+0x0000000140727603: push     r14
+0x0000000140727605: push     r13
+0x0000000140727607: push     r12
+0x0000000140727609: push     rsi
+0x000000014072760a: push     rdi
+0x000000014072760b: push     rbx
+0x000000014072760c: sub      rsp, 0x38
+0x0000000140727610: lea      rbp, [rdx + 0x80]
+0x0000000140727617: mov      bl, byte ptr [rbp + 0x29d]
+0x000000014072761d: test     byte ptr [rbp + 0x29c], 1
+0x0000000140727624: mov      rsi, qword ptr [rbp + 0x290]
+0x000000014072762b: je       0x14072764c
+0x000000014072762d: mov      rcx, qword ptr [rsi + 0x50]
+0x0000000140727631: cmp      rcx, -1
+0x0000000140727635: je       0x14072764c
+0x0000000140727637: mov      rdx, qword ptr [rsi + 0x58]
+0x000000014072763b: mov      r8d, 1
+0x0000000140727641: mov      r9d, 1
+0x0000000140727647: call     0x14000a0f6
+0x000000014072764c: mov      rcx, qword ptr [rsi + 0xb0]
+0x0000000140727653: test     rcx, rcx
+0x0000000140727656: je       0x140727664
+0x0000000140727658: mov      rdx, qword ptr [rsi + 0xb8]
+0x000000014072765f: call     0x14003668a
+0x0000000140727664: mov      rcx, qword ptr [rsi + 0xa0]
+0x000000014072766b: mov      rdx, qword ptr [rsi + 0xa8]
+0x0000000140727672: call     0x14003668a
+0x0000000140727677: cmp      byte ptr [rsi + 0x70], 0
+0x000000014072767b: jne      0x14072769f
+0x000000014072767d: mov      rcx, qword ptr [rsi + 0x78]
+0x0000000140727681: cmp      rcx, -1
+0x0000000140727685: je       0x14072769f
+0x0000000140727687: mov      rdx, qword ptr [rsi + 0x80]
+0x000000014072768e: mov      r8d, 1
+0x0000000140727694: mov      r9d, 1
+0x000000014072769a: call     0x14000a0f6
+0x000000014072769f: mov      rcx, qword ptr [rsi + 0x20]
+0x00000001407276a3: mov      rdx, qword ptr [rsi + 0x28]
+0x00000001407276a7: mov      r8d, 1
+0x00000001407276ad: mov      r9d, 1
+0x00000001407276b3: call     0x14000a0f6
+0x00000001407276b8: test     bl, 1
+0x00000001407276bb: je       0x1407276d7
+0x00000001407276bd: mov      rcx, qword ptr [rsi + 0x38]
+0x00000001407276c1: mov      rdx, qword ptr [rsi + 0x40]
+0x00000001407276c5: mov      r8d, 2
+0x00000001407276cb: mov      r9d, 4
+0x00000001407276d1: call     0x14000a0f6
+0x00000001407276d6: nop      
+0x00000001407276d7: add      rsp, 0x38
+0x00000001407276db: pop      rbx
+0x00000001407276dc: pop      rdi
+0x00000001407276dd: pop      rsi
+0x00000001407276de: pop      r12
+0x00000001407276e0: pop      r13
+0x00000001407276e2: pop      r14
+0x00000001407276e4: pop      r15
+0x00000001407276e6: pop      rbp
+0x00000001407276e7: ret      

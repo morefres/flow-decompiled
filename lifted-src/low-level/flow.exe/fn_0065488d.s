@@ -1,0 +1,76 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x65488d-0x6549ac
+0x000000014065488d: push     rsi
+0x000000014065488e: push     rdi
+0x000000014065488f: sub      rsp, 0x48
+0x0000000140654893: mov      rsi, rcx
+0x0000000140654896: movabs   rax, 0x8000000000000000
+0x00000001406548a0: add      rax, rdx
+0x00000001406548a3: add      rax, -2
+0x00000001406548a7: cmp      rax, 0x11
+0x00000001406548ab: ja       0x140654933
+0x00000001406548b1: lea      rcx, [rip + 0x551b30]
+0x00000001406548b8: movsxd   rax, dword ptr [rcx + rax*4]
+0x00000001406548bc: add      rax, rcx
+0x00000001406548bf: jmp      rax
+0x00000001406548c1: lea      rdi, [rsp + 0x30]
+0x00000001406548c6: mov      rcx, rdi
+0x00000001406548c9: mov      edx, 8
+0x00000001406548ce: mov      r8b, 0x15
+0x00000001406548d1: jmp      0x140654982
+0x00000001406548d6: lea      rdi, [rsp + 0x30]
+0x00000001406548db: mov      rcx, rdi
+0x00000001406548de: mov      edx, 8
+0x00000001406548e3: mov      r8b, 0x28
+0x00000001406548e6: jmp      0x140654982
+0x00000001406548eb: lea      rdi, [rsp + 0x30]
+0x00000001406548f0: mov      rcx, rdi
+0x00000001406548f3: mov      edx, 8
+0x00000001406548f8: mov      r8b, 0x2b
+0x00000001406548fb: jmp      0x140654982
+0x0000000140654900: lea      rdi, [rsp + 0x30]
+0x0000000140654905: mov      rcx, rdi
+0x0000000140654908: mov      edx, 8
+0x000000014065490d: mov      r8b, 0x2a
+0x0000000140654910: jmp      0x140654982
+0x0000000140654912: lea      rdi, [rsp + 0x30]
+0x0000000140654917: mov      rcx, rdi
+0x000000014065491a: mov      edx, 8
+0x000000014065491f: mov      r8b, 0x1f
+0x0000000140654922: jmp      0x140654982
+0x0000000140654924: lea      rdi, [rsp + 0x30]
+0x0000000140654929: mov      rcx, rdi
+0x000000014065492c: mov      edx, 8
+0x0000000140654931: jmp      0x14065497f
+0x0000000140654933: mov      qword ptr [rsi], 0xfffffffffffffffd
+0x000000014065493a: jmp      0x1406549a5
+0x000000014065493c: lea      rdi, [rsp + 0x30]
+0x0000000140654941: mov      rcx, rdi
+0x0000000140654944: mov      edx, 8
+0x0000000140654949: mov      r8b, 0x13
+0x000000014065494c: jmp      0x140654982
+0x000000014065494e: lea      rdi, [rsp + 0x30]
+0x0000000140654953: mov      rcx, rdi
+0x0000000140654956: mov      edx, 8
+0x000000014065495b: mov      r8b, 0x2c
+0x000000014065495e: jmp      0x140654982
+0x0000000140654960: lea      rdi, [rsp + 0x30]
+0x0000000140654965: mov      rcx, rdi
+0x0000000140654968: mov      edx, 1
+0x000000014065496d: mov      r8b, 0xa3
+0x0000000140654970: jmp      0x140654982
+0x0000000140654972: lea      rdi, [rsp + 0x30]
+0x0000000140654977: mov      rcx, rdi
+0x000000014065497a: mov      edx, 9
+0x000000014065497f: mov      r8b, 0x1a
+0x0000000140654982: call     0x140656215
+0x0000000140654987: mov      qword ptr [rdi - 8], 0xfffffffffffffffe
+0x000000014065498f: movups   xmm0, xmmword ptr [rdi + 8]
+0x0000000140654993: movups   xmmword ptr [rsi + 0x10], xmm0
+0x0000000140654997: mov      rax, qword ptr [rdi - 8]
+0x000000014065499b: mov      qword ptr [rsi], rax
+0x000000014065499e: mov      rax, qword ptr [rdi]
+0x00000001406549a1: mov      qword ptr [rsi + 8], rax
+0x00000001406549a5: add      rsp, 0x48
+0x00000001406549a9: pop      rdi
+0x00000001406549aa: pop      rsi
+0x00000001406549ab: ret      

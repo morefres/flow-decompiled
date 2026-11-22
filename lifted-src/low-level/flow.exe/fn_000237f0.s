@@ -1,0 +1,79 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x237f0-0x23910
+0x00000001400237f0: push     rbp
+0x00000001400237f1: push     rsi
+0x00000001400237f2: push     rdi
+0x00000001400237f3: push     rbx
+0x00000001400237f4: sub      rsp, 0x48
+0x00000001400237f8: lea      rbp, [rsp + 0x40]
+0x00000001400237fd: mov      r8, rcx
+0x0000000140023800: mov      r9, rcx
+0x0000000140023803: neg      r9
+0x0000000140023806: cmovs    r9, rcx
+0x000000014002380a: mov      rcx, rdx
+0x000000014002380d: mov      eax, 0x14
+0x0000000140023812: lea      r10, [rip + 0xb750a7]
+0x0000000140023819: cmp      r9, 0x3e8
+0x0000000140023820: jb       0x140023901
+0x0000000140023826: movabs   r11, 0x346dc5d63886594b
+0x0000000140023830: mov      rsi, rax
+0x0000000140023833: mov      rax, r9
+0x0000000140023836: mul      r11
+0x0000000140023839: shr      rdx, 0xb
+0x000000014002383d: imul     eax, edx, 0x2710
+0x0000000140023843: mov      edi, r9d
+0x0000000140023846: sub      edi, eax
+0x0000000140023848: imul     eax, edi, 0x147b
+0x000000014002384e: shr      eax, 0x13
+0x0000000140023851: imul     ebx, eax, 0x64
+0x0000000140023854: sub      edi, ebx
+0x0000000140023856: movzx    eax, word ptr [r10 + rax*2]
+0x000000014002385b: mov      word ptr [rbp + rsi - 0x10], ax
+0x0000000140023860: movzx    eax, di
+0x0000000140023863: movzx    eax, word ptr [r10 + rax*2]
+0x0000000140023868: mov      word ptr [rbp + rsi - 0xe], ax
+0x000000014002386d: lea      rax, [rsi - 4]
+0x0000000140023871: cmp      r9, 0x98967f
+0x0000000140023878: mov      r9, rdx
+0x000000014002387b: ja       0x140023830
+0x000000014002387d: cmp      rdx, 0xa
+0x0000000140023881: jb       0x1400238b4
+0x0000000140023883: mov      r9d, edx
+0x0000000140023886: shr      r9d, 2
+0x000000014002388a: movzx    r9d, r9w
+0x000000014002388e: imul     r9d, r9d, 0x147b
+0x0000000140023895: shr      r9d, 0x11
+0x0000000140023899: imul     r11d, r9d, 0x64
+0x000000014002389d: sub      edx, r11d
+0x00000001400238a0: movzx    edx, dx
+0x00000001400238a3: movzx    edx, word ptr [r10 + rdx*2]
+0x00000001400238a8: mov      word ptr [rbp + rax - 0xe], dx
+0x00000001400238ad: add      rax, -2
+0x00000001400238b1: mov      rdx, r9
+0x00000001400238b4: test     rdx, rdx
+0x00000001400238b7: je       0x1400238c9
+0x00000001400238b9: and      edx, 0xf
+0x00000001400238bc: movzx    edx, byte ptr [r10 + rdx*2 + 1]
+0x00000001400238c2: mov      byte ptr [rbp + rax - 0xd], dl
+0x00000001400238c6: dec      rax
+0x00000001400238c9: test     r8, r8
+0x00000001400238cc: setns    dl
+0x00000001400238cf: mov      r8d, 0x14
+0x00000001400238d5: sub      r8, rax
+0x00000001400238d8: add      rax, rbp
+0x00000001400238db: add      rax, -0xc
+0x00000001400238df: mov      qword ptr [rsp + 0x28], r8
+0x00000001400238e4: mov      qword ptr [rsp + 0x20], rax
+0x00000001400238e9: mov      r8d, 1
+0x00000001400238ef: xor      r9d, r9d
+0x00000001400238f2: call     0x14001b660
+0x00000001400238f7: nop      
+0x00000001400238f8: add      rsp, 0x48
+0x00000001400238fc: pop      rbx
+0x00000001400238fd: pop      rdi
+0x00000001400238fe: pop      rsi
+0x00000001400238ff: pop      rbp
+0x0000000140023900: ret      
+0x0000000140023901: mov      rdx, r9
+0x0000000140023904: cmp      rdx, 0xa
+0x0000000140023908: jae      0x140023883
+0x000000014002390e: jmp      0x1400238b4

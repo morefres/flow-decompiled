@@ -1,0 +1,215 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x89614d-0x896425
+0x000000014089614d: mov      rdi, rcx
+0x0000000140896150: mov      rsi, rdx
+0x0000000140896153: mov      rdx, r8
+0x0000000140896156: push     rbp
+0x0000000140896157: push     rbx
+0x0000000140896158: push     r12
+0x000000014089615a: push     r13
+0x000000014089615c: push     r14
+0x000000014089615e: push     r15
+0x0000000140896160: mov      r8, qword ptr [rsi]
+0x0000000140896163: mov      rax, qword ptr [rsi + 8]
+0x0000000140896167: mov      r14, qword ptr [rsi + 0x10]
+0x000000014089616b: mov      r15, qword ptr [rsi + 0x18]
+0x000000014089616f: lea      rsi, [rip + 0x344faa]
+0x0000000140896176: mov      rbx, rdx
+0x0000000140896179: jmp      0x140896180
+0x000000014089617e: nop      
+0x000000014089617f: nop      
+0x0000000140896180: mov      rbp, rax
+0x0000000140896183: mul      r8
+0x0000000140896186: mov      r9, rax
+0x0000000140896189: movq     xmm1, rbp
+0x000000014089618e: mov      rax, r14
+0x0000000140896191: mov      r10, rdx
+0x0000000140896194: mul      r8
+0x0000000140896197: add      r10, rax
+0x000000014089619a: mov      rax, r15
+0x000000014089619d: movq     xmm2, r14
+0x00000001408961a2: adc      rdx, 0
+0x00000001408961a6: mov      r11, rdx
+0x00000001408961a9: mul      r8
+0x00000001408961ac: add      r11, rax
+0x00000001408961af: mov      rax, r15
+0x00000001408961b2: movq     xmm3, r15
+0x00000001408961b7: adc      rdx, 0
+0x00000001408961bb: mov      r12, rdx
+0x00000001408961be: mul      r14
+0x00000001408961c1: mov      r13, rax
+0x00000001408961c4: mov      rax, r14
+0x00000001408961c7: mov      r14, rdx
+0x00000001408961ca: mul      rbp
+0x00000001408961cd: add      r11, rax
+0x00000001408961d0: mov      rax, r15
+0x00000001408961d3: adc      rdx, 0
+0x00000001408961d7: mov      r15, rdx
+0x00000001408961da: mul      rbp
+0x00000001408961dd: add      r12, rax
+0x00000001408961e0: adc      rdx, 0
+0x00000001408961e4: add      r12, r15
+0x00000001408961e7: adc      r13, rdx
+0x00000001408961ea: adc      r14, 0
+0x00000001408961ee: xor      r15, r15
+0x00000001408961f1: mov      rax, r8
+0x00000001408961f4: add      r9, r9
+0x00000001408961f7: adc      r10, r10
+0x00000001408961fa: adc      r11, r11
+0x00000001408961fd: adc      r12, r12
+0x0000000140896200: adc      r13, r13
+0x0000000140896203: adc      r14, r14
+0x0000000140896206: adc      r15, 0
+0x000000014089620a: mul      rax
+0x000000014089620d: mov      r8, rax
+0x0000000140896210: movq     rax, xmm1
+0x0000000140896215: mov      rbp, rdx
+0x0000000140896218: mul      rax
+0x000000014089621b: add      r9, rbp
+0x000000014089621e: adc      r10, rax
+0x0000000140896221: movq     rax, xmm2
+0x0000000140896226: adc      rdx, 0
+0x000000014089622a: mov      rbp, rdx
+0x000000014089622d: mul      rax
+0x0000000140896230: add      r11, rbp
+0x0000000140896233: adc      r12, rax
+0x0000000140896236: movq     rax, xmm3
+0x000000014089623b: adc      rdx, 0
+0x000000014089623f: mov      rbp, rdx
+0x0000000140896242: mov      rcx, r8
+0x0000000140896245: imul     r8, qword ptr [rsi + 0x20]
+0x000000014089624a: mul      rax
+0x000000014089624d: add      r13, rbp
+0x0000000140896250: adc      r14, rax
+0x0000000140896253: mov      rax, qword ptr [rsi]
+0x0000000140896256: adc      r15, rdx
+0x0000000140896259: mul      r8
+0x000000014089625c: mov      rbp, r8
+0x000000014089625f: add      rcx, rax
+0x0000000140896262: mov      rax, qword ptr [rsi + 8]
+0x0000000140896266: adc      rcx, rdx
+0x0000000140896269: sub      r10, r8
+0x000000014089626c: sbb      rbp, 0
+0x0000000140896270: mul      r8
+0x0000000140896273: add      r9, rcx
+0x0000000140896276: adc      rdx, 0
+0x000000014089627a: add      r9, rax
+0x000000014089627d: mov      rax, r8
+0x0000000140896280: adc      r10, rdx
+0x0000000140896283: mov      rdx, r8
+0x0000000140896286: adc      rbp, 0
+0x000000014089628a: mov      rcx, r9
+0x000000014089628d: imul     r9, qword ptr [rsi + 0x20]
+0x0000000140896292: shl      rax, 0x20
+0x0000000140896296: shr      rdx, 0x20
+0x000000014089629a: sub      r11, rax
+0x000000014089629d: mov      rax, qword ptr [rsi]
+0x00000001408962a0: sbb      r8, rdx
+0x00000001408962a3: add      r11, rbp
+0x00000001408962a6: adc      r8, 0
+0x00000001408962aa: mul      r9
+0x00000001408962ad: mov      rbp, r9
+0x00000001408962b0: add      rcx, rax
+0x00000001408962b3: mov      rax, qword ptr [rsi + 8]
+0x00000001408962b7: adc      rcx, rdx
+0x00000001408962ba: sub      r11, r9
+0x00000001408962bd: sbb      rbp, 0
+0x00000001408962c1: mul      r9
+0x00000001408962c4: add      r10, rcx
+0x00000001408962c7: adc      rdx, 0
+0x00000001408962cb: add      r10, rax
+0x00000001408962ce: mov      rax, r9
+0x00000001408962d1: adc      r11, rdx
+0x00000001408962d4: mov      rdx, r9
+0x00000001408962d7: adc      rbp, 0
+0x00000001408962db: mov      rcx, r10
+0x00000001408962de: imul     r10, qword ptr [rsi + 0x20]
+0x00000001408962e3: shl      rax, 0x20
+0x00000001408962e7: shr      rdx, 0x20
+0x00000001408962eb: sub      r8, rax
+0x00000001408962ee: mov      rax, qword ptr [rsi]
+0x00000001408962f1: sbb      r9, rdx
+0x00000001408962f4: add      r8, rbp
+0x00000001408962f7: adc      r9, 0
+0x00000001408962fb: mul      r10
+0x00000001408962fe: mov      rbp, r10
+0x0000000140896301: add      rcx, rax
+0x0000000140896304: mov      rax, qword ptr [rsi + 8]
+0x0000000140896308: adc      rcx, rdx
+0x000000014089630b: sub      r8, r10
+0x000000014089630e: sbb      rbp, 0
+0x0000000140896312: mul      r10
+0x0000000140896315: add      r11, rcx
+0x0000000140896318: adc      rdx, 0
+0x000000014089631c: add      r11, rax
+0x000000014089631f: mov      rax, r10
+0x0000000140896322: adc      r8, rdx
+0x0000000140896325: mov      rdx, r10
+0x0000000140896328: adc      rbp, 0
+0x000000014089632c: mov      rcx, r11
+0x000000014089632f: imul     r11, qword ptr [rsi + 0x20]
+0x0000000140896334: shl      rax, 0x20
+0x0000000140896338: shr      rdx, 0x20
+0x000000014089633c: sub      r9, rax
+0x000000014089633f: mov      rax, qword ptr [rsi]
+0x0000000140896342: sbb      r10, rdx
+0x0000000140896345: add      r9, rbp
+0x0000000140896348: adc      r10, 0
+0x000000014089634c: mul      r11
+0x000000014089634f: mov      rbp, r11
+0x0000000140896352: add      rcx, rax
+0x0000000140896355: mov      rax, qword ptr [rsi + 8]
+0x0000000140896359: adc      rcx, rdx
+0x000000014089635c: sub      r9, r11
+0x000000014089635f: sbb      rbp, 0
+0x0000000140896363: mul      r11
+0x0000000140896366: add      r8, rcx
+0x0000000140896369: adc      rdx, 0
+0x000000014089636d: add      r8, rax
+0x0000000140896370: mov      rax, r11
+0x0000000140896373: adc      r9, rdx
+0x0000000140896376: mov      rdx, r11
+0x0000000140896379: adc      rbp, 0
+0x000000014089637d: shl      rax, 0x20
+0x0000000140896381: shr      rdx, 0x20
+0x0000000140896385: sub      r10, rax
+0x0000000140896388: sbb      r11, rdx
+0x000000014089638b: add      r10, rbp
+0x000000014089638e: adc      r11, 0
+0x0000000140896392: xor      rdx, rdx
+0x0000000140896395: add      r8, r12
+0x0000000140896398: adc      r9, r13
+0x000000014089639b: mov      r12, r8
+0x000000014089639e: adc      r10, r14
+0x00000001408963a1: adc      r11, r15
+0x00000001408963a4: mov      rax, r9
+0x00000001408963a7: adc      rdx, 0
+0x00000001408963ab: sub      r8, qword ptr [rsi]
+0x00000001408963ae: mov      r14, r10
+0x00000001408963b1: sbb      r9, qword ptr [rsi + 8]
+0x00000001408963b5: sbb      r10, qword ptr [rsi + 0x10]
+0x00000001408963b9: mov      r15, r11
+0x00000001408963bc: sbb      r11, qword ptr [rsi + 0x18]
+0x00000001408963c0: sbb      rdx, 0
+0x00000001408963c4: cmovb    r8, r12
+0x00000001408963c8: cmovae   rax, r9
+0x00000001408963cc: cmovae   r14, r10
+0x00000001408963d0: cmovae   r15, r11
+0x00000001408963d4: dec      rbx
+0x00000001408963d7: jne      0x140896180
+0x00000001408963dd: mov      qword ptr [rdi], r8
+0x00000001408963e0: mov      qword ptr [rdi + 8], rax
+0x00000001408963e4: pxor     xmm1, xmm1
+0x00000001408963e8: mov      qword ptr [rdi + 0x10], r14
+0x00000001408963ec: pxor     xmm2, xmm2
+0x00000001408963f0: mov      qword ptr [rdi + 0x18], r15
+0x00000001408963f4: pxor     xmm3, xmm3
+0x00000001408963f8: mov      r15, qword ptr [rsp]
+0x00000001408963fc: mov      r14, qword ptr [rsp + 8]
+0x0000000140896401: mov      r13, qword ptr [rsp + 0x10]
+0x0000000140896406: mov      r12, qword ptr [rsp + 0x18]
+0x000000014089640b: mov      rbx, qword ptr [rsp + 0x20]
+0x0000000140896410: mov      rbp, qword ptr [rsp + 0x28]
+0x0000000140896415: lea      rsp, [rsp + 0x30]
+0x000000014089641a: mov      rdi, qword ptr [rsp + 8]
+0x000000014089641f: mov      rsi, qword ptr [rsp + 0x10]
+0x0000000140896424: ret      

@@ -1,0 +1,60 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6845e5-0x684695
+0x00000001406845e5: mov      qword ptr [rsp + 0x10], rdx
+0x00000001406845ea: push     rbp
+0x00000001406845eb: push     r15
+0x00000001406845ed: push     r14
+0x00000001406845ef: push     r13
+0x00000001406845f1: push     r12
+0x00000001406845f3: push     rsi
+0x00000001406845f4: push     rdi
+0x00000001406845f5: push     rbx
+0x00000001406845f6: sub      rsp, 0x58
+0x00000001406845fa: lea      rbp, [rdx + 0x80]
+0x0000000140684601: movdqa   xmmword ptr [rsp + 0x20], xmm8
+0x0000000140684608: movdqa   xmmword ptr [rsp + 0x30], xmm7
+0x000000014068460e: movdqa   xmmword ptr [rsp + 0x40], xmm6
+0x0000000140684614: cmp      byte ptr [rbp + 0x211], 2
+0x000000014068461b: je       0x140684653
+0x000000014068461d: test     byte ptr [rbp + 0x256], 1
+0x0000000140684624: je       0x140684674
+0x0000000140684626: lea      rcx, [rbp + 0x1e0]
+0x000000014068462d: call     0x14068491b
+0x0000000140684632: movaps   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140684637: movaps   xmm7, xmmword ptr [rsp + 0x30]
+0x000000014068463c: movaps   xmm8, xmmword ptr [rsp + 0x20]
+0x0000000140684642: add      rsp, 0x58
+0x0000000140684646: pop      rbx
+0x0000000140684647: pop      rdi
+0x0000000140684648: pop      rsi
+0x0000000140684649: pop      r12
+0x000000014068464b: pop      r13
+0x000000014068464d: pop      r14
+0x000000014068464f: pop      r15
+0x0000000140684651: pop      rbp
+0x0000000140684652: ret      
+0x0000000140684653: movaps   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140684658: movaps   xmm7, xmmword ptr [rsp + 0x30]
+0x000000014068465d: movaps   xmm8, xmmword ptr [rsp + 0x20]
+0x0000000140684663: add      rsp, 0x58
+0x0000000140684667: pop      rbx
+0x0000000140684668: pop      rdi
+0x0000000140684669: pop      rsi
+0x000000014068466a: pop      r12
+0x000000014068466c: pop      r13
+0x000000014068466e: pop      r14
+0x0000000140684670: pop      r15
+0x0000000140684672: pop      rbp
+0x0000000140684673: ret      
+0x0000000140684674: movaps   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140684679: movaps   xmm7, xmmword ptr [rsp + 0x30]
+0x000000014068467e: movaps   xmm8, xmmword ptr [rsp + 0x20]
+0x0000000140684684: add      rsp, 0x58
+0x0000000140684688: pop      rbx
+0x0000000140684689: pop      rdi
+0x000000014068468a: pop      rsi
+0x000000014068468b: pop      r12
+0x000000014068468d: pop      r13
+0x000000014068468f: pop      r14
+0x0000000140684691: pop      r15
+0x0000000140684693: pop      rbp
+0x0000000140684694: ret      

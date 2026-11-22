@@ -1,0 +1,47 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x156099-0x15613f
+0x0000000140156099: mov      qword ptr [rsp + 0x10], rdx
+0x000000014015609e: push     rbp
+0x000000014015609f: push     r15
+0x00000001401560a1: push     r14
+0x00000001401560a3: push     r13
+0x00000001401560a5: push     r12
+0x00000001401560a7: push     rsi
+0x00000001401560a8: push     rdi
+0x00000001401560a9: push     rbx
+0x00000001401560aa: sub      rsp, 0x48
+0x00000001401560ae: lea      rbp, [rdx + 0x80]
+0x00000001401560b5: movaps   xmmword ptr [rsp + 0x30], xmm6
+0x00000001401560ba: and      rdx, 0xffffffffffffff80
+0x00000001401560be: mov      rbx, rdx
+0x00000001401560c1: mov      rsi, qword ptr [rbx + 0x48]
+0x00000001401560c5: cmp      byte ptr [rsi + 0x1333], 0
+0x00000001401560cc: jne      0x140156135
+0x00000001401560ce: cmp      byte ptr [rsi + 0x1332], 0
+0x00000001401560d5: je       0x1401560f0
+0x00000001401560d7: mov      rax, qword ptr [rsi + 0x180]
+0x00000001401560de: lock dec qword ptr [rax]
+0x00000001401560e2: jne      0x1401560f0
+0x00000001401560e4: mov      rcx, qword ptr [rsi + 0x180]
+0x00000001401560eb: call     0x1407e387b
+0x00000001401560f0: cmp      byte ptr [rsi + 0x1331], 0
+0x00000001401560f7: je       0x140156118
+0x00000001401560f9: mov      rcx, qword ptr [rsi + 0x168]
+0x0000000140156100: mov      rdx, qword ptr [rsi + 0x170]
+0x0000000140156107: mov      r8d, 1
+0x000000014015610d: mov      r9d, 1
+0x0000000140156113: call     0x14000a0f6
+0x0000000140156118: mov      byte ptr [rsi + 0x1330], 2
+0x000000014015611f: movaps   xmm6, xmmword ptr [rsp + 0x30]
+0x0000000140156124: add      rsp, 0x48
+0x0000000140156128: pop      rbx
+0x0000000140156129: pop      rdi
+0x000000014015612a: pop      rsi
+0x000000014015612b: pop      r12
+0x000000014015612d: pop      r13
+0x000000014015612f: pop      r14
+0x0000000140156131: pop      r15
+0x0000000140156133: pop      rbp
+0x0000000140156134: ret      
+0x0000000140156135: mov      rcx, rsi
+0x0000000140156138: call     0x140038a80
+0x000000014015613d: jmp      0x1401560ce

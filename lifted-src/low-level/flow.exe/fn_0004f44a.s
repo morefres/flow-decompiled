@@ -1,0 +1,38 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x4f44a-0x4f49f
+0x000000014004f44a: push     r14
+0x000000014004f44c: push     rsi
+0x000000014004f44d: push     rdi
+0x000000014004f44e: push     rbp
+0x000000014004f44f: push     rbx
+0x000000014004f450: sub      rsp, 0x20
+0x000000014004f454: mov      rax, qword ptr [rcx + 0x58]
+0x000000014004f458: test     al, 1
+0x000000014004f45a: jne      0x14004f494
+0x000000014004f45c: mov      rsi, rcx
+0x000000014004f45f: mov      edi, 1
+0x000000014004f464: xor      ebx, ebx
+0x000000014004f466: mov      r14, qword ptr [rip + 0x8820eb]
+0x000000014004f46d: xor      ebp, ebp
+0x000000014004f46f: cmp      ebp, 7
+0x000000014004f472: jae      0x14004f482
+0x000000014004f474: test     ebp, ebp
+0x000000014004f476: je       0x14004f485
+0x000000014004f478: mov      eax, ebx
+0x000000014004f47a: pause    
+0x000000014004f47c: dec      eax
+0x000000014004f47e: jne      0x14004f47a
+0x000000014004f480: jmp      0x14004f485
+0x000000014004f482: call     r14
+0x000000014004f485: inc      ebp
+0x000000014004f487: mov      rax, qword ptr [rsi + 0x58]
+0x000000014004f48b: add      ebx, edi
+0x000000014004f48d: add      edi, 2
+0x000000014004f490: test     al, 1
+0x000000014004f492: je       0x14004f46f
+0x000000014004f494: add      rsp, 0x20
+0x000000014004f498: pop      rbx
+0x000000014004f499: pop      rbp
+0x000000014004f49a: pop      rdi
+0x000000014004f49b: pop      rsi
+0x000000014004f49c: pop      r14
+0x000000014004f49e: ret      

@@ -1,0 +1,42 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x816165-0x816209
+0x0000000140816165: sub      rsp, 0x38
+0x0000000140816169: mov      eax, edx
+0x000000014081616b: mov      rdx, rcx
+0x000000014081616e: cmp      r9d, 0x3b8b87c1
+0x0000000140816175: jb       0x140816189
+0x0000000140816177: cmp      r8, -1
+0x000000014081617b: je       0x1408161ef
+0x000000014081617d: inc      r8
+0x0000000140816180: add      r9d, 0xc474783f
+0x0000000140816187: jmp      0x140816190
+0x0000000140816189: add      r9d, 0xf423f
+0x0000000140816190: lea      rcx, [rsp + 0x28]
+0x0000000140816195: mov      qword ptr [rcx], r8
+0x0000000140816198: mov      dword ptr [rcx + 8], r9d
+0x000000014081619c: mov      r8d, eax
+0x000000014081619f: call     0x140768fc0
+0x00000001408161a4: mov      ecx, edx
+0x00000001408161a6: mov      edx, 0x3e8
+0x00000001408161ab: mul      rdx
+0x00000001408161ae: mov      r8d, ecx
+0x00000001408161b1: imul     r8, r8, 0x431bde83
+0x00000001408161b8: shr      r8, 0x32
+0x00000001408161bc: xor      r9d, r9d
+0x00000001408161bf: cmp      ecx, -1
+0x00000001408161c2: cmove    rdx, r9
+0x00000001408161c6: cmove    rax, r9
+0x00000001408161ca: cmove    r8d, r9d
+0x00000001408161ce: add      rax, r8
+0x00000001408161d1: adc      rdx, 0
+0x00000001408161d5: mov      rcx, 0xfffffffffffffffd
+0x00000001408161dc: cmp      rax, rcx
+0x00000001408161df: cmovae   rax, rcx
+0x00000001408161e3: test     rdx, rdx
+0x00000001408161e6: cmovne   rax, rcx
+0x00000001408161ea: add      rsp, 0x38
+0x00000001408161ee: ret      
+0x00000001408161ef: lea      rcx, [rip + 0x35ea60]
+0x00000001408161f6: lea      r8, [rip + 0x36cf0b]
+0x00000001408161fd: mov      edx, 0x28
+0x0000000140816202: call     0x1408ae980
+0x0000000140816207: ud2      

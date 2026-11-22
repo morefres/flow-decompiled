@@ -1,0 +1,56 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x15649a-0x15655c
+0x000000014015649a: push     r15
+0x000000014015649c: push     r14
+0x000000014015649e: push     rsi
+0x000000014015649f: push     rdi
+0x00000001401564a0: push     rbx
+0x00000001401564a1: sub      rsp, 0x20
+0x00000001401564a5: cmp      byte ptr [rcx], 1
+0x00000001401564a8: je       0x140156542
+0x00000001401564ae: mov      rsi, r9
+0x00000001401564b1: mov      rdi, r8
+0x00000001401564b4: mov      rbx, rdx
+0x00000001401564b7: mov      r14, rcx
+0x00000001401564ba: mov      r15, qword ptr [rcx + 8]
+0x00000001401564be: cmp      byte ptr [rcx + 1], 1
+0x00000001401564c2: je       0x1401564d9
+0x00000001401564c4: mov      rcx, qword ptr [r15]
+0x00000001401564c7: lea      rdx, [rip + 0xa2e69c]
+0x00000001401564ce: mov      r8d, 1
+0x00000001401564d4: call     0x14002fe6f
+0x00000001401564d9: mov      byte ptr [r14 + 1], 2
+0x00000001401564de: mov      rcx, qword ptr [r15]
+0x00000001401564e1: mov      rdx, rbx
+0x00000001401564e4: mov      r8, rdi
+0x00000001401564e7: call     0x1407fab9f
+0x00000001401564ec: mov      rcx, qword ptr [r15]
+0x00000001401564ef: lea      rdx, [rip + 0xa361ef]
+0x00000001401564f6: mov      r8d, 1
+0x00000001401564fc: call     0x14002fe6f
+0x0000000140156501: cmp      qword ptr [rsi], -1
+0x0000000140156505: je       0x140156522
+0x0000000140156507: mov      rdx, qword ptr [rsi + 8]
+0x000000014015650b: mov      r8, qword ptr [rsi + 0x10]
+0x000000014015650f: mov      rcx, qword ptr [r15]
+0x0000000140156512: add      rsp, 0x20
+0x0000000140156516: pop      rbx
+0x0000000140156517: pop      rdi
+0x0000000140156518: pop      rsi
+0x0000000140156519: pop      r14
+0x000000014015651b: pop      r15
+0x000000014015651d: jmp      0x1407fab9f
+0x0000000140156522: mov      rcx, qword ptr [r15]
+0x0000000140156525: lea      rdx, [rip + 0xa21c94]
+0x000000014015652c: mov      r8d, 4
+0x0000000140156532: add      rsp, 0x20
+0x0000000140156536: pop      rbx
+0x0000000140156537: pop      rdi
+0x0000000140156538: pop      rsi
+0x0000000140156539: pop      r14
+0x000000014015653b: pop      r15
+0x000000014015653d: jmp      0x14002fe6f
+0x0000000140156542: lea      rcx, [rip + 0xa380e7]
+0x0000000140156549: lea      r8, [rip + 0xa21c38]
+0x0000000140156550: mov      edx, 0x28
+0x0000000140156555: call     0x1408ae860
+0x000000014015655a: ud2      

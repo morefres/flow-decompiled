@@ -1,0 +1,64 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0xb214e-0xb2203
+0x00000001400b214e: push     rsi
+0x00000001400b214f: cmp      r8, rdx
+0x00000001400b2152: jb       0x1400b218e
+0x00000001400b2154: mov      r9, rdx
+0x00000001400b2157: movzx    esi, byte ptr [rcx + rdx]
+0x00000001400b215b: cmp      sil, 0xc0
+0x00000001400b215f: jl       0x1400b218e
+0x00000001400b2161: cmp      byte ptr [rcx + r8], 0xc0
+0x00000001400b2166: jl       0x1400b218e
+0x00000001400b2168: mov      r11, r8
+0x00000001400b216b: sub      r11, r9
+0x00000001400b216e: je       0x1400b2192
+0x00000001400b2170: lea      r10, [rcx + r9]
+0x00000001400b2174: cmp      r11, 1
+0x00000001400b2178: jne      0x1400b2197
+0x00000001400b217a: xor      eax, eax
+0x00000001400b217c: cmp      esi, 0x2b
+0x00000001400b217f: je       0x1400b2190
+0x00000001400b2181: mov      r11d, 1
+0x00000001400b2187: cmp      esi, 0x2d
+0x00000001400b218a: je       0x1400b2190
+0x00000001400b218c: jmp      0x1400b21d4
+0x00000001400b218e: xor      eax, eax
+0x00000001400b2190: pop      rsi
+0x00000001400b2191: ret      
+0x00000001400b2192: mov      rax, r11
+0x00000001400b2195: jmp      0x1400b2190
+0x00000001400b2197: cmp      esi, 0x2b
+0x00000001400b219a: je       0x1400b21ce
+0x00000001400b219c: cmp      esi, 0x2d
+0x00000001400b219f: jne      0x1400b21d4
+0x00000001400b21a1: inc      r9
+0x00000001400b21a4: xor      eax, eax
+0x00000001400b21a6: xor      edx, edx
+0x00000001400b21a8: movzx    r10d, byte ptr [rcx + r9]
+0x00000001400b21ad: add      r10d, -0x30
+0x00000001400b21b1: cmp      r10d, 9
+0x00000001400b21b5: ja       0x1400b2190
+0x00000001400b21b7: add      rdx, rdx
+0x00000001400b21ba: lea      rdx, [rdx + rdx*4]
+0x00000001400b21be: mov      r10d, r10d
+0x00000001400b21c1: sub      rdx, r10
+0x00000001400b21c4: inc      r9
+0x00000001400b21c7: cmp      r8, r9
+0x00000001400b21ca: jne      0x1400b21a8
+0x00000001400b21cc: jmp      0x1400b21fc
+0x00000001400b21ce: inc      r10
+0x00000001400b21d1: dec      r11
+0x00000001400b21d4: xor      eax, eax
+0x00000001400b21d6: xor      ecx, ecx
+0x00000001400b21d8: xor      edx, edx
+0x00000001400b21da: movzx    r8d, byte ptr [r10 + rcx]
+0x00000001400b21df: add      r8d, -0x30
+0x00000001400b21e3: cmp      r8d, 9
+0x00000001400b21e7: ja       0x1400b2190
+0x00000001400b21e9: lea      rdx, [rdx + rdx*4]
+0x00000001400b21ed: mov      r8d, r8d
+0x00000001400b21f0: lea      rdx, [r8 + rdx*2]
+0x00000001400b21f4: inc      rcx
+0x00000001400b21f7: cmp      r11, rcx
+0x00000001400b21fa: jne      0x1400b21da
+0x00000001400b21fc: mov      eax, 1
+0x00000001400b2201: jmp      0x1400b2190

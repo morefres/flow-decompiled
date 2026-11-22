@@ -1,0 +1,63 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x272969-0x272a5c
+0x0000000140272969: push     rsi
+0x000000014027296a: sub      rsp, 0x20
+0x000000014027296e: mov      rsi, rcx
+0x0000000140272971: mov      rcx, qword ptr [rcx]
+0x0000000140272974: sub      rcx, 2
+0x0000000140272978: mov      eax, 6
+0x000000014027297d: cmovae   rax, rcx
+0x0000000140272981: cmp      rax, 5
+0x0000000140272985: ja       0x140272a24
+0x000000014027298b: lea      rcx, [rip + 0x92d92a]
+0x0000000140272992: movsxd   rax, dword ptr [rcx + rax*4]
+0x0000000140272996: add      rax, rcx
+0x0000000140272999: jmp      rax
+0x000000014027299b: mov      rcx, qword ptr [rsi + 8]
+0x000000014027299f: cmp      rcx, -1
+0x00000001402729a3: je       0x1402729bf
+0x00000001402729a5: test     rcx, rcx
+0x00000001402729a8: js       0x1402729bf
+0x00000001402729aa: mov      rdx, qword ptr [rsi + 0x10]
+0x00000001402729ae: mov      r8d, 1
+0x00000001402729b4: mov      r9d, 1
+0x00000001402729ba: call     0x14000a0f6
+0x00000001402729bf: add      rsi, 0x20
+0x00000001402729c3: mov      rcx, rsi
+0x00000001402729c6: add      rsp, 0x20
+0x00000001402729ca: pop      rsi
+0x00000001402729cb: jmp      0x140272a7e
+0x00000001402729d0: mov      rcx, qword ptr [rsi + 8]
+0x00000001402729d4: mov      rdx, qword ptr [rsi + 0x10]
+0x00000001402729d8: mov      r8d, 1
+0x00000001402729de: mov      r9d, 1
+0x00000001402729e4: call     0x14000a0f6
+0x00000001402729e9: mov      rcx, qword ptr [rsi + 0x20]
+0x00000001402729ed: cmp      rcx, -1
+0x00000001402729f1: je       0x140272a0d
+0x00000001402729f3: test     rcx, rcx
+0x00000001402729f6: js       0x140272a0d
+0x00000001402729f8: mov      rdx, qword ptr [rsi + 0x28]
+0x00000001402729fc: mov      r8d, 1
+0x0000000140272a02: mov      r9d, 1
+0x0000000140272a08: call     0x14000a0f6
+0x0000000140272a0d: add      rsi, 0x38
+0x0000000140272a11: jmp      0x1402729c3
+0x0000000140272a13: add      rsi, 8
+0x0000000140272a17: mov      rcx, rsi
+0x0000000140272a1a: add      rsp, 0x20
+0x0000000140272a1e: pop      rsi
+0x0000000140272a1f: jmp      0x140272b66
+0x0000000140272a24: mov      rcx, qword ptr [rsi + 0x60]
+0x0000000140272a28: test     rcx, rcx
+0x0000000140272a2b: js       0x140272a42
+0x0000000140272a2d: mov      rdx, qword ptr [rsi + 0x68]
+0x0000000140272a31: mov      r8d, 1
+0x0000000140272a37: mov      r9d, 1
+0x0000000140272a3d: call     0x14000a0f6
+0x0000000140272a42: lea      rcx, [rsi + 0x78]
+0x0000000140272a46: call     0x140272a7e
+0x0000000140272a4b: add      rsi, 0x18
+0x0000000140272a4f: mov      rcx, rsi
+0x0000000140272a52: add      rsp, 0x20
+0x0000000140272a56: pop      rsi
+0x0000000140272a57: jmp      0x140272ad8

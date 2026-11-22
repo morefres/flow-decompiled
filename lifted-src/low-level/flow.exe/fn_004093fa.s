@@ -1,0 +1,47 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x4093fa-0x4094b6
+0x00000001404093fa: mov      qword ptr [rsp + 0x10], rdx
+0x00000001404093ff: push     rbp
+0x0000000140409400: push     r15
+0x0000000140409402: push     r14
+0x0000000140409404: push     r13
+0x0000000140409406: push     r12
+0x0000000140409408: push     rsi
+0x0000000140409409: push     rdi
+0x000000014040940a: push     rbx
+0x000000014040940b: sub      rsp, 0x28
+0x000000014040940f: lea      rbp, [rdx + 0x80]
+0x0000000140409416: cmp      qword ptr [rbp + 0x3c8], -1
+0x000000014040941e: je       0x14040943f
+0x0000000140409420: mov      r8d, 1
+0x0000000140409426: mov      r9d, 1
+0x000000014040942c: mov      rcx, qword ptr [rbp + 0x3c8]
+0x0000000140409433: mov      rdx, qword ptr [rbp + 0x3a8]
+0x000000014040943a: call     0x14000a0f6
+0x000000014040943f: mov      rcx, qword ptr [rbp + 0x3b0]
+0x0000000140409446: call     0x14074809b
+0x000000014040944b: mov      rcx, qword ptr [rbp + 0x3b8]
+0x0000000140409452: call     0x14074809b
+0x0000000140409457: mov      r8d, 1
+0x000000014040945d: mov      r9d, 1
+0x0000000140409463: mov      rcx, qword ptr [rbp + 0x338]
+0x000000014040946a: mov      rdx, qword ptr [rbp + 0x348]
+0x0000000140409471: call     0x14000a0f6
+0x0000000140409476: mov      rcx, qword ptr [rbp + 0x350]
+0x000000014040947d: call     0x14074809b
+0x0000000140409482: mov      rcx, qword ptr [rbp + 0x340]
+0x0000000140409489: call     0x14074809b
+0x000000014040948e: lea      rcx, [rbp + 0x40]
+0x0000000140409492: call     0x1404099a5
+0x0000000140409497: mov      al, 1
+0x0000000140409499: mov      byte ptr [rbp + 0x3de], al
+0x000000014040949f: mov      byte ptr [rbp + 0x3dd], al
+0x00000001404094a5: add      rsp, 0x28
+0x00000001404094a9: pop      rbx
+0x00000001404094aa: pop      rdi
+0x00000001404094ab: pop      rsi
+0x00000001404094ac: pop      r12
+0x00000001404094ae: pop      r13
+0x00000001404094b0: pop      r14
+0x00000001404094b2: pop      r15
+0x00000001404094b4: pop      rbp
+0x00000001404094b5: ret      

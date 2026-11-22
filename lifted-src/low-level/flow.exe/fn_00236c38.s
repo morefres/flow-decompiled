@@ -1,0 +1,28 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x236c38-0x236c87
+0x0000000140236c38: push     r14
+0x0000000140236c3a: push     rsi
+0x0000000140236c3b: push     rdi
+0x0000000140236c3c: push     rbx
+0x0000000140236c3d: sub      rsp, 0x28
+0x0000000140236c41: mov      rsi, r9
+0x0000000140236c44: mov      rdi, r8
+0x0000000140236c47: mov      rbx, rdx
+0x0000000140236c4a: mov      r14, rcx
+0x0000000140236c4d: mov      r8, qword ptr [r9]
+0x0000000140236c50: mov      rdx, rdi
+0x0000000140236c53: call     0x140236c87
+0x0000000140236c58: add      r14, 0x20
+0x0000000140236c5c: lea      rdx, [rdi + 0x20]
+0x0000000140236c60: mov      r8, qword ptr [rsi]
+0x0000000140236c63: mov      rcx, r14
+0x0000000140236c66: call     0x140236c87
+0x0000000140236c6b: mov      edx, 8
+0x0000000140236c70: mov      rcx, rdi
+0x0000000140236c73: mov      r8, rbx
+0x0000000140236c76: mov      r9, rsi
+0x0000000140236c79: add      rsp, 0x28
+0x0000000140236c7d: pop      rbx
+0x0000000140236c7e: pop      rdi
+0x0000000140236c7f: pop      rsi
+0x0000000140236c80: pop      r14
+0x0000000140236c82: jmp      0x140236e52

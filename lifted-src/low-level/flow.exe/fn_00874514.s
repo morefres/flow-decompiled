@@ -1,0 +1,162 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x874514-0x874760
+0x0000000140874514: push     r14
+0x0000000140874516: push     rsi
+0x0000000140874517: push     rdi
+0x0000000140874518: push     rbx
+0x0000000140874519: sub      rsp, 0x48
+0x000000014087451d: vmovdqa  xmmword ptr [rsp + 0x30], xmm7
+0x0000000140874523: vmovaps  xmmword ptr [rsp + 0x20], xmm6
+0x0000000140874529: mov      eax, ecx
+0x000000014087452b: test     r8, r8
+0x000000014087452e: je       0x140874721
+0x0000000140874534: lea      rcx, [rdx + 0x1f]
+0x0000000140874538: and      rcx, 0xffffffffffffffe0
+0x000000014087453c: sub      rcx, rdx
+0x000000014087453f: mov      r9, r8
+0x0000000140874542: sub      r9, rcx
+0x0000000140874545: jae      0x140874558
+0x0000000140874547: mov      esi, 1
+0x000000014087454c: mov      ebx, 0x20
+0x0000000140874551: xor      r14d, r14d
+0x0000000140874554: xor      edi, edi
+0x0000000140874556: jmp      0x14087457c
+0x0000000140874558: lea      rbx, [rdx + rcx]
+0x000000014087455c: mov      r14, r9
+0x000000014087455f: shr      r14, 5
+0x0000000140874563: mov      edi, r9d
+0x0000000140874566: and      edi, 0x1f
+0x0000000140874569: movabs   rsi, 0x7fffffffffffffe0
+0x0000000140874573: and      rsi, r9
+0x0000000140874576: add      rsi, rbx
+0x0000000140874579: mov      r8, rcx
+0x000000014087457c: mov      r9d, eax
+0x000000014087457f: shr      r9d, 0x10
+0x0000000140874583: movzx    ecx, ax
+0x0000000140874586: cmp      r8, 0xf
+0x000000014087458a: ja       0x1408745da
+0x000000014087458c: test     r8, r8
+0x000000014087458f: je       0x1408745a6
+0x0000000140874591: xor      eax, eax
+0x0000000140874593: movzx    r10d, byte ptr [rdx + rax]
+0x0000000140874598: add      ecx, r10d
+0x000000014087459b: add      r9d, ecx
+0x000000014087459e: inc      rax
+0x00000001408745a1: cmp      r8, rax
+0x00000001408745a4: jne      0x140874593
+0x00000001408745a6: mov      eax, ecx
+0x00000001408745a8: mov      edx, 0x80078071
+0x00000001408745ad: imul     rax, rdx
+0x00000001408745b1: shr      rax, 0x2f
+0x00000001408745b5: imul     eax, eax, 0xfff1
+0x00000001408745bb: sub      ecx, eax
+0x00000001408745bd: mov      eax, r9d
+0x00000001408745c0: imul     rax, rdx
+0x00000001408745c4: shr      rax, 0x2f
+0x00000001408745c8: imul     eax, eax, 0xfff1
+0x00000001408745ce: sub      r9d, eax
+0x00000001408745d1: shl      r9d, 0x10
+0x00000001408745d5: or       r9d, ecx
+0x00000001408745d8: jmp      0x1408745e2
+0x00000001408745da: call     0x1408743e9
+0x00000001408745df: mov      r9d, eax
+0x00000001408745e2: mov      eax, r9d
+0x00000001408745e5: shr      eax, 0x10
+0x00000001408745e8: movzx    ecx, r9w
+0x00000001408745ec: test     r14, r14
+0x00000001408745ef: je       0x1408746d4
+0x00000001408745f5: mov      edx, 0xad
+0x00000001408745fa: vpxor    xmm0, xmm0, xmm0
+0x00000001408745fe: vmovdqa  ymm1, ymmword ptr [rip + 0x6463a]
+0x0000000140874606: vpbroadcastw ymm2, word ptr [rip + 0x6419d]
+0x000000014087460f: mov      r8d, 0x80078071
+0x0000000140874615: cmp      r14, rdx
+0x0000000140874618: mov      r9d, 0xad
+0x000000014087461e: cmovb    r9, r14
+0x0000000140874622: mov      r10d, r9d
+0x0000000140874625: shl      r10d, 5
+0x0000000140874629: vmovd    xmm5, ecx
+0x000000014087462d: vmovd    xmm3, eax
+0x0000000140874631: xor      eax, eax
+0x0000000140874633: vpxor    xmm4, xmm4, xmm4
+0x0000000140874637: vmovdqa  ymm6, ymmword ptr [rbx + rax]
+0x000000014087463c: vpsadbw  ymm7, ymm6, ymm0
+0x0000000140874640: vpaddd   ymm4, ymm5, ymm4
+0x0000000140874644: vpaddd   ymm5, ymm5, ymm7
+0x0000000140874648: vpmaddubsw ymm6, ymm6, ymm1
+0x000000014087464d: vpmaddwd ymm6, ymm6, ymm2
+0x0000000140874651: vpaddd   ymm3, ymm6, ymm3
+0x0000000140874655: add      rax, 0x20
+0x0000000140874659: cmp      r10, rax
+0x000000014087465c: jne      0x140874637
+0x000000014087465e: vextracti128 xmm6, ymm5, 1
+0x0000000140874664: vshufps  xmm5, xmm5, xmm6, 0x88
+0x0000000140874669: mov      rax, r9
+0x000000014087466c: shl      rax, 5
+0x0000000140874670: add      rbx, rax
+0x0000000140874673: vphaddd  xmm5, xmm5, xmm5
+0x0000000140874678: vpslld   ymm4, ymm4, 5
+0x000000014087467d: vphaddd  xmm5, xmm5, xmm5
+0x0000000140874682: vpaddd   ymm3, ymm3, ymm4
+0x0000000140874686: vmovd    ecx, xmm5
+0x000000014087468a: mov      rax, rcx
+0x000000014087468d: imul     rax, r8
+0x0000000140874691: vextracti128 xmm4, ymm3, 1
+0x0000000140874697: vphaddd  xmm3, xmm4, xmm3
+0x000000014087469c: shr      rax, 0x2f
+0x00000001408746a0: vphaddd  xmm3, xmm3, xmm3
+0x00000001408746a5: imul     eax, eax, 0xfff1
+0x00000001408746ab: vphaddd  xmm3, xmm3, xmm3
+0x00000001408746b0: sub      ecx, eax
+0x00000001408746b2: vmovd    eax, xmm3
+0x00000001408746b6: mov      r10, rax
+0x00000001408746b9: imul     r10, r8
+0x00000001408746bd: shr      r10, 0x2f
+0x00000001408746c1: imul     r10d, r10d, 0xfff1
+0x00000001408746c8: sub      eax, r10d
+0x00000001408746cb: sub      r14, r9
+0x00000001408746ce: jne      0x140874615
+0x00000001408746d4: test     rdi, rdi
+0x00000001408746d7: je       0x14087471c
+0x00000001408746d9: cmp      edi, 0x10
+0x00000001408746dc: jae      0x14087473a
+0x00000001408746de: xor      edx, edx
+0x00000001408746e0: movzx    r8d, byte ptr [rsi + rdx]
+0x00000001408746e5: add      ecx, r8d
+0x00000001408746e8: add      eax, ecx
+0x00000001408746ea: inc      rdx
+0x00000001408746ed: cmp      rdi, rdx
+0x00000001408746f0: jne      0x1408746e0
+0x00000001408746f2: mov      edx, ecx
+0x00000001408746f4: mov      r8d, 0x80078071
+0x00000001408746fa: imul     rdx, r8
+0x00000001408746fe: shr      rdx, 0x2f
+0x0000000140874702: imul     edx, edx, 0xfff1
+0x0000000140874708: sub      ecx, edx
+0x000000014087470a: mov      edx, eax
+0x000000014087470c: imul     rdx, r8
+0x0000000140874710: shr      rdx, 0x2f
+0x0000000140874714: imul     edx, edx, 0xfff1
+0x000000014087471a: sub      eax, edx
+0x000000014087471c: shl      eax, 0x10
+0x000000014087471f: or       eax, ecx
+0x0000000140874721: vmovaps  xmm6, xmmword ptr [rsp + 0x20]
+0x0000000140874727: vmovaps  xmm7, xmmword ptr [rsp + 0x30]
+0x000000014087472d: add      rsp, 0x48
+0x0000000140874731: pop      rbx
+0x0000000140874732: pop      rdi
+0x0000000140874733: pop      rsi
+0x0000000140874734: pop      r14
+0x0000000140874736: vzeroupper 
+0x0000000140874739: ret      
+0x000000014087473a: mov      rdx, rsi
+0x000000014087473d: mov      r8, rdi
+0x0000000140874740: mov      r9d, eax
+0x0000000140874743: vmovaps  xmm6, xmmword ptr [rsp + 0x20]
+0x0000000140874749: vmovaps  xmm7, xmmword ptr [rsp + 0x30]
+0x000000014087474f: add      rsp, 0x48
+0x0000000140874753: pop      rbx
+0x0000000140874754: pop      rdi
+0x0000000140874755: pop      rsi
+0x0000000140874756: pop      r14
+0x0000000140874758: vzeroupper 
+0x000000014087475b: jmp      0x1408743e9

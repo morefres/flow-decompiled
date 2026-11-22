@@ -1,0 +1,50 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6712c0-0x67135f
+0x00000001406712c0: push     rbp
+0x00000001406712c1: sub      rsp, 0x30
+0x00000001406712c5: lea      rbp, [rsp + 0x30]
+0x00000001406712ca: mov      qword ptr [rbp - 8], 0xfffffffffffffffe
+0x00000001406712d2: mov      rdx, rcx
+0x00000001406712d5: mov      rcx, qword ptr [rcx]
+0x00000001406712d8: xor      eax, eax
+0x00000001406712da: sub      rcx, 1
+0x00000001406712de: cmovae   rax, rcx
+0x00000001406712e2: test     rax, rax
+0x00000001406712e5: je       0x140671319
+0x00000001406712e7: cmp      rax, 1
+0x00000001406712eb: je       0x140671346
+0x00000001406712ed: cmp      rax, 2
+0x00000001406712f1: mov      qword ptr [rbp - 0x10], rdx
+0x00000001406712f5: lea      rcx, [rdx + 8]
+0x00000001406712f9: jne      0x140671326
+0x00000001406712fb: call     0x14066805e
+0x0000000140671300: nop      
+0x0000000140671301: mov      rax, qword ptr [rbp - 0x10]
+0x0000000140671305: lea      rcx, [rax + 0x30]
+0x0000000140671309: call     0x140668d81
+0x000000014067130e: nop      
+0x000000014067130f: mov      rax, qword ptr [rbp - 0x10]
+0x0000000140671313: mov      rcx, qword ptr [rax + 0x68]
+0x0000000140671317: jmp      0x140671334
+0x0000000140671319: mov      rcx, rdx
+0x000000014067131c: add      rsp, 0x30
+0x0000000140671320: pop      rbp
+0x0000000140671321: jmp      0x1406686a2
+0x0000000140671326: call     0x14066805e
+0x000000014067132b: nop      
+0x000000014067132c: mov      rax, qword ptr [rbp - 0x10]
+0x0000000140671330: mov      rcx, qword ptr [rax + 0x30]
+0x0000000140671334: mov      eax, ecx
+0x0000000140671336: and      eax, 3
+0x0000000140671339: lea      edx, [rax - 2]
+0x000000014067133c: cmp      edx, 2
+0x000000014067133f: jb       0x140671346
+0x0000000140671341: test     rax, rax
+0x0000000140671344: jne      0x14067134c
+0x0000000140671346: add      rsp, 0x30
+0x000000014067134a: pop      rbp
+0x000000014067134b: ret      
+0x000000014067134c: mov      rax, qword ptr [rcx + 0x17]
+0x0000000140671350: dec      rcx
+0x0000000140671353: add      rsp, 0x30
+0x0000000140671357: pop      rbp
+0x0000000140671358: jmp      qword ptr [rip + 0x260b39]

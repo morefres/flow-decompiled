@@ -1,0 +1,84 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x31748f-0x3175aa
+0x000000014031748f: push     r14
+0x0000000140317491: push     rsi
+0x0000000140317492: push     rdi
+0x0000000140317493: push     rbx
+0x0000000140317494: sub      rsp, 0x28
+0x0000000140317498: mov      rdi, rdx
+0x000000014031749b: mov      rsi, rcx
+0x000000014031749e: mov      rcx, qword ptr [rcx + 0x20]
+0x00000001403174a2: mov      rdx, qword ptr [rsi + 0x28]
+0x00000001403174a6: mov      r8, rdi
+0x00000001403174a9: call     0x14024aa03
+0x00000001403174ae: mov      rcx, rax
+0x00000001403174b1: shr      rcx, 0x39
+0x00000001403174b5: mov      rdx, qword ptr [rsi]
+0x00000001403174b8: mov      r8, qword ptr [rsi + 8]
+0x00000001403174bc: movd     xmm0, ecx
+0x00000001403174c0: punpcklbw xmm0, xmm0
+0x00000001403174c4: pshuflw  xmm0, xmm0, 0
+0x00000001403174c9: pshufd   xmm0, xmm0, 0x44
+0x00000001403174ce: xor      ecx, ecx
+0x00000001403174d0: pcmpeqd  xmm1, xmm1
+0x00000001403174d4: xor      r9d, r9d
+0x00000001403174d7: and      rax, r8
+0x00000001403174da: movdqu   xmm2, xmmword ptr [rdx + rax]
+0x00000001403174df: movdqa   xmm3, xmm2
+0x00000001403174e3: pcmpeqb  xmm3, xmm0
+0x00000001403174e7: pmovmskb ebx, xmm3
+0x00000001403174eb: test     ebx, ebx
+0x00000001403174ed: je       0x140317519
+0x00000001403174ef: bsf      r10d, ebx
+0x00000001403174f3: add      r10, rax
+0x00000001403174f6: and      r10, r8
+0x00000001403174f9: mov      r14, r10
+0x00000001403174fc: shl      r14, 4
+0x0000000140317500: mov      r11, rdx
+0x0000000140317503: sub      r11, r14
+0x0000000140317506: cmp      rdi, qword ptr [r11 - 0x10]
+0x000000014031750a: je       0x140317534
+0x000000014031750c: lea      r10d, [rbx - 1]
+0x0000000140317510: and      r10w, bx
+0x0000000140317514: mov      ebx, r10d
+0x0000000140317517: jne      0x1403174ef
+0x0000000140317519: pcmpeqb  xmm2, xmm1
+0x000000014031751d: pmovmskb r10d, xmm2
+0x0000000140317522: test     r10d, r10d
+0x0000000140317525: jne      0x14031759d
+0x0000000140317527: add      rax, r9
+0x000000014031752a: add      rax, 0x10
+0x000000014031752e: add      r9, 0x10
+0x0000000140317532: jmp      0x1403174d7
+0x0000000140317534: lea      rax, [r10 - 0x10]
+0x0000000140317538: and      rax, r8
+0x000000014031753b: movdqu   xmm0, xmmword ptr [rdx + rax]
+0x0000000140317540: pcmpeqd  xmm1, xmm1
+0x0000000140317544: pcmpeqb  xmm0, xmm1
+0x0000000140317548: pmovmskb ecx, xmm0
+0x000000014031754c: movdqu   xmm0, xmmword ptr [rdx + r10]
+0x0000000140317552: pcmpeqb  xmm0, xmm1
+0x0000000140317556: pmovmskb r8d, xmm0
+0x000000014031755b: mov      r9w, 0x1f
+0x0000000140317560: bsr      r9w, cx
+0x0000000140317565: xor      r9d, 0xf
+0x0000000140317569: or       r8d, 0x10000
+0x0000000140317570: bsf      r8d, r8d
+0x0000000140317574: add      r8d, r9d
+0x0000000140317577: mov      cl, 0x80
+0x0000000140317579: cmp      r8w, 0xf
+0x000000014031757e: ja       0x140317586
+0x0000000140317580: inc      qword ptr [rsi + 0x10]
+0x0000000140317584: mov      cl, 0xff
+0x0000000140317586: mov      byte ptr [rdx + r10], cl
+0x000000014031758a: mov      byte ptr [rdx + rax + 0x10], cl
+0x000000014031758e: dec      qword ptr [rsi + 0x18]
+0x0000000140317592: mov      rdx, qword ptr [r11 - 8]
+0x0000000140317596: mov      ecx, 1
+0x000000014031759b: jmp      0x14031759d
+0x000000014031759d: mov      rax, rcx
+0x00000001403175a0: add      rsp, 0x28
+0x00000001403175a4: pop      rbx
+0x00000001403175a5: pop      rdi
+0x00000001403175a6: pop      rsi
+0x00000001403175a7: pop      r14
+0x00000001403175a9: ret      

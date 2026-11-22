@@ -1,0 +1,79 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x67998-0x67aa3
+0x0000000140067998: push     r14
+0x000000014006799a: push     rsi
+0x000000014006799b: push     rdi
+0x000000014006799c: push     rbx
+0x000000014006799d: sub      rsp, 0x28
+0x00000001400679a1: mov      rsi, rcx
+0x00000001400679a4: mov      rbx, qword ptr [rdx]
+0x00000001400679a7: mov      r14, qword ptr [rdx + 8]
+0x00000001400679ab: mov      rdi, qword ptr [rdx + 0x10]
+0x00000001400679af: cmp      r14, 5
+0x00000001400679b3: je       0x1400679e6
+0x00000001400679b5: cmp      r14, 8
+0x00000001400679b9: jne      0x140067a6d
+0x00000001400679bf: movabs   rax, 0x746e656d75636f64
+0x00000001400679c9: cmp      qword ptr [rbx], rax
+0x00000001400679cc: jne      0x140067a6d
+0x00000001400679d2: test     rdi, rdi
+0x00000001400679d5: je       0x1400679e0
+0x00000001400679d7: cmp      byte ptr [rdi], 0
+0x00000001400679da: jne      0x140067a8d
+0x00000001400679e0: mov      byte ptr [rsi + 1], 0
+0x00000001400679e4: jmp      0x140067a5f
+0x00000001400679e6: lea      rdx, [rip + 0x8af343]
+0x00000001400679ed: mov      r8d, 5
+0x00000001400679f3: mov      rcx, rbx
+0x00000001400679f6: call     0x1408accc0
+0x00000001400679fb: test     eax, eax
+0x00000001400679fd: je       0x140067a41
+0x00000001400679ff: lea      rdx, [rip + 0x8a70c2]
+0x0000000140067a06: mov      r8d, 5
+0x0000000140067a0c: mov      rcx, rbx
+0x0000000140067a0f: call     0x1408accc0
+0x0000000140067a14: test     eax, eax
+0x0000000140067a16: je       0x140067a51
+0x0000000140067a18: lea      rdx, [rip + 0x8af316]
+0x0000000140067a1f: mov      r8d, 5
+0x0000000140067a25: mov      rcx, rbx
+0x0000000140067a28: call     0x1408accc0
+0x0000000140067a2d: test     eax, eax
+0x0000000140067a2f: jne      0x140067a6d
+0x0000000140067a31: test     rdi, rdi
+0x0000000140067a34: je       0x140067a3b
+0x0000000140067a36: cmp      byte ptr [rdi], 0
+0x0000000140067a39: jne      0x140067a8d
+0x0000000140067a3b: mov      byte ptr [rsi + 1], 3
+0x0000000140067a3f: jmp      0x140067a5f
+0x0000000140067a41: test     rdi, rdi
+0x0000000140067a44: je       0x140067a4b
+0x0000000140067a46: cmp      byte ptr [rdi], 0
+0x0000000140067a49: jne      0x140067a8d
+0x0000000140067a4b: mov      byte ptr [rsi + 1], 1
+0x0000000140067a4f: jmp      0x140067a5f
+0x0000000140067a51: test     rdi, rdi
+0x0000000140067a54: je       0x140067a5b
+0x0000000140067a56: cmp      byte ptr [rdi], 0
+0x0000000140067a59: jne      0x140067a8d
+0x0000000140067a5b: mov      byte ptr [rsi + 1], 2
+0x0000000140067a5f: xor      eax, eax
+0x0000000140067a61: mov      byte ptr [rsi], al
+0x0000000140067a63: add      rsp, 0x28
+0x0000000140067a67: pop      rbx
+0x0000000140067a68: pop      rdi
+0x0000000140067a69: pop      rsi
+0x0000000140067a6a: pop      r14
+0x0000000140067a6c: ret      
+0x0000000140067a6d: lea      r8, [rip + 0x8af2cc]
+0x0000000140067a74: mov      r9d, 4
+0x0000000140067a7a: mov      rcx, rbx
+0x0000000140067a7d: mov      rdx, r14
+0x0000000140067a80: call     0x1408cc563
+0x0000000140067a85: mov      qword ptr [rsi + 8], rax
+0x0000000140067a89: mov      al, 1
+0x0000000140067a8b: jmp      0x140067a61
+0x0000000140067a8d: lea      r8, [rip + 0xb16ddc]
+0x0000000140067a94: lea      rdx, [rsp + 0x27]
+0x0000000140067a99: mov      rcx, rdi
+0x0000000140067a9c: call     0x1408c3d55
+0x0000000140067aa1: jmp      0x140067a85

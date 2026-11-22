@@ -1,0 +1,127 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x2a075-0x2a28b
+0x000000014002a075: push     r15
+0x000000014002a077: push     r14
+0x000000014002a079: push     r12
+0x000000014002a07b: push     rsi
+0x000000014002a07c: push     rdi
+0x000000014002a07d: push     rbx
+0x000000014002a07e: sub      rsp, 0x318
+0x000000014002a085: mov      rdi, rdx
+0x000000014002a088: mov      rsi, rcx
+0x000000014002a08b: lea      rbx, [rsp + 0x48]
+0x000000014002a090: mov      rcx, rbx
+0x000000014002a093: mov      r8d, 1
+0x000000014002a099: call     0x14002a28b
+0x000000014002a09e: lea      r14, [rsp + 0x20]
+0x000000014002a0a3: mov      rcx, r14
+0x000000014002a0a6: mov      rdx, rbx
+0x000000014002a0a9: mov      r8d, 1
+0x000000014002a0af: call     0x14002a28b
+0x000000014002a0b4: lea      r15, [rsp + 0x70]
+0x000000014002a0b9: mov      rcx, r15
+0x000000014002a0bc: mov      rdx, r14
+0x000000014002a0bf: mov      r8d, 1
+0x000000014002a0c5: call     0x14002a28b
+0x000000014002a0ca: lea      r14, [rsp + 0x98]
+0x000000014002a0d2: mov      rcx, r14
+0x000000014002a0d5: mov      rdx, rdi
+0x000000014002a0d8: mov      r8, r15
+0x000000014002a0db: call     0x140029a7f
+0x000000014002a0e0: lea      rdi, [rsp + 0xc0]
+0x000000014002a0e8: mov      rcx, rdi
+0x000000014002a0eb: mov      rdx, rbx
+0x000000014002a0ee: mov      r8, r14
+0x000000014002a0f1: call     0x140029a7f
+0x000000014002a0f6: lea      rbx, [rsp + 0xe8]
+0x000000014002a0fe: mov      rcx, rbx
+0x000000014002a101: mov      rdx, rdi
+0x000000014002a104: mov      r8d, 1
+0x000000014002a10a: call     0x14002a28b
+0x000000014002a10f: lea      r15, [rsp + 0x110]
+0x000000014002a117: mov      rcx, r15
+0x000000014002a11a: mov      rdx, r14
+0x000000014002a11d: mov      r8, rbx
+0x000000014002a120: call     0x140029a7f
+0x000000014002a125: lea      r14, [rsp + 0x138]
+0x000000014002a12d: mov      rcx, r14
+0x000000014002a130: mov      rdx, r15
+0x000000014002a133: mov      r8d, 5
+0x000000014002a139: call     0x14002a28b
+0x000000014002a13e: lea      rbx, [rsp + 0x160]
+0x000000014002a146: mov      rcx, rbx
+0x000000014002a149: mov      rdx, r14
+0x000000014002a14c: mov      r8, r15
+0x000000014002a14f: call     0x140029a7f
+0x000000014002a154: lea      r14, [rsp + 0x188]
+0x000000014002a15c: mov      rcx, r14
+0x000000014002a15f: mov      rdx, rbx
+0x000000014002a162: mov      r8d, 0xa
+0x000000014002a168: call     0x14002a28b
+0x000000014002a16d: lea      r15, [rsp + 0x1b0]
+0x000000014002a175: mov      rcx, r15
+0x000000014002a178: mov      rdx, r14
+0x000000014002a17b: mov      r8, rbx
+0x000000014002a17e: call     0x140029a7f
+0x000000014002a183: lea      r14, [rsp + 0x1d8]
+0x000000014002a18b: mov      rcx, r14
+0x000000014002a18e: mov      rdx, r15
+0x000000014002a191: mov      r8d, 0x14
+0x000000014002a197: call     0x14002a28b
+0x000000014002a19c: lea      r12, [rsp + 0x200]
+0x000000014002a1a4: mov      rcx, r12
+0x000000014002a1a7: mov      rdx, r14
+0x000000014002a1aa: mov      r8, r15
+0x000000014002a1ad: call     0x140029a7f
+0x000000014002a1b2: lea      r15, [rsp + 0x228]
+0x000000014002a1ba: mov      rcx, r15
+0x000000014002a1bd: mov      rdx, r12
+0x000000014002a1c0: mov      r8d, 0xa
+0x000000014002a1c6: call     0x14002a28b
+0x000000014002a1cb: lea      r14, [rsp + 0x250]
+0x000000014002a1d3: mov      rcx, r14
+0x000000014002a1d6: mov      rdx, r15
+0x000000014002a1d9: mov      r8, rbx
+0x000000014002a1dc: call     0x140029a7f
+0x000000014002a1e1: lea      rbx, [rsp + 0x278]
+0x000000014002a1e9: mov      rcx, rbx
+0x000000014002a1ec: mov      rdx, r14
+0x000000014002a1ef: mov      r8d, 0x32
+0x000000014002a1f5: call     0x14002a28b
+0x000000014002a1fa: lea      r15, [rsp + 0x2a0]
+0x000000014002a202: mov      rcx, r15
+0x000000014002a205: mov      rdx, rbx
+0x000000014002a208: mov      r8, r14
+0x000000014002a20b: call     0x140029a7f
+0x000000014002a210: lea      rbx, [rsp + 0x2c8]
+0x000000014002a218: mov      rcx, rbx
+0x000000014002a21b: mov      rdx, r15
+0x000000014002a21e: mov      r8d, 0x64
+0x000000014002a224: call     0x14002a28b
+0x000000014002a229: lea      r12, [rsp + 0x2f0]
+0x000000014002a231: mov      rcx, r12
+0x000000014002a234: mov      rdx, rbx
+0x000000014002a237: mov      r8, r15
+0x000000014002a23a: call     0x140029a7f
+0x000000014002a23f: lea      rbx, [rsp + 0x20]
+0x000000014002a244: mov      rcx, rbx
+0x000000014002a247: mov      rdx, r12
+0x000000014002a24a: mov      r8d, 0x32
+0x000000014002a250: call     0x14002a28b
+0x000000014002a255: mov      rcx, rsi
+0x000000014002a258: mov      rdx, rbx
+0x000000014002a25b: mov      r8, r14
+0x000000014002a25e: call     0x140029a7f
+0x000000014002a263: mov      rax, qword ptr [rdi + 0x20]
+0x000000014002a267: mov      qword ptr [rsi + 0x48], rax
+0x000000014002a26b: movups   xmm0, xmmword ptr [rdi]
+0x000000014002a26e: movups   xmm1, xmmword ptr [rdi + 0x10]
+0x000000014002a272: movups   xmmword ptr [rsi + 0x38], xmm1
+0x000000014002a276: movups   xmmword ptr [rsi + 0x28], xmm0
+0x000000014002a27a: add      rsp, 0x318
+0x000000014002a281: pop      rbx
+0x000000014002a282: pop      rdi
+0x000000014002a283: pop      rsi
+0x000000014002a284: pop      r12
+0x000000014002a286: pop      r14
+0x000000014002a288: pop      r15
+0x000000014002a28a: ret      

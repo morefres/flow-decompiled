@@ -1,19 +1,22 @@
-# Flow decompiled — static reconstruction workspace
+# Flow decompiled — Delta-style static reconstruction workspace
 
-This repository contains a read-only, static reconstruction of the supplied `flow.exe`. The target is a 64-bit native Windows PE built with Rust/Tauri and WebView2 indicators. It is not the original source repository.
+This repository now mirrors the layout of the Delta decompile workspace while preserving the Flow-specific PE evidence. It is a static reconstruction of the supplied 64-bit Rust/Tauri Windows executable, not the original source repository.
 
-## Contents
+## Layout
 
-- `artifacts/flow.exe` — original attached executable, byte-for-byte copied and SHA-256 recorded.
-- `analysis/pe/` — PE headers, sections, unwind/function index, imports and raw PE tool output.
-- `analysis/strings/` — ASCII/UTF-16 strings and classified endpoint/path/library observations.
-- `analysis/evidence/` — REA evidence bundle and retained provider records.
-- `resources/` — exact PE resource payloads extracted by file offset, with manifest hashes.
-- `lifted-src/flow_x64_functions.s` — instruction-faithful x86-64 listing bounded by Windows `.pdata` records.
-- `lifted-src/flow_x64_functions.c` — transparent C-like evidence lift consisting of observed instruction comments, not semantic source recovery.
-- `reconstructed-src/` — source-recovery boundary and recovered-artifact notes.
-- `docs/FLOW_STATIC_ANALYSIS_REPORT.md` — detailed findings and limitations.
+- `assets/extracted-app/` — complete copied target artifact (`flow.exe`).
+- `analysis/pe_bounded/flow/` — bounded PE metadata, imports, sections, and complete `.pdata` function index.
+- `analysis/strings/` — ASCII/UTF-16 strings and classified indicators.
+- `analysis/evidence/` — REA evidence bundle.
+- `lifted-src/functions/flow.exe/` — one C-like evidence lift per recovered function.
+- `lifted-src/low-level/flow.exe/` — one instruction-faithful x86-64 fallback per recovered function.
+- `reconstructed-src/shipped/` — exact source-like files shipped in the executable; none were present.
+- `recovered-open-source/` — no unverified upstream source baseline.
+- `docs/` — static report and accuracy boundary.
+- `resources/` — exact PE resource payloads.
 
-## Important accuracy boundary
+The original executable remains under `artifacts/` as well as the Delta-style `assets/extracted-app/` copy. All copies are digest-bound in `PROVENANCE.json`.
 
-The executable contains compiled native code, not the original Rust/Tauri source tree. A compiled binary cannot generally yield exact original filenames, module boundaries, comments, variable names, types, or source-level semantics. The generated C-like file is explicitly evidence-preserving and does not claim to be compilable or behaviorally equivalent. No target execution, network access, or dynamic instrumentation was performed.
+## Accuracy boundary
+
+The binary contains compiled Rust/Tauri native code, not the original Rust modules or frontend source. Per-function C files are transparent instruction-comment lifts and are not claimed to compile or reproduce vendor semantics. No target execution or dynamic instrumentation was performed.

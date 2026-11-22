@@ -1,0 +1,46 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x844edb-0x844f7a
+0x0000000140844edb: push     rsi
+0x0000000140844edc: sub      rsp, 0x20
+0x0000000140844ee0: add      edx, -2
+0x0000000140844ee3: cmp      edx, 3
+0x0000000140844ee6: ja       0x140844f02
+0x0000000140844ee8: mov      rsi, rcx
+0x0000000140844eeb: lea      rax, [rip + 0x367a42]
+0x0000000140844ef2: movsxd   rcx, dword ptr [rax + rdx*4]
+0x0000000140844ef6: add      rcx, rax
+0x0000000140844ef9: jmp      rcx
+0x0000000140844efb: cmp      word ptr [rsi], 0x7377
+0x0000000140844f00: je       0x140844f72
+0x0000000140844f02: mov      al, 2
+0x0000000140844f04: jmp      0x140844f74
+0x0000000140844f06: cmp      dword ptr [rsi], 0x70747468
+0x0000000140844f0c: je       0x140844f72
+0x0000000140844f0e: lea      rdx, [rip + 0x3467ae]
+0x0000000140844f15: mov      r8d, 4
+0x0000000140844f1b: mov      rcx, rsi
+0x0000000140844f1e: call     0x1408accc0
+0x0000000140844f23: test     eax, eax
+0x0000000140844f25: setne    al
+0x0000000140844f28: add      al, al
+0x0000000140844f2a: jmp      0x140844f74
+0x0000000140844f2c: lea      rdx, [rip + 0x346798]
+0x0000000140844f33: mov      r8d, 5
+0x0000000140844f39: jmp      0x140844f61
+0x0000000140844f3b: lea      rdx, [rip + 0x34678e]
+0x0000000140844f42: mov      r8d, 3
+0x0000000140844f48: mov      rcx, rsi
+0x0000000140844f4b: call     0x1408accc0
+0x0000000140844f50: test     eax, eax
+0x0000000140844f52: je       0x140844f72
+0x0000000140844f54: lea      rdx, [rip + 0x346765]
+0x0000000140844f5b: mov      r8d, 3
+0x0000000140844f61: mov      rcx, rsi
+0x0000000140844f64: call     0x1408accc0
+0x0000000140844f69: cmp      eax, 1
+0x0000000140844f6c: mov      al, 2
+0x0000000140844f6e: sbb      al, 0
+0x0000000140844f70: jmp      0x140844f74
+0x0000000140844f72: mov      al, 1
+0x0000000140844f74: add      rsp, 0x20
+0x0000000140844f78: pop      rsi
+0x0000000140844f79: ret      

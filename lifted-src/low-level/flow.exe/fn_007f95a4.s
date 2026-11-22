@@ -1,0 +1,47 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7f95a4-0x7f9634
+0x00000001407f95a4: push     rsi
+0x00000001407f95a5: push     rdi
+0x00000001407f95a6: sub      rsp, 0x28
+0x00000001407f95aa: mov      rdi, rdx
+0x00000001407f95ad: mov      rsi, rcx
+0x00000001407f95b0: cmp      r8, 5
+0x00000001407f95b4: je       0x1407f95eb
+0x00000001407f95b6: cmp      r8, 4
+0x00000001407f95ba: je       0x1407f95df
+0x00000001407f95bc: cmp      r8, 3
+0x00000001407f95c0: jne      0x1407f961d
+0x00000001407f95c2: lea      rdx, [rip + 0x3850ff]
+0x00000001407f95c9: mov      r8d, 3
+0x00000001407f95cf: mov      rcx, rdi
+0x00000001407f95d2: call     0x1408accc0
+0x00000001407f95d7: test     eax, eax
+0x00000001407f95d9: jne      0x1407f961d
+0x00000001407f95db: xor      eax, eax
+0x00000001407f95dd: jmp      0x1407f961f
+0x00000001407f95df: cmp      dword ptr [rdi], 0x65756c62
+0x00000001407f95e5: jne      0x1407f961d
+0x00000001407f95e7: mov      al, 2
+0x00000001407f95e9: jmp      0x1407f961f
+0x00000001407f95eb: lea      rdx, [rip + 0x3850d9]
+0x00000001407f95f2: mov      r8d, 5
+0x00000001407f95f8: mov      rcx, rdi
+0x00000001407f95fb: call     0x1408accc0
+0x00000001407f9600: test     eax, eax
+0x00000001407f9602: je       0x1407f962c
+0x00000001407f9604: lea      rdx, [rip + 0x3850c9]
+0x00000001407f960b: mov      r8d, 5
+0x00000001407f9611: mov      rcx, rdi
+0x00000001407f9614: call     0x1408accc0
+0x00000001407f9619: test     eax, eax
+0x00000001407f961b: je       0x1407f9630
+0x00000001407f961d: mov      al, 4
+0x00000001407f961f: mov      byte ptr [rsi + 1], al
+0x00000001407f9622: mov      byte ptr [rsi], 0
+0x00000001407f9625: add      rsp, 0x28
+0x00000001407f9629: pop      rdi
+0x00000001407f962a: pop      rsi
+0x00000001407f962b: ret      
+0x00000001407f962c: mov      al, 1
+0x00000001407f962e: jmp      0x1407f961f
+0x00000001407f9630: mov      al, 3
+0x00000001407f9632: jmp      0x1407f961f

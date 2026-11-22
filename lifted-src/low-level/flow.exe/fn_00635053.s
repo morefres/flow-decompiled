@@ -1,0 +1,75 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x635053-0x635134
+0x0000000140635053: push     rsi
+0x0000000140635054: push     rdi
+0x0000000140635055: mov      rax, rcx
+0x0000000140635058: mov      r8, qword ptr [rcx + 0x18]
+0x000000014063505c: cmp      edx, dword ptr [rcx + 0x20]
+0x000000014063505f: jae      0x1406350c1
+0x0000000140635061: mov      ecx, edx
+0x0000000140635063: shr      ecx, 0xe
+0x0000000140635066: lea      r9d, [rcx + 0x40]
+0x000000014063506a: add      ecx, 0x3fc
+0x0000000140635070: cmp      byte ptr [rax + 0x30], 0
+0x0000000140635074: cmovne   ecx, r9d
+0x0000000140635078: mov      r10, qword ptr [rax + 8]
+0x000000014063507c: cmp      r10, rcx
+0x000000014063507f: jbe      0x140635112
+0x0000000140635085: mov      r9, qword ptr [rax]
+0x0000000140635088: movzx    r11d, word ptr [r9 + rcx*2]
+0x000000014063508d: mov      ecx, edx
+0x000000014063508f: shr      ecx, 9
+0x0000000140635092: and      ecx, 0x1f
+0x0000000140635095: add      ecx, r11d
+0x0000000140635098: cmp      r10, rcx
+0x000000014063509b: jbe      0x140635112
+0x000000014063509d: movzx    r11d, word ptr [r9 + rcx*2]
+0x00000001406350a2: mov      ecx, edx
+0x00000001406350a4: shr      ecx, 4
+0x00000001406350a7: mov      esi, ecx
+0x00000001406350a9: and      esi, 0x1f
+0x00000001406350ac: test     r11w, r11w
+0x00000001406350b0: js       0x1406350c7
+0x00000001406350b2: add      esi, r11d
+0x00000001406350b5: cmp      r10, rsi
+0x00000001406350b8: jbe      0x140635112
+0x00000001406350ba: movzx    r10d, word ptr [r9 + rsi*2]
+0x00000001406350bf: jmp      0x14063510a
+0x00000001406350c1: lea      edx, [r8 - 2]
+0x00000001406350c5: jmp      0x140635116
+0x00000001406350c7: mov      edi, ecx
+0x00000001406350c9: and      edi, 0x18
+0x00000001406350cc: shr      esi, 3
+0x00000001406350cf: or       esi, edi
+0x00000001406350d1: and      r11d, 0x7fff
+0x00000001406350d8: add      r11d, esi
+0x00000001406350db: cmp      r10, r11
+0x00000001406350de: jbe      0x140635112
+0x00000001406350e0: and      ecx, 7
+0x00000001406350e3: lea      esi, [rcx + r11]
+0x00000001406350e7: inc      esi
+0x00000001406350e9: cmp      r10, rsi
+0x00000001406350ec: jbe      0x140635112
+0x00000001406350ee: add      ecx, ecx
+0x00000001406350f0: movzx    r10d, word ptr [r9 + r11*2]
+0x00000001406350f5: add      cl, 2
+0x00000001406350f8: shl      r10d, cl
+0x00000001406350fb: movzx    ecx, word ptr [r9 + rsi*2]
+0x0000000140635100: and      r10d, 0x30000
+0x0000000140635107: or       r10d, ecx
+0x000000014063510a: and      edx, 0xf
+0x000000014063510d: add      edx, r10d
+0x0000000140635110: jmp      0x140635116
+0x0000000140635112: lea      edx, [r8 - 1]
+0x0000000140635116: mov      ecx, edx
+0x0000000140635118: cmp      r8, rcx
+0x000000014063511b: jbe      0x140635124
+0x000000014063511d: mov      rdx, qword ptr [rax + 0x10]
+0x0000000140635121: mov      dl, byte ptr [rdx + rcx]
+0x0000000140635124: cmp      r8, rcx
+0x0000000140635127: ja       0x14063512e
+0x0000000140635129: mov      eax, dword ptr [rax + 0x34]
+0x000000014063512c: jmp      0x140635131
+0x000000014063512e: movzx    eax, dl
+0x0000000140635131: pop      rdi
+0x0000000140635132: pop      rsi
+0x0000000140635133: ret      

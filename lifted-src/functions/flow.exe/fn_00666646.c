@@ -1,0 +1,44 @@
+/* Evidence-based C-like lift; not original Rust source. */
+/* image=flow.exe rva=0x666646-0x6666c8 va=0x140666646 bytes=130 */
+void sub_0000000140666646(void) {
+    /* push rbp */
+    /* push rsi */
+    /* sub rsp, 0x38 */
+    /* lea rbp, [rsp + 0x30] */
+    /* mov qword ptr [rbp], 0xfffffffffffffffe */
+    /* mov qword ptr [rbp - 8], rcx */
+    /* mov rax, qword ptr [rcx + 0x10] */
+    /* lock dec qword ptr [rax] */
+    /* jne 0x140666679 */
+    /* mov rax, qword ptr [rbp - 8] */
+    /* mov rcx, qword ptr [rax + 0x10] */
+    /* mov rdx, qword ptr [rax + 0x18] */
+    /* call 0x140805f84 */
+    /* nop  */
+    /* mov rax, qword ptr [rbp - 8] */
+    /* mov rax, qword ptr [rax + 0x20] */
+    /* lock dec qword ptr [rax] */
+    /* jne 0x140666695 */
+    /* mov rax, qword ptr [rbp - 8] */
+    /* mov rcx, qword ptr [rax + 0x20] */
+    /* call 0x140665f8a */
+    /* nop  */
+    /* mov rsi, qword ptr [rbp - 8] */
+    /* cmp rsi, -1 */
+    /* je 0x1406666c1 */
+    /* lock dec qword ptr [rsi + 8] */
+    /* jne 0x1406666c1 */
+    /* call qword ptr [rip + 0x26b05c] */
+    /* mov rcx, rax */
+    /* xor edx, edx */
+    /* mov r8, rsi */
+    /* add rsp, 0x38 */
+    /* pop rsi */
+    /* pop rbp */
+    /* jmp qword ptr [rip + 0x26b03f] */
+    /* add rsp, 0x38 */
+    /* pop rsi */
+    /* pop rbp */
+    /* ret  */
+    /* Types, control-flow semantics, ABI effects, and source names remain unresolved. */
+}

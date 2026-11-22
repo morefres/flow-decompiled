@@ -1,0 +1,51 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x62932c-0x6293e4
+0x000000014062932c: push     rsi
+0x000000014062932d: push     rdi
+0x000000014062932e: push     rbx
+0x000000014062932f: sub      rsp, 0x20
+0x0000000140629333: mov      byte ptr [rcx + 0x423], 1
+0x000000014062933a: mov      rbx, qword ptr [rcx + 0x400]
+0x0000000140629341: test     rbx, rbx
+0x0000000140629344: je       0x1406293a0
+0x0000000140629346: mov      rsi, rdx
+0x0000000140629349: cmp      rdx, 0x401
+0x0000000140629350: jae      0x1406293ba
+0x0000000140629352: mov      rdi, rcx
+0x0000000140629355: mov      rax, qword ptr [rbx]
+0x0000000140629358: mov      rdx, qword ptr [rbx + 0x10]
+0x000000014062935c: sub      rax, rdx
+0x000000014062935f: cmp      rsi, rax
+0x0000000140629362: ja       0x1406293d3
+0x0000000140629364: test     rsi, rsi
+0x0000000140629367: je       0x14062937f
+0x0000000140629369: add      rdx, qword ptr [rbx + 8]
+0x000000014062936d: mov      rcx, rdx
+0x0000000140629370: mov      rdx, rdi
+0x0000000140629373: mov      r8, rsi
+0x0000000140629376: call     0x1408acdc0
+0x000000014062937b: mov      rdx, qword ptr [rbx + 0x10]
+0x000000014062937f: add      rdx, rsi
+0x0000000140629382: mov      qword ptr [rbx + 0x10], rdx
+0x0000000140629386: mov      byte ptr [rdi + 0x423], 0
+0x000000014062938d: mov      qword ptr [rdi + 0x410], 0
+0x0000000140629398: add      rsp, 0x20
+0x000000014062939c: pop      rbx
+0x000000014062939d: pop      rdi
+0x000000014062939e: pop      rsi
+0x000000014062939f: ret      
+0x00000001406293a0: lea      rcx, [rip + 0x539e49]
+0x00000001406293a7: lea      r8, [rip + 0x5049e2]
+0x00000001406293ae: mov      edx, 0x16
+0x00000001406293b3: call     0x1408ae980
+0x00000001406293b8: ud2      
+0x00000001406293ba: lea      r9, [rip + 0x5049e7]
+0x00000001406293c1: mov      r8d, 0x400
+0x00000001406293c7: xor      ecx, ecx
+0x00000001406293c9: mov      rdx, rsi
+0x00000001406293cc: call     0x1408ae7a0
+0x00000001406293d1: ud2      
+0x00000001406293d3: mov      rcx, rbx
+0x00000001406293d6: mov      r8, rsi
+0x00000001406293d9: call     0x1408ade4d
+0x00000001406293de: mov      rdx, qword ptr [rbx + 0x10]
+0x00000001406293e2: jmp      0x140629369

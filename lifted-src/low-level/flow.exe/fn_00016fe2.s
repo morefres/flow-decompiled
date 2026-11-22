@@ -1,0 +1,121 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x16fe2-0x171af
+0x0000000140016fe2: push     r15
+0x0000000140016fe4: push     r14
+0x0000000140016fe6: push     rsi
+0x0000000140016fe7: push     rdi
+0x0000000140016fe8: push     rbx
+0x0000000140016fe9: sub      rsp, 0x40
+0x0000000140016fed: mov      rsi, rcx
+0x0000000140016ff0: mov      cl, byte ptr [rcx + 0xcb8]
+0x0000000140016ff6: mov      eax, 1
+0x0000000140016ffb: shl      eax, cl
+0x0000000140016ffd: mov      r9b, byte ptr [rsi + 0xde1]
+0x0000000140017004: mov      dword ptr [rsi + 0xc58], eax
+0x000000014001700a: cmp      byte ptr [rsi + 0xde2], 0
+0x0000000140017011: je       0x140017053
+0x0000000140017013: mov      ecx, dword ptr [rsi + 0x510]
+0x0000000140017019: mov      r10d, dword ptr [rsi + 0x514]
+0x0000000140017020: cmp      rcx, 0x41
+0x0000000140017024: setb     bl
+0x0000000140017027: mov      r11d, dword ptr [rsi + 0x518]
+0x000000014001702e: lea      rdi, [r11 + r10]
+0x0000000140017032: cmp      rdi, r8
+0x0000000140017035: setbe    r8b
+0x0000000140017039: and      r8b, bl
+0x000000014001703c: cmp      r8b, 1
+0x0000000140017040: jne      0x140017053
+0x0000000140017042: mov      edi, 0x40
+0x0000000140017047: sub      edi, ecx
+0x0000000140017049: test     dil, 7
+0x000000014001704d: je       0x140017136
+0x0000000140017053: test     r9b, r9b
+0x0000000140017056: je       0x14001709d
+0x0000000140017058: cmp      byte ptr [rsi + 0xcd5], 0
+0x000000014001705f: je       0x14001709d
+0x0000000140017061: mov      r8d, dword ptr [rsi + 0xc70]
+0x0000000140017068: cmp      eax, 0x21
+0x000000014001706b: jl       0x14001709d
+0x000000014001706d: movsxd   rcx, r8d
+0x0000000140017070: lea      rcx, [rcx*2 + 0x20]
+0x0000000140017078: movsxd   rdx, eax
+0x000000014001707b: cmp      rcx, rdx
+0x000000014001707e: jg       0x14001709d
+0x0000000140017080: mov      edx, eax
+0x0000000140017082: mov      r8d, edx
+0x0000000140017085: shr      edx, 1
+0x0000000140017087: cmp      r8d, 0x42
+0x000000014001708b: jb       0x140017092
+0x000000014001708d: cmp      rcx, rdx
+0x0000000140017090: jle      0x140017082
+0x0000000140017092: cmp      edx, eax
+0x0000000140017094: cmovb    eax, edx
+0x0000000140017097: mov      dword ptr [rsi + 0xc58], eax
+0x000000014001709d: lea      ecx, [rax - 1]
+0x00000001400170a0: mov      dword ptr [rsi + 0xc5c], ecx
+0x00000001400170a6: movsxd   rdi, eax
+0x00000001400170a9: lea      rdx, [rdi + 0x236]
+0x00000001400170b0: lea      rbx, [rsp + 0x28]
+0x00000001400170b5: mov      rcx, rbx
+0x00000001400170b8: call     0x14000c50a
+0x00000001400170bd: mov      rcx, rbx
+0x00000001400170c0: call     0x1400106c1
+0x00000001400170c5: mov      r14, rax
+0x00000001400170c8: mov      rbx, rdx
+0x00000001400170cb: cmp      qword ptr [rsi + 0x430], 0
+0x00000001400170d3: je       0x1400170f0
+0x00000001400170d5: mov      r15, qword ptr [rsi + 0x428]
+0x00000001400170dc: call     qword ptr [rip + 0x8ba626]
+0x00000001400170e2: mov      rcx, rax
+0x00000001400170e5: xor      edx, edx
+0x00000001400170e7: mov      r8, r15
+0x00000001400170ea: call     qword ptr [rip + 0x8ba610]
+0x00000001400170f0: mov      qword ptr [rsi + 0x428], r14
+0x00000001400170f7: mov      qword ptr [rsi + 0x430], rbx
+0x00000001400170fe: test     rbx, rbx
+0x0000000140017101: je       0x140017124
+0x0000000140017103: lea      rcx, [rdi - 1]
+0x0000000140017107: cmp      rcx, rbx
+0x000000014001710a: jae      0x140017192
+0x0000000140017110: mov      byte ptr [r14 + rdi - 1], 0
+0x0000000140017116: add      rdi, -2
+0x000000014001711a: cmp      rdi, rbx
+0x000000014001711d: jae      0x14001719b
+0x000000014001711f: mov      byte ptr [r14 + rdi], 0
+0x0000000140017124: test     rbx, rbx
+0x0000000140017127: setne    al
+0x000000014001712a: add      rsp, 0x40
+0x000000014001712e: pop      rbx
+0x000000014001712f: pop      rdi
+0x0000000140017130: pop      rsi
+0x0000000140017131: pop      r14
+0x0000000140017133: pop      r15
+0x0000000140017135: ret      
+0x0000000140017136: mov      r8d, dword ptr [rsi + 0xc70]
+0x000000014001713d: shr      edi, 3
+0x0000000140017140: cmp      r8d, edi
+0x0000000140017143: jae      0x14001715c
+0x0000000140017145: mov      rdx, qword ptr [rsi + 0x508]
+0x000000014001714c: shr      rdx, cl
+0x000000014001714f: lea      ecx, [r8*8]
+0x0000000140017157: shr      rdx, cl
+0x000000014001715a: jmp      0x140017175
+0x000000014001715c: mov      edi, edi
+0x000000014001715e: mov      rcx, r8
+0x0000000140017161: sub      rcx, rdi
+0x0000000140017164: cmp      ecx, r11d
+0x0000000140017167: jae      0x140017053
+0x000000014001716d: add      rdx, rcx
+0x0000000140017170: movzx    edx, byte ptr [r10 + rdx]
+0x0000000140017175: not      edx
+0x0000000140017177: test     dl, 3
+0x000000014001717a: jne      0x140017053
+0x0000000140017180: cmp      byte ptr [rsi + 0xcd5], 0
+0x0000000140017187: jne      0x140017068
+0x000000014001718d: jmp      0x14001709d
+0x0000000140017192: lea      r8, [rip + 0x8e23df]
+0x0000000140017199: jmp      0x1400171a5
+0x000000014001719b: lea      r8, [rip + 0x8e23ee]
+0x00000001400171a2: mov      rcx, rdi
+0x00000001400171a5: mov      rdx, rbx
+0x00000001400171a8: call     0x1408ae879
+0x00000001400171ad: ud2      

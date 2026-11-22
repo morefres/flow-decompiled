@@ -1,0 +1,43 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x5d43d-0x5d4c5
+0x000000014005d43d: push     r14
+0x000000014005d43f: push     rsi
+0x000000014005d440: push     rdi
+0x000000014005d441: push     rbx
+0x000000014005d442: sub      rsp, 0x28
+0x000000014005d446: mov      rbx, r8
+0x000000014005d449: mov      rdi, rdx
+0x000000014005d44c: mov      rsi, rcx
+0x000000014005d44f: lea      rdx, [rip + 0xb2f7b5]
+0x000000014005d456: mov      r8d, 1
+0x000000014005d45c: call     0x14002fe6f
+0x000000014005d461: test     rbx, rbx
+0x000000014005d464: je       0x14005d4a4
+0x000000014005d466: imul     r14, rbx, 0x58
+0x000000014005d46a: mov      al, 1
+0x000000014005d46c: lea      rbx, [rip + 0xb276f7]
+0x000000014005d473: test     al, 1
+0x000000014005d475: jne      0x14005d488
+0x000000014005d477: mov      r8d, 1
+0x000000014005d47d: mov      rcx, rsi
+0x000000014005d480: mov      rdx, rbx
+0x000000014005d483: call     0x14002fe6f
+0x000000014005d488: mov      rcx, rdi
+0x000000014005d48b: mov      rdx, rsi
+0x000000014005d48e: call     0x14004c73a
+0x000000014005d493: test     rax, rax
+0x000000014005d496: jne      0x14005d4bb
+0x000000014005d498: add      rdi, 0x58
+0x000000014005d49c: xor      eax, eax
+0x000000014005d49e: add      r14, -0x58
+0x000000014005d4a2: jne      0x14005d473
+0x000000014005d4a4: lea      rdx, [rip + 0xb2f24f]
+0x000000014005d4ab: mov      r8d, 1
+0x000000014005d4b1: mov      rcx, rsi
+0x000000014005d4b4: call     0x14002fe6f
+0x000000014005d4b9: xor      eax, eax
+0x000000014005d4bb: add      rsp, 0x28
+0x000000014005d4bf: pop      rbx
+0x000000014005d4c0: pop      rdi
+0x000000014005d4c1: pop      rsi
+0x000000014005d4c2: pop      r14
+0x000000014005d4c4: ret      

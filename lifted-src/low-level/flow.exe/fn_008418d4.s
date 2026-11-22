@@ -1,0 +1,28 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x8418d4-0x841928
+0x00000001408418d4: push     rsi
+0x00000001408418d5: push     rdi
+0x00000001408418d6: sub      rsp, 0x38
+0x00000001408418da: mov      rsi, rcx
+0x00000001408418dd: lea      rdi, [rsp + 0x20]
+0x00000001408418e2: mov      rcx, rdi
+0x00000001408418e5: mov      r9, rsi
+0x00000001408418e8: call     0x140841928
+0x00000001408418ed: test     byte ptr [rdi], 1
+0x00000001408418f0: jne      0x1408418f6
+0x00000001408418f2: xor      eax, eax
+0x00000001408418f4: jmp      0x140841913
+0x00000001408418f6: mov      rcx, qword ptr [rsp + 0x30]
+0x00000001408418fb: mov      rdx, qword ptr [rsi + 0x28]
+0x00000001408418ff: cmp      rcx, rdx
+0x0000000140841902: jae      0x14084191a
+0x0000000140841904: mov      rax, qword ptr [rsi + 0x20]
+0x0000000140841908: imul     rcx, rcx, 0x68
+0x000000014084190c: add      rax, rcx
+0x000000014084190f: add      rax, 0x18
+0x0000000140841913: add      rsp, 0x38
+0x0000000140841917: pop      rdi
+0x0000000140841918: pop      rsi
+0x0000000140841919: ret      
+0x000000014084191a: lea      r8, [rip + 0x343517]
+0x0000000140841921: call     0x1408ae879
+0x0000000140841926: ud2      

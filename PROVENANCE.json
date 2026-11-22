@@ -133,5 +133,10 @@
     }
   ],
   "analysis_mode": "static-only",
-  "execution_performed": false
+  "execution_performed": false,
+  "delta_style_layout": true,
+  "delta_style_function_files": 41361,
+  "delta_style_instruction_comments": 2258997,
+  "source_copy_sha256": "0547ece3d1f51cdc7f1169d077a548303ed9e388d527ca8a00399995d08efaad",
+  "source_copy_bytes": 14958080
 }

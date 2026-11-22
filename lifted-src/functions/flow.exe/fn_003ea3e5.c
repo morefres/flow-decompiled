@@ -1,0 +1,77 @@
+/* Evidence-based C-like lift; not original Rust source. */
+/* image=flow.exe rva=0x3ea3e5-0x3ea4eb va=0x1403ea3e5 bytes=262 */
+void sub_00000001403ea3e5(void) {
+    /* mov qword ptr [rsp + 0x10], rdx */
+    /* push rbp */
+    /* push r15 */
+    /* push r14 */
+    /* push r13 */
+    /* push r12 */
+    /* push rsi */
+    /* push rdi */
+    /* push rbx */
+    /* sub rsp, 0x78 */
+    /* lea rbp, [rdx + 0x80] */
+    /* movdqa xmmword ptr [rsp + 0x40], xmm8 */
+    /* movdqa xmmword ptr [rsp + 0x50], xmm7 */
+    /* movdqa xmmword ptr [rsp + 0x60], xmm6 */
+    /* mov rcx, qword ptr [rbp + 0x8a8] */
+    /* cmp rcx, -1 */
+    /* jne 0x1403ea45e */
+    /* mov rax, qword ptr [rbp + 0x8c0] */
+    /* mov qword ptr [rbp + 0x800], rax */
+    /* mov rax, qword ptr [rbp + 0x8b8] */
+    /* mov qword ptr [rbp + 0x7f8], rax */
+    /* movaps xmm6, xmmword ptr [rsp + 0x60] */
+    /* movaps xmm7, xmmword ptr [rsp + 0x50] */
+    /* movaps xmm8, xmmword ptr [rsp + 0x40] */
+    /* add rsp, 0x78 */
+    /* pop rbx */
+    /* pop rdi */
+    /* pop rsi */
+    /* pop r12 */
+    /* pop r13 */
+    /* pop r14 */
+    /* pop r15 */
+    /* pop rbp */
+    /* ret  */
+    /* test byte ptr [rbp + 0x88f], 1 */
+    /* mov rsi, qword ptr [rbp + 0x8c0] */
+    /* mov rdi, qword ptr [rbp + 0x8b8] */
+    /* je 0x1403ea4bc */
+    /* mov r8d, 1 */
+    /* mov r9d, 1 */
+    /* mov rdx, qword ptr [rbp + 0x890] */
+    /* call 0x14000a0f6 */
+    /* mov qword ptr [rbp + 0x800], rsi */
+    /* mov qword ptr [rbp + 0x7f8], rdi */
+    /* movaps xmm6, xmmword ptr [rsp + 0x60] */
+    /* movaps xmm7, xmmword ptr [rsp + 0x50] */
+    /* movaps xmm8, xmmword ptr [rsp + 0x40] */
+    /* add rsp, 0x78 */
+    /* pop rbx */
+    /* pop rdi */
+    /* pop rsi */
+    /* pop r12 */
+    /* pop r13 */
+    /* pop r14 */
+    /* pop r15 */
+    /* pop rbp */
+    /* ret  */
+    /* mov qword ptr [rbp + 0x800], rsi */
+    /* mov qword ptr [rbp + 0x7f8], rdi */
+    /* movaps xmm6, xmmword ptr [rsp + 0x60] */
+    /* movaps xmm7, xmmword ptr [rsp + 0x50] */
+    /* movaps xmm8, xmmword ptr [rsp + 0x40] */
+    /* add rsp, 0x78 */
+    /* pop rbx */
+    /* pop rdi */
+    /* pop rsi */
+    /* pop r12 */
+    /* pop r13 */
+    /* pop r14 */
+    /* pop r15 */
+    /* pop rbp */
+    /* ret  */
+    /* Types, control-flow semantics, ABI effects, and source names remain unresolved. */
+}

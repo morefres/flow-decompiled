@@ -1,0 +1,1173 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x87fc0d-0x880e1c
+0x000000014087fc0d: mov      rdi, rcx
+0x000000014087fc10: mov      rsi, rdx
+0x000000014087fc13: mov      rdx, r8
+0x000000014087fc16: mov      rax, rsp
+0x000000014087fc19: push     rbx
+0x000000014087fc1a: push     rbp
+0x000000014087fc1b: push     r12
+0x000000014087fc1d: push     r13
+0x000000014087fc1f: push     r14
+0x000000014087fc21: push     r15
+0x000000014087fc23: shl      rdx, 4
+0x000000014087fc27: sub      rsp, 0x100
+0x000000014087fc2e: lea      rdx, [rsi + rdx*8]
+0x000000014087fc32: and      rsp, 0xffffffffffffffc0
+0x000000014087fc36: mov      qword ptr [rsp + 0x80], rdi
+0x000000014087fc3e: mov      qword ptr [rsp + 0x88], rsi
+0x000000014087fc46: mov      qword ptr [rsp + 0x90], rdx
+0x000000014087fc4e: mov      qword ptr [rsp + 0x98], rax
+0x000000014087fc56: movaps   xmmword ptr [rsp + 0xa0], xmm6
+0x000000014087fc5e: movaps   xmmword ptr [rsp + 0xb0], xmm7
+0x000000014087fc66: movaps   xmmword ptr [rsp + 0xc0], xmm8
+0x000000014087fc6f: movaps   xmmword ptr [rsp + 0xd0], xmm9
+0x000000014087fc78: movaps   xmmword ptr [rsp + 0xe0], xmm10
+0x000000014087fc81: movaps   xmmword ptr [rsp + 0xf0], xmm11
+0x000000014087fc8a: vzeroupper 
+0x000000014087fc8d: mov      rax, qword ptr [rdi]
+0x000000014087fc90: mov      rbx, qword ptr [rdi + 8]
+0x000000014087fc94: mov      rcx, qword ptr [rdi + 0x10]
+0x000000014087fc98: mov      rdx, qword ptr [rdi + 0x18]
+0x000000014087fc9c: mov      r8, qword ptr [rdi + 0x20]
+0x000000014087fca0: mov      r9, qword ptr [rdi + 0x28]
+0x000000014087fca4: mov      r10, qword ptr [rdi + 0x30]
+0x000000014087fca8: mov      r11, qword ptr [rdi + 0x38]
+0x000000014087fcac: jmp      0x14087fcc0
+0x000000014087fcb1: nop      
+0x000000014087fcb2: nop      
+0x000000014087fcb3: nop      
+0x000000014087fcb4: nop      
+0x000000014087fcb5: nop      
+0x000000014087fcb6: nop      
+0x000000014087fcb7: nop      
+0x000000014087fcb8: nop      
+0x000000014087fcb9: nop      
+0x000000014087fcba: nop      
+0x000000014087fcbb: nop      
+0x000000014087fcbc: nop      
+0x000000014087fcbd: nop      
+0x000000014087fcbe: nop      
+0x000000014087fcbf: nop      
+0x000000014087fcc0: vmovdqa  xmm11, xmmword ptr [rip + 0x32dc78]
+0x000000014087fcc8: vmovdqu  xmm0, xmmword ptr [rsi]
+0x000000014087fccc: lea      rbp, [rip + 0x32d7ed]
+0x000000014087fcd3: vmovdqu  xmm1, xmmword ptr [rsi + 0x10]
+0x000000014087fcd8: vmovdqu  xmm2, xmmword ptr [rsi + 0x20]
+0x000000014087fcdd: vpshufb  xmm0, xmm0, xmm11
+0x000000014087fce2: vmovdqu  xmm3, xmmword ptr [rsi + 0x30]
+0x000000014087fce7: vpshufb  xmm1, xmm1, xmm11
+0x000000014087fcec: vmovdqu  xmm4, xmmword ptr [rsi + 0x40]
+0x000000014087fcf1: vpshufb  xmm2, xmm2, xmm11
+0x000000014087fcf6: vmovdqu  xmm5, xmmword ptr [rsi + 0x50]
+0x000000014087fcfb: vpshufb  xmm3, xmm3, xmm11
+0x000000014087fd00: vmovdqu  xmm6, xmmword ptr [rsi + 0x60]
+0x000000014087fd05: vpshufb  xmm4, xmm4, xmm11
+0x000000014087fd0a: vmovdqu  xmm7, xmmword ptr [rsi + 0x70]
+0x000000014087fd0f: vpshufb  xmm5, xmm5, xmm11
+0x000000014087fd14: vpaddq   xmm8, xmm0, xmmword ptr [rbp - 0x80]
+0x000000014087fd19: vpshufb  xmm6, xmm6, xmm11
+0x000000014087fd1e: vpaddq   xmm9, xmm1, xmmword ptr [rbp - 0x60]
+0x000000014087fd23: vpshufb  xmm7, xmm7, xmm11
+0x000000014087fd28: vpaddq   xmm10, xmm2, xmmword ptr [rbp - 0x40]
+0x000000014087fd2d: vpaddq   xmm11, xmm3, xmmword ptr [rbp - 0x20]
+0x000000014087fd32: vmovdqa  xmmword ptr [rsp], xmm8
+0x000000014087fd37: vpaddq   xmm8, xmm4, xmmword ptr [rbp]
+0x000000014087fd3c: vmovdqa  xmmword ptr [rsp + 0x10], xmm9
+0x000000014087fd42: vpaddq   xmm9, xmm5, xmmword ptr [rbp + 0x20]
+0x000000014087fd47: vmovdqa  xmmword ptr [rsp + 0x20], xmm10
+0x000000014087fd4d: vpaddq   xmm10, xmm6, xmmword ptr [rbp + 0x40]
+0x000000014087fd52: vmovdqa  xmmword ptr [rsp + 0x30], xmm11
+0x000000014087fd58: vpaddq   xmm11, xmm7, xmmword ptr [rbp + 0x60]
+0x000000014087fd5d: vmovdqa  xmmword ptr [rsp + 0x40], xmm8
+0x000000014087fd63: mov      r14, rax
+0x000000014087fd66: vmovdqa  xmmword ptr [rsp + 0x50], xmm9
+0x000000014087fd6c: mov      rdi, rbx
+0x000000014087fd6f: vmovdqa  xmmword ptr [rsp + 0x60], xmm10
+0x000000014087fd75: xor      rdi, rcx
+0x000000014087fd78: vmovdqa  xmmword ptr [rsp + 0x70], xmm11
+0x000000014087fd7e: mov      r13, r8
+0x000000014087fd81: jmp      0x14087fd90
+0x000000014087fd86: nop      
+0x000000014087fd87: nop      
+0x000000014087fd88: nop      
+0x000000014087fd89: nop      
+0x000000014087fd8a: nop      
+0x000000014087fd8b: nop      
+0x000000014087fd8c: nop      
+0x000000014087fd8d: nop      
+0x000000014087fd8e: nop      
+0x000000014087fd8f: nop      
+0x000000014087fd90: add      rbp, 0x100
+0x000000014087fd97: vpalignr xmm8, xmm1, xmm0, 8
+0x000000014087fd9d: shrd     r13, r13, 0x17
+0x000000014087fda2: mov      rax, r14
+0x000000014087fda5: vpalignr xmm11, xmm5, xmm4, 8
+0x000000014087fdab: mov      r12, r9
+0x000000014087fdae: shrd     r14, r14, 5
+0x000000014087fdb3: vpsrlq   xmm10, xmm8, 1
+0x000000014087fdb9: xor      r13, r8
+0x000000014087fdbc: xor      r12, r10
+0x000000014087fdbf: vpaddq   xmm0, xmm0, xmm11
+0x000000014087fdc4: shrd     r13, r13, 4
+0x000000014087fdc9: xor      r14, rax
+0x000000014087fdcc: vpsrlq   xmm11, xmm8, 7
+0x000000014087fdd2: and      r12, r8
+0x000000014087fdd5: xor      r13, r8
+0x000000014087fdd8: vpsllq   xmm9, xmm8, 0x38
+0x000000014087fdde: add      r11, qword ptr [rsp]
+0x000000014087fde2: mov      r15, rax
+0x000000014087fde5: vpxor    xmm8, xmm11, xmm10
+0x000000014087fdea: xor      r12, r10
+0x000000014087fded: shrd     r14, r14, 6
+0x000000014087fdf2: vpsrlq   xmm10, xmm10, 7
+0x000000014087fdf8: xor      r15, rbx
+0x000000014087fdfb: add      r11, r12
+0x000000014087fdfe: vpxor    xmm8, xmm8, xmm9
+0x000000014087fe03: shrd     r13, r13, 0xe
+0x000000014087fe08: and      rdi, r15
+0x000000014087fe0b: vpsllq   xmm9, xmm9, 7
+0x000000014087fe11: xor      r14, rax
+0x000000014087fe14: add      r11, r13
+0x000000014087fe17: vpxor    xmm8, xmm8, xmm10
+0x000000014087fe1c: xor      rdi, rbx
+0x000000014087fe1f: shrd     r14, r14, 0x1c
+0x000000014087fe24: vpsrlq   xmm11, xmm7, 6
+0x000000014087fe29: add      rdx, r11
+0x000000014087fe2c: add      r11, rdi
+0x000000014087fe2f: vpxor    xmm8, xmm8, xmm9
+0x000000014087fe34: mov      r13, rdx
+0x000000014087fe37: add      r14, r11
+0x000000014087fe3a: vpsllq   xmm10, xmm7, 3
+0x000000014087fe3f: shrd     r13, r13, 0x17
+0x000000014087fe44: mov      r11, r14
+0x000000014087fe47: vpaddq   xmm0, xmm0, xmm8
+0x000000014087fe4c: mov      r12, r8
+0x000000014087fe4f: shrd     r14, r14, 5
+0x000000014087fe54: vpsrlq   xmm9, xmm7, 0x13
+0x000000014087fe59: xor      r13, rdx
+0x000000014087fe5c: xor      r12, r9
+0x000000014087fe5f: vpxor    xmm11, xmm11, xmm10
+0x000000014087fe64: shrd     r13, r13, 4
+0x000000014087fe69: xor      r14, r11
+0x000000014087fe6c: vpsllq   xmm10, xmm10, 0x2a
+0x000000014087fe72: and      r12, rdx
+0x000000014087fe75: xor      r13, rdx
+0x000000014087fe78: vpxor    xmm11, xmm11, xmm9
+0x000000014087fe7d: add      r10, qword ptr [rsp + 8]
+0x000000014087fe82: mov      rdi, r11
+0x000000014087fe85: vpsrlq   xmm9, xmm9, 0x2a
+0x000000014087fe8b: xor      r12, r9
+0x000000014087fe8e: shrd     r14, r14, 6
+0x000000014087fe93: vpxor    xmm11, xmm11, xmm10
+0x000000014087fe98: xor      rdi, rax
+0x000000014087fe9b: add      r10, r12
+0x000000014087fe9e: vpxor    xmm11, xmm11, xmm9
+0x000000014087fea3: shrd     r13, r13, 0xe
+0x000000014087fea8: and      r15, rdi
+0x000000014087feab: vpaddq   xmm0, xmm0, xmm11
+0x000000014087feb0: xor      r14, r11
+0x000000014087feb3: add      r10, r13
+0x000000014087feb6: vpaddq   xmm10, xmm0, xmmword ptr [rbp - 0x80]
+0x000000014087febb: xor      r15, rax
+0x000000014087febe: shrd     r14, r14, 0x1c
+0x000000014087fec3: add      rcx, r10
+0x000000014087fec6: add      r10, r15
+0x000000014087fec9: mov      r13, rcx
+0x000000014087fecc: add      r14, r10
+0x000000014087fecf: vmovdqa  xmmword ptr [rsp], xmm10
+0x000000014087fed4: vpalignr xmm8, xmm2, xmm1, 8
+0x000000014087feda: shrd     r13, r13, 0x17
+0x000000014087fedf: mov      r10, r14
+0x000000014087fee2: vpalignr xmm11, xmm6, xmm5, 8
+0x000000014087fee8: mov      r12, rdx
+0x000000014087feeb: shrd     r14, r14, 5
+0x000000014087fef0: vpsrlq   xmm10, xmm8, 1
+0x000000014087fef6: xor      r13, rcx
+0x000000014087fef9: xor      r12, r8
+0x000000014087fefc: vpaddq   xmm1, xmm1, xmm11
+0x000000014087ff01: shrd     r13, r13, 4
+0x000000014087ff06: xor      r14, r10
+0x000000014087ff09: vpsrlq   xmm11, xmm8, 7
+0x000000014087ff0f: and      r12, rcx
+0x000000014087ff12: xor      r13, rcx
+0x000000014087ff15: vpsllq   xmm9, xmm8, 0x38
+0x000000014087ff1b: add      r9, qword ptr [rsp + 0x10]
+0x000000014087ff20: mov      r15, r10
+0x000000014087ff23: vpxor    xmm8, xmm11, xmm10
+0x000000014087ff28: xor      r12, r8
+0x000000014087ff2b: shrd     r14, r14, 6
+0x000000014087ff30: vpsrlq   xmm10, xmm10, 7
+0x000000014087ff36: xor      r15, r11
+0x000000014087ff39: add      r9, r12
+0x000000014087ff3c: vpxor    xmm8, xmm8, xmm9
+0x000000014087ff41: shrd     r13, r13, 0xe
+0x000000014087ff46: and      rdi, r15
+0x000000014087ff49: vpsllq   xmm9, xmm9, 7
+0x000000014087ff4f: xor      r14, r10
+0x000000014087ff52: add      r9, r13
+0x000000014087ff55: vpxor    xmm8, xmm8, xmm10
+0x000000014087ff5a: xor      rdi, r11
+0x000000014087ff5d: shrd     r14, r14, 0x1c
+0x000000014087ff62: vpsrlq   xmm11, xmm0, 6
+0x000000014087ff67: add      rbx, r9
+0x000000014087ff6a: add      r9, rdi
+0x000000014087ff6d: vpxor    xmm8, xmm8, xmm9
+0x000000014087ff72: mov      r13, rbx
+0x000000014087ff75: add      r14, r9
+0x000000014087ff78: vpsllq   xmm10, xmm0, 3
+0x000000014087ff7d: shrd     r13, r13, 0x17
+0x000000014087ff82: mov      r9, r14
+0x000000014087ff85: vpaddq   xmm1, xmm1, xmm8
+0x000000014087ff8a: mov      r12, rcx
+0x000000014087ff8d: shrd     r14, r14, 5
+0x000000014087ff92: vpsrlq   xmm9, xmm0, 0x13
+0x000000014087ff97: xor      r13, rbx
+0x000000014087ff9a: xor      r12, rdx
+0x000000014087ff9d: vpxor    xmm11, xmm11, xmm10
+0x000000014087ffa2: shrd     r13, r13, 4
+0x000000014087ffa7: xor      r14, r9
+0x000000014087ffaa: vpsllq   xmm10, xmm10, 0x2a
+0x000000014087ffb0: and      r12, rbx
+0x000000014087ffb3: xor      r13, rbx
+0x000000014087ffb6: vpxor    xmm11, xmm11, xmm9
+0x000000014087ffbb: add      r8, qword ptr [rsp + 0x18]
+0x000000014087ffc0: mov      rdi, r9
+0x000000014087ffc3: vpsrlq   xmm9, xmm9, 0x2a
+0x000000014087ffc9: xor      r12, rdx
+0x000000014087ffcc: shrd     r14, r14, 6
+0x000000014087ffd1: vpxor    xmm11, xmm11, xmm10
+0x000000014087ffd6: xor      rdi, r10
+0x000000014087ffd9: add      r8, r12
+0x000000014087ffdc: vpxor    xmm11, xmm11, xmm9
+0x000000014087ffe1: shrd     r13, r13, 0xe
+0x000000014087ffe6: and      r15, rdi
+0x000000014087ffe9: vpaddq   xmm1, xmm1, xmm11
+0x000000014087ffee: xor      r14, r9
+0x000000014087fff1: add      r8, r13
+0x000000014087fff4: vpaddq   xmm10, xmm1, xmmword ptr [rbp - 0x60]
+0x000000014087fff9: xor      r15, r10
+0x000000014087fffc: shrd     r14, r14, 0x1c
+0x0000000140880001: add      rax, r8
+0x0000000140880004: add      r8, r15
+0x0000000140880007: mov      r13, rax
+0x000000014088000a: add      r14, r8
+0x000000014088000d: vmovdqa  xmmword ptr [rsp + 0x10], xmm10
+0x0000000140880013: vpalignr xmm8, xmm3, xmm2, 8
+0x0000000140880019: shrd     r13, r13, 0x17
+0x000000014088001e: mov      r8, r14
+0x0000000140880021: vpalignr xmm11, xmm7, xmm6, 8
+0x0000000140880027: mov      r12, rbx
+0x000000014088002a: shrd     r14, r14, 5
+0x000000014088002f: vpsrlq   xmm10, xmm8, 1
+0x0000000140880035: xor      r13, rax
+0x0000000140880038: xor      r12, rcx
+0x000000014088003b: vpaddq   xmm2, xmm2, xmm11
+0x0000000140880040: shrd     r13, r13, 4
+0x0000000140880045: xor      r14, r8
+0x0000000140880048: vpsrlq   xmm11, xmm8, 7
+0x000000014088004e: and      r12, rax
+0x0000000140880051: xor      r13, rax
+0x0000000140880054: vpsllq   xmm9, xmm8, 0x38
+0x000000014088005a: add      rdx, qword ptr [rsp + 0x20]
+0x000000014088005f: mov      r15, r8
+0x0000000140880062: vpxor    xmm8, xmm11, xmm10
+0x0000000140880067: xor      r12, rcx
+0x000000014088006a: shrd     r14, r14, 6
+0x000000014088006f: vpsrlq   xmm10, xmm10, 7
+0x0000000140880075: xor      r15, r9
+0x0000000140880078: add      rdx, r12
+0x000000014088007b: vpxor    xmm8, xmm8, xmm9
+0x0000000140880080: shrd     r13, r13, 0xe
+0x0000000140880085: and      rdi, r15
+0x0000000140880088: vpsllq   xmm9, xmm9, 7
+0x000000014088008e: xor      r14, r8
+0x0000000140880091: add      rdx, r13
+0x0000000140880094: vpxor    xmm8, xmm8, xmm10
+0x0000000140880099: xor      rdi, r9
+0x000000014088009c: shrd     r14, r14, 0x1c
+0x00000001408800a1: vpsrlq   xmm11, xmm1, 6
+0x00000001408800a6: add      r11, rdx
+0x00000001408800a9: add      rdx, rdi
+0x00000001408800ac: vpxor    xmm8, xmm8, xmm9
+0x00000001408800b1: mov      r13, r11
+0x00000001408800b4: add      r14, rdx
+0x00000001408800b7: vpsllq   xmm10, xmm1, 3
+0x00000001408800bc: shrd     r13, r13, 0x17
+0x00000001408800c1: mov      rdx, r14
+0x00000001408800c4: vpaddq   xmm2, xmm2, xmm8
+0x00000001408800c9: mov      r12, rax
+0x00000001408800cc: shrd     r14, r14, 5
+0x00000001408800d1: vpsrlq   xmm9, xmm1, 0x13
+0x00000001408800d6: xor      r13, r11
+0x00000001408800d9: xor      r12, rbx
+0x00000001408800dc: vpxor    xmm11, xmm11, xmm10
+0x00000001408800e1: shrd     r13, r13, 4
+0x00000001408800e6: xor      r14, rdx
+0x00000001408800e9: vpsllq   xmm10, xmm10, 0x2a
+0x00000001408800ef: and      r12, r11
+0x00000001408800f2: xor      r13, r11
+0x00000001408800f5: vpxor    xmm11, xmm11, xmm9
+0x00000001408800fa: add      rcx, qword ptr [rsp + 0x28]
+0x00000001408800ff: mov      rdi, rdx
+0x0000000140880102: vpsrlq   xmm9, xmm9, 0x2a
+0x0000000140880108: xor      r12, rbx
+0x000000014088010b: shrd     r14, r14, 6
+0x0000000140880110: vpxor    xmm11, xmm11, xmm10
+0x0000000140880115: xor      rdi, r8
+0x0000000140880118: add      rcx, r12
+0x000000014088011b: vpxor    xmm11, xmm11, xmm9
+0x0000000140880120: shrd     r13, r13, 0xe
+0x0000000140880125: and      r15, rdi
+0x0000000140880128: vpaddq   xmm2, xmm2, xmm11
+0x000000014088012d: xor      r14, rdx
+0x0000000140880130: add      rcx, r13
+0x0000000140880133: vpaddq   xmm10, xmm2, xmmword ptr [rbp - 0x40]
+0x0000000140880138: xor      r15, r8
+0x000000014088013b: shrd     r14, r14, 0x1c
+0x0000000140880140: add      r10, rcx
+0x0000000140880143: add      rcx, r15
+0x0000000140880146: mov      r13, r10
+0x0000000140880149: add      r14, rcx
+0x000000014088014c: vmovdqa  xmmword ptr [rsp + 0x20], xmm10
+0x0000000140880152: vpalignr xmm8, xmm4, xmm3, 8
+0x0000000140880158: shrd     r13, r13, 0x17
+0x000000014088015d: mov      rcx, r14
+0x0000000140880160: vpalignr xmm11, xmm0, xmm7, 8
+0x0000000140880166: mov      r12, r11
+0x0000000140880169: shrd     r14, r14, 5
+0x000000014088016e: vpsrlq   xmm10, xmm8, 1
+0x0000000140880174: xor      r13, r10
+0x0000000140880177: xor      r12, rax
+0x000000014088017a: vpaddq   xmm3, xmm3, xmm11
+0x000000014088017f: shrd     r13, r13, 4
+0x0000000140880184: xor      r14, rcx
+0x0000000140880187: vpsrlq   xmm11, xmm8, 7
+0x000000014088018d: and      r12, r10
+0x0000000140880190: xor      r13, r10
+0x0000000140880193: vpsllq   xmm9, xmm8, 0x38
+0x0000000140880199: add      rbx, qword ptr [rsp + 0x30]
+0x000000014088019e: mov      r15, rcx
+0x00000001408801a1: vpxor    xmm8, xmm11, xmm10
+0x00000001408801a6: xor      r12, rax
+0x00000001408801a9: shrd     r14, r14, 6
+0x00000001408801ae: vpsrlq   xmm10, xmm10, 7
+0x00000001408801b4: xor      r15, rdx
+0x00000001408801b7: add      rbx, r12
+0x00000001408801ba: vpxor    xmm8, xmm8, xmm9
+0x00000001408801bf: shrd     r13, r13, 0xe
+0x00000001408801c4: and      rdi, r15
+0x00000001408801c7: vpsllq   xmm9, xmm9, 7
+0x00000001408801cd: xor      r14, rcx
+0x00000001408801d0: add      rbx, r13
+0x00000001408801d3: vpxor    xmm8, xmm8, xmm10
+0x00000001408801d8: xor      rdi, rdx
+0x00000001408801db: shrd     r14, r14, 0x1c
+0x00000001408801e0: vpsrlq   xmm11, xmm2, 6
+0x00000001408801e5: add      r9, rbx
+0x00000001408801e8: add      rbx, rdi
+0x00000001408801eb: vpxor    xmm8, xmm8, xmm9
+0x00000001408801f0: mov      r13, r9
+0x00000001408801f3: add      r14, rbx
+0x00000001408801f6: vpsllq   xmm10, xmm2, 3
+0x00000001408801fb: shrd     r13, r13, 0x17
+0x0000000140880200: mov      rbx, r14
+0x0000000140880203: vpaddq   xmm3, xmm3, xmm8
+0x0000000140880208: mov      r12, r10
+0x000000014088020b: shrd     r14, r14, 5
+0x0000000140880210: vpsrlq   xmm9, xmm2, 0x13
+0x0000000140880215: xor      r13, r9
+0x0000000140880218: xor      r12, r11
+0x000000014088021b: vpxor    xmm11, xmm11, xmm10
+0x0000000140880220: shrd     r13, r13, 4
+0x0000000140880225: xor      r14, rbx
+0x0000000140880228: vpsllq   xmm10, xmm10, 0x2a
+0x000000014088022e: and      r12, r9
+0x0000000140880231: xor      r13, r9
+0x0000000140880234: vpxor    xmm11, xmm11, xmm9
+0x0000000140880239: add      rax, qword ptr [rsp + 0x38]
+0x000000014088023e: mov      rdi, rbx
+0x0000000140880241: vpsrlq   xmm9, xmm9, 0x2a
+0x0000000140880247: xor      r12, r11
+0x000000014088024a: shrd     r14, r14, 6
+0x000000014088024f: vpxor    xmm11, xmm11, xmm10
+0x0000000140880254: xor      rdi, rcx
+0x0000000140880257: add      rax, r12
+0x000000014088025a: vpxor    xmm11, xmm11, xmm9
+0x000000014088025f: shrd     r13, r13, 0xe
+0x0000000140880264: and      r15, rdi
+0x0000000140880267: vpaddq   xmm3, xmm3, xmm11
+0x000000014088026c: xor      r14, rbx
+0x000000014088026f: add      rax, r13
+0x0000000140880272: vpaddq   xmm10, xmm3, xmmword ptr [rbp - 0x20]
+0x0000000140880277: xor      r15, rcx
+0x000000014088027a: shrd     r14, r14, 0x1c
+0x000000014088027f: add      r8, rax
+0x0000000140880282: add      rax, r15
+0x0000000140880285: mov      r13, r8
+0x0000000140880288: add      r14, rax
+0x000000014088028b: vmovdqa  xmmword ptr [rsp + 0x30], xmm10
+0x0000000140880291: vpalignr xmm8, xmm5, xmm4, 8
+0x0000000140880297: shrd     r13, r13, 0x17
+0x000000014088029c: mov      rax, r14
+0x000000014088029f: vpalignr xmm11, xmm1, xmm0, 8
+0x00000001408802a5: mov      r12, r9
+0x00000001408802a8: shrd     r14, r14, 5
+0x00000001408802ad: vpsrlq   xmm10, xmm8, 1
+0x00000001408802b3: xor      r13, r8
+0x00000001408802b6: xor      r12, r10
+0x00000001408802b9: vpaddq   xmm4, xmm4, xmm11
+0x00000001408802be: shrd     r13, r13, 4
+0x00000001408802c3: xor      r14, rax
+0x00000001408802c6: vpsrlq   xmm11, xmm8, 7
+0x00000001408802cc: and      r12, r8
+0x00000001408802cf: xor      r13, r8
+0x00000001408802d2: vpsllq   xmm9, xmm8, 0x38
+0x00000001408802d8: add      r11, qword ptr [rsp + 0x40]
+0x00000001408802dd: mov      r15, rax
+0x00000001408802e0: vpxor    xmm8, xmm11, xmm10
+0x00000001408802e5: xor      r12, r10
+0x00000001408802e8: shrd     r14, r14, 6
+0x00000001408802ed: vpsrlq   xmm10, xmm10, 7
+0x00000001408802f3: xor      r15, rbx
+0x00000001408802f6: add      r11, r12
+0x00000001408802f9: vpxor    xmm8, xmm8, xmm9
+0x00000001408802fe: shrd     r13, r13, 0xe
+0x0000000140880303: and      rdi, r15
+0x0000000140880306: vpsllq   xmm9, xmm9, 7
+0x000000014088030c: xor      r14, rax
+0x000000014088030f: add      r11, r13
+0x0000000140880312: vpxor    xmm8, xmm8, xmm10
+0x0000000140880317: xor      rdi, rbx
+0x000000014088031a: shrd     r14, r14, 0x1c
+0x000000014088031f: vpsrlq   xmm11, xmm3, 6
+0x0000000140880324: add      rdx, r11
+0x0000000140880327: add      r11, rdi
+0x000000014088032a: vpxor    xmm8, xmm8, xmm9
+0x000000014088032f: mov      r13, rdx
+0x0000000140880332: add      r14, r11
+0x0000000140880335: vpsllq   xmm10, xmm3, 3
+0x000000014088033a: shrd     r13, r13, 0x17
+0x000000014088033f: mov      r11, r14
+0x0000000140880342: vpaddq   xmm4, xmm4, xmm8
+0x0000000140880347: mov      r12, r8
+0x000000014088034a: shrd     r14, r14, 5
+0x000000014088034f: vpsrlq   xmm9, xmm3, 0x13
+0x0000000140880354: xor      r13, rdx
+0x0000000140880357: xor      r12, r9
+0x000000014088035a: vpxor    xmm11, xmm11, xmm10
+0x000000014088035f: shrd     r13, r13, 4
+0x0000000140880364: xor      r14, r11
+0x0000000140880367: vpsllq   xmm10, xmm10, 0x2a
+0x000000014088036d: and      r12, rdx
+0x0000000140880370: xor      r13, rdx
+0x0000000140880373: vpxor    xmm11, xmm11, xmm9
+0x0000000140880378: add      r10, qword ptr [rsp + 0x48]
+0x000000014088037d: mov      rdi, r11
+0x0000000140880380: vpsrlq   xmm9, xmm9, 0x2a
+0x0000000140880386: xor      r12, r9
+0x0000000140880389: shrd     r14, r14, 6
+0x000000014088038e: vpxor    xmm11, xmm11, xmm10
+0x0000000140880393: xor      rdi, rax
+0x0000000140880396: add      r10, r12
+0x0000000140880399: vpxor    xmm11, xmm11, xmm9
+0x000000014088039e: shrd     r13, r13, 0xe
+0x00000001408803a3: and      r15, rdi
+0x00000001408803a6: vpaddq   xmm4, xmm4, xmm11
+0x00000001408803ab: xor      r14, r11
+0x00000001408803ae: add      r10, r13
+0x00000001408803b1: vpaddq   xmm10, xmm4, xmmword ptr [rbp]
+0x00000001408803b6: xor      r15, rax
+0x00000001408803b9: shrd     r14, r14, 0x1c
+0x00000001408803be: add      rcx, r10
+0x00000001408803c1: add      r10, r15
+0x00000001408803c4: mov      r13, rcx
+0x00000001408803c7: add      r14, r10
+0x00000001408803ca: vmovdqa  xmmword ptr [rsp + 0x40], xmm10
+0x00000001408803d0: vpalignr xmm8, xmm6, xmm5, 8
+0x00000001408803d6: shrd     r13, r13, 0x17
+0x00000001408803db: mov      r10, r14
+0x00000001408803de: vpalignr xmm11, xmm2, xmm1, 8
+0x00000001408803e4: mov      r12, rdx
+0x00000001408803e7: shrd     r14, r14, 5
+0x00000001408803ec: vpsrlq   xmm10, xmm8, 1
+0x00000001408803f2: xor      r13, rcx
+0x00000001408803f5: xor      r12, r8
+0x00000001408803f8: vpaddq   xmm5, xmm5, xmm11
+0x00000001408803fd: shrd     r13, r13, 4
+0x0000000140880402: xor      r14, r10
+0x0000000140880405: vpsrlq   xmm11, xmm8, 7
+0x000000014088040b: and      r12, rcx
+0x000000014088040e: xor      r13, rcx
+0x0000000140880411: vpsllq   xmm9, xmm8, 0x38
+0x0000000140880417: add      r9, qword ptr [rsp + 0x50]
+0x000000014088041c: mov      r15, r10
+0x000000014088041f: vpxor    xmm8, xmm11, xmm10
+0x0000000140880424: xor      r12, r8
+0x0000000140880427: shrd     r14, r14, 6
+0x000000014088042c: vpsrlq   xmm10, xmm10, 7
+0x0000000140880432: xor      r15, r11
+0x0000000140880435: add      r9, r12
+0x0000000140880438: vpxor    xmm8, xmm8, xmm9
+0x000000014088043d: shrd     r13, r13, 0xe
+0x0000000140880442: and      rdi, r15
+0x0000000140880445: vpsllq   xmm9, xmm9, 7
+0x000000014088044b: xor      r14, r10
+0x000000014088044e: add      r9, r13
+0x0000000140880451: vpxor    xmm8, xmm8, xmm10
+0x0000000140880456: xor      rdi, r11
+0x0000000140880459: shrd     r14, r14, 0x1c
+0x000000014088045e: vpsrlq   xmm11, xmm4, 6
+0x0000000140880463: add      rbx, r9
+0x0000000140880466: add      r9, rdi
+0x0000000140880469: vpxor    xmm8, xmm8, xmm9
+0x000000014088046e: mov      r13, rbx
+0x0000000140880471: add      r14, r9
+0x0000000140880474: vpsllq   xmm10, xmm4, 3
+0x0000000140880479: shrd     r13, r13, 0x17
+0x000000014088047e: mov      r9, r14
+0x0000000140880481: vpaddq   xmm5, xmm5, xmm8
+0x0000000140880486: mov      r12, rcx
+0x0000000140880489: shrd     r14, r14, 5
+0x000000014088048e: vpsrlq   xmm9, xmm4, 0x13
+0x0000000140880493: xor      r13, rbx
+0x0000000140880496: xor      r12, rdx
+0x0000000140880499: vpxor    xmm11, xmm11, xmm10
+0x000000014088049e: shrd     r13, r13, 4
+0x00000001408804a3: xor      r14, r9
+0x00000001408804a6: vpsllq   xmm10, xmm10, 0x2a
+0x00000001408804ac: and      r12, rbx
+0x00000001408804af: xor      r13, rbx
+0x00000001408804b2: vpxor    xmm11, xmm11, xmm9
+0x00000001408804b7: add      r8, qword ptr [rsp + 0x58]
+0x00000001408804bc: mov      rdi, r9
+0x00000001408804bf: vpsrlq   xmm9, xmm9, 0x2a
+0x00000001408804c5: xor      r12, rdx
+0x00000001408804c8: shrd     r14, r14, 6
+0x00000001408804cd: vpxor    xmm11, xmm11, xmm10
+0x00000001408804d2: xor      rdi, r10
+0x00000001408804d5: add      r8, r12
+0x00000001408804d8: vpxor    xmm11, xmm11, xmm9
+0x00000001408804dd: shrd     r13, r13, 0xe
+0x00000001408804e2: and      r15, rdi
+0x00000001408804e5: vpaddq   xmm5, xmm5, xmm11
+0x00000001408804ea: xor      r14, r9
+0x00000001408804ed: add      r8, r13
+0x00000001408804f0: vpaddq   xmm10, xmm5, xmmword ptr [rbp + 0x20]
+0x00000001408804f5: xor      r15, r10
+0x00000001408804f8: shrd     r14, r14, 0x1c
+0x00000001408804fd: add      rax, r8
+0x0000000140880500: add      r8, r15
+0x0000000140880503: mov      r13, rax
+0x0000000140880506: add      r14, r8
+0x0000000140880509: vmovdqa  xmmword ptr [rsp + 0x50], xmm10
+0x000000014088050f: vpalignr xmm8, xmm7, xmm6, 8
+0x0000000140880515: shrd     r13, r13, 0x17
+0x000000014088051a: mov      r8, r14
+0x000000014088051d: vpalignr xmm11, xmm3, xmm2, 8
+0x0000000140880523: mov      r12, rbx
+0x0000000140880526: shrd     r14, r14, 5
+0x000000014088052b: vpsrlq   xmm10, xmm8, 1
+0x0000000140880531: xor      r13, rax
+0x0000000140880534: xor      r12, rcx
+0x0000000140880537: vpaddq   xmm6, xmm6, xmm11
+0x000000014088053c: shrd     r13, r13, 4
+0x0000000140880541: xor      r14, r8
+0x0000000140880544: vpsrlq   xmm11, xmm8, 7
+0x000000014088054a: and      r12, rax
+0x000000014088054d: xor      r13, rax
+0x0000000140880550: vpsllq   xmm9, xmm8, 0x38
+0x0000000140880556: add      rdx, qword ptr [rsp + 0x60]
+0x000000014088055b: mov      r15, r8
+0x000000014088055e: vpxor    xmm8, xmm11, xmm10
+0x0000000140880563: xor      r12, rcx
+0x0000000140880566: shrd     r14, r14, 6
+0x000000014088056b: vpsrlq   xmm10, xmm10, 7
+0x0000000140880571: xor      r15, r9
+0x0000000140880574: add      rdx, r12
+0x0000000140880577: vpxor    xmm8, xmm8, xmm9
+0x000000014088057c: shrd     r13, r13, 0xe
+0x0000000140880581: and      rdi, r15
+0x0000000140880584: vpsllq   xmm9, xmm9, 7
+0x000000014088058a: xor      r14, r8
+0x000000014088058d: add      rdx, r13
+0x0000000140880590: vpxor    xmm8, xmm8, xmm10
+0x0000000140880595: xor      rdi, r9
+0x0000000140880598: shrd     r14, r14, 0x1c
+0x000000014088059d: vpsrlq   xmm11, xmm5, 6
+0x00000001408805a2: add      r11, rdx
+0x00000001408805a5: add      rdx, rdi
+0x00000001408805a8: vpxor    xmm8, xmm8, xmm9
+0x00000001408805ad: mov      r13, r11
+0x00000001408805b0: add      r14, rdx
+0x00000001408805b3: vpsllq   xmm10, xmm5, 3
+0x00000001408805b8: shrd     r13, r13, 0x17
+0x00000001408805bd: mov      rdx, r14
+0x00000001408805c0: vpaddq   xmm6, xmm6, xmm8
+0x00000001408805c5: mov      r12, rax
+0x00000001408805c8: shrd     r14, r14, 5
+0x00000001408805cd: vpsrlq   xmm9, xmm5, 0x13
+0x00000001408805d2: xor      r13, r11
+0x00000001408805d5: xor      r12, rbx
+0x00000001408805d8: vpxor    xmm11, xmm11, xmm10
+0x00000001408805dd: shrd     r13, r13, 4
+0x00000001408805e2: xor      r14, rdx
+0x00000001408805e5: vpsllq   xmm10, xmm10, 0x2a
+0x00000001408805eb: and      r12, r11
+0x00000001408805ee: xor      r13, r11
+0x00000001408805f1: vpxor    xmm11, xmm11, xmm9
+0x00000001408805f6: add      rcx, qword ptr [rsp + 0x68]
+0x00000001408805fb: mov      rdi, rdx
+0x00000001408805fe: vpsrlq   xmm9, xmm9, 0x2a
+0x0000000140880604: xor      r12, rbx
+0x0000000140880607: shrd     r14, r14, 6
+0x000000014088060c: vpxor    xmm11, xmm11, xmm10
+0x0000000140880611: xor      rdi, r8
+0x0000000140880614: add      rcx, r12
+0x0000000140880617: vpxor    xmm11, xmm11, xmm9
+0x000000014088061c: shrd     r13, r13, 0xe
+0x0000000140880621: and      r15, rdi
+0x0000000140880624: vpaddq   xmm6, xmm6, xmm11
+0x0000000140880629: xor      r14, rdx
+0x000000014088062c: add      rcx, r13
+0x000000014088062f: vpaddq   xmm10, xmm6, xmmword ptr [rbp + 0x40]
+0x0000000140880634: xor      r15, r8
+0x0000000140880637: shrd     r14, r14, 0x1c
+0x000000014088063c: add      r10, rcx
+0x000000014088063f: add      rcx, r15
+0x0000000140880642: mov      r13, r10
+0x0000000140880645: add      r14, rcx
+0x0000000140880648: vmovdqa  xmmword ptr [rsp + 0x60], xmm10
+0x000000014088064e: vpalignr xmm8, xmm0, xmm7, 8
+0x0000000140880654: shrd     r13, r13, 0x17
+0x0000000140880659: mov      rcx, r14
+0x000000014088065c: vpalignr xmm11, xmm4, xmm3, 8
+0x0000000140880662: mov      r12, r11
+0x0000000140880665: shrd     r14, r14, 5
+0x000000014088066a: vpsrlq   xmm10, xmm8, 1
+0x0000000140880670: xor      r13, r10
+0x0000000140880673: xor      r12, rax
+0x0000000140880676: vpaddq   xmm7, xmm7, xmm11
+0x000000014088067b: shrd     r13, r13, 4
+0x0000000140880680: xor      r14, rcx
+0x0000000140880683: vpsrlq   xmm11, xmm8, 7
+0x0000000140880689: and      r12, r10
+0x000000014088068c: xor      r13, r10
+0x000000014088068f: vpsllq   xmm9, xmm8, 0x38
+0x0000000140880695: add      rbx, qword ptr [rsp + 0x70]
+0x000000014088069a: mov      r15, rcx
+0x000000014088069d: vpxor    xmm8, xmm11, xmm10
+0x00000001408806a2: xor      r12, rax
+0x00000001408806a5: shrd     r14, r14, 6
+0x00000001408806aa: vpsrlq   xmm10, xmm10, 7
+0x00000001408806b0: xor      r15, rdx
+0x00000001408806b3: add      rbx, r12
+0x00000001408806b6: vpxor    xmm8, xmm8, xmm9
+0x00000001408806bb: shrd     r13, r13, 0xe
+0x00000001408806c0: and      rdi, r15
+0x00000001408806c3: vpsllq   xmm9, xmm9, 7
+0x00000001408806c9: xor      r14, rcx
+0x00000001408806cc: add      rbx, r13
+0x00000001408806cf: vpxor    xmm8, xmm8, xmm10
+0x00000001408806d4: xor      rdi, rdx
+0x00000001408806d7: shrd     r14, r14, 0x1c
+0x00000001408806dc: vpsrlq   xmm11, xmm6, 6
+0x00000001408806e1: add      r9, rbx
+0x00000001408806e4: add      rbx, rdi
+0x00000001408806e7: vpxor    xmm8, xmm8, xmm9
+0x00000001408806ec: mov      r13, r9
+0x00000001408806ef: add      r14, rbx
+0x00000001408806f2: vpsllq   xmm10, xmm6, 3
+0x00000001408806f7: shrd     r13, r13, 0x17
+0x00000001408806fc: mov      rbx, r14
+0x00000001408806ff: vpaddq   xmm7, xmm7, xmm8
+0x0000000140880704: mov      r12, r10
+0x0000000140880707: shrd     r14, r14, 5
+0x000000014088070c: vpsrlq   xmm9, xmm6, 0x13
+0x0000000140880711: xor      r13, r9
+0x0000000140880714: xor      r12, r11
+0x0000000140880717: vpxor    xmm11, xmm11, xmm10
+0x000000014088071c: shrd     r13, r13, 4
+0x0000000140880721: xor      r14, rbx
+0x0000000140880724: vpsllq   xmm10, xmm10, 0x2a
+0x000000014088072a: and      r12, r9
+0x000000014088072d: xor      r13, r9
+0x0000000140880730: vpxor    xmm11, xmm11, xmm9
+0x0000000140880735: add      rax, qword ptr [rsp + 0x78]
+0x000000014088073a: mov      rdi, rbx
+0x000000014088073d: vpsrlq   xmm9, xmm9, 0x2a
+0x0000000140880743: xor      r12, r11
+0x0000000140880746: shrd     r14, r14, 6
+0x000000014088074b: vpxor    xmm11, xmm11, xmm10
+0x0000000140880750: xor      rdi, rcx
+0x0000000140880753: add      rax, r12
+0x0000000140880756: vpxor    xmm11, xmm11, xmm9
+0x000000014088075b: shrd     r13, r13, 0xe
+0x0000000140880760: and      r15, rdi
+0x0000000140880763: vpaddq   xmm7, xmm7, xmm11
+0x0000000140880768: xor      r14, rbx
+0x000000014088076b: add      rax, r13
+0x000000014088076e: vpaddq   xmm10, xmm7, xmmword ptr [rbp + 0x60]
+0x0000000140880773: xor      r15, rcx
+0x0000000140880776: shrd     r14, r14, 0x1c
+0x000000014088077b: add      r8, rax
+0x000000014088077e: add      rax, r15
+0x0000000140880781: mov      r13, r8
+0x0000000140880784: add      r14, rax
+0x0000000140880787: vmovdqa  xmmword ptr [rsp + 0x70], xmm10
+0x000000014088078d: cmp      byte ptr [rbp + 0x87], 0
+0x0000000140880794: jne      0x14087fd90
+0x000000014088079a: shrd     r13, r13, 0x17
+0x000000014088079f: mov      rax, r14
+0x00000001408807a2: mov      r12, r9
+0x00000001408807a5: shrd     r14, r14, 5
+0x00000001408807aa: xor      r13, r8
+0x00000001408807ad: xor      r12, r10
+0x00000001408807b0: shrd     r13, r13, 4
+0x00000001408807b5: xor      r14, rax
+0x00000001408807b8: and      r12, r8
+0x00000001408807bb: xor      r13, r8
+0x00000001408807be: add      r11, qword ptr [rsp]
+0x00000001408807c2: mov      r15, rax
+0x00000001408807c5: xor      r12, r10
+0x00000001408807c8: shrd     r14, r14, 6
+0x00000001408807cd: xor      r15, rbx
+0x00000001408807d0: add      r11, r12
+0x00000001408807d3: shrd     r13, r13, 0xe
+0x00000001408807d8: and      rdi, r15
+0x00000001408807db: xor      r14, rax
+0x00000001408807de: add      r11, r13
+0x00000001408807e1: xor      rdi, rbx
+0x00000001408807e4: shrd     r14, r14, 0x1c
+0x00000001408807e9: add      rdx, r11
+0x00000001408807ec: add      r11, rdi
+0x00000001408807ef: mov      r13, rdx
+0x00000001408807f2: add      r14, r11
+0x00000001408807f5: shrd     r13, r13, 0x17
+0x00000001408807fa: mov      r11, r14
+0x00000001408807fd: mov      r12, r8
+0x0000000140880800: shrd     r14, r14, 5
+0x0000000140880805: xor      r13, rdx
+0x0000000140880808: xor      r12, r9
+0x000000014088080b: shrd     r13, r13, 4
+0x0000000140880810: xor      r14, r11
+0x0000000140880813: and      r12, rdx
+0x0000000140880816: xor      r13, rdx
+0x0000000140880819: add      r10, qword ptr [rsp + 8]
+0x000000014088081e: mov      rdi, r11
+0x0000000140880821: xor      r12, r9
+0x0000000140880824: shrd     r14, r14, 6
+0x0000000140880829: xor      rdi, rax
+0x000000014088082c: add      r10, r12
+0x000000014088082f: shrd     r13, r13, 0xe
+0x0000000140880834: and      r15, rdi
+0x0000000140880837: xor      r14, r11
+0x000000014088083a: add      r10, r13
+0x000000014088083d: xor      r15, rax
+0x0000000140880840: shrd     r14, r14, 0x1c
+0x0000000140880845: add      rcx, r10
+0x0000000140880848: add      r10, r15
+0x000000014088084b: mov      r13, rcx
+0x000000014088084e: add      r14, r10
+0x0000000140880851: shrd     r13, r13, 0x17
+0x0000000140880856: mov      r10, r14
+0x0000000140880859: mov      r12, rdx
+0x000000014088085c: shrd     r14, r14, 5
+0x0000000140880861: xor      r13, rcx
+0x0000000140880864: xor      r12, r8
+0x0000000140880867: shrd     r13, r13, 4
+0x000000014088086c: xor      r14, r10
+0x000000014088086f: and      r12, rcx
+0x0000000140880872: xor      r13, rcx
+0x0000000140880875: add      r9, qword ptr [rsp + 0x10]
+0x000000014088087a: mov      r15, r10
+0x000000014088087d: xor      r12, r8
+0x0000000140880880: shrd     r14, r14, 6
+0x0000000140880885: xor      r15, r11
+0x0000000140880888: add      r9, r12
+0x000000014088088b: shrd     r13, r13, 0xe
+0x0000000140880890: and      rdi, r15
+0x0000000140880893: xor      r14, r10
+0x0000000140880896: add      r9, r13
+0x0000000140880899: xor      rdi, r11
+0x000000014088089c: shrd     r14, r14, 0x1c
+0x00000001408808a1: add      rbx, r9
+0x00000001408808a4: add      r9, rdi
+0x00000001408808a7: mov      r13, rbx
+0x00000001408808aa: add      r14, r9
+0x00000001408808ad: shrd     r13, r13, 0x17
+0x00000001408808b2: mov      r9, r14
+0x00000001408808b5: mov      r12, rcx
+0x00000001408808b8: shrd     r14, r14, 5
+0x00000001408808bd: xor      r13, rbx
+0x00000001408808c0: xor      r12, rdx
+0x00000001408808c3: shrd     r13, r13, 4
+0x00000001408808c8: xor      r14, r9
+0x00000001408808cb: and      r12, rbx
+0x00000001408808ce: xor      r13, rbx
+0x00000001408808d1: add      r8, qword ptr [rsp + 0x18]
+0x00000001408808d6: mov      rdi, r9
+0x00000001408808d9: xor      r12, rdx
+0x00000001408808dc: shrd     r14, r14, 6
+0x00000001408808e1: xor      rdi, r10
+0x00000001408808e4: add      r8, r12
+0x00000001408808e7: shrd     r13, r13, 0xe
+0x00000001408808ec: and      r15, rdi
+0x00000001408808ef: xor      r14, r9
+0x00000001408808f2: add      r8, r13
+0x00000001408808f5: xor      r15, r10
+0x00000001408808f8: shrd     r14, r14, 0x1c
+0x00000001408808fd: add      rax, r8
+0x0000000140880900: add      r8, r15
+0x0000000140880903: mov      r13, rax
+0x0000000140880906: add      r14, r8
+0x0000000140880909: shrd     r13, r13, 0x17
+0x000000014088090e: mov      r8, r14
+0x0000000140880911: mov      r12, rbx
+0x0000000140880914: shrd     r14, r14, 5
+0x0000000140880919: xor      r13, rax
+0x000000014088091c: xor      r12, rcx
+0x000000014088091f: shrd     r13, r13, 4
+0x0000000140880924: xor      r14, r8
+0x0000000140880927: and      r12, rax
+0x000000014088092a: xor      r13, rax
+0x000000014088092d: add      rdx, qword ptr [rsp + 0x20]
+0x0000000140880932: mov      r15, r8
+0x0000000140880935: xor      r12, rcx
+0x0000000140880938: shrd     r14, r14, 6
+0x000000014088093d: xor      r15, r9
+0x0000000140880940: add      rdx, r12
+0x0000000140880943: shrd     r13, r13, 0xe
+0x0000000140880948: and      rdi, r15
+0x000000014088094b: xor      r14, r8
+0x000000014088094e: add      rdx, r13
+0x0000000140880951: xor      rdi, r9
+0x0000000140880954: shrd     r14, r14, 0x1c
+0x0000000140880959: add      r11, rdx
+0x000000014088095c: add      rdx, rdi
+0x000000014088095f: mov      r13, r11
+0x0000000140880962: add      r14, rdx
+0x0000000140880965: shrd     r13, r13, 0x17
+0x000000014088096a: mov      rdx, r14
+0x000000014088096d: mov      r12, rax
+0x0000000140880970: shrd     r14, r14, 5
+0x0000000140880975: xor      r13, r11
+0x0000000140880978: xor      r12, rbx
+0x000000014088097b: shrd     r13, r13, 4
+0x0000000140880980: xor      r14, rdx
+0x0000000140880983: and      r12, r11
+0x0000000140880986: xor      r13, r11
+0x0000000140880989: add      rcx, qword ptr [rsp + 0x28]
+0x000000014088098e: mov      rdi, rdx
+0x0000000140880991: xor      r12, rbx
+0x0000000140880994: shrd     r14, r14, 6
+0x0000000140880999: xor      rdi, r8
+0x000000014088099c: add      rcx, r12
+0x000000014088099f: shrd     r13, r13, 0xe
+0x00000001408809a4: and      r15, rdi
+0x00000001408809a7: xor      r14, rdx
+0x00000001408809aa: add      rcx, r13
+0x00000001408809ad: xor      r15, r8
+0x00000001408809b0: shrd     r14, r14, 0x1c
+0x00000001408809b5: add      r10, rcx
+0x00000001408809b8: add      rcx, r15
+0x00000001408809bb: mov      r13, r10
+0x00000001408809be: add      r14, rcx
+0x00000001408809c1: shrd     r13, r13, 0x17
+0x00000001408809c6: mov      rcx, r14
+0x00000001408809c9: mov      r12, r11
+0x00000001408809cc: shrd     r14, r14, 5
+0x00000001408809d1: xor      r13, r10
+0x00000001408809d4: xor      r12, rax
+0x00000001408809d7: shrd     r13, r13, 4
+0x00000001408809dc: xor      r14, rcx
+0x00000001408809df: and      r12, r10
+0x00000001408809e2: xor      r13, r10
+0x00000001408809e5: add      rbx, qword ptr [rsp + 0x30]
+0x00000001408809ea: mov      r15, rcx
+0x00000001408809ed: xor      r12, rax
+0x00000001408809f0: shrd     r14, r14, 6
+0x00000001408809f5: xor      r15, rdx
+0x00000001408809f8: add      rbx, r12
+0x00000001408809fb: shrd     r13, r13, 0xe
+0x0000000140880a00: and      rdi, r15
+0x0000000140880a03: xor      r14, rcx
+0x0000000140880a06: add      rbx, r13
+0x0000000140880a09: xor      rdi, rdx
+0x0000000140880a0c: shrd     r14, r14, 0x1c
+0x0000000140880a11: add      r9, rbx
+0x0000000140880a14: add      rbx, rdi
+0x0000000140880a17: mov      r13, r9
+0x0000000140880a1a: add      r14, rbx
+0x0000000140880a1d: shrd     r13, r13, 0x17
+0x0000000140880a22: mov      rbx, r14
+0x0000000140880a25: mov      r12, r10
+0x0000000140880a28: shrd     r14, r14, 5
+0x0000000140880a2d: xor      r13, r9
+0x0000000140880a30: xor      r12, r11
+0x0000000140880a33: shrd     r13, r13, 4
+0x0000000140880a38: xor      r14, rbx
+0x0000000140880a3b: and      r12, r9
+0x0000000140880a3e: xor      r13, r9
+0x0000000140880a41: add      rax, qword ptr [rsp + 0x38]
+0x0000000140880a46: mov      rdi, rbx
+0x0000000140880a49: xor      r12, r11
+0x0000000140880a4c: shrd     r14, r14, 6
+0x0000000140880a51: xor      rdi, rcx
+0x0000000140880a54: add      rax, r12
+0x0000000140880a57: shrd     r13, r13, 0xe
+0x0000000140880a5c: and      r15, rdi
+0x0000000140880a5f: xor      r14, rbx
+0x0000000140880a62: add      rax, r13
+0x0000000140880a65: xor      r15, rcx
+0x0000000140880a68: shrd     r14, r14, 0x1c
+0x0000000140880a6d: add      r8, rax
+0x0000000140880a70: add      rax, r15
+0x0000000140880a73: mov      r13, r8
+0x0000000140880a76: add      r14, rax
+0x0000000140880a79: shrd     r13, r13, 0x17
+0x0000000140880a7e: mov      rax, r14
+0x0000000140880a81: mov      r12, r9
+0x0000000140880a84: shrd     r14, r14, 5
+0x0000000140880a89: xor      r13, r8
+0x0000000140880a8c: xor      r12, r10
+0x0000000140880a8f: shrd     r13, r13, 4
+0x0000000140880a94: xor      r14, rax
+0x0000000140880a97: and      r12, r8
+0x0000000140880a9a: xor      r13, r8
+0x0000000140880a9d: add      r11, qword ptr [rsp + 0x40]
+0x0000000140880aa2: mov      r15, rax
+0x0000000140880aa5: xor      r12, r10
+0x0000000140880aa8: shrd     r14, r14, 6
+0x0000000140880aad: xor      r15, rbx
+0x0000000140880ab0: add      r11, r12
+0x0000000140880ab3: shrd     r13, r13, 0xe
+0x0000000140880ab8: and      rdi, r15
+0x0000000140880abb: xor      r14, rax
+0x0000000140880abe: add      r11, r13
+0x0000000140880ac1: xor      rdi, rbx
+0x0000000140880ac4: shrd     r14, r14, 0x1c
+0x0000000140880ac9: add      rdx, r11
+0x0000000140880acc: add      r11, rdi
+0x0000000140880acf: mov      r13, rdx
+0x0000000140880ad2: add      r14, r11
+0x0000000140880ad5: shrd     r13, r13, 0x17
+0x0000000140880ada: mov      r11, r14
+0x0000000140880add: mov      r12, r8
+0x0000000140880ae0: shrd     r14, r14, 5
+0x0000000140880ae5: xor      r13, rdx
+0x0000000140880ae8: xor      r12, r9
+0x0000000140880aeb: shrd     r13, r13, 4
+0x0000000140880af0: xor      r14, r11
+0x0000000140880af3: and      r12, rdx
+0x0000000140880af6: xor      r13, rdx
+0x0000000140880af9: add      r10, qword ptr [rsp + 0x48]
+0x0000000140880afe: mov      rdi, r11
+0x0000000140880b01: xor      r12, r9
+0x0000000140880b04: shrd     r14, r14, 6
+0x0000000140880b09: xor      rdi, rax
+0x0000000140880b0c: add      r10, r12
+0x0000000140880b0f: shrd     r13, r13, 0xe
+0x0000000140880b14: and      r15, rdi
+0x0000000140880b17: xor      r14, r11
+0x0000000140880b1a: add      r10, r13
+0x0000000140880b1d: xor      r15, rax
+0x0000000140880b20: shrd     r14, r14, 0x1c
+0x0000000140880b25: add      rcx, r10
+0x0000000140880b28: add      r10, r15
+0x0000000140880b2b: mov      r13, rcx
+0x0000000140880b2e: add      r14, r10
+0x0000000140880b31: shrd     r13, r13, 0x17
+0x0000000140880b36: mov      r10, r14
+0x0000000140880b39: mov      r12, rdx
+0x0000000140880b3c: shrd     r14, r14, 5
+0x0000000140880b41: xor      r13, rcx
+0x0000000140880b44: xor      r12, r8
+0x0000000140880b47: shrd     r13, r13, 4
+0x0000000140880b4c: xor      r14, r10
+0x0000000140880b4f: and      r12, rcx
+0x0000000140880b52: xor      r13, rcx
+0x0000000140880b55: add      r9, qword ptr [rsp + 0x50]
+0x0000000140880b5a: mov      r15, r10
+0x0000000140880b5d: xor      r12, r8
+0x0000000140880b60: shrd     r14, r14, 6
+0x0000000140880b65: xor      r15, r11
+0x0000000140880b68: add      r9, r12
+0x0000000140880b6b: shrd     r13, r13, 0xe
+0x0000000140880b70: and      rdi, r15
+0x0000000140880b73: xor      r14, r10
+0x0000000140880b76: add      r9, r13
+0x0000000140880b79: xor      rdi, r11
+0x0000000140880b7c: shrd     r14, r14, 0x1c
+0x0000000140880b81: add      rbx, r9
+0x0000000140880b84: add      r9, rdi
+0x0000000140880b87: mov      r13, rbx
+0x0000000140880b8a: add      r14, r9
+0x0000000140880b8d: shrd     r13, r13, 0x17
+0x0000000140880b92: mov      r9, r14
+0x0000000140880b95: mov      r12, rcx
+0x0000000140880b98: shrd     r14, r14, 5
+0x0000000140880b9d: xor      r13, rbx
+0x0000000140880ba0: xor      r12, rdx
+0x0000000140880ba3: shrd     r13, r13, 4
+0x0000000140880ba8: xor      r14, r9
+0x0000000140880bab: and      r12, rbx
+0x0000000140880bae: xor      r13, rbx
+0x0000000140880bb1: add      r8, qword ptr [rsp + 0x58]
+0x0000000140880bb6: mov      rdi, r9
+0x0000000140880bb9: xor      r12, rdx
+0x0000000140880bbc: shrd     r14, r14, 6
+0x0000000140880bc1: xor      rdi, r10
+0x0000000140880bc4: add      r8, r12
+0x0000000140880bc7: shrd     r13, r13, 0xe
+0x0000000140880bcc: and      r15, rdi
+0x0000000140880bcf: xor      r14, r9
+0x0000000140880bd2: add      r8, r13
+0x0000000140880bd5: xor      r15, r10
+0x0000000140880bd8: shrd     r14, r14, 0x1c
+0x0000000140880bdd: add      rax, r8
+0x0000000140880be0: add      r8, r15
+0x0000000140880be3: mov      r13, rax
+0x0000000140880be6: add      r14, r8
+0x0000000140880be9: shrd     r13, r13, 0x17
+0x0000000140880bee: mov      r8, r14
+0x0000000140880bf1: mov      r12, rbx
+0x0000000140880bf4: shrd     r14, r14, 5
+0x0000000140880bf9: xor      r13, rax
+0x0000000140880bfc: xor      r12, rcx
+0x0000000140880bff: shrd     r13, r13, 4
+0x0000000140880c04: xor      r14, r8
+0x0000000140880c07: and      r12, rax
+0x0000000140880c0a: xor      r13, rax
+0x0000000140880c0d: add      rdx, qword ptr [rsp + 0x60]
+0x0000000140880c12: mov      r15, r8
+0x0000000140880c15: xor      r12, rcx
+0x0000000140880c18: shrd     r14, r14, 6
+0x0000000140880c1d: xor      r15, r9
+0x0000000140880c20: add      rdx, r12
+0x0000000140880c23: shrd     r13, r13, 0xe
+0x0000000140880c28: and      rdi, r15
+0x0000000140880c2b: xor      r14, r8
+0x0000000140880c2e: add      rdx, r13
+0x0000000140880c31: xor      rdi, r9
+0x0000000140880c34: shrd     r14, r14, 0x1c
+0x0000000140880c39: add      r11, rdx
+0x0000000140880c3c: add      rdx, rdi
+0x0000000140880c3f: mov      r13, r11
+0x0000000140880c42: add      r14, rdx
+0x0000000140880c45: shrd     r13, r13, 0x17
+0x0000000140880c4a: mov      rdx, r14
+0x0000000140880c4d: mov      r12, rax
+0x0000000140880c50: shrd     r14, r14, 5
+0x0000000140880c55: xor      r13, r11
+0x0000000140880c58: xor      r12, rbx
+0x0000000140880c5b: shrd     r13, r13, 4
+0x0000000140880c60: xor      r14, rdx
+0x0000000140880c63: and      r12, r11
+0x0000000140880c66: xor      r13, r11
+0x0000000140880c69: add      rcx, qword ptr [rsp + 0x68]
+0x0000000140880c6e: mov      rdi, rdx
+0x0000000140880c71: xor      r12, rbx
+0x0000000140880c74: shrd     r14, r14, 6
+0x0000000140880c79: xor      rdi, r8
+0x0000000140880c7c: add      rcx, r12
+0x0000000140880c7f: shrd     r13, r13, 0xe
+0x0000000140880c84: and      r15, rdi
+0x0000000140880c87: xor      r14, rdx
+0x0000000140880c8a: add      rcx, r13
+0x0000000140880c8d: xor      r15, r8
+0x0000000140880c90: shrd     r14, r14, 0x1c
+0x0000000140880c95: add      r10, rcx
+0x0000000140880c98: add      rcx, r15
+0x0000000140880c9b: mov      r13, r10
+0x0000000140880c9e: add      r14, rcx
+0x0000000140880ca1: shrd     r13, r13, 0x17
+0x0000000140880ca6: mov      rcx, r14
+0x0000000140880ca9: mov      r12, r11
+0x0000000140880cac: shrd     r14, r14, 5
+0x0000000140880cb1: xor      r13, r10
+0x0000000140880cb4: xor      r12, rax
+0x0000000140880cb7: shrd     r13, r13, 4
+0x0000000140880cbc: xor      r14, rcx
+0x0000000140880cbf: and      r12, r10
+0x0000000140880cc2: xor      r13, r10
+0x0000000140880cc5: add      rbx, qword ptr [rsp + 0x70]
+0x0000000140880cca: mov      r15, rcx
+0x0000000140880ccd: xor      r12, rax
+0x0000000140880cd0: shrd     r14, r14, 6
+0x0000000140880cd5: xor      r15, rdx
+0x0000000140880cd8: add      rbx, r12
+0x0000000140880cdb: shrd     r13, r13, 0xe
+0x0000000140880ce0: and      rdi, r15
+0x0000000140880ce3: xor      r14, rcx
+0x0000000140880ce6: add      rbx, r13
+0x0000000140880ce9: xor      rdi, rdx
+0x0000000140880cec: shrd     r14, r14, 0x1c
+0x0000000140880cf1: add      r9, rbx
+0x0000000140880cf4: add      rbx, rdi
+0x0000000140880cf7: mov      r13, r9
+0x0000000140880cfa: add      r14, rbx
+0x0000000140880cfd: shrd     r13, r13, 0x17
+0x0000000140880d02: mov      rbx, r14
+0x0000000140880d05: mov      r12, r10
+0x0000000140880d08: shrd     r14, r14, 5
+0x0000000140880d0d: xor      r13, r9
+0x0000000140880d10: xor      r12, r11
+0x0000000140880d13: shrd     r13, r13, 4
+0x0000000140880d18: xor      r14, rbx
+0x0000000140880d1b: and      r12, r9
+0x0000000140880d1e: xor      r13, r9
+0x0000000140880d21: add      rax, qword ptr [rsp + 0x78]
+0x0000000140880d26: mov      rdi, rbx
+0x0000000140880d29: xor      r12, r11
+0x0000000140880d2c: shrd     r14, r14, 6
+0x0000000140880d31: xor      rdi, rcx
+0x0000000140880d34: add      rax, r12
+0x0000000140880d37: shrd     r13, r13, 0xe
+0x0000000140880d3c: and      r15, rdi
+0x0000000140880d3f: xor      r14, rbx
+0x0000000140880d42: add      rax, r13
+0x0000000140880d45: xor      r15, rcx
+0x0000000140880d48: shrd     r14, r14, 0x1c
+0x0000000140880d4d: add      r8, rax
+0x0000000140880d50: add      rax, r15
+0x0000000140880d53: mov      r13, r8
+0x0000000140880d56: add      r14, rax
+0x0000000140880d59: mov      rdi, qword ptr [rsp + 0x80]
+0x0000000140880d61: mov      rax, r14
+0x0000000140880d64: add      rax, qword ptr [rdi]
+0x0000000140880d67: lea      rsi, [rsi + 0x80]
+0x0000000140880d6e: add      rbx, qword ptr [rdi + 8]
+0x0000000140880d72: add      rcx, qword ptr [rdi + 0x10]
+0x0000000140880d76: add      rdx, qword ptr [rdi + 0x18]
+0x0000000140880d7a: add      r8, qword ptr [rdi + 0x20]
+0x0000000140880d7e: add      r9, qword ptr [rdi + 0x28]
+0x0000000140880d82: add      r10, qword ptr [rdi + 0x30]
+0x0000000140880d86: add      r11, qword ptr [rdi + 0x38]
+0x0000000140880d8a: cmp      rsi, qword ptr [rsp + 0x90]
+0x0000000140880d92: mov      qword ptr [rdi], rax
+0x0000000140880d95: mov      qword ptr [rdi + 8], rbx
+0x0000000140880d99: mov      qword ptr [rdi + 0x10], rcx
+0x0000000140880d9d: mov      qword ptr [rdi + 0x18], rdx
+0x0000000140880da1: mov      qword ptr [rdi + 0x20], r8
+0x0000000140880da5: mov      qword ptr [rdi + 0x28], r9
+0x0000000140880da9: mov      qword ptr [rdi + 0x30], r10
+0x0000000140880dad: mov      qword ptr [rdi + 0x38], r11
+0x0000000140880db1: jb       0x14087fcc0
+0x0000000140880db7: mov      rsi, qword ptr [rsp + 0x98]
+0x0000000140880dbf: vzeroupper 
+0x0000000140880dc2: movaps   xmm6, xmmword ptr [rsp + 0xa0]
+0x0000000140880dca: movaps   xmm7, xmmword ptr [rsp + 0xb0]
+0x0000000140880dd2: movaps   xmm8, xmmword ptr [rsp + 0xc0]
+0x0000000140880ddb: movaps   xmm9, xmmword ptr [rsp + 0xd0]
+0x0000000140880de4: movaps   xmm10, xmmword ptr [rsp + 0xe0]
+0x0000000140880ded: movaps   xmm11, xmmword ptr [rsp + 0xf0]
+0x0000000140880df6: mov      r15, qword ptr [rsi - 0x30]
+0x0000000140880dfa: mov      r14, qword ptr [rsi - 0x28]
+0x0000000140880dfe: mov      r13, qword ptr [rsi - 0x20]
+0x0000000140880e02: mov      r12, qword ptr [rsi - 0x18]
+0x0000000140880e06: mov      rbp, qword ptr [rsi - 0x10]
+0x0000000140880e0a: mov      rbx, qword ptr [rsi - 8]
+0x0000000140880e0e: lea      rsp, [rsi]
+0x0000000140880e11: mov      rdi, qword ptr [rsp + 8]
+0x0000000140880e16: mov      rsi, qword ptr [rsp + 0x10]
+0x0000000140880e1b: ret      

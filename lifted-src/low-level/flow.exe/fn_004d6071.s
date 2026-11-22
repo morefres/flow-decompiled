@@ -1,0 +1,48 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x4d6071-0x4d615c
+0x00000001404d6071: mov      qword ptr [rsp + 0x10], rdx
+0x00000001404d6076: push     rbp
+0x00000001404d6077: push     r15
+0x00000001404d6079: push     r14
+0x00000001404d607b: push     r13
+0x00000001404d607d: push     r12
+0x00000001404d607f: push     rsi
+0x00000001404d6080: push     rdi
+0x00000001404d6081: push     rbx
+0x00000001404d6082: sub      rsp, 0xd8
+0x00000001404d6089: lea      rbp, [rdx + 0x80]
+0x00000001404d6090: movaps   xmmword ptr [rsp + 0x30], xmm15
+0x00000001404d6096: movaps   xmmword ptr [rsp + 0x40], xmm14
+0x00000001404d609c: movaps   xmmword ptr [rsp + 0x50], xmm13
+0x00000001404d60a2: movaps   xmmword ptr [rsp + 0x60], xmm12
+0x00000001404d60a8: movaps   xmmword ptr [rsp + 0x70], xmm11
+0x00000001404d60ae: movaps   xmmword ptr [rsp + 0x80], xmm10
+0x00000001404d60b7: movaps   xmmword ptr [rsp + 0x90], xmm9
+0x00000001404d60c0: movaps   xmmword ptr [rsp + 0xa0], xmm8
+0x00000001404d60c9: movaps   xmmword ptr [rsp + 0xb0], xmm7
+0x00000001404d60d1: movaps   xmmword ptr [rsp + 0xc0], xmm6
+0x00000001404d60d9: mov      r8d, 1
+0x00000001404d60df: mov      r9d, 1
+0x00000001404d60e5: mov      rcx, qword ptr [rbp + 0x37e8]
+0x00000001404d60ec: mov      rdx, qword ptr [rbp + 0x37f0]
+0x00000001404d60f3: call     0x14000a0f6
+0x00000001404d60f8: mov      byte ptr [rbp + 0x3603], 1
+0x00000001404d60ff: movaps   xmm6, xmmword ptr [rsp + 0xc0]
+0x00000001404d6107: movaps   xmm7, xmmword ptr [rsp + 0xb0]
+0x00000001404d610f: movaps   xmm8, xmmword ptr [rsp + 0xa0]
+0x00000001404d6118: movaps   xmm9, xmmword ptr [rsp + 0x90]
+0x00000001404d6121: movaps   xmm10, xmmword ptr [rsp + 0x80]
+0x00000001404d612a: movaps   xmm11, xmmword ptr [rsp + 0x70]
+0x00000001404d6130: movaps   xmm12, xmmword ptr [rsp + 0x60]
+0x00000001404d6136: movaps   xmm13, xmmword ptr [rsp + 0x50]
+0x00000001404d613c: movaps   xmm14, xmmword ptr [rsp + 0x40]
+0x00000001404d6142: movaps   xmm15, xmmword ptr [rsp + 0x30]
+0x00000001404d6148: add      rsp, 0xd8
+0x00000001404d614f: pop      rbx
+0x00000001404d6150: pop      rdi
+0x00000001404d6151: pop      rsi
+0x00000001404d6152: pop      r12
+0x00000001404d6154: pop      r13
+0x00000001404d6156: pop      r14
+0x00000001404d6158: pop      r15
+0x00000001404d615a: pop      rbp
+0x00000001404d615b: ret      

@@ -1,0 +1,59 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x77f420-0x77f4bf
+0x000000014077f420: push     rbp
+0x000000014077f421: push     r15
+0x000000014077f423: push     r14
+0x000000014077f425: push     r13
+0x000000014077f427: push     r12
+0x000000014077f429: push     rsi
+0x000000014077f42a: push     rdi
+0x000000014077f42b: push     rbx
+0x000000014077f42c: sub      rsp, 0x28
+0x000000014077f430: lea      rbp, [rsp + 0x20]
+0x000000014077f435: mov      rdi, rcx
+0x000000014077f438: mov      rsi, qword ptr [rcx + 8]
+0x000000014077f43c: mov      r14, qword ptr [rcx + 0x10]
+0x000000014077f440: test     r14, r14
+0x000000014077f443: je       0x14077f483
+0x000000014077f445: lea      r15, [rsi + 8]
+0x000000014077f449: mov      r12, qword ptr [rip + 0x1522b8]
+0x000000014077f450: mov      r13, qword ptr [rip + 0x1522a9]
+0x000000014077f457: jmp      0x14077f469
+0x000000014077f459: nop      dword ptr [rax]
+0x000000014077f460: add      r15, 0x20
+0x000000014077f464: dec      r14
+0x000000014077f467: je       0x14077f483
+0x000000014077f469: cmp      qword ptr [r15 - 8], 0
+0x000000014077f46e: je       0x14077f460
+0x000000014077f470: mov      rbx, qword ptr [r15]
+0x000000014077f473: call     r12
+0x000000014077f476: mov      rcx, rax
+0x000000014077f479: xor      edx, edx
+0x000000014077f47b: mov      r8, rbx
+0x000000014077f47e: call     r13
+0x000000014077f481: jmp      0x14077f460
+0x000000014077f483: cmp      qword ptr [rdi], 0
+0x000000014077f487: je       0x14077f4ae
+0x000000014077f489: call     qword ptr [rip + 0x152279]
+0x000000014077f48f: mov      rcx, rax
+0x000000014077f492: xor      edx, edx
+0x000000014077f494: mov      r8, rsi
+0x000000014077f497: add      rsp, 0x28
+0x000000014077f49b: pop      rbx
+0x000000014077f49c: pop      rdi
+0x000000014077f49d: pop      rsi
+0x000000014077f49e: pop      r12
+0x000000014077f4a0: pop      r13
+0x000000014077f4a2: pop      r14
+0x000000014077f4a4: pop      r15
+0x000000014077f4a6: pop      rbp
+0x000000014077f4a7: jmp      qword ptr [rip + 0x152252]
+0x000000014077f4ae: add      rsp, 0x28
+0x000000014077f4b2: pop      rbx
+0x000000014077f4b3: pop      rdi
+0x000000014077f4b4: pop      rsi
+0x000000014077f4b5: pop      r12
+0x000000014077f4b7: pop      r13
+0x000000014077f4b9: pop      r14
+0x000000014077f4bb: pop      r15
+0x000000014077f4bd: pop      rbp
+0x000000014077f4be: ret      

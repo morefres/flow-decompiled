@@ -1,0 +1,67 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6308d3-0x63098c
+0x00000001406308d3: push     r15
+0x00000001406308d5: push     r14
+0x00000001406308d7: push     r13
+0x00000001406308d9: push     r12
+0x00000001406308db: push     rsi
+0x00000001406308dc: push     rdi
+0x00000001406308dd: push     rbp
+0x00000001406308de: push     rbx
+0x00000001406308df: sub      rsp, 0x28
+0x00000001406308e3: mov      rdi, rcx
+0x00000001406308e6: mov      rax, qword ptr [rcx + 0x58]
+0x00000001406308ea: mov      r14, qword ptr [rcx + 0x60]
+0x00000001406308ee: mov      r15d, dword ptr [rcx + 0xb8]
+0x00000001406308f5: mov      rbx, qword ptr [rcx + 0x68]
+0x00000001406308f9: movzx    ebp, byte ptr [rcx + 0xbc]
+0x0000000140630900: mov      r12d, 0xfff
+0x0000000140630906: cmp      rax, r14
+0x0000000140630909: je       0x140630970
+0x000000014063090b: lea      r13, [rax + 4]
+0x000000014063090f: mov      qword ptr [rdi + 0x58], r13
+0x0000000140630913: mov      esi, dword ptr [rax]
+0x0000000140630915: cmp      esi, r15d
+0x0000000140630918: jb       0x140630977
+0x000000014063091a: cmp      byte ptr [rbx + 0x34], 0
+0x000000014063091e: mov      eax, 0xffff
+0x0000000140630923: cmovne   eax, r12d
+0x0000000140630927: cmp      esi, eax
+0x0000000140630929: jbe      0x140630939
+0x000000014063092b: mov      rcx, rbx
+0x000000014063092e: mov      edx, esi
+0x0000000140630930: call     0x14062dcea
+0x0000000140630935: mov      edx, eax
+0x0000000140630937: jmp      0x140630953
+0x0000000140630939: mov      eax, esi
+0x000000014063093b: shr      eax, 6
+0x000000014063093e: mov      rcx, qword ptr [rbx]
+0x0000000140630941: mov      rdx, qword ptr [rbx + 0x10]
+0x0000000140630945: movzx    eax, word ptr [rcx + rax*2]
+0x0000000140630949: mov      ecx, esi
+0x000000014063094b: and      ecx, 0x3f
+0x000000014063094e: add      ecx, eax
+0x0000000140630950: mov      edx, dword ptr [rdx + rcx*4]
+0x0000000140630953: cmp      edx, -1
+0x0000000140630956: jne      0x140630979
+0x0000000140630958: mov      rax, r13
+0x000000014063095b: cmp      ebp, 1
+0x000000014063095e: je       0x140630906
+0x0000000140630960: mov      edx, 0x4000fffd
+0x0000000140630965: test     ebp, ebp
+0x0000000140630967: jne      0x140630979
+0x0000000140630969: mov      edx, 0xffffffff
+0x000000014063096e: jmp      0x140630979
+0x0000000140630970: mov      esi, 0xffffffff
+0x0000000140630975: jmp      0x140630979
+0x0000000140630977: xor      edx, edx
+0x0000000140630979: mov      eax, esi
+0x000000014063097b: add      rsp, 0x28
+0x000000014063097f: pop      rbx
+0x0000000140630980: pop      rbp
+0x0000000140630981: pop      rdi
+0x0000000140630982: pop      rsi
+0x0000000140630983: pop      r12
+0x0000000140630985: pop      r13
+0x0000000140630987: pop      r14
+0x0000000140630989: pop      r15
+0x000000014063098b: ret      

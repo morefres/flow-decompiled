@@ -1,0 +1,30 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x229628-0x22968b
+0x0000000140229628: push     rsi
+0x0000000140229629: sub      rsp, 0x50
+0x000000014022962d: mov      r8, rdx
+0x0000000140229630: mov      rdx, rcx
+0x0000000140229633: mov      qword ptr [rsp + 0x20], 6
+0x000000014022963c: lea      r9, [rip + 0x8d25bf]
+0x0000000140229643: lea      rsi, [rsp + 0x30]
+0x0000000140229648: mov      rcx, rsi
+0x000000014022964b: call     0x14022ee8a
+0x0000000140229650: mov      rcx, rsi
+0x0000000140229653: call     0x14022ef19
+0x0000000140229658: test     rax, rax
+0x000000014022965b: je       0x14022966f
+0x000000014022965d: mov      ecx, eax
+0x000000014022965f: and      ecx, 3
+0x0000000140229662: lea      edx, [rcx - 2]
+0x0000000140229665: cmp      edx, 2
+0x0000000140229668: jb       0x14022966f
+0x000000014022966a: test     rcx, rcx
+0x000000014022966d: jne      0x140229675
+0x000000014022966f: add      rsp, 0x50
+0x0000000140229673: pop      rsi
+0x0000000140229674: ret      
+0x0000000140229675: mov      rcx, rax
+0x0000000140229678: dec      rcx
+0x000000014022967b: mov      rax, qword ptr [rax + 0x17]
+0x000000014022967f: add      rsp, 0x50
+0x0000000140229683: pop      rsi
+0x0000000140229684: jmp      qword ptr [rip + 0x6a880d]

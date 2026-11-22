@@ -1,0 +1,57 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x701796-0x701843
+0x0000000140701796: push     r14
+0x0000000140701798: push     rsi
+0x0000000140701799: push     rdi
+0x000000014070179a: push     rbx
+0x000000014070179b: sub      rsp, 0x28
+0x000000014070179f: mov      rdx, qword ptr [rcx + 0x18]
+0x00000001407017a3: test     rdx, rdx
+0x00000001407017a6: je       0x1407017d4
+0x00000001407017a8: mov      rbx, qword ptr [rcx]
+0x00000001407017ab: mov      rax, qword ptr [rcx + 0x10]
+0x00000001407017af: xor      r8d, r8d
+0x00000001407017b2: cmp      rax, rbx
+0x00000001407017b5: cmovae   r8, rbx
+0x00000001407017b9: sub      rax, r8
+0x00000001407017bc: mov      r8, rbx
+0x00000001407017bf: sub      r8, rax
+0x00000001407017c2: mov      rsi, rdx
+0x00000001407017c5: sub      rsi, r8
+0x00000001407017c8: ja       0x1407017da
+0x00000001407017ca: add      rdx, rax
+0x00000001407017cd: xor      esi, esi
+0x00000001407017cf: mov      rbx, rdx
+0x00000001407017d2: jmp      0x1407017da
+0x00000001407017d4: xor      esi, esi
+0x00000001407017d6: xor      ebx, ebx
+0x00000001407017d8: xor      eax, eax
+0x00000001407017da: mov      rdi, qword ptr [rcx + 8]
+0x00000001407017de: sub      rbx, rax
+0x00000001407017e1: lea      rax, [rax + rax*2]
+0x00000001407017e5: lea      r14, [rdi + rax*8]
+0x00000001407017e9: add      r14, 8
+0x00000001407017ed: sub      rbx, 1
+0x00000001407017f1: jb       0x140701811
+0x00000001407017f3: mov      rcx, qword ptr [r14 - 8]
+0x00000001407017f7: mov      rdx, qword ptr [r14]
+0x00000001407017fa: mov      r8d, 1
+0x0000000140701800: mov      r9d, 1
+0x0000000140701806: call     0x14000a0f6
+0x000000014070180b: add      r14, 0x18
+0x000000014070180f: jmp      0x1407017ed
+0x0000000140701811: add      rdi, 8
+0x0000000140701815: sub      rsi, 1
+0x0000000140701819: jb       0x140701839
+0x000000014070181b: mov      rcx, qword ptr [rdi - 8]
+0x000000014070181f: mov      rdx, qword ptr [rdi]
+0x0000000140701822: mov      r8d, 1
+0x0000000140701828: mov      r9d, 1
+0x000000014070182e: call     0x14000a0f6
+0x0000000140701833: add      rdi, 0x18
+0x0000000140701837: jmp      0x140701815
+0x0000000140701839: add      rsp, 0x28
+0x000000014070183d: pop      rbx
+0x000000014070183e: pop      rdi
+0x000000014070183f: pop      rsi
+0x0000000140701840: pop      r14
+0x0000000140701842: ret      

@@ -1,0 +1,6 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x68450-0x6845f
+0x0000000140068450: sub      rsp, 0x28
+0x0000000140068454: call     0x140068460
+0x0000000140068459: nop      
+0x000000014006845a: add      rsp, 0x28
+0x000000014006845e: ret      

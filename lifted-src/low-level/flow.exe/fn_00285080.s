@@ -1,0 +1,18 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x285080-0x2850c7
+0x0000000140285080: sub      rsp, 0x28
+0x0000000140285084: mov      rax, 0xffffffffffffffc0
+0x000000014028508b: lock xadd qword ptr [rcx], rax
+0x0000000140285090: shr      rax, 6
+0x0000000140285094: cmp      rax, 1
+0x0000000140285098: je       0x1402850a4
+0x000000014028509a: test     rax, rax
+0x000000014028509d: je       0x1402850ad
+0x000000014028509f: add      rsp, 0x28
+0x00000001402850a3: ret      
+0x00000001402850a4: add      rsp, 0x28
+0x00000001402850a8: jmp      0x140285157
+0x00000001402850ad: lea      rcx, [rip + 0x8fc81c]
+0x00000001402850b4: lea      r8, [rip + 0x8fc83d]
+0x00000001402850bb: mov      edx, 0x27
+0x00000001402850c0: call     0x1408ae860
+0x00000001402850c5: ud2      

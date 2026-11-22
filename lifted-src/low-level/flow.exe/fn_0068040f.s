@@ -1,0 +1,50 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x68040f-0x6804a0
+0x000000014068040f: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140680414: push     rbp
+0x0000000140680415: push     r15
+0x0000000140680417: push     r14
+0x0000000140680419: push     r13
+0x000000014068041b: push     r12
+0x000000014068041d: push     rsi
+0x000000014068041e: push     rdi
+0x000000014068041f: push     rbx
+0x0000000140680420: sub      rsp, 0x28
+0x0000000140680424: lea      rbp, [rdx + 0x80]
+0x000000014068042b: cmp      byte ptr [rbp + 0x1e1c], 0
+0x0000000140680432: je       0x140680481
+0x0000000140680434: mov      rax, qword ptr [rbp + 0x1e00]
+0x000000014068043b: add      eax, -2
+0x000000014068043e: cmp      eax, 2
+0x0000000140680441: jb       0x140680462
+0x0000000140680443: cmp      qword ptr [rbp + 0x1e00], 0
+0x000000014068044b: je       0x140680462
+0x000000014068044d: mov      rax, qword ptr [rbp + 0x1dc8]
+0x0000000140680454: lea      rcx, [rax - 1]
+0x0000000140680458: mov      rax, qword ptr [rax + 0x17]
+0x000000014068045c: call     qword ptr [rip + 0x251a36]
+0x0000000140680462: mov      al, 1
+0x0000000140680464: mov      byte ptr [rbp + 0x1e2e], al
+0x000000014068046a: mov      byte ptr [rbp + 0x1e2d], al
+0x0000000140680470: add      rsp, 0x28
+0x0000000140680474: pop      rbx
+0x0000000140680475: pop      rdi
+0x0000000140680476: pop      rsi
+0x0000000140680477: pop      r12
+0x0000000140680479: pop      r13
+0x000000014068047b: pop      r14
+0x000000014068047d: pop      r15
+0x000000014068047f: pop      rbp
+0x0000000140680480: ret      
+0x0000000140680481: xor      eax, eax
+0x0000000140680483: mov      byte ptr [rbp + 0x1e2e], al
+0x0000000140680489: mov      byte ptr [rbp + 0x1e2d], al
+0x000000014068048f: add      rsp, 0x28
+0x0000000140680493: pop      rbx
+0x0000000140680494: pop      rdi
+0x0000000140680495: pop      rsi
+0x0000000140680496: pop      r12
+0x0000000140680498: pop      r13
+0x000000014068049a: pop      r14
+0x000000014068049c: pop      r15
+0x000000014068049e: pop      rbp
+0x000000014068049f: ret      

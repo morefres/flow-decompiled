@@ -1,0 +1,99 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x66939c-0x6694de
+0x000000014066939c: push     rbp
+0x000000014066939d: push     r15
+0x000000014066939f: push     r14
+0x00000001406693a1: push     rsi
+0x00000001406693a2: push     rdi
+0x00000001406693a3: push     rbx
+0x00000001406693a4: sub      rsp, 0x48
+0x00000001406693a8: lea      rbp, [rsp + 0x40]
+0x00000001406693ad: mov      qword ptr [rbp], 0xfffffffffffffffe
+0x00000001406693b5: mov      r14, rdx
+0x00000001406693b8: mov      rbx, rcx
+0x00000001406693bb: cmp      byte ptr [rcx + 0x451], 1
+0x00000001406693c2: ja       0x1406693d4
+0x00000001406693c4: lea      rcx, [rbx + 0x28]
+0x00000001406693c8: call     0x1406e273b
+0x00000001406693cd: or       byte ptr [rbx + 0x451], 2
+0x00000001406693d4: lea      r15, [rbx + 0x28]
+0x00000001406693d8: xor      edi, edi
+0x00000001406693da: movabs   rsi, 0x1700000003
+0x00000001406693e4: cmp      qword ptr [rbx + 0xd8], 0
+0x00000001406693ec: je       0x140669414
+0x00000001406693ee: mov      rcx, rbx
+0x00000001406693f1: mov      rdx, r15
+0x00000001406693f4: mov      r8, r14
+0x00000001406693f7: call     0x14066927f
+0x00000001406693fc: cmp      rax, 2
+0x0000000140669400: je       0x14066943e
+0x0000000140669402: test     al, 1
+0x0000000140669404: jne      0x140669499
+0x000000014066940a: test     rdx, rdx
+0x000000014066940d: jne      0x1406693e4
+0x000000014066940f: jmp      0x14066949c
+0x0000000140669414: mov      rcx, qword ptr [rbx + 0x18]
+0x0000000140669418: call     0x14082031b
+0x000000014066941d: test     rdx, rdx
+0x0000000140669420: je       0x140669445
+0x0000000140669422: mov      r8d, edx
+0x0000000140669425: and      r8d, 3
+0x0000000140669429: lea      rax, [rip + 0x53da08]
+0x0000000140669430: movsxd   rcx, dword ptr [rax + r8*4]
+0x0000000140669434: add      rcx, rax
+0x0000000140669437: jmp      rcx
+0x0000000140669439: mov      al, byte ptr [rdx + 0x10]
+0x000000014066943c: jmp      0x140669484
+0x000000014066943e: mov      edi, 1
+0x0000000140669443: jmp      0x14066949c
+0x0000000140669445: xor      esi, esi
+0x0000000140669447: jmp      0x140669493
+0x0000000140669449: mov      qword ptr [rbp - 0x10], r8
+0x000000014066944d: mov      rax, qword ptr [rip + 0x75835c]
+0x0000000140669454: mov      qword ptr [rbp - 0x18], rdx
+0x0000000140669458: mov      rcx, rdx
+0x000000014066945b: shr      rcx, 0x20
+0x000000014066945f: mov      rax, qword ptr [rax + 8]
+0x0000000140669463: mov      byte ptr [rbp - 1], 1
+0x0000000140669467: call     qword ptr [rip + 0x268a2b]
+0x000000014066946d: nop      
+0x000000014066946e: mov      rdx, qword ptr [rbp - 0x18]
+0x0000000140669472: mov      r8, qword ptr [rbp - 0x10]
+0x0000000140669476: jmp      0x140669484
+0x0000000140669478: mov      rax, rdx
+0x000000014066947b: shr      rax, 0x20
+0x000000014066947f: jmp      0x140669484
+0x0000000140669481: mov      al, byte ptr [rdx + 0x1f]
+0x0000000140669484: cmp      al, 7
+0x0000000140669486: jne      0x140669497
+0x0000000140669488: xor      esi, esi
+0x000000014066948a: lea      eax, [r8 - 2]
+0x000000014066948e: cmp      eax, 2
+0x0000000140669491: jae      0x1406694af
+0x0000000140669493: xor      edi, edi
+0x0000000140669495: jmp      0x14066949c
+0x0000000140669497: xor      edi, edi
+0x0000000140669499: mov      rsi, rdx
+0x000000014066949c: mov      rax, rdi
+0x000000014066949f: mov      rdx, rsi
+0x00000001406694a2: add      rsp, 0x48
+0x00000001406694a6: pop      rbx
+0x00000001406694a7: pop      rdi
+0x00000001406694a8: pop      rsi
+0x00000001406694a9: pop      r14
+0x00000001406694ab: pop      r15
+0x00000001406694ad: pop      rbp
+0x00000001406694ae: ret      
+0x00000001406694af: mov      qword ptr [rbp - 0x18], rdx
+0x00000001406694b3: mov      edi, 0
+0x00000001406694b8: mov      qword ptr [rbp - 0x10], r8
+0x00000001406694bc: test     r8, r8
+0x00000001406694bf: je       0x14066949c
+0x00000001406694c1: mov      rax, qword ptr [rbp - 0x18]
+0x00000001406694c5: lea      rcx, [rax - 1]
+0x00000001406694c9: mov      rax, qword ptr [rax + 0x17]
+0x00000001406694cd: mov      byte ptr [rbp - 1], 0
+0x00000001406694d1: xor      esi, esi
+0x00000001406694d3: call     qword ptr [rip + 0x2689bf]
+0x00000001406694d9: nop      
+0x00000001406694da: xor      edi, edi
+0x00000001406694dc: jmp      0x14066949c

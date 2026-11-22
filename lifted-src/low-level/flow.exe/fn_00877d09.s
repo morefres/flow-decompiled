@@ -1,0 +1,98 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x877d09-0x877e84
+0x0000000140877d09: push     r15
+0x0000000140877d0b: push     r14
+0x0000000140877d0d: push     rsi
+0x0000000140877d0e: push     rdi
+0x0000000140877d0f: push     rbx
+0x0000000140877d10: sub      rsp, 0x20
+0x0000000140877d14: mov      r15, r8
+0x0000000140877d17: mov      rdi, rdx
+0x0000000140877d1a: mov      rsi, rcx
+0x0000000140877d1d: lea      r14, [rcx + 0x90]
+0x0000000140877d24: mov      rcx, r14
+0x0000000140877d27: xor      edx, edx
+0x0000000140877d29: mov      r8d, r9d
+0x0000000140877d2c: call     0x140877e84
+0x0000000140877d31: mov      rcx, r14
+0x0000000140877d34: call     0x140877eb1
+0x0000000140877d39: mov      r8, qword ptr [rsi + 0x20]
+0x0000000140877d3d: mov      rbx, r15
+0x0000000140877d40: sub      rbx, rdi
+0x0000000140877d43: jb       0x140877e15
+0x0000000140877d49: cmp      r15, r8
+0x0000000140877d4c: ja       0x140877e15
+0x0000000140877d52: mov      rdx, qword ptr [rsi + 0x98]
+0x0000000140877d59: mov      rcx, qword ptr [rsi + 0xa0]
+0x0000000140877d60: mov      r15, qword ptr [rsi + 0xa8]
+0x0000000140877d67: lea      r8, [r15 + rcx]
+0x0000000140877d6b: mov      rax, rdx
+0x0000000140877d6e: sub      rax, r8
+0x0000000140877d71: cmp      rax, 1
+0x0000000140877d75: jbe      0x140877e24
+0x0000000140877d7b: cmp      rdx, r8
+0x0000000140877d7e: jb       0x140877e34
+0x0000000140877d84: add      rdi, qword ptr [rsi + 0x18]
+0x0000000140877d88: mov      rax, qword ptr [r14]
+0x0000000140877d8b: mov      word ptr [rax + r8], bx
+0x0000000140877d90: lea      r8, [r15 + 2]
+0x0000000140877d94: mov      qword ptr [rsi + 0xa8], r8
+0x0000000140877d9b: lea      r8, [r15 + rcx]
+0x0000000140877d9f: add      r8, 2
+0x0000000140877da3: mov      r9, rdx
+0x0000000140877da6: sub      r9, r8
+0x0000000140877da9: cmp      r9, 1
+0x0000000140877dad: jbe      0x140877e3d
+0x0000000140877db3: cmp      rdx, r8
+0x0000000140877db6: jb       0x140877e4d
+0x0000000140877dbc: mov      r9d, ebx
+0x0000000140877dbf: not      r9d
+0x0000000140877dc2: mov      word ptr [rax + r8], r9w
+0x0000000140877dc7: add      r15, 4
+0x0000000140877dcb: mov      qword ptr [rsi + 0xa8], r15
+0x0000000140877dd2: test     bx, bx
+0x0000000140877dd5: je       0x140877e09
+0x0000000140877dd7: add      rcx, r15
+0x0000000140877dda: mov      r8, rdx
+0x0000000140877ddd: sub      r8, rcx
+0x0000000140877de0: cmp      r8, rbx
+0x0000000140877de3: jb       0x140877e59
+0x0000000140877de5: cmp      rdx, rcx
+0x0000000140877de8: jb       0x140877e73
+0x0000000140877dee: add      rax, rcx
+0x0000000140877df1: mov      rcx, rax
+0x0000000140877df4: mov      rdx, rdi
+0x0000000140877df7: mov      r8, rbx
+0x0000000140877dfa: call     0x1408acdc0
+0x0000000140877dff: add      r15, rbx
+0x0000000140877e02: mov      qword ptr [rsi + 0xa8], r15
+0x0000000140877e09: add      rsp, 0x20
+0x0000000140877e0d: pop      rbx
+0x0000000140877e0e: pop      rdi
+0x0000000140877e0f: pop      rsi
+0x0000000140877e10: pop      r14
+0x0000000140877e12: pop      r15
+0x0000000140877e14: ret      
+0x0000000140877e15: lea      r9, [rip + 0x31d694]
+0x0000000140877e1c: mov      rcx, rdi
+0x0000000140877e1f: mov      rdx, r15
+0x0000000140877e22: jmp      0x140877e7d
+0x0000000140877e24: lea      rcx, [rip + 0x31a765]
+0x0000000140877e2b: lea      r8, [rip + 0x31d696]
+0x0000000140877e32: jmp      0x140877e67
+0x0000000140877e34: lea      r9, [rip + 0x31d68d]
+0x0000000140877e3b: jmp      0x140877e54
+0x0000000140877e3d: lea      rcx, [rip + 0x31a74c]
+0x0000000140877e44: lea      r8, [rip + 0x31d695]
+0x0000000140877e4b: jmp      0x140877e67
+0x0000000140877e4d: lea      r9, [rip + 0x31d68c]
+0x0000000140877e54: mov      rcx, r8
+0x0000000140877e57: jmp      0x140877e7a
+0x0000000140877e59: lea      rcx, [rip + 0x31a730]
+0x0000000140877e60: lea      r8, [rip + 0x31d691]
+0x0000000140877e67: mov      edx, 0x43
+0x0000000140877e6c: call     0x1408ae6f0
+0x0000000140877e71: ud2      
+0x0000000140877e73: lea      r9, [rip + 0x31d67e]
+0x0000000140877e7a: mov      r8, rdx
+0x0000000140877e7d: call     0x1408ae7a0
+0x0000000140877e82: ud2      

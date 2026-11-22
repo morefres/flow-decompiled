@@ -1,0 +1,30 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x756850-0x7568b3
+0x0000000140756850: sub      rsp, 0x28
+0x0000000140756854: mov      rax, qword ptr [rcx]
+0x0000000140756857: mov      cl, byte ptr [rax]
+0x0000000140756859: mov      byte ptr [rax], 0
+0x000000014075685c: cmp      cl, 1
+0x000000014075685f: jne      0x1407568a5
+0x0000000140756861: call     0x14075660e
+0x0000000140756866: test     rax, rax
+0x0000000140756869: je       0x140756882
+0x000000014075686b: mov      eax, edx
+0x000000014075686d: and      eax, 3
+0x0000000140756870: lea      ecx, [rax - 2]
+0x0000000140756873: cmp      ecx, 2
+0x0000000140756876: jb       0x14075687d
+0x0000000140756878: test     rax, rax
+0x000000014075687b: jne      0x140756890
+0x000000014075687d: add      rsp, 0x28
+0x0000000140756881: ret      
+0x0000000140756882: mov      rcx, rdx
+0x0000000140756885: add      rsp, 0x28
+0x0000000140756889: jmp      qword ptr [rip + 0x17b5d0]
+0x0000000140756890: mov      rcx, rdx
+0x0000000140756893: dec      rcx
+0x0000000140756896: mov      rax, qword ptr [rdx + 0x17]
+0x000000014075689a: add      rsp, 0x28
+0x000000014075689e: jmp      qword ptr [rip + 0x17b5f3]
+0x00000001407568a5: lea      rcx, [rip + 0x41ee84]
+0x00000001407568ac: call     0x1408ae8e0
+0x00000001407568b1: ud2      

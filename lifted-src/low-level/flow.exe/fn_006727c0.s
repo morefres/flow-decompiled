@@ -1,0 +1,50 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6727c0-0x672851
+0x00000001406727c0: mov      qword ptr [rsp + 0x10], rdx
+0x00000001406727c5: push     rbp
+0x00000001406727c6: push     r15
+0x00000001406727c8: push     r14
+0x00000001406727ca: push     r13
+0x00000001406727cc: push     r12
+0x00000001406727ce: push     rsi
+0x00000001406727cf: push     rdi
+0x00000001406727d0: push     rbx
+0x00000001406727d1: sub      rsp, 0x28
+0x00000001406727d5: lea      rbp, [rdx + 0x80]
+0x00000001406727dc: cmp      byte ptr [rbp + 0x1e8c], 0
+0x00000001406727e3: je       0x140672832
+0x00000001406727e5: mov      rax, qword ptr [rbp + 0x1e70]
+0x00000001406727ec: add      eax, -2
+0x00000001406727ef: cmp      eax, 2
+0x00000001406727f2: jb       0x140672813
+0x00000001406727f4: cmp      qword ptr [rbp + 0x1e70], 0
+0x00000001406727fc: je       0x140672813
+0x00000001406727fe: mov      rax, qword ptr [rbp + 0x1e60]
+0x0000000140672805: lea      rcx, [rax - 1]
+0x0000000140672809: mov      rax, qword ptr [rax + 0x17]
+0x000000014067280d: call     qword ptr [rip + 0x25f685]
+0x0000000140672813: mov      al, 1
+0x0000000140672815: mov      byte ptr [rbp + 0x1e9e], al
+0x000000014067281b: mov      byte ptr [rbp + 0x1e9d], al
+0x0000000140672821: add      rsp, 0x28
+0x0000000140672825: pop      rbx
+0x0000000140672826: pop      rdi
+0x0000000140672827: pop      rsi
+0x0000000140672828: pop      r12
+0x000000014067282a: pop      r13
+0x000000014067282c: pop      r14
+0x000000014067282e: pop      r15
+0x0000000140672830: pop      rbp
+0x0000000140672831: ret      
+0x0000000140672832: xor      eax, eax
+0x0000000140672834: mov      byte ptr [rbp + 0x1e9e], al
+0x000000014067283a: mov      byte ptr [rbp + 0x1e9d], al
+0x0000000140672840: add      rsp, 0x28
+0x0000000140672844: pop      rbx
+0x0000000140672845: pop      rdi
+0x0000000140672846: pop      rsi
+0x0000000140672847: pop      r12
+0x0000000140672849: pop      r13
+0x000000014067284b: pop      r14
+0x000000014067284d: pop      r15
+0x000000014067284f: pop      rbp
+0x0000000140672850: ret      

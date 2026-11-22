@@ -1,0 +1,9 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x8a9210-0x8a9229
+0x00000001408a9210: sub      rsp, 0x28
+0x00000001408a9214: call     0x1408a922c
+0x00000001408a9219: test     rax, rax
+0x00000001408a921c: je       0x1408a9223
+0x00000001408a921e: add      rsp, 0x28
+0x00000001408a9222: ret      
+0x00000001408a9223: call     0x1408acaf1
+0x00000001408a9228: int3     

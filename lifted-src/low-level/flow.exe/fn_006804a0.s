@@ -1,0 +1,53 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6804a0-0x680539
+0x00000001406804a0: mov      qword ptr [rsp + 0x10], rdx
+0x00000001406804a5: push     rbp
+0x00000001406804a6: push     r15
+0x00000001406804a8: push     r14
+0x00000001406804aa: push     r13
+0x00000001406804ac: push     r12
+0x00000001406804ae: push     rsi
+0x00000001406804af: push     rdi
+0x00000001406804b0: push     rbx
+0x00000001406804b1: sub      rsp, 0x28
+0x00000001406804b5: lea      rbp, [rdx + 0x80]
+0x00000001406804bc: mov      bl, byte ptr [rbp + 0x1e2d]
+0x00000001406804c2: mov      sil, byte ptr [rbp + 0x1e2e]
+0x00000001406804c9: test     bl, 1
+0x00000001406804cc: je       0x1406804f9
+0x00000001406804ce: mov      rax, qword ptr [rbp + 0x1e10]
+0x00000001406804d5: and      eax, 3
+0x00000001406804d8: lea      ecx, [rax - 2]
+0x00000001406804db: cmp      ecx, 2
+0x00000001406804de: jb       0x1406804f9
+0x00000001406804e0: test     rax, rax
+0x00000001406804e3: je       0x1406804f9
+0x00000001406804e5: mov      rcx, qword ptr [rbp + 0x1e10]
+0x00000001406804ec: mov      rax, qword ptr [rcx + 0x17]
+0x00000001406804f0: dec      rcx
+0x00000001406804f3: call     qword ptr [rip + 0x25199f]
+0x00000001406804f9: test     sil, 1
+0x00000001406804fd: je       0x140680522
+0x00000001406804ff: lea      rcx, [rbp + 0x1d68]
+0x0000000140680506: call     0x140668d81
+0x000000014068050b: mov      byte ptr [rbp + 0x1e1d], bl
+0x0000000140680511: add      rsp, 0x28
+0x0000000140680515: pop      rbx
+0x0000000140680516: pop      rdi
+0x0000000140680517: pop      rsi
+0x0000000140680518: pop      r12
+0x000000014068051a: pop      r13
+0x000000014068051c: pop      r14
+0x000000014068051e: pop      r15
+0x0000000140680520: pop      rbp
+0x0000000140680521: ret      
+0x0000000140680522: mov      byte ptr [rbp + 0x1e1d], bl
+0x0000000140680528: add      rsp, 0x28
+0x000000014068052c: pop      rbx
+0x000000014068052d: pop      rdi
+0x000000014068052e: pop      rsi
+0x000000014068052f: pop      r12
+0x0000000140680531: pop      r13
+0x0000000140680533: pop      r14
+0x0000000140680535: pop      r15
+0x0000000140680537: pop      rbp
+0x0000000140680538: ret      

@@ -1,0 +1,64 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x735413-0x73550e
+0x0000000140735413: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140735418: push     rbp
+0x0000000140735419: push     r15
+0x000000014073541b: push     r14
+0x000000014073541d: push     r12
+0x000000014073541f: push     rsi
+0x0000000140735420: push     rdi
+0x0000000140735421: push     rbx
+0x0000000140735422: sub      rsp, 0x30
+0x0000000140735426: lea      rbp, [rdx + 0x80]
+0x000000014073542d: mov      bl, byte ptr [rbp + 0x214]
+0x0000000140735433: mov      sil, byte ptr [rbp + 0x215]
+0x000000014073543a: test     byte ptr [rbp + 0x212], 1
+0x0000000140735441: je       0x1407354af
+0x0000000140735443: movabs   rax, 0x8000000000000013
+0x000000014073544d: cmp      qword ptr [rbp + 0x1e8], rax
+0x0000000140735454: je       0x1407354cf
+0x0000000140735456: mov      rcx, qword ptr [rbp + 0x1d8]
+0x000000014073545d: call     0x1406e2b28
+0x0000000140735462: cmp      qword ptr [rbp + 0x1f8], -1
+0x000000014073546a: je       0x14073548f
+0x000000014073546c: mov      rax, qword ptr [rbp + 0x200]
+0x0000000140735473: mov      rdx, qword ptr [rax + 8]
+0x0000000140735477: mov      r8d, 1
+0x000000014073547d: mov      r9d, 1
+0x0000000140735483: mov      rcx, qword ptr [rbp + 0x1f8]
+0x000000014073548a: call     0x14000a0f6
+0x000000014073548f: and      sil, 1
+0x0000000140735493: mov      byte ptr [rbp + 0x211], sil
+0x000000014073549a: mov      byte ptr [rbp + 0x210], bl
+0x00000001407354a0: add      rsp, 0x30
+0x00000001407354a4: pop      rbx
+0x00000001407354a5: pop      rdi
+0x00000001407354a6: pop      rsi
+0x00000001407354a7: pop      r12
+0x00000001407354a9: pop      r14
+0x00000001407354ab: pop      r15
+0x00000001407354ad: pop      rbp
+0x00000001407354ae: ret      
+0x00000001407354af: and      sil, 1
+0x00000001407354b3: mov      byte ptr [rbp + 0x211], sil
+0x00000001407354ba: mov      byte ptr [rbp + 0x210], bl
+0x00000001407354c0: add      rsp, 0x30
+0x00000001407354c4: pop      rbx
+0x00000001407354c5: pop      rdi
+0x00000001407354c6: pop      rsi
+0x00000001407354c7: pop      r12
+0x00000001407354c9: pop      r14
+0x00000001407354cb: pop      r15
+0x00000001407354cd: pop      rbp
+0x00000001407354ce: ret      
+0x00000001407354cf: test     byte ptr [rbp + 0x213], 1
+0x00000001407354d6: je       0x140735462
+0x00000001407354d8: mov      rax, qword ptr [rbp + 0x200]
+0x00000001407354df: mov      rcx, qword ptr [rax + 0x20]
+0x00000001407354e3: cmp      rcx, -1
+0x00000001407354e7: je       0x140735462
+0x00000001407354ed: mov      rax, qword ptr [rbp + 0x200]
+0x00000001407354f4: mov      rdx, qword ptr [rax + 0x28]
+0x00000001407354f8: mov      r8d, 1
+0x00000001407354fe: mov      r9d, 1
+0x0000000140735504: call     0x14000a0f6
+0x0000000140735509: jmp      0x140735462

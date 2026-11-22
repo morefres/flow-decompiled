@@ -1,0 +1,165 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x256410-0x256675
+0x0000000140256410: push     rbp
+0x0000000140256411: push     r15
+0x0000000140256413: push     r14
+0x0000000140256415: push     r13
+0x0000000140256417: push     r12
+0x0000000140256419: push     rsi
+0x000000014025641a: push     rdi
+0x000000014025641b: push     rbx
+0x000000014025641c: sub      rsp, 0x48
+0x0000000140256420: lea      rbp, [rsp + 0x40]
+0x0000000140256425: mov      qword ptr [rbp], 0xfffffffffffffffe
+0x000000014025642d: mov      rsi, rcx
+0x0000000140256430: xor      eax, eax
+0x0000000140256432: mov      qword ptr [rbp - 0x18], rax
+0x0000000140256436: mov      qword ptr [rbp - 0x10], 1
+0x000000014025643e: mov      qword ptr [rbp - 8], rax
+0x0000000140256442: mov      r14, qword ptr [rdx + 0x10]
+0x0000000140256446: test     r14, r14
+0x0000000140256449: je       0x140256614
+0x000000014025644f: mov      r15, qword ptr [rdx + 8]
+0x0000000140256453: mov      r12, qword ptr [rdx]
+0x0000000140256456: mov      rax, r15
+0x0000000140256459: sub      rax, r12
+0x000000014025645c: jne      0x14025663c
+0x0000000140256462: lea      rcx, [rbp - 0x18]
+0x0000000140256466: mov      r13d, 2
+0x000000014025646c: cmp      r12, r15
+0x000000014025646f: je       0x140256614
+0x0000000140256475: mov      r8b, byte ptr [r12]
+0x0000000140256479: movzx    eax, r8b
+0x000000014025647d: test     al, al
+0x000000014025647f: js       0x140256490
+0x0000000140256481: inc      r12
+0x0000000140256484: mov      rdx, qword ptr [rbp - 0x18]
+0x0000000140256488: mov      rbx, qword ptr [rbp - 8]
+0x000000014025648c: mov      edi, eax
+0x000000014025648e: jmp      0x1402564f4
+0x0000000140256490: mov      edi, eax
+0x0000000140256492: and      edi, 0x1f
+0x0000000140256495: movzx    edx, byte ptr [r12 + 1]
+0x000000014025649b: and      edx, 0x3f
+0x000000014025649e: cmp      al, 0xdf
+0x00000001402564a0: jbe      0x1402564d0
+0x00000001402564a2: movzx    eax, byte ptr [r12 + 2]
+0x00000001402564a8: shl      edx, 6
+0x00000001402564ab: and      eax, 0x3f
+0x00000001402564ae: or       eax, edx
+0x00000001402564b0: cmp      r8b, 0xf0
+0x00000001402564b4: jb       0x1402564db
+0x00000001402564b6: movzx    edx, byte ptr [r12 + 3]
+0x00000001402564bc: add      r12, 4
+0x00000001402564c0: and      edi, 7
+0x00000001402564c3: shl      edi, 0x12
+0x00000001402564c6: shl      eax, 6
+0x00000001402564c9: and      edx, 0x3f
+0x00000001402564cc: or       edx, eax
+0x00000001402564ce: jmp      0x1402564d7
+0x00000001402564d0: add      r12, 2
+0x00000001402564d4: shl      edi, 6
+0x00000001402564d7: or       edi, edx
+0x00000001402564d9: jmp      0x1402564e4
+0x00000001402564db: add      r12, 3
+0x00000001402564df: shl      edi, 0xc
+0x00000001402564e2: or       edi, eax
+0x00000001402564e4: mov      rdx, qword ptr [rbp - 0x18]
+0x00000001402564e8: mov      rbx, qword ptr [rbp - 8]
+0x00000001402564ec: cmp      edi, 0x80
+0x00000001402564f2: jae      0x140256522
+0x00000001402564f4: cmp      rdx, rbx
+0x00000001402564f7: je       0x1402565d1
+0x00000001402564fd: mov      rax, qword ptr [rbp - 0x10]
+0x0000000140256501: mov      byte ptr [rax + rbx], dil
+0x0000000140256505: mov      eax, 1
+0x000000014025650a: add      rbx, rax
+0x000000014025650d: dec      r14
+0x0000000140256510: mov      qword ptr [rbp - 8], rbx
+0x0000000140256514: test     r14, r14
+0x0000000140256517: jne      0x14025646c
+0x000000014025651d: jmp      0x140256614
+0x0000000140256522: cmp      edi, 0x10000
+0x0000000140256528: mov      r8d, 4
+0x000000014025652e: sbb      r8, 0
+0x0000000140256532: cmp      edi, 0x800
+0x0000000140256538: cmovb    r8, r13
+0x000000014025653c: sub      rdx, rbx
+0x000000014025653f: cmp      r8, rdx
+0x0000000140256542: ja       0x1402565f4
+0x0000000140256548: mov      eax, edi
+0x000000014025654a: and      al, 0x3f
+0x000000014025654c: or       al, 0x80
+0x000000014025654e: mov      r9d, edi
+0x0000000140256551: shr      r9d, 6
+0x0000000140256555: mov      rdx, qword ptr [rbp - 0x10]
+0x0000000140256559: cmp      edi, 0x800
+0x000000014025655f: jae      0x140256574
+0x0000000140256561: or       r9b, 0xc0
+0x0000000140256565: mov      byte ptr [rdx + rbx], r9b
+0x0000000140256569: mov      byte ptr [rdx + rbx + 1], al
+0x000000014025656d: mov      eax, 2
+0x0000000140256572: jmp      0x14025650a
+0x0000000140256574: and      r9b, 0x3f
+0x0000000140256578: or       r9b, 0x80
+0x000000014025657c: mov      r8d, edi
+0x000000014025657f: shr      r8d, 0xc
+0x0000000140256583: cmp      edi, 0xffff
+0x0000000140256589: ja       0x1402565a6
+0x000000014025658b: or       r8b, 0xe0
+0x000000014025658f: mov      byte ptr [rdx + rbx], r8b
+0x0000000140256593: mov      byte ptr [rdx + rbx + 1], r9b
+0x0000000140256598: mov      byte ptr [rdx + rbx + 2], al
+0x000000014025659c: mov      eax, 3
+0x00000001402565a1: jmp      0x14025650a
+0x00000001402565a6: and      r8b, 0x3f
+0x00000001402565aa: or       r8b, 0x80
+0x00000001402565ae: shr      edi, 0x12
+0x00000001402565b1: or       dil, 0xf0
+0x00000001402565b5: mov      byte ptr [rdx + rbx], dil
+0x00000001402565b9: mov      byte ptr [rdx + rbx + 1], r8b
+0x00000001402565be: mov      byte ptr [rdx + rbx + 2], r9b
+0x00000001402565c3: mov      byte ptr [rdx + rbx + 3], al
+0x00000001402565c7: mov      eax, 4
+0x00000001402565cc: jmp      0x14025650a
+0x00000001402565d1: mov      qword ptr [rsp + 0x20], 1
+0x00000001402565da: mov      r8d, 1
+0x00000001402565e0: mov      r9d, 1
+0x00000001402565e6: call     0x1408adb37
+0x00000001402565eb: lea      rcx, [rbp - 0x18]
+0x00000001402565ef: jmp      0x1402564fd
+0x00000001402565f4: mov      qword ptr [rsp + 0x20], 1
+0x00000001402565fd: mov      r9d, 1
+0x0000000140256603: mov      rdx, rbx
+0x0000000140256606: call     0x1408adb37
+0x000000014025660b: lea      rcx, [rbp - 0x18]
+0x000000014025660f: jmp      0x140256548
+0x0000000140256614: mov      rax, qword ptr [rbp - 8]
+0x0000000140256618: mov      qword ptr [rsi + 0x10], rax
+0x000000014025661c: mov      rax, qword ptr [rbp - 0x18]
+0x0000000140256620: mov      qword ptr [rsi], rax
+0x0000000140256623: mov      rax, qword ptr [rbp - 0x10]
+0x0000000140256627: mov      qword ptr [rsi + 8], rax
+0x000000014025662b: add      rsp, 0x48
+0x000000014025662f: pop      rbx
+0x0000000140256630: pop      rdi
+0x0000000140256631: pop      rsi
+0x0000000140256632: pop      r12
+0x0000000140256634: pop      r13
+0x0000000140256636: pop      r14
+0x0000000140256638: pop      r15
+0x000000014025663a: pop      rbp
+0x000000014025663b: ret      
+0x000000014025663c: mov      r8, rax
+0x000000014025663f: shr      r8, 2
+0x0000000140256643: and      eax, 3
+0x0000000140256646: cmp      rax, 1
+0x000000014025664a: sbb      r8, -1
+0x000000014025664e: cmp      r14, r8
+0x0000000140256651: cmovb    r8, r14
+0x0000000140256655: mov      qword ptr [rsp + 0x20], 1
+0x000000014025665e: lea      rcx, [rbp - 0x18]
+0x0000000140256662: mov      r9d, 1
+0x0000000140256668: xor      edx, edx
+0x000000014025666a: call     0x1408adb37
+0x000000014025666f: nop      
+0x0000000140256670: jmp      0x140256462

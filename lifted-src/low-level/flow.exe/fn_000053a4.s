@@ -1,0 +1,62 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x53a4-0x5454
+0x00000001400053a4: push     r15
+0x00000001400053a6: push     r14
+0x00000001400053a8: push     r12
+0x00000001400053aa: push     rsi
+0x00000001400053ab: push     rdi
+0x00000001400053ac: push     rbx
+0x00000001400053ad: sub      rsp, 0x28
+0x00000001400053b1: mov      rdi, r9
+0x00000001400053b4: mov      rsi, rcx
+0x00000001400053b7: cmp      r8, 0x11
+0x00000001400053bb: jae      0x1400053e2
+0x00000001400053bd: call     qword ptr [rip + 0x8cc345]
+0x00000001400053c3: mov      rcx, rax
+0x00000001400053c6: xor      edx, edx
+0x00000001400053c8: mov      r8, rsi
+0x00000001400053cb: mov      r9, rdi
+0x00000001400053ce: add      rsp, 0x28
+0x00000001400053d2: pop      rbx
+0x00000001400053d3: pop      rdi
+0x00000001400053d4: pop      rsi
+0x00000001400053d5: pop      r12
+0x00000001400053d7: pop      r14
+0x00000001400053d9: pop      r15
+0x00000001400053db: jmp      qword ptr [rip + 0x8cc316]
+0x00000001400053e2: mov      r15, r8
+0x00000001400053e5: mov      r14, rdx
+0x00000001400053e8: lea      rdx, [rdi + r8]
+0x00000001400053ec: xor      r12d, r12d
+0x00000001400053ef: xor      ecx, ecx
+0x00000001400053f1: call     0x1407667d0
+0x00000001400053f6: test     rax, rax
+0x00000001400053f9: je       0x140005443
+0x00000001400053fb: mov      rbx, rax
+0x00000001400053fe: lea      rax, [r15 - 1]
+0x0000000140005402: mov      rcx, rbx
+0x0000000140005405: and      rax, rbx
+0x0000000140005408: sub      r15, rax
+0x000000014000540b: add      rbx, r15
+0x000000014000540e: mov      qword ptr [rcx + r15 - 8], rcx
+0x0000000140005413: cmp      rdi, r14
+0x0000000140005416: cmovb    r14, rdi
+0x000000014000541a: mov      rcx, rbx
+0x000000014000541d: mov      rdx, rsi
+0x0000000140005420: mov      r8, r14
+0x0000000140005423: call     0x1408acdc0
+0x0000000140005428: mov      rsi, qword ptr [rsi - 8]
+0x000000014000542c: call     qword ptr [rip + 0x8cc2d6]
+0x0000000140005432: mov      rcx, rax
+0x0000000140005435: xor      edx, edx
+0x0000000140005437: mov      r8, rsi
+0x000000014000543a: call     qword ptr [rip + 0x8cc2c0]
+0x0000000140005440: mov      r12, rbx
+0x0000000140005443: mov      rax, r12
+0x0000000140005446: add      rsp, 0x28
+0x000000014000544a: pop      rbx
+0x000000014000544b: pop      rdi
+0x000000014000544c: pop      rsi
+0x000000014000544d: pop      r12
+0x000000014000544f: pop      r14
+0x0000000140005451: pop      r15
+0x0000000140005453: ret      

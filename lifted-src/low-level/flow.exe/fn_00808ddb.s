@@ -1,0 +1,52 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x808ddb-0x808e96
+0x0000000140808ddb: sub      rsp, 0x38
+0x0000000140808ddf: mov      rax, qword ptr [rcx]
+0x0000000140808de2: lea      r8, [rsp + 0x28]
+0x0000000140808de7: lea      r9, [rsp + 0x30]
+0x0000000140808dec: test     al, 1
+0x0000000140808dee: je       0x140808e52
+0x0000000140808df0: test     al, 0x20
+0x0000000140808df2: jne      0x140808e14
+0x0000000140808df4: mov      r10, rax
+0x0000000140808df7: and      r10, 0xffffffffffffffde
+0x0000000140808dfb: test     al, 4
+0x0000000140808dfd: jne      0x140808e1e
+0x0000000140808dff: cmp      rax, 0x3f
+0x0000000140808e03: jbe      0x140808e6c
+0x0000000140808e05: add      r10, -0x40
+0x0000000140808e09: cmp      r10, 0x40
+0x0000000140808e0d: setb     dl
+0x0000000140808e10: add      dl, dl
+0x0000000140808e12: jmp      0x140808e29
+0x0000000140808e14: mov      dl, 3
+0x0000000140808e16: mov      r11, r8
+0x0000000140808e19: xor      r10d, r10d
+0x0000000140808e1c: jmp      0x140808e35
+0x0000000140808e1e: test     rax, rax
+0x0000000140808e21: js       0x140808e81
+0x0000000140808e23: add      r10, 0x40
+0x0000000140808e27: mov      dl, 1
+0x0000000140808e29: mov      qword ptr [rsp + 0x28], 1
+0x0000000140808e32: mov      r11, r9
+0x0000000140808e35: mov      qword ptr [r11], r10
+0x0000000140808e38: cmp      dword ptr [rsp + 0x28], 1
+0x0000000140808e3d: jne      0x140808e4b
+0x0000000140808e3f: mov      r10, qword ptr [rsp + 0x30]
+0x0000000140808e44: lock cmpxchg qword ptr [rcx], r10
+0x0000000140808e49: jne      0x140808dec
+0x0000000140808e4b: mov      eax, edx
+0x0000000140808e4d: add      rsp, 0x38
+0x0000000140808e51: ret      
+0x0000000140808e52: lea      rcx, [rip + 0x37795f]
+0x0000000140808e59: lea      r8, [rip + 0x377980]
+0x0000000140808e60: mov      edx, 0x23
+0x0000000140808e65: call     0x1408ae860
+0x0000000140808e6a: ud2      
+0x0000000140808e6c: lea      rcx, [rip + 0x3799a0]
+0x0000000140808e73: lea      r8, [rip + 0x3799c6]
+0x0000000140808e7a: mov      edx, 0x26
+0x0000000140808e7f: jmp      0x140808e65
+0x0000000140808e81: lea      rcx, [rip + 0x3799d0]
+0x0000000140808e88: lea      r8, [rip + 0x3799f9]
+0x0000000140808e8f: mov      edx, 0x2f
+0x0000000140808e94: jmp      0x140808e65

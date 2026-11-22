@@ -1,0 +1,64 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7260a4-0x72616e
+0x00000001407260a4: mov      qword ptr [rsp + 0x10], rdx
+0x00000001407260a9: push     rbp
+0x00000001407260aa: push     r15
+0x00000001407260ac: push     r14
+0x00000001407260ae: push     r13
+0x00000001407260b0: push     r12
+0x00000001407260b2: push     rsi
+0x00000001407260b3: push     rdi
+0x00000001407260b4: push     rbx
+0x00000001407260b5: sub      rsp, 0x58
+0x00000001407260b9: lea      rbp, [rdx + 0x80]
+0x00000001407260c0: mov      bl, byte ptr [rbp + 0x638]
+0x00000001407260c6: mov      sil, byte ptr [rbp + 0x63a]
+0x00000001407260cd: mov      dil, byte ptr [rbp + 0x63b]
+0x00000001407260d4: mov      rax, qword ptr [rbp + 0x708]
+0x00000001407260db: cmp      qword ptr [rax], -1
+0x00000001407260df: je       0x14072611e
+0x00000001407260e1: test     byte ptr [rbp + 0x639], 1
+0x00000001407260e8: je       0x140726146
+0x00000001407260ea: mov      rcx, qword ptr [rbp + 0x708]
+0x00000001407260f1: call     0x1407211c7
+0x00000001407260f6: mov      byte ptr [rbp + 0x64a], dil
+0x00000001407260fd: mov      byte ptr [rbp + 0x649], sil
+0x0000000140726104: and      bl, 1
+0x0000000140726107: mov      byte ptr [rbp + 0x648], bl
+0x000000014072610d: add      rsp, 0x58
+0x0000000140726111: pop      rbx
+0x0000000140726112: pop      rdi
+0x0000000140726113: pop      rsi
+0x0000000140726114: pop      r12
+0x0000000140726116: pop      r13
+0x0000000140726118: pop      r14
+0x000000014072611a: pop      r15
+0x000000014072611c: pop      rbp
+0x000000014072611d: ret      
+0x000000014072611e: mov      byte ptr [rbp + 0x64a], dil
+0x0000000140726125: mov      byte ptr [rbp + 0x649], sil
+0x000000014072612c: and      bl, 1
+0x000000014072612f: mov      byte ptr [rbp + 0x648], bl
+0x0000000140726135: add      rsp, 0x58
+0x0000000140726139: pop      rbx
+0x000000014072613a: pop      rdi
+0x000000014072613b: pop      rsi
+0x000000014072613c: pop      r12
+0x000000014072613e: pop      r13
+0x0000000140726140: pop      r14
+0x0000000140726142: pop      r15
+0x0000000140726144: pop      rbp
+0x0000000140726145: ret      
+0x0000000140726146: mov      byte ptr [rbp + 0x64a], dil
+0x000000014072614d: mov      byte ptr [rbp + 0x649], sil
+0x0000000140726154: and      bl, 1
+0x0000000140726157: mov      byte ptr [rbp + 0x648], bl
+0x000000014072615d: add      rsp, 0x58
+0x0000000140726161: pop      rbx
+0x0000000140726162: pop      rdi
+0x0000000140726163: pop      rsi
+0x0000000140726164: pop      r12
+0x0000000140726166: pop      r13
+0x0000000140726168: pop      r14
+0x000000014072616a: pop      r15
+0x000000014072616c: pop      rbp
+0x000000014072616d: ret      

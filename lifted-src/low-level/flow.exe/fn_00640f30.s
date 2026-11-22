@@ -1,0 +1,119 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x640f30-0x6410ce
+0x0000000140640f30: sub      rsp, 0x18
+0x0000000140640f34: movdqa   xmmword ptr [rsp], xmm6
+0x0000000140640f39: cmp      rdx, r8
+0x0000000140640f3c: jae      0x14064106c
+0x0000000140640f42: mov      rax, r8
+0x0000000140640f45: sub      rax, rdx
+0x0000000140640f48: cmp      rax, 0xf
+0x0000000140640f4c: ja       0x140640f68
+0x0000000140640f4e: xor      eax, eax
+0x0000000140640f50: cmp      r8, rdx
+0x0000000140640f53: jbe      0x14064106e
+0x0000000140640f59: lea      r9, [r8 - 1]
+0x0000000140640f5d: cmp      byte ptr [r8 - 1], cl
+0x0000000140640f61: mov      r8, r9
+0x0000000140640f64: jne      0x140640f50
+0x0000000140640f66: jmp      0x140640f9d
+0x0000000140640f68: movzx    ecx, cl
+0x0000000140640f6b: movd     xmm0, ecx
+0x0000000140640f6f: punpcklbw xmm0, xmm0
+0x0000000140640f73: pshuflw  xmm0, xmm0, 0
+0x0000000140640f78: pshufd   xmm0, xmm0, 0x44
+0x0000000140640f7d: movdqu   xmm1, xmmword ptr [r8 - 0x10]
+0x0000000140640f83: pcmpeqb  xmm1, xmm0
+0x0000000140640f87: pmovmskb ecx, xmm1
+0x0000000140640f8b: test     ecx, ecx
+0x0000000140640f8d: je       0x140640fa7
+0x0000000140640f8f: add      r8, -0x10
+0x0000000140640f93: movzx    eax, cx
+0x0000000140640f96: bsr      r9d, eax
+0x0000000140640f9a: add      r9, r8
+0x0000000140640f9d: mov      eax, 1
+0x0000000140640fa2: jmp      0x14064106e
+0x0000000140640fa7: and      r8, 0xfffffffffffffff0
+0x0000000140640fab: cmp      rax, 0x40
+0x0000000140640faf: jb       0x14064101e
+0x0000000140640fb1: lea      rcx, [rdx + 0x40]
+0x0000000140640fb5: mov      rax, r8
+0x0000000140640fb8: cmp      r8, rcx
+0x0000000140640fbb: jb       0x14064101b
+0x0000000140640fbd: lea      r8, [rax - 0x40]
+0x0000000140640fc1: movdqa   xmm1, xmmword ptr [rax - 0x40]
+0x0000000140640fc6: pcmpeqb  xmm1, xmm0
+0x0000000140640fca: movdqa   xmm2, xmmword ptr [rax - 0x30]
+0x0000000140640fcf: pcmpeqb  xmm2, xmm0
+0x0000000140640fd3: movdqa   xmm3, xmmword ptr [rax - 0x20]
+0x0000000140640fd8: pcmpeqb  xmm3, xmm0
+0x0000000140640fdc: movdqa   xmm4, xmmword ptr [rax - 0x10]
+0x0000000140640fe1: pcmpeqb  xmm4, xmm0
+0x0000000140640fe5: movdqa   xmm5, xmm1
+0x0000000140640fe9: por      xmm5, xmm2
+0x0000000140640fed: movdqa   xmm6, xmm3
+0x0000000140640ff1: por      xmm6, xmm4
+0x0000000140640ff5: por      xmm6, xmm5
+0x0000000140640ff9: pmovmskb r9d, xmm6
+0x0000000140640ffe: test     r9d, r9d
+0x0000000140641001: je       0x140640fb5
+0x0000000140641003: pmovmskb ecx, xmm4
+0x0000000140641007: test     ecx, ecx
+0x0000000140641009: je       0x14064107a
+0x000000014064100b: movzx    ecx, cx
+0x000000014064100e: bsr      ecx, ecx
+0x0000000140641011: lea      r9, [rcx + rax]
+0x0000000140641015: add      r9, -0x10
+0x0000000140641019: jmp      0x140640f9d
+0x000000014064101b: mov      r8, rax
+0x000000014064101e: lea      rax, [rdx + 0x10]
+0x0000000140641022: cmp      r8, rax
+0x0000000140641025: jb       0x140641042
+0x0000000140641027: movdqu   xmm1, xmmword ptr [r8 - 0x10]
+0x000000014064102d: add      r8, -0x10
+0x0000000140641031: pcmpeqb  xmm1, xmm0
+0x0000000140641035: pmovmskb ecx, xmm1
+0x0000000140641039: test     ecx, ecx
+0x000000014064103b: je       0x140641022
+0x000000014064103d: jmp      0x140640f93
+0x0000000140641042: cmp      r8, rdx
+0x0000000140641045: jbe      0x14064106c
+0x0000000140641047: movdqu   xmm1, xmmword ptr [rdx]
+0x000000014064104b: pcmpeqb  xmm0, xmm1
+0x000000014064104f: pmovmskb ecx, xmm0
+0x0000000140641053: xor      eax, eax
+0x0000000140641055: test     ecx, ecx
+0x0000000140641057: setne    al
+0x000000014064105a: bsr      ecx, ecx
+0x000000014064105d: xor      ecx, 0xffffffe0
+0x0000000140641060: add      ecx, 0x21
+0x0000000140641063: lea      r9, [rdx + rcx]
+0x0000000140641067: dec      r9
+0x000000014064106a: jmp      0x14064106e
+0x000000014064106c: xor      eax, eax
+0x000000014064106e: mov      rdx, r9
+0x0000000140641071: movaps   xmm6, xmmword ptr [rsp]
+0x0000000140641075: add      rsp, 0x18
+0x0000000140641079: ret      
+0x000000014064107a: pmovmskb ecx, xmm3
+0x000000014064107e: test     ecx, ecx
+0x0000000140641080: je       0x140641095
+0x0000000140641082: movzx    ecx, cx
+0x0000000140641085: bsr      ecx, ecx
+0x0000000140641088: lea      r9, [rcx + rax]
+0x000000014064108c: add      r9, -0x20
+0x0000000140641090: jmp      0x140640f9d
+0x0000000140641095: pmovmskb ecx, xmm2
+0x0000000140641099: test     ecx, ecx
+0x000000014064109b: je       0x1406410b0
+0x000000014064109d: movzx    ecx, cx
+0x00000001406410a0: bsr      ecx, ecx
+0x00000001406410a3: lea      r9, [rcx + rax]
+0x00000001406410a7: add      r9, -0x30
+0x00000001406410ab: jmp      0x140640f9d
+0x00000001406410b0: pmovmskb eax, xmm1
+0x00000001406410b4: mov      ecx, 0x3f
+0x00000001406410b9: bsr      ecx, eax
+0x00000001406410bc: xor      ecx, 0xffffffe0
+0x00000001406410bf: add      ecx, 0x21
+0x00000001406410c2: lea      r9, [r8 + rcx]
+0x00000001406410c6: dec      r9
+0x00000001406410c9: jmp      0x140640f9d

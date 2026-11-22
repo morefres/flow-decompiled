@@ -1,0 +1,56 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x71600c-0x7160d7
+0x000000014071600c: push     rsi
+0x000000014071600d: push     rdi
+0x000000014071600e: sub      rsp, 0x28
+0x0000000140716012: mov      rax, r8
+0x0000000140716015: mov      rsi, rcx
+0x0000000140716018: mov      rcx, qword ptr [rcx]
+0x000000014071601b: mov      r8, qword ptr [rsi + 8]
+0x000000014071601f: mov      r9, r8
+0x0000000140716022: and      r9, rdx
+0x0000000140716025: movdqu   xmm0, xmmword ptr [rcx + r9]
+0x000000014071602b: pmovmskb r10d, xmm0
+0x0000000140716030: test     r10d, r10d
+0x0000000140716033: je       0x14071609c
+0x0000000140716035: bsf      r10d, r10d
+0x0000000140716039: add      r10, r9
+0x000000014071603c: and      r10, r8
+0x000000014071603f: mov      r9b, byte ptr [rcx + r10]
+0x0000000140716043: test     r9b, r9b
+0x0000000140716046: jns      0x1407160c1
+0x0000000140716048: shr      rdx, 0x39
+0x000000014071604c: lea      r11, [r10 - 0x10]
+0x0000000140716050: and      r11, r8
+0x0000000140716053: mov      byte ptr [rcx + r10], dl
+0x0000000140716057: mov      byte ptr [rcx + r11 + 0x10], dl
+0x000000014071605c: neg      r10
+0x000000014071605f: imul     rdx, r10, 0xd8
+0x0000000140716066: lea      rdi, [rcx + rdx]
+0x000000014071606a: and      r9b, 1
+0x000000014071606e: movzx    r8d, r9b
+0x0000000140716072: sub      qword ptr [rsi + 0x10], r8
+0x0000000140716076: add      rcx, rdx
+0x0000000140716079: add      rcx, -0xd8
+0x0000000140716080: mov      r8d, 0xd8
+0x0000000140716086: mov      rdx, rax
+0x0000000140716089: call     0x1408acdc0
+0x000000014071608e: inc      qword ptr [rsi + 0x18]
+0x0000000140716092: mov      rax, rdi
+0x0000000140716095: add      rsp, 0x28
+0x0000000140716099: pop      rdi
+0x000000014071609a: pop      rsi
+0x000000014071609b: ret      
+0x000000014071609c: mov      r11d, 0x10
+0x00000001407160a2: add      r9, r11
+0x00000001407160a5: and      r9, r8
+0x00000001407160a8: movdqu   xmm0, xmmword ptr [rcx + r9]
+0x00000001407160ae: pmovmskb r10d, xmm0
+0x00000001407160b3: add      r11, 0x10
+0x00000001407160b7: test     r10d, r10d
+0x00000001407160ba: je       0x1407160a2
+0x00000001407160bc: jmp      0x140716035
+0x00000001407160c1: movdqa   xmm0, xmmword ptr [rcx]
+0x00000001407160c5: pmovmskb r9d, xmm0
+0x00000001407160ca: bsf      r10d, r9d
+0x00000001407160ce: mov      r9b, byte ptr [rcx + r10]
+0x00000001407160d2: jmp      0x140716048

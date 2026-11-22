@@ -1,0 +1,75 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x9880-0x9980
+0x0000000140009880: push     rbp
+0x0000000140009881: push     r14
+0x0000000140009883: push     rsi
+0x0000000140009884: push     rdi
+0x0000000140009885: push     rbx
+0x0000000140009886: sub      rsp, 0x20
+0x000000014000988a: lea      rbp, [rsp + 0x20]
+0x000000014000988f: mov      rsi, qword ptr [rcx + 0x10]
+0x0000000140009893: mov      edi, 1
+0x0000000140009898: cmp      edx, 0x80
+0x000000014000989e: jb       0x1400098bc
+0x00000001400098a0: mov      edi, 2
+0x00000001400098a5: cmp      edx, 0x800
+0x00000001400098ab: jb       0x1400098bc
+0x00000001400098ad: cmp      edx, 0x10000
+0x00000001400098b3: mov      edi, 4
+0x00000001400098b8: sbb      rdi, 0
+0x00000001400098bc: mov      rax, qword ptr [rcx]
+0x00000001400098bf: sub      rax, rsi
+0x00000001400098c2: cmp      rdi, rax
+0x00000001400098c5: ja       0x140009964
+0x00000001400098cb: mov      rax, qword ptr [rcx + 8]
+0x00000001400098cf: cmp      edx, 0x80
+0x00000001400098d5: jae      0x1400098dc
+0x00000001400098d7: mov      byte ptr [rax + rsi], dl
+0x00000001400098da: jmp      0x140009950
+0x00000001400098dc: mov      r8d, edx
+0x00000001400098df: and      r8b, 0x3f
+0x00000001400098e3: or       r8b, 0x80
+0x00000001400098e7: mov      r9d, edx
+0x00000001400098ea: shr      r9d, 6
+0x00000001400098ee: cmp      edx, 0x800
+0x00000001400098f4: jae      0x140009905
+0x00000001400098f6: or       r9b, 0xc0
+0x00000001400098fa: mov      byte ptr [rax + rsi], r9b
+0x00000001400098fe: mov      byte ptr [rax + rsi + 1], r8b
+0x0000000140009903: jmp      0x140009950
+0x0000000140009905: and      r9b, 0x3f
+0x0000000140009909: or       r9b, 0x80
+0x000000014000990d: mov      r10d, edx
+0x0000000140009910: shr      r10d, 0xc
+0x0000000140009914: cmp      edx, 0xffff
+0x000000014000991a: ja       0x140009930
+0x000000014000991c: or       r10b, 0xe0
+0x0000000140009920: mov      byte ptr [rax + rsi], r10b
+0x0000000140009924: mov      byte ptr [rax + rsi + 1], r9b
+0x0000000140009929: mov      byte ptr [rax + rsi + 2], r8b
+0x000000014000992e: jmp      0x140009950
+0x0000000140009930: and      r10b, 0x3f
+0x0000000140009934: or       r10b, 0x80
+0x0000000140009938: shr      edx, 0x12
+0x000000014000993b: or       dl, 0xf0
+0x000000014000993e: mov      byte ptr [rax + rsi], dl
+0x0000000140009941: mov      byte ptr [rax + rsi + 1], r10b
+0x0000000140009946: mov      byte ptr [rax + rsi + 2], r9b
+0x000000014000994b: mov      byte ptr [rax + rsi + 3], r8b
+0x0000000140009950: add      rdi, rsi
+0x0000000140009953: mov      qword ptr [rcx + 0x10], rdi
+0x0000000140009957: xor      eax, eax
+0x0000000140009959: add      rsp, 0x20
+0x000000014000995d: pop      rbx
+0x000000014000995e: pop      rdi
+0x000000014000995f: pop      rsi
+0x0000000140009960: pop      r14
+0x0000000140009962: pop      rbp
+0x0000000140009963: ret      
+0x0000000140009964: mov      rbx, rcx
+0x0000000140009967: mov      r14d, edx
+0x000000014000996a: mov      rdx, rsi
+0x000000014000996d: mov      r8, rdi
+0x0000000140009970: call     0x1408ad890
+0x0000000140009975: mov      edx, r14d
+0x0000000140009978: mov      rcx, rbx
+0x000000014000997b: jmp      0x1400098cb

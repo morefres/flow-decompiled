@@ -1,0 +1,26 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x614f56-0x614fa6
+0x0000000140614f56: sub      rsp, 0x28
+0x0000000140614f5a: test     rdx, rdx
+0x0000000140614f5d: je       0x140614f87
+0x0000000140614f5f: xor      eax, eax
+0x0000000140614f61: lea      r10, [rip + 0x516710]
+0x0000000140614f68: movzx    r11d, byte ptr [rcx + rax]
+0x0000000140614f6d: mov      r11b, byte ptr [r11 + r10]
+0x0000000140614f71: test     r11b, r11b
+0x0000000140614f74: je       0x140614f8b
+0x0000000140614f76: cmp      r9, rax
+0x0000000140614f79: je       0x140614f92
+0x0000000140614f7b: mov      byte ptr [r8 + rax], r11b
+0x0000000140614f7f: inc      rax
+0x0000000140614f82: cmp      rdx, rax
+0x0000000140614f85: jne      0x140614f68
+0x0000000140614f87: xor      eax, eax
+0x0000000140614f89: jmp      0x140614f8d
+0x0000000140614f8b: mov      al, 1
+0x0000000140614f8d: add      rsp, 0x28
+0x0000000140614f91: ret      
+0x0000000140614f92: lea      r8, [rip + 0x5167df]
+0x0000000140614f99: mov      rcx, r9
+0x0000000140614f9c: mov      rdx, r9
+0x0000000140614f9f: call     0x1408ae879
+0x0000000140614fa4: ud2      

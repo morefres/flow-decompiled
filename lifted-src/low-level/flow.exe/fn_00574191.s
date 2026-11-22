@@ -1,0 +1,37 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x574191-0x574209
+0x0000000140574191: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140574196: push     rbp
+0x0000000140574197: push     r15
+0x0000000140574199: push     r14
+0x000000014057419b: push     r12
+0x000000014057419d: push     rsi
+0x000000014057419e: push     rdi
+0x000000014057419f: push     rbx
+0x00000001405741a0: sub      rsp, 0x20
+0x00000001405741a4: lea      rbp, [rdx + 0x80]
+0x00000001405741ab: mov      rcx, qword ptr [rbp + 0x178]
+0x00000001405741b2: lock dec qword ptr [rcx]
+0x00000001405741b6: jne      0x1405741bd
+0x00000001405741b8: call     0x140310cad
+0x00000001405741bd: mov      rcx, qword ptr [rbp + 0x170]
+0x00000001405741c4: lock dec qword ptr [rcx]
+0x00000001405741c8: jne      0x1405741cf
+0x00000001405741ca: call     0x140310cad
+0x00000001405741cf: mov      rcx, qword ptr [rbp + 0x168]
+0x00000001405741d6: lock dec qword ptr [rcx]
+0x00000001405741da: jne      0x1405741e1
+0x00000001405741dc: call     0x140310cad
+0x00000001405741e1: mov      rcx, qword ptr [rbp + 0x160]
+0x00000001405741e8: lock dec qword ptr [rcx]
+0x00000001405741ec: jne      0x1405741f3
+0x00000001405741ee: call     0x140310cad
+0x00000001405741f3: mov      byte ptr [rbp + 0x187], 1
+0x00000001405741fa: add      rsp, 0x20
+0x00000001405741fe: pop      rbx
+0x00000001405741ff: pop      rdi
+0x0000000140574200: pop      rsi
+0x0000000140574201: pop      r12
+0x0000000140574203: pop      r14
+0x0000000140574205: pop      r15
+0x0000000140574207: pop      rbp
+0x0000000140574208: ret      

@@ -1,0 +1,69 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x66b33b-0x66b3f4
+0x000000014066b33b: push     r15
+0x000000014066b33d: push     r14
+0x000000014066b33f: push     r13
+0x000000014066b341: push     r12
+0x000000014066b343: push     rsi
+0x000000014066b344: push     rdi
+0x000000014066b345: push     rbx
+0x000000014066b346: sub      rsp, 0x20
+0x000000014066b34a: mov      rbx, r9
+0x000000014066b34d: mov      r14, r8
+0x000000014066b350: mov      r15, rdx
+0x000000014066b353: mov      r12, rcx
+0x000000014066b356: mov      r13, qword ptr [rsp + 0x80]
+0x000000014066b35e: mov      rax, r13
+0x000000014066b361: shl      rax, 4
+0x000000014066b365: xor      esi, esi
+0x000000014066b367: xor      ecx, ecx
+0x000000014066b369: cmp      rax, rcx
+0x000000014066b36c: je       0x14066b3ba
+0x000000014066b36e: cmp      dword ptr [rbx + rcx], 0
+0x000000014066b372: lea      rcx, [rcx + 0x10]
+0x000000014066b376: je       0x14066b369
+0x000000014066b378: xor      edi, edi
+0x000000014066b37a: mov      rcx, r15
+0x000000014066b37d: mov      rdx, rbx
+0x000000014066b380: mov      r8, r13
+0x000000014066b383: call     0x140701e84
+0x000000014066b388: mov      rsi, rdx
+0x000000014066b38b: test     al, 1
+0x000000014066b38d: jne      0x14066b3ed
+0x000000014066b38f: cmp      qword ptr [r15 + 0xb0], 0
+0x000000014066b397: je       0x14066b3b3
+0x000000014066b399: mov      rcx, r12
+0x000000014066b39c: mov      rdx, r15
+0x000000014066b39f: mov      r8, r14
+0x000000014066b3a2: call     0x14066b3f4
+0x000000014066b3a7: test     rax, rax
+0x000000014066b3aa: jne      0x14066b3be
+0x000000014066b3ac: test     rdx, rdx
+0x000000014066b3af: jne      0x14066b38f
+0x000000014066b3b1: jmp      0x14066b3c4
+0x000000014066b3b3: test     rsi, rsi
+0x000000014066b3b6: je       0x14066b37a
+0x000000014066b3b8: jmp      0x14066b3d7
+0x000000014066b3ba: xor      edi, edi
+0x000000014066b3bc: jmp      0x14066b3d7
+0x000000014066b3be: cmp      rax, 2
+0x000000014066b3c2: jne      0x14066b3d1
+0x000000014066b3c4: xor      edi, edi
+0x000000014066b3c6: test     rsi, rsi
+0x000000014066b3c9: sete     dil
+0x000000014066b3cd: add      edi, edi
+0x000000014066b3cf: jmp      0x14066b3d7
+0x000000014066b3d1: mov      rsi, rdx
+0x000000014066b3d4: mov      rdi, rax
+0x000000014066b3d7: mov      rax, rdi
+0x000000014066b3da: mov      rdx, rsi
+0x000000014066b3dd: add      rsp, 0x20
+0x000000014066b3e1: pop      rbx
+0x000000014066b3e2: pop      rdi
+0x000000014066b3e3: pop      rsi
+0x000000014066b3e4: pop      r12
+0x000000014066b3e6: pop      r13
+0x000000014066b3e8: pop      r14
+0x000000014066b3ea: pop      r15
+0x000000014066b3ec: ret      
+0x000000014066b3ed: mov      edi, 1
+0x000000014066b3f2: jmp      0x14066b3d7

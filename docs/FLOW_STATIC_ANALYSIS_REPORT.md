@@ -39,3 +39,7 @@ The executable imports 29 libraries and Windows APIs including `kernel32.dll`, `
 ## Reconstruction limitations
 
 The native decompiler provider was unavailable in this Linux environment: Ghidra was not configured, Hopper is macOS-only here, and no IDA MCP connection was configured. Therefore this repository does not claim semantic pseudocode, recovered Rust modules, or original source equivalence. The complete binary, raw disassembly, unwind-bounded function index, strings, resources, hashes, and evidence records are preserved so the work can be continued with a configured native decompiler.
+
+## Delta-style layout update
+
+The workspace was extended to mirror the Delta decompile layout. Per-function C-like evidence lifts are in `lifted-src/functions/flow.exe/`; instruction-faithful x86-64 fallbacks are in `lifted-src/low-level/flow.exe/`; the copied target is in `assets/extracted-app/`; and bounded PE metadata is in `analysis/pe_bounded/flow/`.

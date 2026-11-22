@@ -1,0 +1,31 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x545114-0x545184
+0x0000000140545114: push     rbp
+0x0000000140545115: sub      rsp, 0x30
+0x0000000140545119: lea      rbp, [rsp + 0x30]
+0x000000014054511e: mov      qword ptr [rbp - 8], 0xfffffffffffffffe
+0x0000000140545126: mov      qword ptr [rbp - 0x10], rcx
+0x000000014054512a: mov      rax, qword ptr [rcx + 0x18]
+0x000000014054512e: movabs   rcx, 0x8000000000000012
+0x0000000140545138: cmp      rax, rcx
+0x000000014054513b: setl     cl
+0x000000014054513e: cmp      rax, -2
+0x0000000140545142: sete     al
+0x0000000140545145: or       al, cl
+0x0000000140545147: jne      0x140545157
+0x0000000140545149: mov      rax, qword ptr [rbp - 0x10]
+0x000000014054514d: lea      rcx, [rax + 0x18]
+0x0000000140545151: call     0x14054536d
+0x0000000140545156: nop      
+0x0000000140545157: mov      rax, qword ptr [rbp - 0x10]
+0x000000014054515b: mov      rcx, qword ptr [rax]
+0x000000014054515e: cmp      rcx, -1
+0x0000000140545162: je       0x14054517e
+0x0000000140545164: mov      rdx, qword ptr [rax + 8]
+0x0000000140545168: mov      r8d, 1
+0x000000014054516e: mov      r9d, 1
+0x0000000140545174: add      rsp, 0x30
+0x0000000140545178: pop      rbp
+0x0000000140545179: jmp      0x14000a0f6
+0x000000014054517e: add      rsp, 0x30
+0x0000000140545182: pop      rbp
+0x0000000140545183: ret      

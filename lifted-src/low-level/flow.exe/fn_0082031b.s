@@ -1,0 +1,36 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x82031b-0x82039b
+0x000000014082031b: push     rsi
+0x000000014082031c: sub      rsp, 0x20
+0x0000000140820320: cmp      rcx, -1
+0x0000000140820324: je       0x140820384
+0x0000000140820326: mov      edx, 1
+0x000000014082032b: call     qword ptr [rip + 0xb1ab7]
+0x0000000140820331: cmp      eax, -1
+0x0000000140820334: je       0x14082033a
+0x0000000140820336: xor      edx, edx
+0x0000000140820338: jmp      0x14082037c
+0x000000014082033a: call     qword ptr [rip + 0xb1b00]
+0x0000000140820340: mov      rdx, qword ptr [rip + 0x5a1469]
+0x0000000140820347: lea      rcx, [rip + 0x351d32]
+0x000000014082034e: cmp      rdx, rcx
+0x0000000140820351: jne      0x140820392
+0x0000000140820353: mov      rsi, rax
+0x0000000140820356: shl      rsi, 0x20
+0x000000014082035a: or       rsi, 2
+0x000000014082035e: mov      rcx, qword ptr [rip + 0x5a144b]
+0x0000000140820365: mov      rdx, qword ptr [rcx + 8]
+0x0000000140820369: mov      ecx, eax
+0x000000014082036b: mov      rax, rdx
+0x000000014082036e: call     qword ptr [rip + 0xb1b24]
+0x0000000140820374: xor      edx, edx
+0x0000000140820376: cmp      al, 7
+0x0000000140820378: cmovne   rdx, rsi
+0x000000014082037c: xor      eax, eax
+0x000000014082037e: add      rsp, 0x20
+0x0000000140820382: pop      rsi
+0x0000000140820383: ret      
+0x0000000140820384: lea      rcx, [rip + 0x362c6d]
+0x000000014082038b: call     0x1408ae8e0
+0x0000000140820390: ud2      
+0x0000000140820392: mov      qword ptr [rip + 0x5a1417], rcx
+0x0000000140820399: jmp      0x140820353

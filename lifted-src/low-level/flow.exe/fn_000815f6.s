@@ -1,0 +1,60 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x815f6-0x816a9
+0x00000001400815f6: mov      qword ptr [rsp + 0x10], rdx
+0x00000001400815fb: push     rbp
+0x00000001400815fc: push     r15
+0x00000001400815fe: push     r14
+0x0000000140081600: push     r13
+0x0000000140081602: push     r12
+0x0000000140081604: push     rsi
+0x0000000140081605: push     rdi
+0x0000000140081606: push     rbx
+0x0000000140081607: sub      rsp, 0x58
+0x000000014008160b: lea      rbp, [rdx + 0x80]
+0x0000000140081612: movapd   xmmword ptr [rsp + 0x40], xmm6
+0x0000000140081618: mov      bl, byte ptr [rbp + 0x8ee]
+0x000000014008161e: mov      sil, byte ptr [rbp + 0x8ef]
+0x0000000140081625: cmp      dword ptr [rbp - 0x40], -1
+0x0000000140081629: je       0x140081661
+0x000000014008162b: test     byte ptr [rbp + 0x8f0], 1
+0x0000000140081632: je       0x140081685
+0x0000000140081634: lea      rcx, [rbp - 0x40]
+0x0000000140081638: call     0x14008e469
+0x000000014008163d: mov      byte ptr [rbp + 0x8ed], sil
+0x0000000140081644: mov      byte ptr [rbp + 0x8ec], bl
+0x000000014008164a: movapd   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140081650: add      rsp, 0x58
+0x0000000140081654: pop      rbx
+0x0000000140081655: pop      rdi
+0x0000000140081656: pop      rsi
+0x0000000140081657: pop      r12
+0x0000000140081659: pop      r13
+0x000000014008165b: pop      r14
+0x000000014008165d: pop      r15
+0x000000014008165f: pop      rbp
+0x0000000140081660: ret      
+0x0000000140081661: mov      byte ptr [rbp + 0x8ed], sil
+0x0000000140081668: mov      byte ptr [rbp + 0x8ec], bl
+0x000000014008166e: movapd   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140081674: add      rsp, 0x58
+0x0000000140081678: pop      rbx
+0x0000000140081679: pop      rdi
+0x000000014008167a: pop      rsi
+0x000000014008167b: pop      r12
+0x000000014008167d: pop      r13
+0x000000014008167f: pop      r14
+0x0000000140081681: pop      r15
+0x0000000140081683: pop      rbp
+0x0000000140081684: ret      
+0x0000000140081685: mov      byte ptr [rbp + 0x8ed], sil
+0x000000014008168c: mov      byte ptr [rbp + 0x8ec], bl
+0x0000000140081692: movapd   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140081698: add      rsp, 0x58
+0x000000014008169c: pop      rbx
+0x000000014008169d: pop      rdi
+0x000000014008169e: pop      rsi
+0x000000014008169f: pop      r12
+0x00000001400816a1: pop      r13
+0x00000001400816a3: pop      r14
+0x00000001400816a5: pop      r15
+0x00000001400816a7: pop      rbp
+0x00000001400816a8: ret      

@@ -1,0 +1,135 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x882750-0x882964
+0x0000000140882750: sub      rsp, 8
+0x0000000140882754: movups   xmm0, xmmword ptr [rcx]
+0x0000000140882757: xorps    xmm4, xmm4
+0x000000014088275a: lea      rax, [r8 + 0x10]
+0x000000014088275e: cmp      edx, 0x100
+0x0000000140882764: je       0x140882870
+0x000000014088276a: cmp      edx, 0x80
+0x0000000140882770: jne      0x140882940
+0x0000000140882776: mov      edx, 9
+0x000000014088277b: movdqa   xmm5, xmmword ptr [rip + 0x32b63d]
+0x0000000140882783: mov      r10d, 8
+0x0000000140882789: movdqa   xmm4, xmmword ptr [rip + 0x32b64f]
+0x0000000140882791: movdqa   xmm2, xmm0
+0x0000000140882795: movdqu   xmmword ptr [r8], xmm0
+0x000000014088279a: jmp      0x1408827a0
+0x000000014088279f: nop      
+0x00000001408827a0: pshufb   xmm0, xmm5
+0x00000001408827a5: aesenclast xmm0, xmm4
+0x00000001408827aa: pslld    xmm4, 1
+0x00000001408827af: lea      rax, [rax + 0x10]
+0x00000001408827b3: movdqa   xmm3, xmm2
+0x00000001408827b7: pslldq   xmm2, 4
+0x00000001408827bc: pxor     xmm3, xmm2
+0x00000001408827c0: pslldq   xmm2, 4
+0x00000001408827c5: pxor     xmm3, xmm2
+0x00000001408827c9: pslldq   xmm2, 4
+0x00000001408827ce: pxor     xmm2, xmm3
+0x00000001408827d2: pxor     xmm0, xmm2
+0x00000001408827d6: movdqu   xmmword ptr [rax - 0x10], xmm0
+0x00000001408827db: movdqa   xmm2, xmm0
+0x00000001408827df: dec      r10d
+0x00000001408827e2: jne      0x1408827a0
+0x00000001408827e8: movdqa   xmm4, xmmword ptr [rip + 0x32b600]
+0x00000001408827f0: pshufb   xmm0, xmm5
+0x00000001408827f5: aesenclast xmm0, xmm4
+0x00000001408827fa: pslld    xmm4, 1
+0x00000001408827ff: movdqa   xmm3, xmm2
+0x0000000140882803: pslldq   xmm2, 4
+0x0000000140882808: pxor     xmm3, xmm2
+0x000000014088280c: pslldq   xmm2, 4
+0x0000000140882811: pxor     xmm3, xmm2
+0x0000000140882815: pslldq   xmm2, 4
+0x000000014088281a: pxor     xmm2, xmm3
+0x000000014088281e: pxor     xmm0, xmm2
+0x0000000140882822: movdqu   xmmword ptr [rax], xmm0
+0x0000000140882826: movdqa   xmm2, xmm0
+0x000000014088282a: pshufb   xmm0, xmm5
+0x000000014088282f: aesenclast xmm0, xmm4
+0x0000000140882834: movdqa   xmm3, xmm2
+0x0000000140882838: pslldq   xmm2, 4
+0x000000014088283d: pxor     xmm3, xmm2
+0x0000000140882841: pslldq   xmm2, 4
+0x0000000140882846: pxor     xmm3, xmm2
+0x000000014088284a: pslldq   xmm2, 4
+0x000000014088284f: pxor     xmm2, xmm3
+0x0000000140882853: pxor     xmm0, xmm2
+0x0000000140882857: movdqu   xmmword ptr [rax + 0x10], xmm0
+0x000000014088285c: mov      dword ptr [rax + 0x60], edx
+0x000000014088285f: xor      eax, eax
+0x0000000140882861: jmp      0x140882947
+0x0000000140882866: nop      
+0x0000000140882867: nop      
+0x0000000140882868: nop      
+0x0000000140882869: nop      
+0x000000014088286a: nop      
+0x000000014088286b: nop      
+0x000000014088286c: nop      
+0x000000014088286d: nop      
+0x000000014088286e: nop      
+0x000000014088286f: nop      
+0x0000000140882870: movups   xmm2, xmmword ptr [rcx + 0x10]
+0x0000000140882874: mov      edx, 0xd
+0x0000000140882879: lea      rax, [rax + 0x10]
+0x000000014088287d: movdqa   xmm5, xmmword ptr [rip + 0x32b53b]
+0x0000000140882885: movdqa   xmm4, xmmword ptr [rip + 0x32b553]
+0x000000014088288d: mov      r10d, 7
+0x0000000140882893: movdqu   xmmword ptr [r8], xmm0
+0x0000000140882898: movdqa   xmm1, xmm2
+0x000000014088289c: movdqu   xmmword ptr [r8 + 0x10], xmm2
+0x00000001408828a2: jmp      0x1408828b0
+0x00000001408828a7: nop      
+0x00000001408828a8: nop      
+0x00000001408828a9: nop      
+0x00000001408828aa: nop      
+0x00000001408828ab: nop      
+0x00000001408828ac: nop      
+0x00000001408828ad: nop      
+0x00000001408828ae: nop      
+0x00000001408828af: nop      
+0x00000001408828b0: pshufb   xmm2, xmm5
+0x00000001408828b5: aesenclast xmm2, xmm4
+0x00000001408828ba: movdqa   xmm3, xmm0
+0x00000001408828be: pslldq   xmm0, 4
+0x00000001408828c3: pxor     xmm3, xmm0
+0x00000001408828c7: pslldq   xmm0, 4
+0x00000001408828cc: pxor     xmm3, xmm0
+0x00000001408828d0: pslldq   xmm0, 4
+0x00000001408828d5: pxor     xmm0, xmm3
+0x00000001408828d9: pslld    xmm4, 1
+0x00000001408828de: pxor     xmm0, xmm2
+0x00000001408828e2: movdqu   xmmword ptr [rax], xmm0
+0x00000001408828e6: dec      r10d
+0x00000001408828e9: je       0x140882932
+0x00000001408828ef: pshufd   xmm2, xmm0, 0xff
+0x00000001408828f4: pxor     xmm3, xmm3
+0x00000001408828f8: aesenclast xmm2, xmm3
+0x00000001408828fd: movdqa   xmm3, xmm1
+0x0000000140882901: pslldq   xmm1, 4
+0x0000000140882906: pxor     xmm3, xmm1
+0x000000014088290a: pslldq   xmm1, 4
+0x000000014088290f: pxor     xmm3, xmm1
+0x0000000140882913: pslldq   xmm1, 4
+0x0000000140882918: pxor     xmm1, xmm3
+0x000000014088291c: pxor     xmm2, xmm1
+0x0000000140882920: movdqu   xmmword ptr [rax + 0x10], xmm2
+0x0000000140882925: lea      rax, [rax + 0x20]
+0x0000000140882929: movdqa   xmm1, xmm2
+0x000000014088292d: jmp      0x1408828b0
+0x0000000140882932: mov      dword ptr [rax + 0x10], edx
+0x0000000140882935: xor      eax, eax
+0x0000000140882937: jmp      0x140882947
+0x000000014088293c: nop      
+0x000000014088293d: nop      
+0x000000014088293e: nop      
+0x000000014088293f: nop      
+0x0000000140882940: mov      rax, 0xfffffffffffffffe
+0x0000000140882947: pxor     xmm0, xmm0
+0x000000014088294b: pxor     xmm1, xmm1
+0x000000014088294f: pxor     xmm2, xmm2
+0x0000000140882953: pxor     xmm3, xmm3
+0x0000000140882957: pxor     xmm4, xmm4
+0x000000014088295b: pxor     xmm5, xmm5
+0x000000014088295f: add      rsp, 8
+0x0000000140882963: ret      

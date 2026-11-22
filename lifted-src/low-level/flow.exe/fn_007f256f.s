@@ -1,0 +1,13 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7f256f-0x7f259a
+0x00000001407f256f: sub      rsp, 0x28
+0x00000001407f2573: mov      edx, 0x388
+0x00000001407f2578: xor      ecx, ecx
+0x00000001407f257a: call     0x1407667d0
+0x00000001407f257f: test     rax, rax
+0x00000001407f2582: je       0x1407f2589
+0x00000001407f2584: add      rsp, 0x28
+0x00000001407f2588: ret      
+0x00000001407f2589: mov      ecx, 8
+0x00000001407f258e: mov      edx, 0x388
+0x00000001407f2593: call     0x1408ad83e
+0x00000001407f2598: ud2      

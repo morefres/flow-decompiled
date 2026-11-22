@@ -1,0 +1,100 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x763980-0x763ac6
+0x0000000140763980: push     rbp
+0x0000000140763981: push     rsi
+0x0000000140763982: push     rdi
+0x0000000140763983: sub      rsp, 0x50
+0x0000000140763987: lea      rbp, [rsp + 0x50]
+0x000000014076398c: mov      rsi, rdx
+0x000000014076398f: mov      rdi, rcx
+0x0000000140763992: lea      rcx, [rbp - 0x28]
+0x0000000140763996: mov      rdx, rdi
+0x0000000140763999: mov      r8, rsi
+0x000000014076399c: call     0x140763f50
+0x00000001407639a1: movzx    edx, byte ptr [rbp - 0x28]
+0x00000001407639a5: mov      rax, rsi
+0x00000001407639a8: mov      rcx, rdi
+0x00000001407639ab: cmp      rdx, 5
+0x00000001407639af: ja       0x140763a13
+0x00000001407639b1: mov      rcx, qword ptr [rbp - 0x18]
+0x00000001407639b5: mov      rax, qword ptr [rbp - 8]
+0x00000001407639b9: lea      r8, [rip + 0x44646c]
+0x00000001407639c0: movsxd   r9, dword ptr [r8 + rdx*4]
+0x00000001407639c4: add      r9, r8
+0x00000001407639c7: jmp      r9
+0x00000001407639ca: add      rcx, 4
+0x00000001407639ce: jmp      0x140763a04
+0x00000001407639d0: lea      r8, [rax + 1]
+0x00000001407639d4: test     rax, rax
+0x00000001407639d7: cmove    r8, rax
+0x00000001407639db: add      rcx, r8
+0x00000001407639de: add      rcx, 2
+0x00000001407639e2: jmp      0x140763a04
+0x00000001407639e4: mov      ecx, 6
+0x00000001407639e9: jmp      0x140763a04
+0x00000001407639eb: lea      r8, [rax + 1]
+0x00000001407639ef: test     rax, rax
+0x00000001407639f2: cmove    r8, rax
+0x00000001407639f6: add      rcx, r8
+0x00000001407639f9: add      rcx, 8
+0x00000001407639fd: jmp      0x140763a04
+0x00000001407639ff: mov      ecx, 2
+0x0000000140763a04: mov      rax, rsi
+0x0000000140763a07: sub      rax, rcx
+0x0000000140763a0a: jb       0x140763ab2
+0x0000000140763a10: add      rcx, rdi
+0x0000000140763a13: test     rax, rax
+0x0000000140763a16: je       0x140763a25
+0x0000000140763a18: movzx    eax, byte ptr [rcx]
+0x0000000140763a1b: cmp      eax, 0x2f
+0x0000000140763a1e: je       0x140763a34
+0x0000000140763a20: cmp      eax, 0x5c
+0x0000000140763a23: je       0x140763a34
+0x0000000140763a25: xor      eax, eax
+0x0000000140763a27: cmp      edx, 5
+0x0000000140763a2a: je       0x140763aaa
+0x0000000140763a2c: cmp      edx, 0xff
+0x0000000140763a32: je       0x140763aaa
+0x0000000140763a34: lea      rcx, [rbp - 0x28]
+0x0000000140763a38: mov      rdx, rdi
+0x0000000140763a3b: mov      r8, rsi
+0x0000000140763a3e: call     0x140763f50
+0x0000000140763a43: movzx    eax, byte ptr [rbp - 0x28]
+0x0000000140763a47: cmp      rax, 5
+0x0000000140763a4b: ja       0x140763aa5
+0x0000000140763a4d: mov      rcx, qword ptr [rbp - 0x18]
+0x0000000140763a51: mov      rdx, qword ptr [rbp - 8]
+0x0000000140763a55: lea      r8, [rip + 0x4463e8]
+0x0000000140763a5c: movsxd   r9, dword ptr [r8 + rax*4]
+0x0000000140763a60: add      r9, r8
+0x0000000140763a63: jmp      r9
+0x0000000140763a66: add      rcx, 4
+0x0000000140763a6a: jmp      0x140763aa0
+0x0000000140763a6c: lea      r8, [rdx + 1]
+0x0000000140763a70: test     rdx, rdx
+0x0000000140763a73: cmove    r8, rdx
+0x0000000140763a77: add      rcx, r8
+0x0000000140763a7a: add      rcx, 2
+0x0000000140763a7e: jmp      0x140763aa0
+0x0000000140763a80: mov      ecx, 6
+0x0000000140763a85: jmp      0x140763aa0
+0x0000000140763a87: lea      r8, [rdx + 1]
+0x0000000140763a8b: test     rdx, rdx
+0x0000000140763a8e: cmove    r8, rdx
+0x0000000140763a92: add      rcx, r8
+0x0000000140763a95: add      rcx, 8
+0x0000000140763a99: jmp      0x140763aa0
+0x0000000140763a9b: mov      ecx, 2
+0x0000000140763aa0: cmp      rcx, rsi
+0x0000000140763aa3: ja       0x140763ab2
+0x0000000140763aa5: cmp      al, 0xff
+0x0000000140763aa7: setne    al
+0x0000000140763aaa: add      rsp, 0x50
+0x0000000140763aae: pop      rdi
+0x0000000140763aaf: pop      rsi
+0x0000000140763ab0: pop      rbp
+0x0000000140763ab1: ret      
+0x0000000140763ab2: lea      r9, [rip + 0x40fb27]
+0x0000000140763ab9: mov      rdx, rsi
+0x0000000140763abc: mov      r8, rsi
+0x0000000140763abf: call     0x1408ae7a0
+0x0000000140763ac4: ud2      

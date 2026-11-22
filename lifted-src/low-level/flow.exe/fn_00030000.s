@@ -1,0 +1,97 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x30000-0x30157
+0x0000000140030000: push     r15
+0x0000000140030002: push     r14
+0x0000000140030004: push     r13
+0x0000000140030006: push     r12
+0x0000000140030008: push     rsi
+0x0000000140030009: push     rdi
+0x000000014003000a: push     rbx
+0x000000014003000b: sub      rsp, 0x40
+0x000000014003000f: mov      r13, rdx
+0x0000000140030012: mov      rax, qword ptr [rcx]
+0x0000000140030015: mov      r14, qword ptr [rax]
+0x0000000140030018: test     r14, r14
+0x000000014003001b: je       0x14003005f
+0x000000014003001d: mov      r15, qword ptr [rax + 8]
+0x0000000140030021: mov      rsi, qword ptr [r13]
+0x0000000140030025: mov      r12, qword ptr [r13 + 8]
+0x0000000140030029: mov      rdi, qword ptr [r12 + 0x18]
+0x000000014003002e: lea      rdx, [rip + 0xb5ef87]
+0x0000000140030035: mov      r8d, 4
+0x000000014003003b: mov      rcx, rsi
+0x000000014003003e: mov      rax, rdi
+0x0000000140030041: call     qword ptr [rip + 0x8a1e51]
+0x0000000140030047: mov      bl, 1
+0x0000000140030049: test     al, al
+0x000000014003004b: je       0x14003008e
+0x000000014003004d: mov      eax, ebx
+0x000000014003004f: add      rsp, 0x40
+0x0000000140030053: pop      rbx
+0x0000000140030054: pop      rdi
+0x0000000140030055: pop      rsi
+0x0000000140030056: pop      r12
+0x0000000140030058: pop      r13
+0x000000014003005a: pop      r14
+0x000000014003005c: pop      r15
+0x000000014003005e: ret      
+0x000000014003005f: mov      rcx, qword ptr [r13]
+0x0000000140030063: mov      rax, qword ptr [r13 + 8]
+0x0000000140030067: mov      rax, qword ptr [rax + 0x18]
+0x000000014003006b: lea      rdx, [rip + 0xb5ef46]
+0x0000000140030072: mov      r8d, 4
+0x0000000140030078: add      rsp, 0x40
+0x000000014003007c: pop      rbx
+0x000000014003007d: pop      rdi
+0x000000014003007e: pop      rsi
+0x000000014003007f: pop      r12
+0x0000000140030081: pop      r13
+0x0000000140030083: pop      r14
+0x0000000140030085: pop      r15
+0x0000000140030087: jmp      qword ptr [rip + 0x8a1e0a]
+0x000000014003008e: test     byte ptr [r13 + 0x12], 0x80
+0x0000000140030093: jne      0x1400300c5
+0x0000000140030095: lea      rdx, [rip + 0xb37b15]
+0x000000014003009c: mov      r8d, 1
+0x00000001400300a2: mov      rcx, rsi
+0x00000001400300a5: mov      rax, rdi
+0x00000001400300a8: call     qword ptr [rip + 0x8a1dea]
+0x00000001400300ae: test     al, al
+0x00000001400300b0: jne      0x14003004d
+0x00000001400300b2: mov      rcx, r14
+0x00000001400300b5: mov      rdx, r15
+0x00000001400300b8: mov      r8, rsi
+0x00000001400300bb: mov      r9, r12
+0x00000001400300be: call     0x1400225f0
+0x00000001400300c3: jmp      0x14003012f
+0x00000001400300c5: lea      rdx, [rip + 0x8cc46f]
+0x00000001400300cc: mov      r8d, 2
+0x00000001400300d2: mov      rcx, rsi
+0x00000001400300d5: mov      rax, rdi
+0x00000001400300d8: call     qword ptr [rip + 0x8a1dba]
+0x00000001400300de: test     al, al
+0x00000001400300e0: jne      0x14003004d
+0x00000001400300e6: lea      rax, [rsp + 0x27]
+0x00000001400300eb: mov      byte ptr [rax], 1
+0x00000001400300ee: lea      r8, [rsp + 0x28]
+0x00000001400300f3: mov      qword ptr [r8], rsi
+0x00000001400300f6: mov      qword ptr [r8 + 8], r12
+0x00000001400300fa: mov      qword ptr [r8 + 0x10], rax
+0x00000001400300fe: lea      r9, [rip + 0x8cc7c3]
+0x0000000140030105: mov      rcx, r14
+0x0000000140030108: mov      rdx, r15
+0x000000014003010b: call     0x1400225f0
+0x0000000140030110: test     al, al
+0x0000000140030112: jne      0x14003004d
+0x0000000140030118: lea      rdx, [rip + 0xb3ff39]
+0x000000014003011f: lea      rcx, [rsp + 0x28]
+0x0000000140030124: mov      r8d, 2
+0x000000014003012a: call     0x14001b970
+0x000000014003012f: test     al, al
+0x0000000140030131: jne      0x14003004d
+0x0000000140030137: lea      rdx, [rip + 0xb5cadb]
+0x000000014003013e: mov      r8d, 1
+0x0000000140030144: mov      rcx, rsi
+0x0000000140030147: mov      rax, rdi
+0x000000014003014a: call     qword ptr [rip + 0x8a1d48]
+0x0000000140030150: mov      ebx, eax
+0x0000000140030152: jmp      0x14003004d

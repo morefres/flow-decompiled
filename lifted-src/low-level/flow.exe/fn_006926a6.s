@@ -1,0 +1,98 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6926a6-0x69281a
+0x00000001406926a6: push     rbp
+0x00000001406926a7: push     r15
+0x00000001406926a9: push     r14
+0x00000001406926ab: push     rsi
+0x00000001406926ac: push     rdi
+0x00000001406926ad: push     rbx
+0x00000001406926ae: sub      rsp, 0x148
+0x00000001406926b5: lea      rbp, [rsp + 0x80]
+0x00000001406926bd: mov      qword ptr [rbp + 0xc0], 0xfffffffffffffffe
+0x00000001406926c8: mov      rbx, r8
+0x00000001406926cb: mov      rdi, rdx
+0x00000001406926ce: mov      rsi, rcx
+0x00000001406926d1: mov      rcx, r8
+0x00000001406926d4: call     0x14081372d
+0x00000001406926d9: cmp      al, 2
+0x00000001406926db: jne      0x1406926ef
+0x00000001406926dd: mov      dword ptr [rbp + 0xb8], 0
+0x00000001406926e7: mov      dword ptr [rbp + 0xbc], eax
+0x00000001406926ed: jmp      0x140692722
+0x00000001406926ef: test     al, 1
+0x00000001406926f1: je       0x14069270e
+0x00000001406926f3: mov      qword ptr [rsi + 0x100], 0xfffffffffffffffe
+0x00000001406926fe: add      rsp, 0x148
+0x0000000140692705: pop      rbx
+0x0000000140692706: pop      rdi
+0x0000000140692707: pop      rsi
+0x0000000140692708: pop      r14
+0x000000014069270a: pop      r15
+0x000000014069270c: pop      rbp
+0x000000014069270d: ret      
+0x000000014069270e: mov      ecx, eax
+0x0000000140692710: shr      ecx, 0x10
+0x0000000140692713: mov      dword ptr [rbp + 0xbc], ecx
+0x0000000140692719: shr      eax, 8
+0x000000014069271c: mov      dword ptr [rbp + 0xb8], eax
+0x0000000140692722: lea      r14, [rdi + 0x80]
+0x0000000140692729: lea      r15, [rdi + 0x1a0]
+0x0000000140692730: lea      rcx, [rbp - 0x60]
+0x0000000140692734: mov      rdx, r15
+0x0000000140692737: mov      r8, r14
+0x000000014069273a: call     0x140684d25
+0x000000014069273f: nop      
+0x0000000140692740: mov      rax, qword ptr [rbp + 0xa0]
+0x0000000140692747: cmp      rax, -1
+0x000000014069274b: je       0x14069279e
+0x000000014069274d: cmp      eax, -2
+0x0000000140692750: jne      0x1406927ab
+0x0000000140692752: lea      rcx, [rdi + 0x100]
+0x0000000140692759: mov      rdx, qword ptr [rbx]
+0x000000014069275c: mov      r8, qword ptr [rbx + 8]
+0x0000000140692760: call     0x14081d0a5
+0x0000000140692765: nop      
+0x0000000140692766: lea      rcx, [rbp - 0x60]
+0x000000014069276a: mov      rdx, r15
+0x000000014069276d: mov      r8, r14
+0x0000000140692770: call     0x140684d25
+0x0000000140692775: nop      
+0x0000000140692776: mov      rax, qword ptr [rbp + 0xa0]
+0x000000014069277d: cmp      rax, -1
+0x0000000140692781: je       0x14069279e
+0x0000000140692783: cmp      eax, -2
+0x0000000140692786: jne      0x1406927bf
+0x0000000140692788: cmp      byte ptr [rdi + 0x1b8], 0
+0x000000014069278f: je       0x1406927f8
+0x0000000140692791: mov      rax, qword ptr [rdi + 0x1c0]
+0x0000000140692798: cmp      rax, 1
+0x000000014069279c: ja       0x1406927f8
+0x000000014069279e: mov      qword ptr [rsi + 0x100], 0xffffffffffffffff
+0x00000001406927a9: jmp      0x1406927dc
+0x00000001406927ab: lock sub qword ptr [rdi + 0x1c0], 2
+0x00000001406927b4: jae      0x1406927ca
+0x00000001406927b6: mov      ecx, 7
+0x00000001406927bb: int      0x29
+0x00000001406927bd: ud2      
+0x00000001406927bf: lock sub qword ptr [rdi + 0x1c0], 2
+0x00000001406927c8: jb       0x140692811
+0x00000001406927ca: lea      rdx, [rbp - 0x60]
+0x00000001406927ce: mov      r8d, 0x118
+0x00000001406927d4: mov      rcx, rsi
+0x00000001406927d7: call     0x1408acdc0
+0x00000001406927dc: xor      ecx, ecx
+0x00000001406927de: mov      edx, dword ptr [rbp + 0xbc]
+0x00000001406927e4: add      rsp, 0x148
+0x00000001406927eb: pop      rbx
+0x00000001406927ec: pop      rdi
+0x00000001406927ed: pop      rsi
+0x00000001406927ee: pop      r14
+0x00000001406927f0: pop      r15
+0x00000001406927f2: pop      rbp
+0x00000001406927f3: jmp      0x1408205e5
+0x00000001406927f8: mov      qword ptr [rsi + 0x100], 0xfffffffffffffffe
+0x0000000140692803: mov      edx, dword ptr [rbp + 0xbc]
+0x0000000140692809: mov      ecx, dword ptr [rbp + 0xb8]
+0x000000014069280f: jmp      0x1406927e4
+0x0000000140692811: mov      ecx, 7
+0x0000000140692816: int      0x29
+0x0000000140692818: ud2      

@@ -1,0 +1,97 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x765550-0x765690
+0x0000000140765550: push     rbp
+0x0000000140765551: push     r15
+0x0000000140765553: push     r14
+0x0000000140765555: push     r12
+0x0000000140765557: push     rsi
+0x0000000140765558: push     rdi
+0x0000000140765559: push     rbx
+0x000000014076555a: sub      rsp, 0x40
+0x000000014076555e: lea      rbp, [rsp + 0x40]
+0x0000000140765563: mov      qword ptr [rbp - 8], 0xfffffffffffffffe
+0x000000014076556b: mov      rsi, r8
+0x000000014076556e: mov      rdi, rdx
+0x0000000140765571: mov      rbx, rcx
+0x0000000140765574: lea      r14, [rip + 0x444f2d]
+0x000000014076557b: mov      r12d, 0xff
+0x0000000140765581: lea      r15, [rip + 0x42a390]
+0x0000000140765588: jmp      0x1407655ad
+0x000000014076558a: nop      word ptr [rax + rax]
+0x0000000140765590: mov      rax, rdx
+0x0000000140765593: shr      rax, 0x20
+0x0000000140765597: mov      rcx, rdx
+0x000000014076559a: shr      rcx, 0x22
+0x000000014076559e: cmp      ecx, 0xb
+0x00000001407655a1: cmovae   eax, r12d
+0x00000001407655a5: cmp      al, 0x23
+0x00000001407655a7: jne      0x140765655
+0x00000001407655ad: test     rsi, rsi
+0x00000001407655b0: je       0x140765653
+0x00000001407655b6: mov      ecx, 0xfffffff4
+0x00000001407655bb: mov      rdx, rdi
+0x00000001407655be: mov      r8, rsi
+0x00000001407655c1: mov      r9, rbx
+0x00000001407655c4: call     0x140765a00
+0x00000001407655c9: cmp      rax, 1
+0x00000001407655cd: jne      0x14076563b
+0x00000001407655cf: mov      ecx, edx
+0x00000001407655d1: and      ecx, 3
+0x00000001407655d4: movsxd   rcx, dword ptr [r14 + rcx*4]
+0x00000001407655d8: add      rcx, r14
+0x00000001407655db: jmp      rcx
+0x00000001407655dd: cmp      byte ptr [rdx + 0x10], 0x23
+0x00000001407655e1: je       0x1407655ad
+0x00000001407655e3: jmp      0x140765655
+0x00000001407655e5: nop      word ptr cs:[rax + rax]
+0x00000001407655f0: mov      qword ptr [rbp - 0x18], rax
+0x00000001407655f4: mov      rax, qword ptr [rip + 0x65c1b5]
+0x00000001407655fb: mov      rcx, rdx
+0x00000001407655fe: shr      rcx, 0x20
+0x0000000140765602: mov      rax, qword ptr [rax + 0x10]
+0x0000000140765606: mov      qword ptr [rbp - 0x10], rdx
+0x000000014076560a: mov      qword ptr [rbp - 0x20], rdx
+0x000000014076560e: call     qword ptr [rip + 0x16c884]
+0x0000000140765614: nop      
+0x0000000140765615: test     al, al
+0x0000000140765617: mov      rdx, qword ptr [rbp - 0x10]
+0x000000014076561b: jne      0x1407655ad
+0x000000014076561d: jmp      0x140765655
+0x000000014076561f: nop      
+0x0000000140765620: cmp      byte ptr [rdx + 0x1f], 0x23
+0x0000000140765624: jne      0x140765655
+0x0000000140765626: mov      rcx, rdx
+0x0000000140765629: dec      rcx
+0x000000014076562c: mov      rax, qword ptr [rdx + 0x17]
+0x0000000140765630: call     qword ptr [rip + 0x16c862]
+0x0000000140765636: jmp      0x1407655ad
+0x000000014076563b: test     rdx, rdx
+0x000000014076563e: je       0x140765667
+0x0000000140765640: mov      rcx, rsi
+0x0000000140765643: sub      rcx, rdx
+0x0000000140765646: jb       0x14076566c
+0x0000000140765648: add      rdi, rdx
+0x000000014076564b: mov      rsi, rcx
+0x000000014076564e: jmp      0x1407655ad
+0x0000000140765653: xor      edx, edx
+0x0000000140765655: mov      rax, rdx
+0x0000000140765658: add      rsp, 0x40
+0x000000014076565c: pop      rbx
+0x000000014076565d: pop      rdi
+0x000000014076565e: pop      rsi
+0x000000014076565f: pop      r12
+0x0000000140765661: pop      r14
+0x0000000140765663: pop      r15
+0x0000000140765665: pop      rbp
+0x0000000140765666: ret      
+0x0000000140765667: mov      rdx, r15
+0x000000014076566a: jmp      0x140765655
+0x000000014076566c: mov      qword ptr [rbp - 0x18], rax
+0x0000000140765670: mov      qword ptr [rbp - 0x20], rdx
+0x0000000140765674: lea      r9, [rip + 0x42a2b5]
+0x000000014076567b: mov      qword ptr [rbp - 0x10], rdx
+0x000000014076567f: mov      rcx, rdx
+0x0000000140765682: mov      rdx, rsi
+0x0000000140765685: mov      r8, rsi
+0x0000000140765688: call     0x1408ae7a0
+0x000000014076568d: nop      
+0x000000014076568e: ud2      

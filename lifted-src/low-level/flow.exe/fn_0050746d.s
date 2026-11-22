@@ -1,0 +1,15 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x50746d-0x5074a1
+0x000000014050746d: push     rsi
+0x000000014050746e: sub      rsp, 0x20
+0x0000000140507472: mov      rsi, rcx
+0x0000000140507475: mov      rcx, qword ptr [rcx + 0x18]
+0x0000000140507479: cmp      rcx, -1
+0x000000014050747d: je       0x140507494
+0x000000014050747f: mov      rdx, qword ptr [rsi + 0x20]
+0x0000000140507483: mov      r8d, 1
+0x0000000140507489: mov      r9d, 1
+0x000000014050748f: call     0x14000a0f6
+0x0000000140507494: mov      rcx, rsi
+0x0000000140507497: add      rsp, 0x20
+0x000000014050749b: pop      rsi
+0x000000014050749c: jmp      0x1405074a1

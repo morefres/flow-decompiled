@@ -1,0 +1,50 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x35e811-0x35e8a2
+0x000000014035e811: mov      qword ptr [rsp + 0x10], rdx
+0x000000014035e816: push     rbp
+0x000000014035e817: push     r15
+0x000000014035e819: push     r14
+0x000000014035e81b: push     r13
+0x000000014035e81d: push     r12
+0x000000014035e81f: push     rsi
+0x000000014035e820: push     rdi
+0x000000014035e821: push     rbx
+0x000000014035e822: sub      rsp, 0x38
+0x000000014035e826: lea      rbp, [rdx + 0x80]
+0x000000014035e82d: mov      rax, qword ptr [rbp + 0x498]
+0x000000014035e834: movzx    eax, byte ptr [rax]
+0x000000014035e837: cmp      eax, 3
+0x000000014035e83a: je       0x14035e849
+0x000000014035e83c: test     eax, eax
+0x000000014035e83e: jne      0x14035e85c
+0x000000014035e840: mov      rcx, qword ptr [rbp + 0x490]
+0x000000014035e847: jmp      0x14035e857
+0x000000014035e849: mov      rax, qword ptr [rbp + 0x4f8]
+0x000000014035e850: lea      rcx, [rax + 0x2120]
+0x000000014035e857: call     0x14035cbc0
+0x000000014035e85c: mov      rax, qword ptr [rbp + 0x4f8]
+0x000000014035e863: cmp      byte ptr [rax + 0x26a1], 0
+0x000000014035e86a: je       0x14035e891
+0x000000014035e86c: mov      rax, qword ptr [rbp + 0x4f8]
+0x000000014035e873: lea      rcx, [rax + 0x1630]
+0x000000014035e87a: call     0x14035cbc0
+0x000000014035e87f: nop      
+0x000000014035e880: add      rsp, 0x38
+0x000000014035e884: pop      rbx
+0x000000014035e885: pop      rdi
+0x000000014035e886: pop      rsi
+0x000000014035e887: pop      r12
+0x000000014035e889: pop      r13
+0x000000014035e88b: pop      r14
+0x000000014035e88d: pop      r15
+0x000000014035e88f: pop      rbp
+0x000000014035e890: ret      
+0x000000014035e891: add      rsp, 0x38
+0x000000014035e895: pop      rbx
+0x000000014035e896: pop      rdi
+0x000000014035e897: pop      rsi
+0x000000014035e898: pop      r12
+0x000000014035e89a: pop      r13
+0x000000014035e89c: pop      r14
+0x000000014035e89e: pop      r15
+0x000000014035e8a0: pop      rbp
+0x000000014035e8a1: ret      

@@ -1,0 +1,51 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x438135-0x438208
+0x0000000140438135: push     rsi
+0x0000000140438136: sub      rsp, 0x20
+0x000000014043813a: mov      rsi, rcx
+0x000000014043813d: mov      rcx, qword ptr [rcx]
+0x0000000140438140: cmp      rcx, -1
+0x0000000140438144: je       0x14043816f
+0x0000000140438146: cmp      rcx, -2
+0x000000014043814a: je       0x1404381e4
+0x0000000140438150: cmp      rcx, -3
+0x0000000140438154: je       0x1404381de
+0x000000014043815a: mov      rdx, qword ptr [rsi + 8]
+0x000000014043815e: mov      r8d, 1
+0x0000000140438164: mov      r9d, 1
+0x000000014043816a: call     0x14000a0f6
+0x000000014043816f: mov      rcx, qword ptr [rsi + 0x20]
+0x0000000140438173: cmp      rcx, -1
+0x0000000140438177: je       0x14043818e
+0x0000000140438179: mov      rdx, qword ptr [rsi + 0x28]
+0x000000014043817d: mov      r8d, 1
+0x0000000140438183: mov      r9d, 1
+0x0000000140438189: call     0x14000a0f6
+0x000000014043818e: mov      rcx, qword ptr [rsi + 0x40]
+0x0000000140438192: cmp      rcx, -1
+0x0000000140438196: je       0x1404381ad
+0x0000000140438198: mov      rdx, qword ptr [rsi + 0x48]
+0x000000014043819c: mov      r8d, 1
+0x00000001404381a2: mov      r9d, 1
+0x00000001404381a8: call     0x14000a0f6
+0x00000001404381ad: mov      rcx, qword ptr [rsi + 0x60]
+0x00000001404381b1: cmp      rcx, -1
+0x00000001404381b5: je       0x1404381cc
+0x00000001404381b7: mov      rdx, qword ptr [rsi + 0x68]
+0x00000001404381bb: mov      r8d, 1
+0x00000001404381c1: mov      r9d, 1
+0x00000001404381c7: call     0x14000a0f6
+0x00000001404381cc: mov      rcx, qword ptr [rsi + 0x80]
+0x00000001404381d3: mov      eax, 0x80
+0x00000001404381d8: cmp      rcx, -1
+0x00000001404381dc: jne      0x1404381ed
+0x00000001404381de: add      rsp, 0x20
+0x00000001404381e2: pop      rsi
+0x00000001404381e3: ret      
+0x00000001404381e4: mov      rcx, qword ptr [rsi + 8]
+0x00000001404381e8: mov      eax, 8
+0x00000001404381ed: mov      rdx, qword ptr [rsi + rax + 8]
+0x00000001404381f2: mov      r8d, 1
+0x00000001404381f8: mov      r9d, 1
+0x00000001404381fe: add      rsp, 0x20
+0x0000000140438202: pop      rsi
+0x0000000140438203: jmp      0x14000a0f6

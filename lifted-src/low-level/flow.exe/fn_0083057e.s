@@ -1,0 +1,56 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x83057e-0x83061b
+0x000000014083057e: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140830583: push     rbp
+0x0000000140830584: push     r15
+0x0000000140830586: push     r14
+0x0000000140830588: push     r13
+0x000000014083058a: push     r12
+0x000000014083058c: push     rsi
+0x000000014083058d: push     rdi
+0x000000014083058e: push     rbx
+0x000000014083058f: sub      rsp, 0x58
+0x0000000140830593: lea      rbp, [rdx + 0x80]
+0x000000014083059a: movdqa   xmmword ptr [rsp + 0x30], xmm7
+0x00000001408305a0: movdqa   xmmword ptr [rsp + 0x40], xmm6
+0x00000001408305a6: cmp      byte ptr [rbp + 0xe42], 0
+0x00000001408305ad: je       0x1408305e1
+0x00000001408305af: cmp      dword ptr [rbp + 0xcb0], -1
+0x00000001408305b6: je       0x1408305fe
+0x00000001408305b8: lea      rcx, [rbp + 0xcb0]
+0x00000001408305bf: call     0x140834eae
+0x00000001408305c4: movdqa   xmm6, xmmword ptr [rsp + 0x40]
+0x00000001408305ca: movdqa   xmm7, xmmword ptr [rsp + 0x30]
+0x00000001408305d0: add      rsp, 0x58
+0x00000001408305d4: pop      rbx
+0x00000001408305d5: pop      rdi
+0x00000001408305d6: pop      rsi
+0x00000001408305d7: pop      r12
+0x00000001408305d9: pop      r13
+0x00000001408305db: pop      r14
+0x00000001408305dd: pop      r15
+0x00000001408305df: pop      rbp
+0x00000001408305e0: ret      
+0x00000001408305e1: movdqa   xmm6, xmmword ptr [rsp + 0x40]
+0x00000001408305e7: movdqa   xmm7, xmmword ptr [rsp + 0x30]
+0x00000001408305ed: add      rsp, 0x58
+0x00000001408305f1: pop      rbx
+0x00000001408305f2: pop      rdi
+0x00000001408305f3: pop      rsi
+0x00000001408305f4: pop      r12
+0x00000001408305f6: pop      r13
+0x00000001408305f8: pop      r14
+0x00000001408305fa: pop      r15
+0x00000001408305fc: pop      rbp
+0x00000001408305fd: ret      
+0x00000001408305fe: movdqa   xmm6, xmmword ptr [rsp + 0x40]
+0x0000000140830604: movdqa   xmm7, xmmword ptr [rsp + 0x30]
+0x000000014083060a: add      rsp, 0x58
+0x000000014083060e: pop      rbx
+0x000000014083060f: pop      rdi
+0x0000000140830610: pop      rsi
+0x0000000140830611: pop      r12
+0x0000000140830613: pop      r13
+0x0000000140830615: pop      r14
+0x0000000140830617: pop      r15
+0x0000000140830619: pop      rbp
+0x000000014083061a: ret      

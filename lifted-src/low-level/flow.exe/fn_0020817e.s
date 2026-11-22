@@ -1,0 +1,58 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x20817e-0x208285
+0x000000014020817e: push     rbp
+0x000000014020817f: push     rsi
+0x0000000140208180: sub      rsp, 0x38
+0x0000000140208184: lea      rbp, [rsp + 0x30]
+0x0000000140208189: mov      qword ptr [rbp], 0xfffffffffffffffe
+0x0000000140208191: mov      rdx, rcx
+0x0000000140208194: movzx    eax, byte ptr [rcx + 0x20]
+0x0000000140208198: cmp      eax, 3
+0x000000014020819b: je       0x14020826c
+0x00000001402081a1: cmp      eax, 4
+0x00000001402081a4: jne      0x14020827e
+0x00000001402081aa: lea      rcx, [rdx + 0x120]
+0x00000001402081b1: mov      qword ptr [rbp - 8], rdx
+0x00000001402081b5: call     0x1402083ee
+0x00000001402081ba: nop      
+0x00000001402081bb: mov      rsi, qword ptr [rbp - 8]
+0x00000001402081bf: mov      rcx, qword ptr [rsi + 0x948]
+0x00000001402081c6: mov      rdx, qword ptr [rsi + 0x950]
+0x00000001402081cd: mov      r8d, 1
+0x00000001402081d3: mov      r9d, 1
+0x00000001402081d9: call     0x14000a0f6
+0x00000001402081de: mov      rcx, qword ptr [rsi + 0x928]
+0x00000001402081e5: mov      rdx, qword ptr [rsi + 0x930]
+0x00000001402081ec: mov      r8d, 1
+0x00000001402081f2: mov      r9d, 1
+0x00000001402081f8: call     0x14000a0f6
+0x00000001402081fd: mov      rcx, qword ptr [rsi + 0x908]
+0x0000000140208204: mov      rdx, qword ptr [rsi + 0x910]
+0x000000014020820b: mov      r8d, 1
+0x0000000140208211: mov      r9d, 1
+0x0000000140208217: call     0x14000a0f6
+0x000000014020821c: mov      rcx, qword ptr [rsi + 0x108]
+0x0000000140208223: mov      rdx, qword ptr [rsi + 0x110]
+0x000000014020822a: mov      r8d, 1
+0x0000000140208230: mov      r9d, 1
+0x0000000140208236: call     0x14000a0f6
+0x000000014020823b: mov      rcx, qword ptr [rsi + 0xf0]
+0x0000000140208242: mov      rdx, qword ptr [rsi + 0xf8]
+0x0000000140208249: mov      r8d, 1
+0x000000014020824f: mov      r9d, 1
+0x0000000140208255: call     0x14000a0f6
+0x000000014020825a: add      rsi, 0x28
+0x000000014020825e: mov      rcx, rsi
+0x0000000140208261: add      rsp, 0x38
+0x0000000140208265: pop      rsi
+0x0000000140208266: pop      rbp
+0x0000000140208267: jmp      0x1402086fc
+0x000000014020826c: add      rdx, 0x28
+0x0000000140208270: mov      rcx, rdx
+0x0000000140208273: add      rsp, 0x38
+0x0000000140208277: pop      rsi
+0x0000000140208278: pop      rbp
+0x0000000140208279: jmp      0x140208347
+0x000000014020827e: add      rsp, 0x38
+0x0000000140208282: pop      rsi
+0x0000000140208283: pop      rbp
+0x0000000140208284: ret      

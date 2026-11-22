@@ -1,0 +1,53 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x8279cb-0x827a50
+0x00000001408279cb: mov      qword ptr [rsp + 0x10], rdx
+0x00000001408279d0: push     rbp
+0x00000001408279d1: push     r15
+0x00000001408279d3: push     r14
+0x00000001408279d5: push     r13
+0x00000001408279d7: push     r12
+0x00000001408279d9: push     rsi
+0x00000001408279da: push     rdi
+0x00000001408279db: push     rbx
+0x00000001408279dc: sub      rsp, 0x28
+0x00000001408279e0: lea      rbp, [rdx + 0x80]
+0x00000001408279e7: cmp      dword ptr [rbp + 0x60], 0xa
+0x00000001408279eb: jne      0x140827a17
+0x00000001408279ed: test     byte ptr [rbp + 0x1bd], 1
+0x00000001408279f4: je       0x140827a38
+0x00000001408279f6: lea      rcx, [rbp + 0x68]
+0x00000001408279fa: call     0x140822716
+0x00000001408279ff: mov      byte ptr [rbp + 0x1bf], 1
+0x0000000140827a06: add      rsp, 0x28
+0x0000000140827a0a: pop      rbx
+0x0000000140827a0b: pop      rdi
+0x0000000140827a0c: pop      rsi
+0x0000000140827a0d: pop      r12
+0x0000000140827a0f: pop      r13
+0x0000000140827a11: pop      r14
+0x0000000140827a13: pop      r15
+0x0000000140827a15: pop      rbp
+0x0000000140827a16: ret      
+0x0000000140827a17: lea      rcx, [rbp + 0x60]
+0x0000000140827a1b: call     0x140822a9a
+0x0000000140827a20: mov      byte ptr [rbp + 0x1bf], 1
+0x0000000140827a27: add      rsp, 0x28
+0x0000000140827a2b: pop      rbx
+0x0000000140827a2c: pop      rdi
+0x0000000140827a2d: pop      rsi
+0x0000000140827a2e: pop      r12
+0x0000000140827a30: pop      r13
+0x0000000140827a32: pop      r14
+0x0000000140827a34: pop      r15
+0x0000000140827a36: pop      rbp
+0x0000000140827a37: ret      
+0x0000000140827a38: mov      byte ptr [rbp + 0x1bf], 1
+0x0000000140827a3f: add      rsp, 0x28
+0x0000000140827a43: pop      rbx
+0x0000000140827a44: pop      rdi
+0x0000000140827a45: pop      rsi
+0x0000000140827a46: pop      r12
+0x0000000140827a48: pop      r13
+0x0000000140827a4a: pop      r14
+0x0000000140827a4c: pop      r15
+0x0000000140827a4e: pop      rbp
+0x0000000140827a4f: ret      

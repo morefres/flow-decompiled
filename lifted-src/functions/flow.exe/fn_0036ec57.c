@@ -1,0 +1,21 @@
+/* Evidence-based C-like lift; not original Rust source. */
+/* image=flow.exe rva=0x36ec57-0x36ec8c va=0x14036ec57 bytes=53 */
+void sub_000000014036ec57(void) {
+    /* mov qword ptr [rsp + 0x10], rdx */
+    /* push rbp */
+    /* push rsi */
+    /* push rbx */
+    /* sub rsp, 0x20 */
+    /* lea rbp, [rdx + 0x80] */
+    /* lea rdx, [rbp + 0x2cf8] */
+    /* mov dword ptr [rdx], 2 */
+    /* mov rcx, qword ptr [rbp + 0x5a88] */
+    /* call 0x14036c5ba */
+    /* nop  */
+    /* add rsp, 0x20 */
+    /* pop rbx */
+    /* pop rsi */
+    /* pop rbp */
+    /* ret  */
+    /* Types, control-flow semantics, ABI effects, and source names remain unresolved. */
+}

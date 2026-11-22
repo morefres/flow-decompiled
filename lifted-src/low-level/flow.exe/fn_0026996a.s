@@ -1,0 +1,62 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x26996a-0x269a28
+0x000000014026996a: push     r15
+0x000000014026996c: push     r14
+0x000000014026996e: push     r12
+0x0000000140269970: push     rsi
+0x0000000140269971: push     rdi
+0x0000000140269972: push     rbx
+0x0000000140269973: sub      rsp, 0x28
+0x0000000140269977: mov      rbx, r8
+0x000000014026997a: mov      rsi, rdx
+0x000000014026997d: mov      rdi, rcx
+0x0000000140269980: cmp      r9, 8
+0x0000000140269984: jb       0x1402699e5
+0x0000000140269986: mov      r14, r9
+0x0000000140269989: shr      r14, 3
+0x000000014026998d: mov      rax, r14
+0x0000000140269990: shl      rax, 8
+0x0000000140269994: lea      r15, [rax + rax*2]
+0x0000000140269998: lea      rdx, [rdi + r15]
+0x000000014026999c: imul     r12, r14, 0x540
+0x00000001402699a3: lea      r8, [rdi + r12]
+0x00000001402699a7: mov      rcx, rdi
+0x00000001402699aa: mov      r9, r14
+0x00000001402699ad: call     0x14026996a
+0x00000001402699b2: mov      rdi, rax
+0x00000001402699b5: lea      rdx, [rsi + r15]
+0x00000001402699b9: lea      r8, [rsi + r12]
+0x00000001402699bd: mov      rcx, rsi
+0x00000001402699c0: mov      r9, r14
+0x00000001402699c3: call     0x14026996a
+0x00000001402699c8: mov      rsi, rax
+0x00000001402699cb: add      r15, rbx
+0x00000001402699ce: add      r12, rbx
+0x00000001402699d1: mov      rcx, rbx
+0x00000001402699d4: mov      rdx, r15
+0x00000001402699d7: mov      r8, r12
+0x00000001402699da: mov      r9, r14
+0x00000001402699dd: call     0x14026996a
+0x00000001402699e2: mov      rbx, rax
+0x00000001402699e5: mov      eax, dword ptr [rdi + 0xb8]
+0x00000001402699eb: mov      ecx, dword ptr [rsi + 0xb8]
+0x00000001402699f1: cmp      eax, ecx
+0x00000001402699f3: setb     dl
+0x00000001402699f6: mov      r8d, dword ptr [rbx + 0xb8]
+0x00000001402699fd: cmp      eax, r8d
+0x0000000140269a00: setb     al
+0x0000000140269a03: xor      al, dl
+0x0000000140269a05: cmp      ecx, r8d
+0x0000000140269a08: setb     cl
+0x0000000140269a0b: xor      cl, dl
+0x0000000140269a0d: cmovne   rsi, rbx
+0x0000000140269a11: test     al, al
+0x0000000140269a13: cmovne   rsi, rdi
+0x0000000140269a17: mov      rax, rsi
+0x0000000140269a1a: add      rsp, 0x28
+0x0000000140269a1e: pop      rbx
+0x0000000140269a1f: pop      rdi
+0x0000000140269a20: pop      rsi
+0x0000000140269a21: pop      r12
+0x0000000140269a23: pop      r14
+0x0000000140269a25: pop      r15
+0x0000000140269a27: ret      

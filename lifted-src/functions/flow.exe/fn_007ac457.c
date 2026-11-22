@@ -1,0 +1,163 @@
+/* Evidence-based C-like lift; not original Rust source. */
+/* image=flow.exe rva=0x7ac457-0x7ac6ea va=0x1407ac457 bytes=659 */
+void sub_00000001407ac457(void) {
+    /* push rbp */
+    /* push rsi */
+    /* push rdi */
+    /* sub rsp, 0x70 */
+    /* lea rbp, [rsp + 0x70] */
+    /* mov qword ptr [rbp - 8], 0xfffffffffffffffe */
+    /* mov rdi, rdx */
+    /* test rcx, rcx */
+    /* je 0x1407ac4e5 */
+    /* cmp rcx, 1 */
+    /* jne 0x1407ac569 */
+    /* lock dec qword ptr [rdi + 0x180] */
+    /* jne 0x1407ac670 */
+    /* lock bts qword ptr [rdi + 0x80], 0 */
+    /* jb 0x1407ac5b8 */
+    /* lea rdx, [rdi + 0x100] */
+    /* lea rsi, [rbp - 0x30] */
+    /* mov rcx, rsi */
+    /* call 0x1406448b0 */
+    /* cmp dword ptr [rsi], 1 */
+    /* je 0x1407ac678 */
+    /* mov rcx, qword ptr [rbp - 0x28] */
+    /* mov al, byte ptr [rbp - 0x20] */
+    /* mov byte ptr [rbp - 0x10], al */
+    /* mov qword ptr [rbp - 0x18], rcx */
+    /* add rcx, 8 */
+    /* call 0x14003e6da */
+    /* nop  */
+    /* mov rcx, qword ptr [rbp - 0x18] */
+    /* cmp qword ptr [rcx + 0x18], 0 */
+    /* je 0x1407ac5a2 */
+    /* xor eax, eax */
+    /* jmp 0x1407ac5aa */
+    /* lock dec qword ptr [rdi + 0x200] */
+    /* jne 0x1407ac670 */
+    /* mov rax, qword ptr [rdi + 0x80] */
+    /* mov rcx, qword ptr [rdi + 0x190] */
+    /* mov rdx, rax */
+    /* or rdx, rcx */
+    /* lock cmpxchg qword ptr [rdi + 0x80], rdx */
+    /* jne 0x1407ac501 */
+    /* test qword ptr [rdi + 0x190], rax */
+    /* jne 0x1407ac5f9 */
+    /* lea rdx, [rdi + 0x140] */
+    /* lea rsi, [rbp - 0x30] */
+    /* mov rcx, rsi */
+    /* call 0x1406448b0 */
+    /* cmp dword ptr [rsi], 1 */
+    /* je 0x1407ac6b1 */
+    /* mov rcx, qword ptr [rbp - 0x28] */
+    /* mov al, byte ptr [rbp - 0x20] */
+    /* mov byte ptr [rbp - 0x10], al */
+    /* mov qword ptr [rbp - 0x18], rcx */
+    /* add rcx, 8 */
+    /* call 0x14003e6da */
+    /* nop  */
+    /* mov rcx, qword ptr [rbp - 0x18] */
+    /* cmp qword ptr [rcx + 0x18], 0 */
+    /* je 0x1407ac5e3 */
+    /* xor eax, eax */
+    /* jmp 0x1407ac5eb */
+    /* lock dec qword ptr [rdi + 0x70] */
+    /* jne 0x1407ac670 */
+    /* mov rcx, rdi */
+    /* call 0x1407d3ec8 */
+    /* mov al, 1 */
+    /* xchg byte ptr [rdi + 0x80], al */
+    /* test al, al */
+    /* je 0x1407ac670 */
+    /* mov qword ptr [rbp - 0x10], rdi */
+    /* mov rcx, rdi */
+    /* call 0x14003e686 */
+    /* nop  */
+    /* mov rsi, qword ptr [rbp - 0x10] */
+    /* jmp 0x1407ac654 */
+    /* cmp qword ptr [rcx + 0x30], 0 */
+    /* sete al */
+    /* mov dl, byte ptr [rbp - 0x10] */
+    /* xchg byte ptr [rdi + 0x138], al */
+    /* call 0x140507672 */
+    /* mov al, 1 */
+    /* xchg byte ptr [rdi + 0x190], al */
+    /* test al, al */
+    /* je 0x1407ac670 */
+    /* mov rcx, rdi */
+    /* call 0x1407d3fb4 */
+    /* lea rcx, [rdi + 0x108] */
+    /* mov qword ptr [rbp - 0x10], rdi */
+    /* call 0x140508437 */
+    /* nop  */
+    /* jmp 0x1407ac64c */
+    /* cmp qword ptr [rcx + 0x30], 0 */
+    /* sete al */
+    /* xchg byte ptr [rdi + 0x178], al */
+    /* mov dl, byte ptr [rbp - 0x10] */
+    /* call 0x140507672 */
+    /* mov al, 1 */
+    /* xchg byte ptr [rdi + 0x210], al */
+    /* test al, al */
+    /* je 0x1407ac670 */
+    /* cmp qword ptr [rdi + 0x1a0], 0 */
+    /* je 0x1407ac62a */
+    /* mov rsi, qword ptr [rdi + 0x198] */
+    /* call qword ptr [rip + 0x1250ec] */
+    /* mov rcx, rax */
+    /* xor edx, edx */
+    /* mov r8, rsi */
+    /* call qword ptr [rip + 0x1250d6] */
+    /* lea rcx, [rdi + 0x108] */
+    /* mov qword ptr [rbp - 0x10], rdi */
+    /* call 0x140508437 */
+    /* nop  */
+    /* mov rax, qword ptr [rbp - 0x10] */
+    /* lea rcx, [rax + 0x148] */
+    /* call 0x140508437 */
+    /* nop  */
+    /* mov rsi, qword ptr [rbp - 0x10] */
+    /* mov rsi, qword ptr [rsi - 8] */
+    /* call qword ptr [rip + 0x1250ae] */
+    /* mov rcx, rax */
+    /* xor edx, edx */
+    /* mov r8, rsi */
+    /* add rsp, 0x70 */
+    /* pop rdi */
+    /* pop rsi */
+    /* pop rbp */
+    /* jmp qword ptr [rip + 0x125090] */
+    /* add rsp, 0x70 */
+    /* pop rdi */
+    /* pop rsi */
+    /* pop rbp */
+    /* ret  */
+    /* mov rax, qword ptr [rbp - 0x28] */
+    /* mov cl, byte ptr [rbp - 0x20] */
+    /* lea r8, [rbp - 0x40] */
+    /* mov qword ptr [r8], rax */
+    /* mov byte ptr [r8 + 8], cl */
+    /* lea rax, [rip + 0x3e2477] */
+    /* mov qword ptr [rsp + 0x20], rax */
+    /* lea rcx, [rip + 0x3e5cfb] */
+    /* lea r9, [rip + 0x3cc45c] */
+    /* mov edx, 0x2b */
+    /* call 0x1408ae9c0 */
+    /* nop  */
+    /* jmp 0x1407ac6e8 */
+    /* mov rax, qword ptr [rbp - 0x28] */
+    /* mov cl, byte ptr [rbp - 0x20] */
+    /* lea r8, [rbp - 0x40] */
+    /* mov qword ptr [r8], rax */
+    /* mov byte ptr [r8 + 8], cl */
+    /* lea rax, [rip + 0x3e243e] */
+    /* mov qword ptr [rsp + 0x20], rax */
+    /* lea rcx, [rip + 0x3e5cc2] */
+    /* lea r9, [rip + 0x3cc423] */
+    /* mov edx, 0x2b */
+    /* call 0x1408ae9c0 */
+    /* nop  */
+    /* ud2  */
+    /* Types, control-flow semantics, ABI effects, and source names remain unresolved. */
+}

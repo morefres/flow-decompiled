@@ -1,0 +1,83 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x326c95-0x326d73
+0x0000000140326c95: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140326c9a: push     rbp
+0x0000000140326c9b: push     r15
+0x0000000140326c9d: push     r14
+0x0000000140326c9f: push     r13
+0x0000000140326ca1: push     r12
+0x0000000140326ca3: push     rsi
+0x0000000140326ca4: push     rdi
+0x0000000140326ca5: push     rbx
+0x0000000140326ca6: sub      rsp, 0x68
+0x0000000140326caa: lea      rbp, [rdx + 0x80]
+0x0000000140326cb1: movdqa   xmmword ptr [rsp + 0x50], xmm6
+0x0000000140326cb7: mov      rax, qword ptr [rbp + 0x32e0]
+0x0000000140326cbe: cmp      rax, -1
+0x0000000140326cc2: je       0x140326d02
+0x0000000140326cc4: cmp      rax, -2
+0x0000000140326cc8: je       0x140326d2e
+0x0000000140326cca: test     byte ptr [rbp + 0x330f], 1
+0x0000000140326cd1: je       0x140326d45
+0x0000000140326cd3: lea      rcx, [rbp + 0x2de8]
+0x0000000140326cda: call     0x14026a0ec
+0x0000000140326cdf: lea      rcx, [rbp + 0x2df8]
+0x0000000140326ce6: call     0x14031ecd7
+0x0000000140326ceb: movdqa   xmm6, xmmword ptr [rsp + 0x50]
+0x0000000140326cf1: add      rsp, 0x68
+0x0000000140326cf5: pop      rbx
+0x0000000140326cf6: pop      rdi
+0x0000000140326cf7: pop      rsi
+0x0000000140326cf8: pop      r12
+0x0000000140326cfa: pop      r13
+0x0000000140326cfc: pop      r14
+0x0000000140326cfe: pop      r15
+0x0000000140326d00: pop      rbp
+0x0000000140326d01: ret      
+0x0000000140326d02: test     byte ptr [rbp + 0x330e], 1
+0x0000000140326d09: je       0x140326d5c
+0x0000000140326d0b: lea      rcx, [rbp + 0x2e00]
+0x0000000140326d12: call     0x1400b2490
+0x0000000140326d17: movdqa   xmm6, xmmword ptr [rsp + 0x50]
+0x0000000140326d1d: add      rsp, 0x68
+0x0000000140326d21: pop      rbx
+0x0000000140326d22: pop      rdi
+0x0000000140326d23: pop      rsi
+0x0000000140326d24: pop      r12
+0x0000000140326d26: pop      r13
+0x0000000140326d28: pop      r14
+0x0000000140326d2a: pop      r15
+0x0000000140326d2c: pop      rbp
+0x0000000140326d2d: ret      
+0x0000000140326d2e: movdqa   xmm6, xmmword ptr [rsp + 0x50]
+0x0000000140326d34: add      rsp, 0x68
+0x0000000140326d38: pop      rbx
+0x0000000140326d39: pop      rdi
+0x0000000140326d3a: pop      rsi
+0x0000000140326d3b: pop      r12
+0x0000000140326d3d: pop      r13
+0x0000000140326d3f: pop      r14
+0x0000000140326d41: pop      r15
+0x0000000140326d43: pop      rbp
+0x0000000140326d44: ret      
+0x0000000140326d45: movdqa   xmm6, xmmword ptr [rsp + 0x50]
+0x0000000140326d4b: add      rsp, 0x68
+0x0000000140326d4f: pop      rbx
+0x0000000140326d50: pop      rdi
+0x0000000140326d51: pop      rsi
+0x0000000140326d52: pop      r12
+0x0000000140326d54: pop      r13
+0x0000000140326d56: pop      r14
+0x0000000140326d58: pop      r15
+0x0000000140326d5a: pop      rbp
+0x0000000140326d5b: ret      
+0x0000000140326d5c: movdqa   xmm6, xmmword ptr [rsp + 0x50]
+0x0000000140326d62: add      rsp, 0x68
+0x0000000140326d66: pop      rbx
+0x0000000140326d67: pop      rdi
+0x0000000140326d68: pop      rsi
+0x0000000140326d69: pop      r12
+0x0000000140326d6b: pop      r13
+0x0000000140326d6d: pop      r14
+0x0000000140326d6f: pop      r15
+0x0000000140326d71: pop      rbp
+0x0000000140326d72: ret      

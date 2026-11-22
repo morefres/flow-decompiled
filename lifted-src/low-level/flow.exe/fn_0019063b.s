@@ -1,0 +1,47 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x19063b-0x1906e7
+0x000000014019063b: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140190640: push     rbp
+0x0000000140190641: push     r15
+0x0000000140190643: push     r14
+0x0000000140190645: push     r13
+0x0000000140190647: push     r12
+0x0000000140190649: push     rsi
+0x000000014019064a: push     rdi
+0x000000014019064b: push     rbx
+0x000000014019064c: sub      rsp, 0x58
+0x0000000140190650: lea      rbp, [rdx + 0x80]
+0x0000000140190657: movaps   xmmword ptr [rsp + 0x30], xmm7
+0x000000014019065c: movaps   xmmword ptr [rsp + 0x40], xmm6
+0x0000000140190661: mov      rsi, qword ptr [rbp + 0x778]
+0x0000000140190668: cmp      byte ptr [rsi + 0x1393], 0
+0x000000014019066f: jne      0x1401906dd
+0x0000000140190671: cmp      byte ptr [rsi + 0x1392], 0
+0x0000000140190678: je       0x140190693
+0x000000014019067a: mov      rax, qword ptr [rsi + 0x180]
+0x0000000140190681: lock dec qword ptr [rax]
+0x0000000140190685: jne      0x140190693
+0x0000000140190687: mov      rcx, qword ptr [rsi + 0x180]
+0x000000014019068e: call     0x1407e387b
+0x0000000140190693: cmp      byte ptr [rsi + 0x1391], 0
+0x000000014019069a: je       0x1401906bb
+0x000000014019069c: mov      rcx, qword ptr [rsi + 0x168]
+0x00000001401906a3: mov      rdx, qword ptr [rsi + 0x170]
+0x00000001401906aa: mov      r8d, 1
+0x00000001401906b0: mov      r9d, 1
+0x00000001401906b6: call     0x14000a0f6
+0x00000001401906bb: mov      byte ptr [rsi + 0x1390], 2
+0x00000001401906c2: movaps   xmm6, xmmword ptr [rsp + 0x40]
+0x00000001401906c7: movaps   xmm7, xmmword ptr [rsp + 0x30]
+0x00000001401906cc: add      rsp, 0x58
+0x00000001401906d0: pop      rbx
+0x00000001401906d1: pop      rdi
+0x00000001401906d2: pop      rsi
+0x00000001401906d3: pop      r12
+0x00000001401906d5: pop      r13
+0x00000001401906d7: pop      r14
+0x00000001401906d9: pop      r15
+0x00000001401906db: pop      rbp
+0x00000001401906dc: ret      
+0x00000001401906dd: mov      rcx, rsi
+0x00000001401906e0: call     0x140038a80
+0x00000001401906e5: jmp      0x140190671

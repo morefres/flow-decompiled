@@ -1,0 +1,62 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x864b80-0x864c59
+0x0000000140864b80: push     rbp
+0x0000000140864b81: push     rsi
+0x0000000140864b82: sub      rsp, 0x28
+0x0000000140864b86: lea      rbp, [rsp + 0x20]
+0x0000000140864b8b: mov      qword ptr [rbp], 0xfffffffffffffffe
+0x0000000140864b93: mov      esi, 0x80004003
+0x0000000140864b98: test     rdx, rdx
+0x0000000140864b9b: je       0x140864c50
+0x0000000140864ba1: test     r8, r8
+0x0000000140864ba4: je       0x140864c50
+0x0000000140864baa: mov      eax, dword ptr [rdx]
+0x0000000140864bac: cmp      eax, 2
+0x0000000140864baf: jg       0x140864bc1
+0x0000000140864bb1: cmp      eax, 0x94ea2b94
+0x0000000140864bb6: je       0x140864be5
+0x0000000140864bb8: test     eax, eax
+0x0000000140864bba: je       0x140864bcb
+0x0000000140864bbc: jmp      0x140864c44
+0x0000000140864bc1: cmp      eax, 3
+0x0000000140864bc4: je       0x140864c15
+0x0000000140864bc6: cmp      eax, 0x37
+0x0000000140864bc9: jne      0x140864c44
+0x0000000140864bcb: cmp      word ptr [rdx + 4], 0
+0x0000000140864bd0: jne      0x140864c44
+0x0000000140864bd2: cmp      word ptr [rdx + 6], 0
+0x0000000140864bd7: jne      0x140864c44
+0x0000000140864bd9: movabs   rax, 0x46000000000000c0
+0x0000000140864be3: jmp      0x140864bff
+0x0000000140864be5: cmp      word ptr [rdx + 4], 0xe9cc
+0x0000000140864beb: jne      0x140864c44
+0x0000000140864bed: cmp      word ptr [rdx + 6], 0x49e0
+0x0000000140864bf3: jne      0x140864c44
+0x0000000140864bf5: movabs   rax, 0x905b8fca64eeffc0
+0x0000000140864bff: cmp      qword ptr [rdx + 8], rax
+0x0000000140864c03: jne      0x140864c44
+0x0000000140864c05: mov      qword ptr [r8], rcx
+0x0000000140864c08: test     rcx, rcx
+0x0000000140864c0b: je       0x140864c4b
+0x0000000140864c0d: lock inc dword ptr [rcx + 0x14]
+0x0000000140864c11: xor      esi, esi
+0x0000000140864c13: jmp      0x140864c50
+0x0000000140864c15: cmp      word ptr [rdx + 4], 0
+0x0000000140864c1a: jne      0x140864c44
+0x0000000140864c1c: cmp      word ptr [rdx + 6], 0
+0x0000000140864c21: jne      0x140864c44
+0x0000000140864c23: movabs   rax, 0x46000000000000c0
+0x0000000140864c2d: cmp      qword ptr [rdx + 8], rax
+0x0000000140864c31: jne      0x140864c44
+0x0000000140864c33: lock inc dword ptr [rcx + 0x14]
+0x0000000140864c37: xor      esi, esi
+0x0000000140864c39: mov      rdx, r8
+0x0000000140864c3c: call     0x140864d60
+0x0000000140864c41: nop      
+0x0000000140864c42: jmp      0x140864c50
+0x0000000140864c44: mov      qword ptr [r8], 0
+0x0000000140864c4b: mov      esi, 0x80004002
+0x0000000140864c50: mov      eax, esi
+0x0000000140864c52: add      rsp, 0x28
+0x0000000140864c56: pop      rsi
+0x0000000140864c57: pop      rbp
+0x0000000140864c58: ret      

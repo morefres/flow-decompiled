@@ -1,0 +1,66 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6c5340-0x6c5414
+0x00000001406c5340: push     rsi
+0x00000001406c5341: push     rdi
+0x00000001406c5342: push     rbx
+0x00000001406c5343: sub      rsp, 0x20
+0x00000001406c5347: cmp      dword ptr [rdx], 1
+0x00000001406c534a: jne      0x1406c53fa
+0x00000001406c5350: mov      rsi, r9
+0x00000001406c5353: mov      rbx, r8
+0x00000001406c5356: mov      rdi, rcx
+0x00000001406c5359: add      rdx, 4
+0x00000001406c535d: mov      rax, qword ptr [rip + 0x6fc73c]
+0x00000001406c5364: mov      ecx, eax
+0x00000001406c5366: not      ecx
+0x00000001406c5368: test     ecx, 0x804
+0x00000001406c536e: jne      0x1406c5386
+0x00000001406c5370: mov      r8, rsi
+0x00000001406c5373: shr      r8, 6
+0x00000001406c5377: je       0x1406c53d1
+0x00000001406c5379: mov      rcx, rdx
+0x00000001406c537c: mov      rdx, rbx
+0x00000001406c537f: call     0x14087c5c0
+0x00000001406c5384: jmp      0x1406c53d1
+0x00000001406c5386: mov      ecx, eax
+0x00000001406c5388: not      ecx
+0x00000001406c538a: mov      r8, rsi
+0x00000001406c538d: shr      r8, 6
+0x00000001406c5391: test     ecx, 0x1040
+0x00000001406c5397: jne      0x1406c53ab
+0x00000001406c5399: test     r8, r8
+0x00000001406c539c: je       0x1406c53d1
+0x00000001406c539e: mov      rcx, rdx
+0x00000001406c53a1: mov      rdx, rbx
+0x00000001406c53a4: call     0x14087d8c0
+0x00000001406c53a9: jmp      0x1406c53d1
+0x00000001406c53ab: test     al, 4
+0x00000001406c53ad: jne      0x1406c53c1
+0x00000001406c53af: test     r8, r8
+0x00000001406c53b2: je       0x1406c53d1
+0x00000001406c53b4: mov      rcx, rdx
+0x00000001406c53b7: mov      rdx, rbx
+0x00000001406c53ba: call     0x14087b400
+0x00000001406c53bf: jmp      0x1406c53d1
+0x00000001406c53c1: test     r8, r8
+0x00000001406c53c4: je       0x1406c53d1
+0x00000001406c53c6: mov      rcx, rdx
+0x00000001406c53c9: mov      rdx, rbx
+0x00000001406c53cc: call     0x14087c980
+0x00000001406c53d1: movabs   rax, 0x7fffffffffffffc0
+0x00000001406c53db: and      rax, rsi
+0x00000001406c53de: and      esi, 0x3f
+0x00000001406c53e1: add      rbx, rax
+0x00000001406c53e4: mov      qword ptr [rdi], rax
+0x00000001406c53e7: mov      qword ptr [rdi + 8], rbx
+0x00000001406c53eb: mov      qword ptr [rdi + 0x10], rsi
+0x00000001406c53ef: mov      rax, rdi
+0x00000001406c53f2: add      rsp, 0x20
+0x00000001406c53f6: pop      rbx
+0x00000001406c53f7: pop      rdi
+0x00000001406c53f8: pop      rsi
+0x00000001406c53f9: ret      
+0x00000001406c53fa: lea      rcx, [rip + 0x4c922f]
+0x00000001406c5401: lea      r8, [rip + 0x4a1528]
+0x00000001406c5408: mov      edx, 0x28
+0x00000001406c540d: call     0x1408ae860
+0x00000001406c5412: ud2      

@@ -1,0 +1,30 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x78e956-0x78e9a6
+0x000000014078e956: mov      qword ptr [rsp + 0x10], rdx
+0x000000014078e95b: push     rbp
+0x000000014078e95c: push     r15
+0x000000014078e95e: push     r14
+0x000000014078e960: push     r13
+0x000000014078e962: push     r12
+0x000000014078e964: push     rsi
+0x000000014078e965: push     rdi
+0x000000014078e966: push     rbx
+0x000000014078e967: sub      rsp, 0x38
+0x000000014078e96b: lea      rbp, [rdx + 0x80]
+0x000000014078e972: xor      ecx, ecx
+0x000000014078e974: mov      al, 1
+0x000000014078e976: lock cmpxchg byte ptr [rip + 0x632a62], cl
+0x000000014078e97e: jne      0x14078e998
+0x000000014078e980: mov      byte ptr [rbp + 0xbd], 1
+0x000000014078e987: add      rsp, 0x38
+0x000000014078e98b: pop      rbx
+0x000000014078e98c: pop      rdi
+0x000000014078e98d: pop      rsi
+0x000000014078e98e: pop      r12
+0x000000014078e990: pop      r13
+0x000000014078e992: pop      r14
+0x000000014078e994: pop      r15
+0x000000014078e996: pop      rbp
+0x000000014078e997: ret      
+0x000000014078e998: lea      rcx, [rip + 0x632a41]
+0x000000014078e99f: call     0x1408bf786
+0x000000014078e9a4: jmp      0x14078e980

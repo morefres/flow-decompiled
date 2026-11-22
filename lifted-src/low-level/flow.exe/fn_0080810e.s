@@ -1,0 +1,43 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x80810e-0x8081a0
+0x000000014080810e: push     rbp
+0x000000014080810f: sub      rsp, 0x40
+0x0000000140808113: lea      rbp, [rsp + 0x40]
+0x0000000140808118: mov      qword ptr [rbp - 8], 0xfffffffffffffffe
+0x0000000140808120: mov      r9, r8
+0x0000000140808123: mov      r8, rdx
+0x0000000140808126: lea      rax, [rbp - 0x18]
+0x000000014080812a: mov      qword ptr [rax], rcx
+0x000000014080812d: mov      qword ptr [rax + 8], 0
+0x0000000140808135: lea      rdx, [rip + 0x377e1c]
+0x000000014080813c: mov      rcx, rax
+0x000000014080813f: call     0x14001ab70
+0x0000000140808144: nop      
+0x0000000140808145: mov      rcx, qword ptr [rbp - 0x10]
+0x0000000140808149: test     al, al
+0x000000014080814b: je       0x140808170
+0x000000014080814d: mov      rax, rcx
+0x0000000140808150: test     rcx, rcx
+0x0000000140808153: jne      0x14080819a
+0x0000000140808155: lea      rcx, [rip + 0x384d54]
+0x000000014080815c: lea      r8, [rip + 0x384da5]
+0x0000000140808163: mov      edx, 0xad
+0x0000000140808168: call     0x1408ae6f0
+0x000000014080816d: nop      
+0x000000014080816e: ud2      
+0x0000000140808170: test     rcx, rcx
+0x0000000140808173: je       0x140808198
+0x0000000140808175: mov      edx, ecx
+0x0000000140808177: and      edx, 3
+0x000000014080817a: xor      eax, eax
+0x000000014080817c: lea      r8d, [rdx - 2]
+0x0000000140808180: cmp      r8d, 2
+0x0000000140808184: jb       0x14080819a
+0x0000000140808186: test     rdx, rdx
+0x0000000140808189: je       0x14080819a
+0x000000014080818b: mov      rax, qword ptr [rcx + 0x17]
+0x000000014080818f: dec      rcx
+0x0000000140808192: call     qword ptr [rip + 0xc9d00]
+0x0000000140808198: xor      eax, eax
+0x000000014080819a: add      rsp, 0x40
+0x000000014080819e: pop      rbp
+0x000000014080819f: ret      

@@ -1,0 +1,22 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x741b1c-0x741b64
+0x0000000140741b1c: push     rsi
+0x0000000140741b1d: push     rdi
+0x0000000140741b1e: sub      rsp, 0x28
+0x0000000140741b22: mov      rsi, rdx
+0x0000000140741b25: mov      rdi, rcx
+0x0000000140741b28: call     0x140719665
+0x0000000140741b2d: test     rax, rax
+0x0000000140741b30: cmove    rdx, rax
+0x0000000140741b34: cmp      rsi, rdx
+0x0000000140741b37: ja       0x140741b4a
+0x0000000140741b39: mov      rcx, rdi
+0x0000000140741b3c: mov      rdx, rsi
+0x0000000140741b3f: add      rsp, 0x28
+0x0000000140741b43: pop      rdi
+0x0000000140741b44: pop      rsi
+0x0000000140741b45: jmp      0x140702740
+0x0000000140741b4a: lea      rcx, [rip + 0x42895f]
+0x0000000140741b51: lea      r8, [rip + 0x428978]
+0x0000000140741b58: mov      edx, 0x41
+0x0000000140741b5d: call     0x1408ae6f0
+0x0000000140741b62: ud2      

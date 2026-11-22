@@ -1,0 +1,61 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x618284-0x61832d
+0x0000000140618284: push     rsi
+0x0000000140618285: push     rdi
+0x0000000140618286: push     rbp
+0x0000000140618287: push     rbx
+0x0000000140618288: sub      rsp, 0x28
+0x000000014061828c: mov      rsi, rcx
+0x000000014061828f: mov      bpl, 0xff
+0x0000000140618292: test     r8, r8
+0x0000000140618295: je       0x140618320
+0x000000014061829b: mov      rdi, r8
+0x000000014061829e: cmp      r8, 0x40
+0x00000001406182a2: ja       0x1406182d9
+0x00000001406182a4: mov      rbx, r9
+0x00000001406182a7: mov      rax, qword ptr [rsp + 0x70]
+0x00000001406182ac: xor      ecx, ecx
+0x00000001406182ae: movzx    r8d, byte ptr [rdx + rcx]
+0x00000001406182b3: mov      r8b, byte ptr [rax + r8]
+0x00000001406182b7: mov      byte ptr [rbx + rcx], r8b
+0x00000001406182bb: inc      rcx
+0x00000001406182be: cmp      rdi, rcx
+0x00000001406182c1: jne      0x1406182ae
+0x00000001406182c3: mov      rcx, rbx
+0x00000001406182c6: mov      rdx, rdi
+0x00000001406182c9: call     0x140615498
+0x00000001406182ce: cmp      al, 0xff
+0x00000001406182d0: je       0x1406182ed
+0x00000001406182d2: mov      byte ptr [rsi], al
+0x00000001406182d4: mov      bpl, 2
+0x00000001406182d7: jmp      0x140618320
+0x00000001406182d9: cmp      rdi, 0xffff
+0x00000001406182e0: ja       0x140618320
+0x00000001406182e2: mov      qword ptr [rsi], rdx
+0x00000001406182e5: mov      qword ptr [rsi + 8], rdi
+0x00000001406182e9: xor      ebp, ebp
+0x00000001406182eb: jmp      0x140618320
+0x00000001406182ed: cmp      rdi, 0xf
+0x00000001406182f1: ja       0x140618305
+0x00000001406182f3: xor      eax, eax
+0x00000001406182f5: cmp      byte ptr [rbx + rax], 0
+0x00000001406182f9: je       0x140618320
+0x00000001406182fb: inc      rax
+0x00000001406182fe: cmp      rdi, rax
+0x0000000140618301: jne      0x1406182f5
+0x0000000140618303: jmp      0x140618316
+0x0000000140618305: xor      ecx, ecx
+0x0000000140618307: mov      rdx, rbx
+0x000000014061830a: mov      r8, rdi
+0x000000014061830d: call     0x14001fa30
+0x0000000140618312: test     al, 1
+0x0000000140618314: jne      0x140618320
+0x0000000140618316: mov      qword ptr [rsi], rbx
+0x0000000140618319: mov      qword ptr [rsi + 8], rdi
+0x000000014061831d: mov      bpl, 1
+0x0000000140618320: mov      byte ptr [rsi + 0x10], bpl
+0x0000000140618324: add      rsp, 0x28
+0x0000000140618328: pop      rbx
+0x0000000140618329: pop      rbp
+0x000000014061832a: pop      rdi
+0x000000014061832b: pop      rsi
+0x000000014061832c: ret      

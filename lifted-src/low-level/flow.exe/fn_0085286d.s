@@ -1,0 +1,51 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x85286d-0x852905
+0x000000014085286d: push     r14
+0x000000014085286f: push     rsi
+0x0000000140852870: push     rdi
+0x0000000140852871: push     rbx
+0x0000000140852872: sub      rsp, 0x28
+0x0000000140852876: mov      rbx, rcx
+0x0000000140852879: mov      rsi, r8
+0x000000014085287c: shl      rsi, 4
+0x0000000140852880: mov      rax, r8
+0x0000000140852883: shr      rax, 0x3c
+0x0000000140852887: setne    al
+0x000000014085288a: movabs   rcx, 0x7ffffffffffffff8
+0x0000000140852894: cmp      rsi, rcx
+0x0000000140852897: seta     cl
+0x000000014085289a: or       cl, al
+0x000000014085289c: je       0x1408528aa
+0x000000014085289e: xor      ecx, ecx
+0x00000001408528a0: mov      rdx, rsi
+0x00000001408528a3: call     0x1408ad821
+0x00000001408528a8: ud2      
+0x00000001408528aa: mov      rdi, r8
+0x00000001408528ad: mov      r14, rdx
+0x00000001408528b0: test     rsi, rsi
+0x00000001408528b3: je       0x1408528ce
+0x00000001408528b5: xor      ecx, ecx
+0x00000001408528b7: mov      rdx, rsi
+0x00000001408528ba: call     0x1407667d0
+0x00000001408528bf: mov      rcx, rdi
+0x00000001408528c2: test     rax, rax
+0x00000001408528c5: jne      0x1408528d5
+0x00000001408528c7: mov      ecx, 8
+0x00000001408528cc: jmp      0x1408528a0
+0x00000001408528ce: mov      eax, 8
+0x00000001408528d3: xor      ecx, ecx
+0x00000001408528d5: mov      qword ptr [rbx], rcx
+0x00000001408528d8: mov      qword ptr [rbx + 8], rax
+0x00000001408528dc: mov      qword ptr [rbx + 0x10], 0
+0x00000001408528e4: test     rdi, rdi
+0x00000001408528e7: je       0x1408528fb
+0x00000001408528e9: mov      rcx, rax
+0x00000001408528ec: mov      rdx, r14
+0x00000001408528ef: mov      r8, rsi
+0x00000001408528f2: call     0x1408acdc0
+0x00000001408528f7: mov      qword ptr [rbx + 0x10], rdi
+0x00000001408528fb: add      rsp, 0x28
+0x00000001408528ff: pop      rbx
+0x0000000140852900: pop      rdi
+0x0000000140852901: pop      rsi
+0x0000000140852902: pop      r14
+0x0000000140852904: ret      

@@ -1,0 +1,49 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x711e0-0x71271
+0x00000001400711e0: mov      qword ptr [rsp + 0x10], rdx
+0x00000001400711e5: push     rbp
+0x00000001400711e6: push     r15
+0x00000001400711e8: push     r14
+0x00000001400711ea: push     r13
+0x00000001400711ec: push     r12
+0x00000001400711ee: push     rsi
+0x00000001400711ef: push     rdi
+0x00000001400711f0: push     rbx
+0x00000001400711f1: sub      rsp, 0x68
+0x00000001400711f5: lea      rbp, [rdx + 0x80]
+0x00000001400711fc: movaps   xmmword ptr [rsp + 0x40], xmm7
+0x0000000140071201: movaps   xmmword ptr [rsp + 0x50], xmm6
+0x0000000140071206: mov      al, byte ptr [rbp + 0x4593]
+0x000000014007120c: test     al, al
+0x000000014007120e: mov      byte ptr [rbp + 0x4588], al
+0x0000000140071214: je       0x140071256
+0x0000000140071216: mov      rcx, qword ptr [rbp + 0x4538]
+0x000000014007121d: cmp      rcx, -1
+0x0000000140071221: je       0x14007123b
+0x0000000140071223: mov      r8d, 1
+0x0000000140071229: mov      r9d, 1
+0x000000014007122f: mov      rdx, qword ptr [rbp + 0x44f8]
+0x0000000140071236: call     0x14000a0f6
+0x000000014007123b: movaps   xmm6, xmmword ptr [rsp + 0x50]
+0x0000000140071240: movaps   xmm7, xmmword ptr [rsp + 0x40]
+0x0000000140071245: add      rsp, 0x68
+0x0000000140071249: pop      rbx
+0x000000014007124a: pop      rdi
+0x000000014007124b: pop      rsi
+0x000000014007124c: pop      r12
+0x000000014007124e: pop      r13
+0x0000000140071250: pop      r14
+0x0000000140071252: pop      r15
+0x0000000140071254: pop      rbp
+0x0000000140071255: ret      
+0x0000000140071256: movaps   xmm6, xmmword ptr [rsp + 0x50]
+0x000000014007125b: movaps   xmm7, xmmword ptr [rsp + 0x40]
+0x0000000140071260: add      rsp, 0x68
+0x0000000140071264: pop      rbx
+0x0000000140071265: pop      rdi
+0x0000000140071266: pop      rsi
+0x0000000140071267: pop      r12
+0x0000000140071269: pop      r13
+0x000000014007126b: pop      r14
+0x000000014007126d: pop      r15
+0x000000014007126f: pop      rbp
+0x0000000140071270: ret      

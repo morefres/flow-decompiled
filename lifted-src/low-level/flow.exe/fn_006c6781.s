@@ -1,0 +1,48 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x6c6781-0x6c6822
+0x00000001406c6781: push     r14
+0x00000001406c6783: push     rsi
+0x00000001406c6784: push     rdi
+0x00000001406c6785: push     rbx
+0x00000001406c6786: sub      rsp, 0x208
+0x00000001406c678d: mov      rbx, r8
+0x00000001406c6790: mov      rdi, rdx
+0x00000001406c6793: mov      rsi, rcx
+0x00000001406c6796: shl      edi, 7
+0x00000001406c6799: sub      edi, -0x80
+0x00000001406c679c: lea      r14, [rsp + 0x20]
+0x00000001406c67a1: mov      r8d, 0xf4
+0x00000001406c67a7: mov      rcx, r14
+0x00000001406c67aa: xor      edx, edx
+0x00000001406c67ac: test     r9b, r9b
+0x00000001406c67af: je       0x1406c67c5
+0x00000001406c67b1: call     0x1408ad460
+0x00000001406c67b6: mov      rcx, rbx
+0x00000001406c67b9: mov      edx, edi
+0x00000001406c67bb: mov      r8, r14
+0x00000001406c67be: call     0x140882750
+0x00000001406c67c3: jmp      0x1406c67d7
+0x00000001406c67c5: call     0x1408ad460
+0x00000001406c67ca: mov      rcx, rbx
+0x00000001406c67cd: mov      edx, edi
+0x00000001406c67cf: mov      r8, r14
+0x00000001406c67d2: call     0x140882550
+0x00000001406c67d7: test     eax, eax
+0x00000001406c67d9: je       0x1406c67e2
+0x00000001406c67db: mov      eax, 1
+0x00000001406c67e0: jmp      0x1406c6813
+0x00000001406c67e2: lea      rcx, [rsp + 0x114]
+0x00000001406c67ea: lea      rdx, [rsp + 0x20]
+0x00000001406c67ef: mov      r8d, 0xf4
+0x00000001406c67f5: call     0x1408acdc0
+0x00000001406c67fa: lea      rcx, [rsi + 4]
+0x00000001406c67fe: lea      rdx, [rsp + 0x114]
+0x00000001406c6806: mov      r8d, 0xf4
+0x00000001406c680c: call     0x1408acdc0
+0x00000001406c6811: xor      eax, eax
+0x00000001406c6813: mov      dword ptr [rsi], eax
+0x00000001406c6815: add      rsp, 0x208
+0x00000001406c681c: pop      rbx
+0x00000001406c681d: pop      rdi
+0x00000001406c681e: pop      rsi
+0x00000001406c681f: pop      r14
+0x00000001406c6821: ret      

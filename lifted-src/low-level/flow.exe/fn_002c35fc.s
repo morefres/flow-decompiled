@@ -1,0 +1,149 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x2c35fc-0x2c37d9
+0x00000001402c35fc: push     r15
+0x00000001402c35fe: push     r14
+0x00000001402c3600: push     r13
+0x00000001402c3602: push     r12
+0x00000001402c3604: push     rsi
+0x00000001402c3605: push     rdi
+0x00000001402c3606: push     rbp
+0x00000001402c3607: push     rbx
+0x00000001402c3608: sub      rsp, 0x28
+0x00000001402c360c: mov      r14, rcx
+0x00000001402c360f: mov      rcx, r9
+0x00000001402c3612: sub      rcx, r8
+0x00000001402c3615: je       0x1402c36a4
+0x00000001402c361b: mov      r15, qword ptr [rsp + 0x90]
+0x00000001402c3623: test     r15, r15
+0x00000001402c3626: je       0x1402c36a4
+0x00000001402c3628: mov      rdi, r9
+0x00000001402c362b: mov      rbx, r8
+0x00000001402c362e: mov      rsi, rdx
+0x00000001402c3631: mov      rax, r14
+0x00000001402c3634: add      rax, rcx
+0x00000001402c3637: cmovae   rax, rcx
+0x00000001402c363b: mov      r13, r14
+0x00000001402c363e: sub      r13, r8
+0x00000001402c3641: mov      r12, r14
+0x00000001402c3644: sub      r12, r9
+0x00000001402c3647: mov      rbp, r15
+0x00000001402c364a: sub      rbp, r13
+0x00000001402c364d: jbe      0x1402c36b5
+0x00000001402c364f: cmp      rax, r15
+0x00000001402c3652: jae      0x1402c36f0
+0x00000001402c3658: cmp      r15, r12
+0x00000001402c365b: jbe      0x1402c374b
+0x00000001402c3661: sub      r13, r12
+0x00000001402c3664: imul     r15, r13, 0x58
+0x00000001402c3668: lea      rcx, [rsi + r15]
+0x00000001402c366c: imul     r8, rbp, 0x58
+0x00000001402c3670: mov      rdx, rsi
+0x00000001402c3673: call     0x1408acdc0
+0x00000001402c3678: sub      r14, r13
+0x00000001402c367b: imul     rdx, r14, 0x58
+0x00000001402c367f: add      rdx, rsi
+0x00000001402c3682: mov      rcx, rsi
+0x00000001402c3685: mov      r8, r15
+0x00000001402c3688: call     0x1408acdc0
+0x00000001402c368d: imul     rdx, rbx, 0x58
+0x00000001402c3691: add      rdx, rsi
+0x00000001402c3694: imul     rcx, rdi, 0x58
+0x00000001402c3698: add      rcx, rsi
+0x00000001402c369b: imul     r8, r12, 0x58
+0x00000001402c369f: jmp      0x1402c37c4
+0x00000001402c36a4: add      rsp, 0x28
+0x00000001402c36a8: pop      rbx
+0x00000001402c36a9: pop      rbp
+0x00000001402c36aa: pop      rdi
+0x00000001402c36ab: pop      rsi
+0x00000001402c36ac: pop      r12
+0x00000001402c36ae: pop      r13
+0x00000001402c36b0: pop      r14
+0x00000001402c36b2: pop      r15
+0x00000001402c36b4: ret      
+0x00000001402c36b5: mov      r13, r15
+0x00000001402c36b8: sub      r13, r12
+0x00000001402c36bb: jbe      0x1402c3737
+0x00000001402c36bd: imul     rbx, rbx, 0x58
+0x00000001402c36c1: add      rbx, rsi
+0x00000001402c36c4: cmp      rax, r15
+0x00000001402c36c7: jae      0x1402c3775
+0x00000001402c36cd: imul     r14, r12, 0x58
+0x00000001402c36d1: lea      rdx, [rbx + r14]
+0x00000001402c36d5: imul     r8, r13, 0x58
+0x00000001402c36d9: mov      rcx, rsi
+0x00000001402c36dc: call     0x1408acdc0
+0x00000001402c36e1: imul     rcx, rdi, 0x58
+0x00000001402c36e5: add      rcx, rsi
+0x00000001402c36e8: mov      rdx, rbx
+0x00000001402c36eb: jmp      0x1402c3770
+0x00000001402c36f0: sub      r15, r12
+0x00000001402c36f3: jbe      0x1402c379a
+0x00000001402c36f9: sub      r12, r13
+0x00000001402c36fc: imul     rdx, rbx, 0x58
+0x00000001402c3700: add      rdx, rsi
+0x00000001402c3703: imul     rdi, rdi, 0x58
+0x00000001402c3707: add      rdi, rsi
+0x00000001402c370a: imul     rbx, r13, 0x58
+0x00000001402c370e: mov      rcx, rdi
+0x00000001402c3711: mov      r8, rbx
+0x00000001402c3714: call     0x1408acdc0
+0x00000001402c3719: add      rdi, rbx
+0x00000001402c371c: imul     rbx, r12, 0x58
+0x00000001402c3720: mov      rcx, rdi
+0x00000001402c3723: mov      rdx, rsi
+0x00000001402c3726: mov      r8, rbx
+0x00000001402c3729: call     0x1408acdc0
+0x00000001402c372e: add      rbx, rsi
+0x00000001402c3731: imul     r8, r15, 0x58
+0x00000001402c3735: jmp      0x1402c3792
+0x00000001402c3737: imul     rdx, rbx, 0x58
+0x00000001402c373b: add      rdx, rsi
+0x00000001402c373e: imul     rcx, rdi, 0x58
+0x00000001402c3742: add      rcx, rsi
+0x00000001402c3745: imul     r8, r15, 0x58
+0x00000001402c3749: jmp      0x1402c37c4
+0x00000001402c374b: imul     rdi, rdi, 0x58
+0x00000001402c374f: add      rdi, rsi
+0x00000001402c3752: imul     r14, r13, 0x58
+0x00000001402c3756: lea      rcx, [rdi + r14]
+0x00000001402c375a: imul     r8, rbp, 0x58
+0x00000001402c375e: mov      rdx, rsi
+0x00000001402c3761: call     0x1408acdc0
+0x00000001402c3766: imul     rdx, rbx, 0x58
+0x00000001402c376a: add      rdx, rsi
+0x00000001402c376d: mov      rcx, rdi
+0x00000001402c3770: mov      r8, r14
+0x00000001402c3773: jmp      0x1402c37c4
+0x00000001402c3775: imul     rcx, rdi, 0x58
+0x00000001402c3779: add      rcx, rsi
+0x00000001402c377c: imul     rdi, r12, 0x58
+0x00000001402c3780: mov      rdx, rbx
+0x00000001402c3783: mov      r8, rdi
+0x00000001402c3786: call     0x1408acdc0
+0x00000001402c378b: add      rbx, rdi
+0x00000001402c378e: imul     r8, r13, 0x58
+0x00000001402c3792: mov      rcx, rsi
+0x00000001402c3795: mov      rdx, rbx
+0x00000001402c3798: jmp      0x1402c37c4
+0x00000001402c379a: imul     rdx, rbx, 0x58
+0x00000001402c379e: add      rdx, rsi
+0x00000001402c37a1: imul     rdi, rdi, 0x58
+0x00000001402c37a5: add      rdi, rsi
+0x00000001402c37a8: imul     rbx, r13, 0x58
+0x00000001402c37ac: mov      rcx, rdi
+0x00000001402c37af: mov      r8, rbx
+0x00000001402c37b2: call     0x1408acdc0
+0x00000001402c37b7: add      rdi, rbx
+0x00000001402c37ba: imul     r8, rbp, 0x58
+0x00000001402c37be: mov      rcx, rdi
+0x00000001402c37c1: mov      rdx, rsi
+0x00000001402c37c4: add      rsp, 0x28
+0x00000001402c37c8: pop      rbx
+0x00000001402c37c9: pop      rbp
+0x00000001402c37ca: pop      rdi
+0x00000001402c37cb: pop      rsi
+0x00000001402c37cc: pop      r12
+0x00000001402c37ce: pop      r13
+0x00000001402c37d0: pop      r14
+0x00000001402c37d2: pop      r15
+0x00000001402c37d4: jmp      0x1408acdc0

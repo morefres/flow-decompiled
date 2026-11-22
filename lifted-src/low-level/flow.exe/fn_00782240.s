@@ -1,0 +1,30 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x782240-0x782293
+0x0000000140782240: mov      qword ptr [rsp + 0x10], rdx
+0x0000000140782245: push     rbp
+0x0000000140782246: push     r15
+0x0000000140782248: push     r14
+0x000000014078224a: push     r13
+0x000000014078224c: push     r12
+0x000000014078224e: push     rsi
+0x000000014078224f: push     rdi
+0x0000000140782250: push     rbx
+0x0000000140782251: sub      rsp, 0x38
+0x0000000140782255: lea      rbp, [rdx + 0x80]
+0x000000014078225c: call     qword ptr [rip + 0x14f4a6]
+0x0000000140782262: mov      rcx, rax
+0x0000000140782265: xor      edx, edx
+0x0000000140782267: mov      r8, qword ptr [rbp + 0x260]
+0x000000014078226e: call     qword ptr [rip + 0x14f48c]
+0x0000000140782274: mov      rcx, qword ptr [rbp + 0x238]
+0x000000014078227b: call     qword ptr [rip + 0x14f1af]
+0x0000000140782281: nop      
+0x0000000140782282: add      rsp, 0x38
+0x0000000140782286: pop      rbx
+0x0000000140782287: pop      rdi
+0x0000000140782288: pop      rsi
+0x0000000140782289: pop      r12
+0x000000014078228b: pop      r13
+0x000000014078228d: pop      r14
+0x000000014078228f: pop      r15
+0x0000000140782291: pop      rbp
+0x0000000140782292: ret      

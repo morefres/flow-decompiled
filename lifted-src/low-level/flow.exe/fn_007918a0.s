@@ -1,0 +1,28 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7918a0-0x791903
+0x00000001407918a0: sub      rsp, 0x28
+0x00000001407918a4: cmp      ecx, 0x10000
+0x00000001407918aa: jae      0x1407918bb
+0x00000001407918ac: test     r8, r8
+0x00000001407918af: je       0x1407918ed
+0x00000001407918b1: mov      word ptr [rdx], cx
+0x00000001407918b4: mov      eax, 1
+0x00000001407918b9: jmp      0x1407918e8
+0x00000001407918bb: cmp      r8, 1
+0x00000001407918bf: jbe      0x1407918f7
+0x00000001407918c1: mov      eax, ecx
+0x00000001407918c3: shr      eax, 0xa
+0x00000001407918c6: add      eax, 0x3fc0
+0x00000001407918cb: or       eax, 0xd800
+0x00000001407918d0: mov      word ptr [rdx], ax
+0x00000001407918d3: and      ecx, 0x3ff
+0x00000001407918d9: or       ecx, 0xdc00
+0x00000001407918df: mov      word ptr [rdx + 2], cx
+0x00000001407918e3: mov      eax, 2
+0x00000001407918e8: add      rsp, 0x28
+0x00000001407918ec: ret      
+0x00000001407918ed: mov      edx, 1
+0x00000001407918f2: xor      r8d, r8d
+0x00000001407918f5: jmp      0x1407918fc
+0x00000001407918f7: mov      edx, 2
+0x00000001407918fc: call     0x1408c9893
+0x0000000140791901: ud2      

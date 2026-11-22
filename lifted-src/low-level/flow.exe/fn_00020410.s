@@ -1,0 +1,56 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x20410-0x204dd
+0x0000000140020410: push     rbp
+0x0000000140020411: sub      rsp, 0x20
+0x0000000140020415: lea      rbp, [rsp + 0x20]
+0x000000014002041a: lea      eax, [rcx - 0xc0]
+0x0000000140020420: cmp      eax, 0x1f33f
+0x0000000140020425: ja       0x140020465
+0x0000000140020427: mov      eax, ecx
+0x0000000140020429: shr      eax, 6
+0x000000014002042c: and      eax, 0xf
+0x000000014002042f: mov      edx, ecx
+0x0000000140020431: shr      edx, 0xa
+0x0000000140020434: lea      r8, [rip + 0x8dbd90]
+0x000000014002043b: movzx    edx, byte ptr [rdx + r8]
+0x0000000140020440: shl      edx, 4
+0x0000000140020443: lea      r8, [rip + 0x8de39e]
+0x000000014002044a: add      r8, rdx
+0x000000014002044d: movzx    eax, byte ptr [rax + r8]
+0x0000000140020452: cmp      rax, 0x2c
+0x0000000140020456: jae      0x140020469
+0x0000000140020458: lea      rdx, [rip + 0x8de229]
+0x000000014002045f: mov      rax, qword ptr [rdx + rax*8]
+0x0000000140020463: jmp      0x1400204bc
+0x0000000140020465: xor      eax, eax
+0x0000000140020467: jmp      0x1400204bf
+0x0000000140020469: lea      r9, [rax - 0x2c]
+0x000000014002046d: cmp      al, 0x45
+0x000000014002046f: jae      0x1400204c7
+0x0000000140020471: mov      rdx, rcx
+0x0000000140020474: lea      r8, [rip + 0x8de1d5]
+0x000000014002047b: movzx    ecx, byte ptr [r8 + rax*2 - 0x57]
+0x0000000140020481: movzx    r8d, byte ptr [r8 + rax*2 - 0x58]
+0x0000000140020487: lea      r10, [rip + 0x8de1fa]
+0x000000014002048e: xor      eax, eax
+0x0000000140020490: mov      r11d, 0x1ffc3fd
+0x0000000140020496: bt       r11, r9
+0x000000014002049a: adc      rax, -1
+0x000000014002049e: xor      rax, qword ptr [r10 + r8*8]
+0x00000001400204a2: mov      r8d, 0x40fc02
+0x00000001400204a8: bt       r8, r9
+0x00000001400204ac: jae      0x1400204b6
+0x00000001400204ae: movzx    ecx, cl
+0x00000001400204b1: rol      rax, cl
+0x00000001400204b4: jmp      0x1400204b9
+0x00000001400204b6: shr      rax, cl
+0x00000001400204b9: mov      rcx, rdx
+0x00000001400204bc: shr      rax, cl
+0x00000001400204bf: and      al, 1
+0x00000001400204c1: add      rsp, 0x20
+0x00000001400204c5: pop      rbp
+0x00000001400204c6: ret      
+0x00000001400204c7: lea      r8, [rip + 0x8dbe9a]
+0x00000001400204ce: mov      edx, 0x19
+0x00000001400204d3: mov      rcx, r9
+0x00000001400204d6: call     0x1408ae879
+0x00000001400204db: ud2      

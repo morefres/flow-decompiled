@@ -1,0 +1,98 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x31624d-0x3163d0
+0x000000014031624d: push     r14
+0x000000014031624f: push     rsi
+0x0000000140316250: push     rdi
+0x0000000140316251: push     rbx
+0x0000000140316252: sub      rsp, 0xe8
+0x0000000140316259: mov      ebx, r8d
+0x000000014031625c: mov      rdi, rdx
+0x000000014031625f: mov      rsi, rcx
+0x0000000140316262: mov      rcx, qword ptr [rdx + 0x20]
+0x0000000140316266: mov      rdx, qword ptr [rdx + 0x28]
+0x000000014031626a: call     0x14064d31d
+0x000000014031626f: mov      rdx, rax
+0x0000000140316272: shr      rdx, 0x39
+0x0000000140316276: mov      rcx, qword ptr [rdi]
+0x0000000140316279: mov      r8, qword ptr [rdi + 8]
+0x000000014031627d: movd     xmm0, edx
+0x0000000140316281: punpcklbw xmm0, xmm0
+0x0000000140316285: pshuflw  xmm0, xmm0, 0
+0x000000014031628a: pshufd   xmm0, xmm0, 0x44
+0x000000014031628f: xor      r9d, r9d
+0x0000000140316292: pcmpeqd  xmm1, xmm1
+0x0000000140316296: mov      r14, 0xffffffffffffffff
+0x000000014031629d: and      rax, r8
+0x00000001403162a0: movdqu   xmm2, xmmword ptr [rcx + rax]
+0x00000001403162a5: movdqa   xmm3, xmm2
+0x00000001403162a9: pcmpeqb  xmm3, xmm0
+0x00000001403162ad: pmovmskb r10d, xmm3
+0x00000001403162b2: test     r10d, r10d
+0x00000001403162b5: je       0x1403162e4
+0x00000001403162b7: bsf      r11d, r10d
+0x00000001403162bb: add      r11, rax
+0x00000001403162be: and      r11, r8
+0x00000001403162c1: mov      rdx, r11
+0x00000001403162c4: neg      rdx
+0x00000001403162c7: imul     rdx, rdx, 0xd8
+0x00000001403162ce: cmp      ebx, dword ptr [rcx + rdx - 0xd8]
+0x00000001403162d5: je       0x140316301
+0x00000001403162d7: lea      edx, [r10 - 1]
+0x00000001403162db: and      dx, r10w
+0x00000001403162df: mov      r10d, edx
+0x00000001403162e2: jne      0x1403162b7
+0x00000001403162e4: pcmpeqb  xmm2, xmm1
+0x00000001403162e8: pmovmskb edx, xmm2
+0x00000001403162ec: test     edx, edx
+0x00000001403162ee: jne      0x1403163c0
+0x00000001403162f4: add      rax, r9
+0x00000001403162f7: add      rax, 0x10
+0x00000001403162fb: add      r9, 0x10
+0x00000001403162ff: jmp      0x14031629d
+0x0000000140316301: add      rdx, rcx
+0x0000000140316304: imul     r9, r11, 0xd8
+0x000000014031630b: sar      r9, 3
+0x000000014031630f: movabs   rax, 0x84bda12f684bda13
+0x0000000140316319: imul     rax, r9
+0x000000014031631d: lea      r9, [rax - 0x10]
+0x0000000140316321: and      r9, r8
+0x0000000140316324: movdqu   xmm0, xmmword ptr [rcx + r9]
+0x000000014031632a: pcmpeqd  xmm1, xmm1
+0x000000014031632e: pcmpeqb  xmm0, xmm1
+0x0000000140316332: pmovmskb r8d, xmm0
+0x0000000140316337: movdqu   xmm0, xmmword ptr [rcx + rax]
+0x000000014031633c: pcmpeqb  xmm0, xmm1
+0x0000000140316340: pmovmskb r10d, xmm0
+0x0000000140316345: mov      r11w, 0x1f
+0x000000014031634a: bsr      r11w, r8w
+0x000000014031634f: xor      r11d, 0xf
+0x0000000140316353: or       r10d, 0x10000
+0x000000014031635a: bsf      r10d, r10d
+0x000000014031635e: add      r10d, r11d
+0x0000000140316361: mov      r8b, 0x80
+0x0000000140316364: cmp      r10w, 0xf
+0x0000000140316369: ja       0x140316372
+0x000000014031636b: inc      qword ptr [rdi + 0x10]
+0x000000014031636f: mov      r8b, 0xff
+0x0000000140316372: mov      byte ptr [rcx + rax], r8b
+0x0000000140316376: mov      byte ptr [rcx + r9 + 0x10], r8b
+0x000000014031637b: dec      qword ptr [rdi + 0x18]
+0x000000014031637f: mov      r14, qword ptr [rdx - 0xd0]
+0x0000000140316386: add      rdx, -0xc8
+0x000000014031638d: lea      rcx, [rsp + 0x20]
+0x0000000140316392: mov      r8d, 0xc8
+0x0000000140316398: call     0x1408acdc0
+0x000000014031639d: cmp      r14, -1
+0x00000001403163a1: je       0x1403163b9
+0x00000001403163a3: lea      rcx, [rsi + 8]
+0x00000001403163a7: lea      rdx, [rsp + 0x20]
+0x00000001403163ac: mov      r8d, 0xc8
+0x00000001403163b2: call     0x1408acdc0
+0x00000001403163b7: jmp      0x1403163c0
+0x00000001403163b9: mov      r14, 0xffffffffffffffff
+0x00000001403163c0: mov      qword ptr [rsi], r14
+0x00000001403163c3: add      rsp, 0xe8
+0x00000001403163ca: pop      rbx
+0x00000001403163cb: pop      rdi
+0x00000001403163cc: pop      rsi
+0x00000001403163cd: pop      r14
+0x00000001403163cf: ret      

@@ -1,0 +1,9 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x663010-0x66302c
+0x0000000140663010: sub      rsp, 0x28
+0x0000000140663014: mov      r9, r8
+0x0000000140663017: mov      r8, rdx
+0x000000014066301a: lea      rdx, [rip + 0x4ec63f]
+0x0000000140663021: call     0x14001ab70
+0x0000000140663026: nop      
+0x0000000140663027: add      rsp, 0x28
+0x000000014066302b: ret      

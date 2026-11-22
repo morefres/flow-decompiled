@@ -1,0 +1,56 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x784780-0x784827
+0x0000000140784780: push     rbp
+0x0000000140784781: push     rsi
+0x0000000140784782: push     rdi
+0x0000000140784783: sub      rsp, 0x20
+0x0000000140784787: lea      rbp, [rsp + 0x20]
+0x000000014078478c: call     0x14076d6c0
+0x0000000140784791: cmp      rax, 1
+0x0000000140784795: jne      0x1407847b2
+0x0000000140784797: mov      esi, edx
+0x0000000140784799: and      esi, 3
+0x000000014078479c: lea      rax, [rip + 0x42608d]
+0x00000001407847a3: movsxd   rcx, dword ptr [rax + rsi*4]
+0x00000001407847a7: add      rcx, rax
+0x00000001407847aa: jmp      rcx
+0x00000001407847ac: movzx    ecx, byte ptr [rdx + 0x10]
+0x00000001407847b0: jmp      0x1407847e5
+0x00000001407847b2: xor      eax, eax
+0x00000001407847b4: jmp      0x140784819
+0x00000001407847b6: mov      rax, qword ptr [rip + 0x63cff3]
+0x00000001407847bd: mov      rcx, rdx
+0x00000001407847c0: shr      rcx, 0x20
+0x00000001407847c4: mov      rax, qword ptr [rax + 8]
+0x00000001407847c8: mov      rdi, rdx
+0x00000001407847cb: call     qword ptr [rip + 0x14d6c7]
+0x00000001407847d1: mov      rdx, rdi
+0x00000001407847d4: mov      ecx, eax
+0x00000001407847d6: jmp      0x1407847e5
+0x00000001407847d8: mov      rcx, rdx
+0x00000001407847db: shr      rcx, 0x20
+0x00000001407847df: jmp      0x1407847e5
+0x00000001407847e1: movzx    ecx, byte ptr [rdx + 0x1f]
+0x00000001407847e5: mov      eax, 1
+0x00000001407847ea: cmp      cl, 0xb
+0x00000001407847ed: jne      0x140784819
+0x00000001407847ef: xor      ecx, ecx
+0x00000001407847f1: lea      eax, [rsi - 2]
+0x00000001407847f4: cmp      eax, 2
+0x00000001407847f7: jb       0x140784815
+0x00000001407847f9: mov      eax, 0
+0x00000001407847fe: test     rsi, rsi
+0x0000000140784801: je       0x14078481c
+0x0000000140784803: mov      rcx, rdx
+0x0000000140784806: dec      rcx
+0x0000000140784809: mov      rax, qword ptr [rdx + 0x17]
+0x000000014078480d: call     qword ptr [rip + 0x14d685]
+0x0000000140784813: xor      ecx, ecx
+0x0000000140784815: xor      eax, eax
+0x0000000140784817: jmp      0x14078481c
+0x0000000140784819: mov      rcx, rdx
+0x000000014078481c: mov      rdx, rcx
+0x000000014078481f: add      rsp, 0x20
+0x0000000140784823: pop      rdi
+0x0000000140784824: pop      rsi
+0x0000000140784825: pop      rbp
+0x0000000140784826: ret      

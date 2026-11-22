@@ -1,0 +1,61 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x398971-0x398a64
+0x0000000140398971: push     r15
+0x0000000140398973: push     r14
+0x0000000140398975: push     rsi
+0x0000000140398976: push     rdi
+0x0000000140398977: push     rbx
+0x0000000140398978: sub      rsp, 0xa0
+0x000000014039897f: mov      rdi, r8
+0x0000000140398982: mov      rbx, rdx
+0x0000000140398985: mov      rsi, rcx
+0x0000000140398988: lea      r14, [rsp + 0x60]
+0x000000014039898d: mov      qword ptr [r14], 0
+0x0000000140398994: mov      rcx, r14
+0x0000000140398997: call     qword ptr [rip + 0x538b2b]
+0x000000014039899d: mov      rcx, qword ptr [r14]
+0x00000001403989a0: movabs   rax, 0x19db1ded53e8000
+0x00000001403989aa: cmp      rcx, rax
+0x00000001403989ad: jge      0x1403989b4
+0x00000001403989af: xor      r15d, r15d
+0x00000001403989b2: jmp      0x1403989f4
+0x00000001403989b4: movabs   rax, 0xfe624e212ac18000
+0x00000001403989be: add      rcx, rax
+0x00000001403989c1: movabs   rdx, 0xd6bf94d5e57a42bd
+0x00000001403989cb: mov      rax, rcx
+0x00000001403989ce: mul      rdx
+0x00000001403989d1: shr      rdx, 0x17
+0x00000001403989d5: imul     rax, rdx, 0x989680
+0x00000001403989dc: sub      rcx, rax
+0x00000001403989df: imul     rax, rdx, 0x3e8
+0x00000001403989e6: imul     r15, rcx, 0x1a36e3
+0x00000001403989ed: shr      r15, 0x22
+0x00000001403989f1: add      r15, rax
+0x00000001403989f4: lea      r14, [rsp + 0x60]
+0x00000001403989f9: mov      rcx, r14
+0x00000001403989fc: mov      rdx, rbx
+0x00000001403989ff: mov      r8, rdi
+0x0000000140398a02: call     0x1400099d0
+0x0000000140398a07: lea      rax, [rip + 0x597cfc]
+0x0000000140398a0e: mov      qword ptr [r14 + 0x18], rax
+0x0000000140398a12: mov      qword ptr [r14 + 0x20], 6
+0x0000000140398a1a: lea      rax, [rip + 0x7ebddd]
+0x0000000140398a21: mov      qword ptr [r14 + 0x28], rax
+0x0000000140398a25: mov      qword ptr [r14 + 0x30], 5
+0x0000000140398a2d: mov      qword ptr [r14 + 0x38], r15
+0x0000000140398a31: lea      rdi, [rsp + 0x28]
+0x0000000140398a36: mov      rcx, rdi
+0x0000000140398a39: mov      rdx, rsi
+0x0000000140398a3c: mov      r8, r14
+0x0000000140398a3f: call     0x1402203ca
+0x0000000140398a44: cmp      qword ptr [rdi], -1
+0x0000000140398a48: je       0x140398a55
+0x0000000140398a4a: lea      rcx, [rsp + 0x28]
+0x0000000140398a4f: call     0x140037500
+0x0000000140398a54: nop      
+0x0000000140398a55: add      rsp, 0xa0
+0x0000000140398a5c: pop      rbx
+0x0000000140398a5d: pop      rdi
+0x0000000140398a5e: pop      rsi
+0x0000000140398a5f: pop      r14
+0x0000000140398a61: pop      r15
+0x0000000140398a63: ret      

@@ -1,0 +1,72 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x20190-0x2028c
+0x0000000140020190: push     rsi
+0x0000000140020191: mov      eax, ecx
+0x0000000140020193: shl      eax, 0xb
+0x0000000140020196: xor      edx, edx
+0x0000000140020198: cmp      ecx, 0x11450
+0x000000014002019e: mov      r10d, 0x15
+0x00000001400201a4: cmovb    r10, rdx
+0x00000001400201a8: lea      r11, [r10 + 0xb]
+0x00000001400201ac: lea      r9, [rip + 0x8de051]
+0x00000001400201b3: mov      r8d, 0x1fffff
+0x00000001400201b9: mov      esi, dword ptr [r9 + r10*4 + 0x2c]
+0x00000001400201be: and      esi, r8d
+0x00000001400201c1: cmp      ecx, esi
+0x00000001400201c3: cmovb    r11, r10
+0x00000001400201c7: lea      r10, [r11 + 5]
+0x00000001400201cb: mov      esi, dword ptr [r9 + r11*4 + 0x14]
+0x00000001400201d0: and      esi, r8d
+0x00000001400201d3: cmp      ecx, esi
+0x00000001400201d5: cmovb    r10, r11
+0x00000001400201d9: lea      r11, [r10 + 3]
+0x00000001400201dd: mov      esi, dword ptr [r9 + r10*4 + 0xc]
+0x00000001400201e2: and      esi, r8d
+0x00000001400201e5: cmp      ecx, esi
+0x00000001400201e7: cmovb    r11, r10
+0x00000001400201eb: lea      r10, [r11 + 1]
+0x00000001400201ef: mov      esi, dword ptr [r9 + r11*4 + 4]
+0x00000001400201f4: and      esi, r8d
+0x00000001400201f7: cmp      ecx, esi
+0x00000001400201f9: cmovb    r10, r11
+0x00000001400201fd: lea      rsi, [r10 + 1]
+0x0000000140020201: mov      r11d, dword ptr [r9 + r10*4 + 4]
+0x0000000140020206: and      r11d, r8d
+0x0000000140020209: cmp      ecx, r11d
+0x000000014002020c: cmovb    rsi, r10
+0x0000000140020210: mov      r10d, dword ptr [r9 + rsi*4]
+0x0000000140020214: shl      r10d, 0xb
+0x0000000140020218: xor      r11d, r11d
+0x000000014002021b: cmp      r10d, eax
+0x000000014002021e: sete     r11b
+0x0000000140020222: adc      r11, rsi
+0x0000000140020225: mov      eax, dword ptr [r9 + r11*4]
+0x0000000140020229: shr      eax, 0x15
+0x000000014002022c: mov      r10d, 0x123
+0x0000000140020232: cmp      r11, 0x29
+0x0000000140020236: ja       0x140020246
+0x0000000140020238: mov      r10d, dword ptr [r9 + r11*4 + 4]
+0x000000014002023d: shr      r10d, 0x15
+0x0000000140020241: test     r11, r11
+0x0000000140020244: je       0x14002024e
+0x0000000140020246: and      r8d, dword ptr [r9 + r11*4 - 4]
+0x000000014002024b: mov      edx, r8d
+0x000000014002024e: mov      r8, rax
+0x0000000140020251: not      r8
+0x0000000140020254: add      r8, r10
+0x0000000140020257: je       0x140020288
+0x0000000140020259: sub      ecx, edx
+0x000000014002025b: dec      r10
+0x000000014002025e: xor      r8d, r8d
+0x0000000140020261: lea      rdx, [rip + 0x8dbd62]
+0x0000000140020268: nop      dword ptr [rax + rax]
+0x0000000140020270: mov      r9d, r8d
+0x0000000140020273: movzx    r8d, byte ptr [rax + rdx]
+0x0000000140020278: add      r8d, r9d
+0x000000014002027b: cmp      r8d, ecx
+0x000000014002027e: ja       0x140020288
+0x0000000140020280: inc      rax
+0x0000000140020283: cmp      r10, rax
+0x0000000140020286: jne      0x140020270
+0x0000000140020288: and      al, 1
+0x000000014002028a: pop      rsi
+0x000000014002028b: ret      

@@ -1,0 +1,53 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7160d7-0x716172
+0x00000001407160d7: push     rsi
+0x00000001407160d8: push     rdi
+0x00000001407160d9: push     rbx
+0x00000001407160da: sub      rsp, 0x20
+0x00000001407160de: mov      rsi, rcx
+0x00000001407160e1: mov      rdi, qword ptr [rcx]
+0x00000001407160e4: call     0x140642834
+0x00000001407160e9: mov      rdx, qword ptr [rsi + 0x10]
+0x00000001407160ed: mov      r8, qword ptr [rsi + 0x18]
+0x00000001407160f1: mov      rax, rdi
+0x00000001407160f4: sub      rax, r8
+0x00000001407160f7: cmp      rdx, rax
+0x00000001407160fa: jbe      0x14071614c
+0x00000001407160fc: mov      rbx, qword ptr [rsi]
+0x00000001407160ff: mov      rax, rdi
+0x0000000140716102: sub      rax, rdx
+0x0000000140716105: sub      r8, rax
+0x0000000140716108: cmp      rax, r8
+0x000000014071610b: setbe    cl
+0x000000014071610e: mov      r9, rbx
+0x0000000140716111: sub      r9, rdi
+0x0000000140716114: cmp      r9, r8
+0x0000000140716117: setb     r9b
+0x000000014071611b: or       r9b, cl
+0x000000014071611e: cmp      r9b, 1
+0x0000000140716122: jne      0x140716154
+0x0000000140716124: sub      rbx, rax
+0x0000000140716127: mov      r8, qword ptr [rsi + 8]
+0x000000014071612b: shl      rdx, 5
+0x000000014071612f: add      rdx, r8
+0x0000000140716132: mov      rcx, rbx
+0x0000000140716135: shl      rcx, 5
+0x0000000140716139: add      rcx, r8
+0x000000014071613c: shl      rax, 5
+0x0000000140716140: mov      r8, rax
+0x0000000140716143: call     0x1408acdc0
+0x0000000140716148: mov      qword ptr [rsi + 0x10], rbx
+0x000000014071614c: add      rsp, 0x20
+0x0000000140716150: pop      rbx
+0x0000000140716151: pop      rdi
+0x0000000140716152: pop      rsi
+0x0000000140716153: ret      
+0x0000000140716154: mov      rdx, qword ptr [rsi + 8]
+0x0000000140716158: shl      rdi, 5
+0x000000014071615c: add      rdi, rdx
+0x000000014071615f: shl      r8, 5
+0x0000000140716163: mov      rcx, rdi
+0x0000000140716166: add      rsp, 0x20
+0x000000014071616a: pop      rbx
+0x000000014071616b: pop      rdi
+0x000000014071616c: pop      rsi
+0x000000014071616d: jmp      0x1408acdc0

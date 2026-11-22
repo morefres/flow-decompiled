@@ -1,0 +1,46 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x629250-0x629304
+0x0000000140629250: sub      rsp, 0x28
+0x0000000140629254: mov      dword ptr [rsp + 0x24], 0
+0x000000014062925c: cmp      edx, 0x80
+0x0000000140629262: jae      0x140629273
+0x0000000140629264: mov      byte ptr [rsp + 0x24], dl
+0x0000000140629268: mov      r8d, 1
+0x000000014062926e: jmp      0x1406292f4
+0x0000000140629273: mov      eax, edx
+0x0000000140629275: and      al, 0x3f
+0x0000000140629277: or       al, 0x80
+0x0000000140629279: mov      r8d, edx
+0x000000014062927c: shr      r8d, 6
+0x0000000140629280: cmp      edx, 0x800
+0x0000000140629286: jae      0x14062929d
+0x0000000140629288: or       r8b, 0xc0
+0x000000014062928c: mov      byte ptr [rsp + 0x24], r8b
+0x0000000140629291: mov      byte ptr [rsp + 0x25], al
+0x0000000140629295: mov      r8d, 2
+0x000000014062929b: jmp      0x1406292f4
+0x000000014062929d: and      r8b, 0x3f
+0x00000001406292a1: or       r8b, 0x80
+0x00000001406292a5: mov      r9d, edx
+0x00000001406292a8: shr      r9d, 0xc
+0x00000001406292ac: cmp      edx, 0xffff
+0x00000001406292b2: ja       0x1406292ce
+0x00000001406292b4: or       r9b, 0xe0
+0x00000001406292b8: mov      byte ptr [rsp + 0x24], r9b
+0x00000001406292bd: mov      byte ptr [rsp + 0x25], r8b
+0x00000001406292c2: mov      byte ptr [rsp + 0x26], al
+0x00000001406292c6: mov      r8d, 3
+0x00000001406292cc: jmp      0x1406292f4
+0x00000001406292ce: and      r9b, 0x3f
+0x00000001406292d2: or       r9b, 0x80
+0x00000001406292d6: shr      edx, 0x12
+0x00000001406292d9: or       dl, 0xf0
+0x00000001406292dc: mov      byte ptr [rsp + 0x24], dl
+0x00000001406292e0: mov      byte ptr [rsp + 0x25], r9b
+0x00000001406292e5: mov      byte ptr [rsp + 0x26], r8b
+0x00000001406292ea: mov      byte ptr [rsp + 0x27], al
+0x00000001406292ee: mov      r8d, 4
+0x00000001406292f4: lea      rdx, [rsp + 0x24]
+0x00000001406292f9: call     0x140628fb0
+0x00000001406292fe: nop      
+0x00000001406292ff: add      rsp, 0x28
+0x0000000140629303: ret      

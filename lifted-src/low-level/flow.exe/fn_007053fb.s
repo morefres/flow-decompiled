@@ -1,0 +1,111 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7053fb-0x705576
+0x00000001407053fb: push     rbp
+0x00000001407053fc: push     r15
+0x00000001407053fe: push     r14
+0x0000000140705400: push     r13
+0x0000000140705402: push     r12
+0x0000000140705404: push     rsi
+0x0000000140705405: push     rdi
+0x0000000140705406: push     rbx
+0x0000000140705407: sub      rsp, 0xa8
+0x000000014070540e: lea      rbp, [rsp + 0x80]
+0x0000000140705416: mov      qword ptr [rbp + 0x20], 0xfffffffffffffffe
+0x000000014070541e: mov      rdi, rdx
+0x0000000140705421: mov      rbx, rcx
+0x0000000140705424: mov      eax, dword ptr [rcx + 0x28]
+0x0000000140705427: bswap    eax
+0x0000000140705429: xor      r13d, r13d
+0x000000014070542c: lea      r14, [rbp - 0x10]
+0x0000000140705430: mov      qword ptr [r14], r13
+0x0000000140705433: mov      esi, 4
+0x0000000140705438: mov      qword ptr [r14 + 8], rsi
+0x000000014070543c: mov      dword ptr [r14 + 0x10], eax
+0x0000000140705440: mov      rcx, rdx
+0x0000000140705443: mov      rdx, r14
+0x0000000140705446: call     0x1406ed04a
+0x000000014070544b: mov      eax, dword ptr [rbx + 0x2c]
+0x000000014070544e: bswap    eax
+0x0000000140705450: mov      qword ptr [r14], r13
+0x0000000140705453: mov      qword ptr [r14 + 8], rsi
+0x0000000140705457: mov      dword ptr [r14 + 0x10], eax
+0x000000014070545b: mov      rcx, rdi
+0x000000014070545e: mov      rdx, r14
+0x0000000140705461: call     0x1406ed04a
+0x0000000140705466: mov      rcx, qword ptr [rbx + 8]
+0x000000014070546a: mov      rdx, qword ptr [rbx + 0x10]
+0x000000014070546e: mov      r8, rdi
+0x0000000140705471: call     0x14070761c
+0x0000000140705476: mov      rax, qword ptr [rbx + 0x20]
+0x000000014070547a: mov      r15, qword ptr [rax + 0x18]
+0x000000014070547e: mov      r12, qword ptr [rax + 0x20]
+0x0000000140705482: mov      eax, r12d
+0x0000000140705485: rol      ax, 8
+0x0000000140705489: mov      word ptr [r14], ax
+0x000000014070548d: lea      r8, [rbp - 0xe]
+0x0000000140705491: mov      rcx, rdi
+0x0000000140705494: mov      rdx, r14
+0x0000000140705497: call     0x140744f10
+0x000000014070549c: add      r12, r15
+0x000000014070549f: mov      rcx, rdi
+0x00000001407054a2: mov      rdx, r15
+0x00000001407054a5: mov      r8, r12
+0x00000001407054a8: call     0x140744f10
+0x00000001407054ad: mov      r15b, byte ptr [rbx + 0x18]
+0x00000001407054b1: mov      r12d, dword ptr [rbx + 0x1c]
+0x00000001407054b5: mov      byte ptr [r14], 0x1d
+0x00000001407054b9: lea      rbx, [rbp - 0x60]
+0x00000001407054bd: lea      rdx, [rbp - 0x10]
+0x00000001407054c1: mov      rcx, rbx
+0x00000001407054c4: mov      r8, rdi
+0x00000001407054c7: call     0x140703089
+0x00000001407054cc: mov      rdi, qword ptr [rbx + 0x20]
+0x00000001407054d0: bswap    r12d
+0x00000001407054d3: lea      rbx, [rip + 0x464816]
+0x00000001407054da: lea      r14, [rbp - 0x30]
+0x00000001407054de: cmp      r13, 4
+0x00000001407054e2: je       0x140705558
+0x00000001407054e4: lea      rsi, [r13 + 4]
+0x00000001407054e8: cmp      word ptr [r13 + rbx], 0x19
+0x00000001407054ef: sete     al
+0x00000001407054f2: and      al, r15b
+0x00000001407054f5: mov      r13, rsi
+0x00000001407054f8: cmp      al, 1
+0x00000001407054fa: jne      0x1407054de
+0x00000001407054fc: mov      word ptr [rbp - 0x10], 0x2a00
+0x0000000140705502: mov      rcx, rdi
+0x0000000140705505: lea      r13, [rbp - 0x10]
+0x0000000140705509: mov      rdx, r13
+0x000000014070550c: lea      r8, [rbp - 0xe]
+0x0000000140705510: call     0x140744f10
+0x0000000140705515: nop      
+0x0000000140705516: mov      byte ptr [rbp - 0x30], 0x1d
+0x000000014070551a: mov      rcx, r13
+0x000000014070551d: mov      rdx, r14
+0x0000000140705520: mov      r8, rdi
+0x0000000140705523: call     0x140703089
+0x0000000140705528: nop      
+0x0000000140705529: mov      rcx, qword ptr [rbp + 0x10]
+0x000000014070552d: mov      qword ptr [rbp - 0x30], 0
+0x0000000140705535: mov      qword ptr [rbp - 0x28], 4
+0x000000014070553d: mov      dword ptr [rbp - 0x20], r12d
+0x0000000140705541: mov      rdx, r14
+0x0000000140705544: call     0x1406ed04a
+0x0000000140705549: nop      
+0x000000014070554a: mov      rcx, r13
+0x000000014070554d: call     0x1407061f1
+0x0000000140705552: nop      
+0x0000000140705553: mov      r13, rsi
+0x0000000140705556: jmp      0x1407054de
+0x0000000140705558: lea      rcx, [rbp - 0x60]
+0x000000014070555c: call     0x1407061f1
+0x0000000140705561: nop      
+0x0000000140705562: add      rsp, 0xa8
+0x0000000140705569: pop      rbx
+0x000000014070556a: pop      rdi
+0x000000014070556b: pop      rsi
+0x000000014070556c: pop      r12
+0x000000014070556e: pop      r13
+0x0000000140705570: pop      r14
+0x0000000140705572: pop      r15
+0x0000000140705574: pop      rbp
+0x0000000140705575: ret      

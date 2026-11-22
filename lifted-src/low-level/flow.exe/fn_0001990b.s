@@ -1,0 +1,71 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x1990b-0x19a13
+0x000000014001990b: push     rsi
+0x000000014001990c: push     rdi
+0x000000014001990d: sub      rsp, 0x38
+0x0000000140019911: mov      esi, ecx
+0x0000000140019913: mov      eax, dword ptr [rip + 0xda7717]
+0x0000000140019919: test     eax, eax
+0x000000014001991b: jne      0x140019a09
+0x0000000140019921: cmp      qword ptr [rip + 0xda76ef], 0
+0x0000000140019929: je       0x1400199d3
+0x000000014001992f: mov      rcx, qword ptr [rip + 0xda76ea]
+0x0000000140019936: mov      rdx, qword ptr [rip + 0xda76eb]
+0x000000014001993d: mov      r8d, esi
+0x0000000140019940: call     0x14001973d
+0x0000000140019945: mov      r8, rax
+0x0000000140019948: shr      r8, 0x39
+0x000000014001994c: mov      rdx, qword ptr [rip + 0xda76b5]
+0x0000000140019953: mov      rcx, qword ptr [rip + 0xda76a6]
+0x000000014001995a: movd     xmm0, r8d
+0x000000014001995f: punpcklbw xmm0, xmm0
+0x0000000140019963: pshuflw  xmm0, xmm0, 0
+0x0000000140019968: pshufd   xmm0, xmm0, 0x44
+0x000000014001996d: xor      r8d, r8d
+0x0000000140019970: pcmpeqd  xmm1, xmm1
+0x0000000140019974: and      rax, rdx
+0x0000000140019977: movdqu   xmm2, xmmword ptr [rcx + rax]
+0x000000014001997c: movdqa   xmm3, xmm2
+0x0000000140019980: pcmpeqb  xmm3, xmm0
+0x0000000140019984: pmovmskb r9d, xmm3
+0x0000000140019989: test     r9d, r9d
+0x000000014001998c: je       0x1400199b8
+0x000000014001998e: bsf      r10d, r9d
+0x0000000140019992: add      r10, rax
+0x0000000140019995: and      r10, rdx
+0x0000000140019998: lea      r11, [r10*8]
+0x00000001400199a0: mov      rdi, rcx
+0x00000001400199a3: sub      rdi, r11
+0x00000001400199a6: cmp      esi, dword ptr [rdi - 8]
+0x00000001400199a9: je       0x1400199e6
+0x00000001400199ab: lea      r10d, [r9 - 1]
+0x00000001400199af: and      r10w, r9w
+0x00000001400199b3: mov      r9d, r10d
+0x00000001400199b6: jne      0x14001998e
+0x00000001400199b8: pcmpeqb  xmm2, xmm1
+0x00000001400199bc: pmovmskb r9d, xmm2
+0x00000001400199c1: test     r9d, r9d
+0x00000001400199c4: jne      0x1400199d3
+0x00000001400199c6: add      rax, r8
+0x00000001400199c9: add      rax, 0x10
+0x00000001400199cd: add      r8, 0x10
+0x00000001400199d1: jmp      0x140019974
+0x00000001400199d3: lea      rdi, [rsp + 0x28]
+0x00000001400199d8: mov      rcx, rdi
+0x00000001400199db: mov      edx, esi
+0x00000001400199dd: call     0x140020020
+0x00000001400199e2: mov      edi, dword ptr [rdi]
+0x00000001400199e4: jmp      0x1400199fa
+0x00000001400199e6: neg      r10
+0x00000001400199e9: mov      edi, dword ptr [rcx + r10*8 - 4]
+0x00000001400199ee: lea      rcx, [rsp + 0x28]
+0x00000001400199f3: mov      edx, esi
+0x00000001400199f5: call     0x140020020
+0x00000001400199fa: xor      eax, eax
+0x00000001400199fc: cmp      edi, -1
+0x00000001400199ff: cmovne   eax, edi
+0x0000000140019a02: add      rsp, 0x38
+0x0000000140019a06: pop      rdi
+0x0000000140019a07: pop      rsi
+0x0000000140019a08: ret      
+0x0000000140019a09: call     0x1408ae0b2
+0x0000000140019a0e: jmp      0x140019921

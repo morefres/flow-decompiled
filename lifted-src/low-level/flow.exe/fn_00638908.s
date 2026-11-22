@@ -1,0 +1,60 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x638908-0x6389cc
+0x0000000140638908: push     r15
+0x000000014063890a: push     r14
+0x000000014063890c: push     rsi
+0x000000014063890d: push     rdi
+0x000000014063890e: push     rbp
+0x000000014063890f: push     rbx
+0x0000000140638910: sub      rsp, 0x38
+0x0000000140638914: mov      rdi, rdx
+0x0000000140638917: mov      rsi, rcx
+0x000000014063891a: lea      rdx, [rsp + 0x30]
+0x000000014063891f: mov      dword ptr [rdx], 0
+0x0000000140638925: mov      r8d, 4
+0x000000014063892b: mov      rcx, rdi
+0x000000014063892e: call     0x140638792
+0x0000000140638933: test     rax, rax
+0x0000000140638936: jne      0x14063899d
+0x0000000140638938: lea      rdx, [rsp + 0x30]
+0x000000014063893d: mov      ebx, dword ptr [rdx]
+0x000000014063893f: mov      word ptr [rdx], 0
+0x0000000140638944: mov      r8d, 2
+0x000000014063894a: mov      rcx, rdi
+0x000000014063894d: call     0x140638792
+0x0000000140638952: test     rax, rax
+0x0000000140638955: jne      0x14063899d
+0x0000000140638957: lea      rdx, [rsp + 0x30]
+0x000000014063895c: movzx    ebp, word ptr [rdx]
+0x000000014063895f: mov      word ptr [rdx], 0
+0x0000000140638964: mov      r8d, 2
+0x000000014063896a: mov      rcx, rdi
+0x000000014063896d: call     0x140638792
+0x0000000140638972: test     rax, rax
+0x0000000140638975: jne      0x14063899d
+0x0000000140638977: lea      r15, [rsp + 0x30]
+0x000000014063897c: movzx    r14d, word ptr [r15]
+0x0000000140638980: mov      qword ptr [r15], 0
+0x0000000140638987: mov      r8d, 8
+0x000000014063898d: mov      rcx, rdi
+0x0000000140638990: mov      rdx, r15
+0x0000000140638993: call     0x140638792
+0x0000000140638998: test     rax, rax
+0x000000014063899b: je       0x1406389b1
+0x000000014063899d: mov      qword ptr [rsi + 8], rax
+0x00000001406389a1: mov      byte ptr [rsi], 1
+0x00000001406389a4: add      rsp, 0x38
+0x00000001406389a8: pop      rbx
+0x00000001406389a9: pop      rbp
+0x00000001406389aa: pop      rdi
+0x00000001406389ab: pop      rsi
+0x00000001406389ac: pop      r14
+0x00000001406389ae: pop      r15
+0x00000001406389b0: ret      
+0x00000001406389b1: lea      rcx, [rsi + 1]
+0x00000001406389b5: mov      qword ptr [rsp + 0x20], r15
+0x00000001406389ba: mov      edx, ebx
+0x00000001406389bc: mov      r8d, ebp
+0x00000001406389bf: mov      r9d, r14d
+0x00000001406389c2: call     0x140850b2e
+0x00000001406389c7: mov      byte ptr [rsi], 0
+0x00000001406389ca: jmp      0x1406389a4

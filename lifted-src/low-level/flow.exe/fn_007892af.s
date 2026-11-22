@@ -1,0 +1,64 @@
+; instruction-faithful x86-64 fallback for flow.exe rva=0x7892af-0x789364
+0x00000001407892af: push     r15
+0x00000001407892b1: push     r14
+0x00000001407892b3: push     rsi
+0x00000001407892b4: push     rdi
+0x00000001407892b5: push     rbp
+0x00000001407892b6: push     rbx
+0x00000001407892b7: sub      rsp, 0x28
+0x00000001407892bb: mov      rsi, rcx
+0x00000001407892be: mov      rdi, qword ptr [rcx + 0x18]
+0x00000001407892c2: test     rdi, rdi
+0x00000001407892c5: je       0x14078931d
+0x00000001407892c7: mov      rbx, qword ptr [rsi]
+0x00000001407892ca: movdqa   xmm0, xmmword ptr [rbx]
+0x00000001407892ce: pmovmskb eax, xmm0
+0x00000001407892d2: not      eax
+0x00000001407892d4: lea      r14, [rbx + 0x10]
+0x00000001407892d8: mov      r15, qword ptr [rip + 0x148639]
+0x00000001407892df: test     ax, ax
+0x00000001407892e2: jne      0x1407892fe
+0x00000001407892e4: movdqa   xmm0, xmmword ptr [r14]
+0x00000001407892e9: add      rbx, -0x200
+0x00000001407892f0: add      r14, 0x10
+0x00000001407892f4: pmovmskb eax, xmm0
+0x00000001407892f8: xor      ax, 0xffff
+0x00000001407892fc: je       0x1407892e4
+0x00000001407892fe: lea      ebp, [rax - 1]
+0x0000000140789301: bsf      ecx, eax
+0x0000000140789304: and      ebp, eax
+0x0000000140789306: shl      ecx, 5
+0x0000000140789309: mov      rax, rbx
+0x000000014078930c: sub      rax, rcx
+0x000000014078930f: mov      rcx, qword ptr [rax - 8]
+0x0000000140789313: call     r15
+0x0000000140789316: mov      eax, ebp
+0x0000000140789318: dec      rdi
+0x000000014078931b: jne      0x1407892df
+0x000000014078931d: mov      rcx, qword ptr [rsi + 0x38]
+0x0000000140789321: lea      rax, [rcx - 1]
+0x0000000140789325: cmp      rax, -3
+0x0000000140789329: ja       0x14078933b
+0x000000014078932b: call     qword ptr [rip + 0x14811f]
+0x0000000140789331: test     eax, eax
+0x0000000140789333: jne      0x14078933b
+0x0000000140789335: call     qword ptr [rip + 0x148165]
+0x000000014078933b: mov      rcx, qword ptr [rsi + 0x30]
+0x000000014078933f: test     rcx, rcx
+0x0000000140789342: je       0x140789357
+0x0000000140789344: add      rsp, 0x28
+0x0000000140789348: pop      rbx
+0x0000000140789349: pop      rbp
+0x000000014078934a: pop      rdi
+0x000000014078934b: pop      rsi
+0x000000014078934c: pop      r14
+0x000000014078934e: pop      r15
+0x0000000140789350: jmp      qword ptr [rip + 0x1485c9]
+0x0000000140789357: add      rsp, 0x28
+0x000000014078935b: pop      rbx
+0x000000014078935c: pop      rbp
+0x000000014078935d: pop      rdi
+0x000000014078935e: pop      rsi
+0x000000014078935f: pop      r14
+0x0000000140789361: pop      r15
+0x0000000140789363: ret      
