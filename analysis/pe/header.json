@@ -1,0 +1,60 @@
+{
+  "e_lfanew": 232,
+  "machine": "0x8664",
+  "sections": [
+    {
+      "name": ".text",
+      "va": 4096,
+      "vsize": 9237008,
+      "raw_size": 9237504,
+      "raw_offset": 1024,
+      "characteristics": "0x60000020"
+    },
+    {
+      "name": ".rdata",
+      "va": 9244672,
+      "vsize": 5175292,
+      "raw_size": 5175296,
+      "raw_offset": 9238528,
+      "characteristics": "0x40000040"
+    },
+    {
+      "name": ".data",
+      "va": 14422016,
+      "vsize": 13528,
+      "raw_size": 2560,
+      "raw_offset": 14413824,
+      "characteristics": "0xc0000040"
+    },
+    {
+      "name": ".pdata",
+      "va": 14438400,
+      "vsize": 496332,
+      "raw_size": 496640,
+      "raw_offset": 14416384,
+      "characteristics": "0x40000040"
+    },
+    {
+      "name": ".rsrc",
+      "va": 14938112,
+      "vsize": 19496,
+      "raw_size": 19968,
+      "raw_offset": 14913024,
+      "characteristics": "0x40000040"
+    },
+    {
+      "name": ".reloc",
+      "va": 14958592,
+      "vsize": 24864,
+      "raw_size": 25088,
+      "raw_offset": 14932992,
+      "characteristics": "0x42000040"
+    }
+  ],
+  "imagebase": 5368709120,
+  "entry_rva": 9072672,
+  "entry_va": 5377781792,
+  "exception_rva": 14438400,
+  "exception_size": 496332,
+  "exception_file_offset": 14416384
+}

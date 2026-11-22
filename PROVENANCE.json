@@ -1,0 +1,137 @@
+{
+  "source": {
+    "filename": "flow.exe",
+    "sha256": "0547ece3d1f51cdc7f1169d077a548303ed9e388d527ca8a00399995d08efaad",
+    "bytes": 14958080
+  },
+  "pe": {
+    "e_lfanew": 232,
+    "machine": "0x8664",
+    "sections": [
+      {
+        "name": ".text",
+        "va": 4096,
+        "vsize": 9237008,
+        "raw_size": 9237504,
+        "raw_offset": 1024,
+        "characteristics": "0x60000020"
+      },
+      {
+        "name": ".rdata",
+        "va": 9244672,
+        "vsize": 5175292,
+        "raw_size": 5175296,
+        "raw_offset": 9238528,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".data",
+        "va": 14422016,
+        "vsize": 13528,
+        "raw_size": 2560,
+        "raw_offset": 14413824,
+        "characteristics": "0xc0000040"
+      },
+      {
+        "name": ".pdata",
+        "va": 14438400,
+        "vsize": 496332,
+        "raw_size": 496640,
+        "raw_offset": 14416384,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".rsrc",
+        "va": 14938112,
+        "vsize": 19496,
+        "raw_size": 19968,
+        "raw_offset": 14913024,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".reloc",
+        "va": 14958592,
+        "vsize": 24864,
+        "raw_size": 25088,
+        "raw_offset": 14932992,
+        "characteristics": "0x42000040"
+      }
+    ],
+    "imagebase": 5368709120,
+    "entry_rva": 9072672,
+    "entry_va": 5377781792,
+    "exception_rva": 14438400,
+    "exception_size": 496332,
+    "exception_file_offset": 14416384
+  },
+  "unwind_functions": 41361,
+  "mapped_functions": 41361,
+  "disassembled_instructions": 2258997,
+  "resources_extracted": [
+    {
+      "index": 0,
+      "path": "resources/resource_0_type3_name1_lang1033.bin",
+      "offset": 14914032,
+      "bytes": 720,
+      "sha256": "e051a114afb22c84257465c9a793c559dd6f96f17c0efc8ceba0fd166efae014"
+    },
+    {
+      "index": 1,
+      "path": "resources/resource_1_type3_name2_lang1033.bin",
+      "offset": 14914752,
+      "bytes": 1002,
+      "sha256": "9b12e40b08b8ef8f6ae74ff2f0c6e8cdbd3556db76d4f0df207317584e2ec68b"
+    },
+    {
+      "index": 2,
+      "path": "resources/resource_2_type3_name3_lang1033.bin",
+      "offset": 14915760,
+      "bytes": 1430,
+      "sha256": "cb5175db8095067378e17430c5311d80e54d2d81f6aab0db56aada1599e47f89"
+    },
+    {
+      "index": 3,
+      "path": "resources/resource_3_type3_name4_lang1033.bin",
+      "offset": 14917192,
+      "bytes": 2242,
+      "sha256": "716736e6e7eb4d5904a3a5a9b52a70fc187b547ccb55e90c2954d3391183385b"
+    },
+    {
+      "index": 4,
+      "path": "resources/resource_4_type3_name5_lang1033.bin",
+      "offset": 14919440,
+      "bytes": 2876,
+      "sha256": "18d1a5046c6685f107b4bcdc2c392287ffcbd63b35501de570327855500917c3"
+    },
+    {
+      "index": 5,
+      "path": "resources/resource_5_type3_name6_lang1033.bin",
+      "offset": 14922320,
+      "bytes": 9765,
+      "sha256": "ad6c2d946e42f0c5834aede942b54dfb1b2f248b7f3cb4894fd12903e9607b42"
+    },
+    {
+      "index": 6,
+      "path": "resources/resource_6_type14_name32512_lang1033.bin",
+      "offset": 14932088,
+      "bytes": 90,
+      "sha256": "20e7c1b216a9a79162b6e35b6a2662f8c0fd496963c4f484a4f7f6727e35a129"
+    },
+    {
+      "index": 7,
+      "path": "resources/resource_7_type16_name1_lang1033.bin",
+      "offset": 14913568,
+      "bytes": 460,
+      "sha256": "19413f3adda9a9a24e93605ab3bbf63d40681b125cd13c0ec498325832c26575"
+    },
+    {
+      "index": 8,
+      "path": "resources/resource_8_type24_name1_lang1033.bin",
+      "offset": 14932184,
+      "bytes": 334,
+      "sha256": "b1cb832f790c153aa0e9a66f76e75460263cf1d41971d2dbcc9a4d87ec18b7d8"
+    }
+  ],
+  "analysis_mode": "static-only",
+  "execution_performed": false
+}
