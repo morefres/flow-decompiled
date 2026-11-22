@@ -1,7 +1,3 @@
-# Flow decompiled — Delta-style static reconstruction workspace
-
-This repository now mirrors the layout of the Delta decompile workspace while preserving the Flow-specific PE evidence. It is a static reconstruction of the supplied 64-bit Rust/Tauri Windows executable, not the original source repository.
-
 ## Layout
 
 - `assets/extracted-app/` — complete copied target artifact (`flow.exe`).
